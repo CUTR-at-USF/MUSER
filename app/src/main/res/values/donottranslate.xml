@@ -2,7 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- Do not translate. App Name -->
-    <string name="app_name">Shuttle</string>
+    <string name="app_name">MUSER</string>
 
     <!-- Do not translate. Duration format for duration < 1 hour -->
     <string name="durationformatshort" translatable="false"><xliff:g id="format">%1$s%3$d:%6$02d</xliff:g></string>
