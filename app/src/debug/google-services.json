@@ -62,7 +62,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1022635885638:android:3ba5a7d13d995fc2",
         "android_client_info": {
-          "package_name": "com.simplecity.amp_pro"
+          "package_name": "edu.usf.sas.pal.muser"
         }
       },
       "oauth_client": [
@@ -70,7 +70,7 @@
           "client_id": "1022635885638-oav2v88b743e8io789vprh77i0rrbk82.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.simplecity.amp_pro",
+            "package_name": "edu.usf.sas.pal.muser",
             "certificate_hash": "e0d87743c42a030fe81043fff20102908d515dca"
           }
         },
@@ -78,7 +78,7 @@
           "client_id": "1022635885638-2l09tgklhs8fbinkuhlp0asat3sst0ps.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.simplecity.amp_pro",
+            "package_name": "edu.usf.sas.pal.muser",
             "certificate_hash": "28fd47b7c5e05f85fd61c7d9b7404837a8c2e137"
           }
         },
@@ -114,7 +114,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:1022635885638:android:b36e5cbfb3fd08a4",
         "android_client_info": {
-          "package_name": "com.simplecity.amp_pro.debug"
+          "package_name": "edu.usf.sas.pal.muser.debug"
         }
       },
       "oauth_client": [
@@ -122,7 +122,7 @@
           "client_id": "1022635885638-6b8864rkipui6rl9nu7cuaj664t95dl4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.simplecity.amp_pro.debug",
+            "package_name": "edu.usf.sas.pal.muser.debug",
             "certificate_hash": "28fd47b7c5e05f85fd61c7d9b7404837a8c2e137"
           }
         },
@@ -130,8 +130,7 @@
           "client_id": "1022635885638-od6javatv24ggg3tjono6gdiv2phkse8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.simplecity.amp_pro.debug",
-            "certificate_hash": "e0d87743c42a030fe81043fff20102908d515dca"
+            "package_name": "edu.usf.sas.pal.muser.debug",
           }
         },
         {
