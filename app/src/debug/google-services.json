@@ -131,6 +131,7 @@
           "client_type": 1,
           "android_info": {
             "package_name": "edu.usf.sas.pal.muser.debug",
+            "certificate_hash": "e0d87743c42a030fe81043fff20102908d515dca"
           }
         },
         {
