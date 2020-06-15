@@ -1,55 +1,39 @@
 {
   "project_info": {
-    "project_number": "0"
+    "project_number": "393776752501",
+    "firebase_url": "https://muser-1d7ac.firebaseio.com",
+    "project_id": "muser-1d7ac",
+    "storage_bucket": "muser-1d7ac.appspot.com"
   },
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:393776752501:android:f29dbcfdcb07f9ff9b953c",
         "android_client_info": {
-          "package_name": "another.music.player"
+          "package_name": "edu.usf.sas.pal.muser"
         }
       },
+      "oauth_client": [
+        {
+          "client_id": "393776752501-h4ege2e8p4tvmkejra0b05qa2a08bgab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
-          "current_key": ""
+          "current_key": "AIzaSyAjiCVqF_vp1160DbTDlw-YciVwRKQOG4c"
         }
-      ]
-    },
-    {
-      "client_info": {
-        "android_client_info": {
-          "package_name": "com.simplecity.amp_pro"
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "393776752501-h4ege2e8p4tvmkejra0b05qa2a08bgab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
-      },
-      "api_key": [
-        {
-          "current_key": ""
-        }
-      ]
-    },
-    {
-      "client_info": {
-        "android_client_info": {
-          "package_name": "com.simplecity.amp_pro.debug"
-        }
-      },
-      "api_key": [
-        {
-          "current_key": ""
-        }
-      ]
-    },
-    {
-      "client_info": {
-        "android_client_info": {
-          "package_name": "another.music.player.debug"
-        }
-      },
-      "api_key": [
-        {
-          "current_key": ""
-        }
-      ]
+      }
     }
   ],
   "configuration_version": "1"
