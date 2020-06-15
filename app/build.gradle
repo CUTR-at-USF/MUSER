@@ -237,7 +237,7 @@ dependencies {
     implementation Dependencies.Square.retrofitGson
     implementation Dependencies.Square.sqlBrite
     debugImplementation Dependencies.Square.haha
-    debugImplementation Dependencies.Square.leakCanaryDebug
+    debugImplementation Dependencies.Square.leakCanaryRel
     releaseImplementation Dependencies.Square.leakCanaryRel
 
     // Projects
