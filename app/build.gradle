@@ -89,7 +89,6 @@ android {
     buildTypes {
 
         debug {
-            applicationIdSuffix ""
             ext.enableCrashlytics = false
         }
 
@@ -97,6 +96,7 @@ android {
 
             minifyEnabled true
             shrinkResources true
+            ext.enableCrashlytics = false
             // For further optimisation, use 'proguard-android-optimize.txt' instead of 'proguard-android.txt'.
             // Last time I checked, it reduced by another ~5000 methods.
             proguardFiles getDefaultProguardFile('proguard-android.txt'), file('proguard-rules.pro')
