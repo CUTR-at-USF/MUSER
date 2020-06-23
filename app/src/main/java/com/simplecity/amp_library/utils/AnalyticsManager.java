@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
-import com.crashlytics.android.answers.Answers;
-import com.crashlytics.android.answers.CustomEvent;
-import com.crashlytics.android.core.CrashlyticsCore;
+
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.simplecity.amp_library.BuildConfig;
 import javax.inject.Inject;
@@ -45,7 +43,6 @@ public class AnalyticsManager {
 
         FirebaseAnalytics.getInstance(context)
                 .logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-        Answers.getInstance().logCustom(new CustomEvent("Changelog Viewed"));
     }
 
     public void logUpgrade(@UpgradeType String upgradeType) {
@@ -68,7 +65,6 @@ public class AnalyticsManager {
             return;
         }
 
-        CrashlyticsCore.getInstance().log(String.format("Screen: %s", name));
         FirebaseAnalytics.getInstance(context).setCurrentScreen(activity, name, null);
     }
 
@@ -141,6 +137,5 @@ public class AnalyticsManager {
             return;
         }
 
-        CrashlyticsCore.getInstance().log(String.format("%s | %s", tag, breadCrumb));
     }
 }
