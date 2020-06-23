@@ -1014,6 +1014,7 @@ public class MusicService extends MediaBrowserServiceCompat {
                 Log.e(TAG, "startForeground should have been called, but song is null");
             }
         } catch (NullPointerException | ConcurrentModificationException e) {
+            Log.e(TAG, "startForegroundImpl error: " + e);
         }
     }
 

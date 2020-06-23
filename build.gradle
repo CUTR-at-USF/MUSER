@@ -12,7 +12,6 @@ buildscript {
         classpath Dependencies.Plugins.gradleVersions
         classpath Dependencies.Plugins.playServices
         classpath Dependencies.Plugins.kotlin
-        classpath Dependencies.Plugins.firebase_crashlytics
     }
 }
 

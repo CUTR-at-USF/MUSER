@@ -28,7 +28,6 @@ plugins {
 
 apply plugin: Dependencies.BuildPlugins.dexCount
 apply plugin: Dependencies.BuildPlugins.fabric
-apply plugin: Dependencies.BuildPlugins.firebase_crashlytics
 
 repositories {
     maven { url 'https://maven.fabric.io/public' }
@@ -283,9 +282,7 @@ dependencies {
     compileOnly Dependencies.daggerAssistedInject
     kapt Dependencies.daggerAssistedInjectProcessor
 
-//    implementation(Dependencies.crashlytics) {
-//        transitive = true
-//    }
+
 
     // Testing
     testImplementation Dependencies.Testing.junit

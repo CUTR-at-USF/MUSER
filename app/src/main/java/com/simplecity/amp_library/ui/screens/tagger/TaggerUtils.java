@@ -161,6 +161,9 @@ public class TaggerUtils {
                 }
             }
         } catch (NoSuchMethodError e) {
+            Log.e(TAG, "getExtSdCardPaths() failed. " + e);
+
+
         }
         return paths.toArray(new String[paths.size()]);
     }

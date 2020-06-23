@@ -227,6 +227,7 @@ public class SafManager {
                 }
             }
         } catch (NoSuchMethodError e) {
+            Log.e(TAG, "getExtSdCardPaths() failed. " + e);
         }
         return paths;
     }

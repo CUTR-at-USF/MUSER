@@ -84,7 +84,6 @@ object Dependencies {
             const val fabricGradlePlugin = "1.+"
             const val gradleVersions = "0.20.0"
             const val playServices = "4.2.0"
-            const val firebase_crashlytics="2.2.0"
 
         }
 
@@ -95,7 +94,6 @@ object Dependencies {
         const val playPublisher = "com.github.triplet.play"
         const val gradleVersions = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersions}"
         const val playServices = "com.google.gms:google-services:${Versions.playServices}"
-        const val firebase_crashlytics = "com.google.firebase:firebase-crashlytics-gradle:${Versions.firebase_crashlytics}"
 
     }
 
@@ -108,7 +106,6 @@ object Dependencies {
             const val constraintLayout = "2.0.0-alpha3"
             const val chromeCastFramework = "16.1.0"
 
-            const val firebaseCrashlytics = "2.10.1"
         }
 
         const val cardView = "com.android.support:cardview-v7:${Versions.supportLib}"
@@ -118,7 +115,6 @@ object Dependencies {
         const val supportv4 = "com.android.support:support-v4:${Versions.supportLib}"
         const val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebaseCore}"
         const val firebaseRemoteConfig = "com.google.firebase:firebase-config:${Versions.firebaseRemoteConfig}"
-        const val firebaseCrashlytics = "com.google.firebase:firebase-crashlytics:${Versions.firebaseCrashlytics}"
         const val appcompat = "com.android.support:appcompat-v7:${Versions.supportLib}"
         const val mediarouter = "com.android.support:mediarouter-v7:${Versions.supportLib}"
         const val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"
@@ -258,7 +254,6 @@ object Dependencies {
         const val fabric = "io.fabric"
         const val gradleVersions = "com.github.ben-manes.versions"
         const val playServices = "com.google.gms.google-services"
-        const val firebase_crashlytics = "com.google.firebase.crashlytics"
     }
 }
 

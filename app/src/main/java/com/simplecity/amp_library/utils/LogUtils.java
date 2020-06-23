@@ -17,6 +17,7 @@ public class LogUtils {
                 throwable.printStackTrace();
             }
         } else {
+            Log.e(tag,  message + "\nThrowable: " + (throwable != null ? throwable.getMessage() : null));
 
         }
     }
