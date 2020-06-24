@@ -308,7 +308,7 @@ public class Equalizer {
             }
         } catch (NoSuchMethodError e) {
             Log.e(TAG, "No such method error thrown when updating equalizer.. " + e);
-    }
+        }
     }
 
     private void updateDsp(EffectSet session) {

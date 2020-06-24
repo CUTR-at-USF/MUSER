@@ -84,7 +84,6 @@ object Dependencies {
             const val fabricGradlePlugin = "1.+"
             const val gradleVersions = "0.20.0"
             const val playServices = "4.2.0"
-
         }
 
         const val android = "com.android.tools.build:gradle:${Versions.androidGradlePlugin}"
@@ -94,7 +93,6 @@ object Dependencies {
         const val playPublisher = "com.github.triplet.play"
         const val gradleVersions = "com.github.ben-manes:gradle-versions-plugin:${Versions.gradleVersions}"
         const val playServices = "com.google.gms:google-services:${Versions.playServices}"
-
     }
 
     object Google {
@@ -105,7 +103,6 @@ object Dependencies {
             const val firebaseRemoteConfig = "16.1.0"
             const val constraintLayout = "2.0.0-alpha3"
             const val chromeCastFramework = "16.1.0"
-
         }
 
         const val cardView = "com.android.support:cardview-v7:${Versions.supportLib}"
