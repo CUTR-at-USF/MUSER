@@ -33,6 +33,7 @@ import com.simplecity.amp_library.utils.InputMethodManagerLeaks;
 import com.simplecity.amp_library.utils.LegacyUtils;
 import com.simplecity.amp_library.utils.LogUtils;
 import com.simplecity.amp_library.utils.SettingsManager;
+import com.simplecity.amp_library.utils.ShuttleUtils;
 import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.extensions.GenreExtKt;
 import com.squareup.leakcanary.LeakCanary;
@@ -93,11 +94,8 @@ public class ShuttleApplication extends DaggerApplication {
                 .create(this)
                 .inject(this);
 
-        if (LeakCanary.isInAnalyzerProcess(this)) {
-            // This process is dedicated to LeakCanary for heap analysis.
-            // You should not init your app in this process.
-            return;
-        }
+        ((ShuttleApplication) getApplicationContext()).setIsUpgraded(true);
+
 
         // Todo: Remove for production builds. Useful for tracking down crashes in beta.
         RxDogTag.install();
