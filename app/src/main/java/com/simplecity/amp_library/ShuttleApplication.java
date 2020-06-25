@@ -68,7 +68,7 @@ public class ShuttleApplication extends DaggerApplication {
 
     private static final String TAG = "ShuttleApplication";
 
-    private boolean isUpgraded;
+    private boolean isUpgraded = true;
 
     private RefWatcher refWatcher;
 
@@ -94,8 +94,11 @@ public class ShuttleApplication extends DaggerApplication {
                 .create(this)
                 .inject(this);
 
-        ((ShuttleApplication) getApplicationContext()).setIsUpgraded(true);
-
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
 
         // Todo: Remove for production builds. Useful for tracking down crashes in beta.
         RxDogTag.install();
@@ -210,8 +213,8 @@ public class ShuttleApplication extends DaggerApplication {
     }
 
     public void setIsUpgraded(boolean isUpgraded) {
-        this.isUpgraded = isUpgraded;
-        analyticsManager.setIsUpgraded(isUpgraded);
+//        this.isUpgraded = isUpgraded;
+//        analyticsManager.setIsUpgraded(isUpgraded);
     }
 
     public boolean getIsUpgraded() {
