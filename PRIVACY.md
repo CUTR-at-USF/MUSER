@@ -1,7 +1,5 @@
 # PRIVACY POLICY
 
-### MUSER PROJECT PRIVACY POLICY
-
 We value your privacy, so we want to be explicit about what kind of personal information is involved when you interact with MUSER.
 
 The objective of this policy is to let the users know how the information collected is used, stored and disclosed. By using MUSER, you agree that your personal information will be handled as described in this policy.
