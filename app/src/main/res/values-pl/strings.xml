@@ -84,7 +84,7 @@
     <!-- -->
     <string name="get_pro_title">Ulepsz do wersji Shuttle+</string>
     <!-- -->
-    <string name="get_pro_message">Jeśli Shuttle spełnia Twoje oczekiwania, rozważ ulepszenie do płatnej wersji.
+    <string name="get_pro_message">Jeśli Muser spełnia Twoje oczekiwania, rozważ ulepszenie do płatnej wersji.
 \n\nFunkcje:
 \n• Mnóstwo dodatkowych motywów
 \n• Edytor tagów muzycznych,
@@ -434,9 +434,9 @@ Po wyłączeniu, jako obraz zastępczy będzie używana ikona programu.</string>
     <string name="save">Zapisz</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Wystąpił błąd modyfikowania znaczników.</string>
-    <string name="tag_editor_document_tree_message">Z powodu zmian w Androidzie 5.0, Google wymaga określenia katalogów, do których aplikacja może mieć uprawnienia do zapisywania.\n\nProgram Shuttle otworzy przeglądarkę plików. Proszę wybrać katalog nadrzędny z modyfikowanymi plikami.</string>
+    <string name="tag_editor_document_tree_message">Z powodu zmian w Androidzie 5.0, Google wymaga określenia katalogów, do których aplikacja może mieć uprawnienia do zapisywania.\n\nProgram Muser otworzy przeglądarkę plików. Proszę wybrać katalog nadrzędny z modyfikowanymi plikami.</string>
     <string name="tag_editor_check_permission">Sprawdzanie uprawnień. Może to chwilę potrwać...\n\nObwiniaj Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Wygląda na to, że Shuttle nie ma uprawnień do zapisywania plików. Proszę upewnić się, że wybrano odpowiedni katalog w przeglądarce plików.</string>
+    <string name="tag_editor_document_tree_permission_failed">Wygląda na to, że Muser nie ma uprawnień do zapisywania plików. Proszę upewnić się, że wybrano odpowiedni katalog w przeglądarce plików.</string>
     <string name="tag_retrieve_error">Wystąpił błąd podczas przetwarzania znaczników.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -690,9 +690,9 @@ katalog</item>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
     <string name="iab_purchase_restored">Przywrócono zakupy. Proszę uruchomić program ponownie.</string>
     <string name="iab_purchase_not_found">Nie odnaleziono poprzednich zakupów.</string>
-    <string name="iab_already_upgraded">Program Shuttle jest już uaktualniony. Proszę spróbować uruchomić program ponownie.</string>
+    <string name="iab_already_upgraded">Program Muser jest już uaktualniony. Proszę spróbować uruchomić program ponownie.</string>
     <string name="iab_purchase_failed">Coś poszło nie tak. Proszę spróbować ponownie później.</string>
-    <string name="snackbar_rate_text">Odtwarzacz Shuttle jest ok?</string>
+    <string name="snackbar_rate_text">Odtwarzacz Muser jest ok?</string>
     <string name="snackbar_rate_action">Oceń go!</string>
     <string name="dialog_create_playlist_error">Błąd tworzenia listy odtwarzania</string>
     <!-- Artwork picker -->
@@ -736,7 +736,7 @@ katalog</item>
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Nie odnaleziono dołączonego tekstu.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric jest otwarto-źródłowym programem pobierającym teksty utworów, dostępnym w sklepie Google Play.\n\n\nPo zainstalowaniu, QuickLyric będzie można otworzyć za pośrednictwem Shuttle, używając dedykowanego przycisku.</string>
+    <string name="quicklyric_info">QuickLyric jest otwarto-źródłowym programem pobierającym teksty utworów, dostępnym w sklepie Google Play.\n\n\nPo zainstalowaniu, QuickLyric będzie można otworzyć za pośrednictwem Muser, używając dedykowanego przycisku.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Lista odtwarzania</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
