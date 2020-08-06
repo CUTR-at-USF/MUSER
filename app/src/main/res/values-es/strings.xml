@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">No hay un proveedor de documentos disponible para permitir la acción.</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -80,14 +80,14 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Recopilando canciones...</string>
     <!-- -->
-    <string name="get_pro_title">Actualizar a Shuttle+</string>
+    <string name="get_pro_title">Actualizar a Muser+</string>
     <!-- -->
-    <string name="get_pro_message">Si disfrutas de Shuttle Music Player, por favor considera comprar Shuttle+.\n\nCaracterísticas:\n\&#8226;-Un montón de temas extras\n\&#8226;-Edición de etiqueta (soporte limitado en Android 4.4 KitKat)\n\&#8226;-Navegación de carpertas\n\&#8226;-Soporte Chromecast\n\nTambién ayuda a promocionar un futuro desarrollo.</string>
+    <string name="get_pro_message">Si disfrutas de Muser Music Player, por favor considera comprar Muser+.\n\nCaracterísticas:\n\&#8226;-Un montón de temas extras\n\&#8226;-Edición de etiqueta (soporte limitado en Android 4.4 KitKat)\n\&#8226;-Navegación de carpertas\n\&#8226;-Soporte Chromecast\n\nTambién ayuda a promocionar un futuro desarrollo.</string>
     <!-- -->
     <string name="upgraded_title">Gracias</string>
-    <string name="upgraded_message">Has sido actualizado correctamente a Shuttle+. Agradezco tu apoyo. .\n\nPor favor reinicia la aplicación para asegurarse de que todas las funciones están habilitadas.</string>
-    <string name="upgrade_dialog_message">"La actualización desbloqueara características adicionales en Shuttle, incluyendo: \n\n\&#8226;-Montones de temas extra  \n\&#8226;-Edición de etiquetas (Soporte limitado en Android 4.4 Kitkat)    \n\&#8226;-Navegación por carpetas     \n\&#8226;-Soporte para ChromeCast    \n\nTambién ayuda a promover un desarrollo futuro.\n\nNo necesitas actualizarte si ya tienes Shuttle+ "</string>
-    <string name="upgrade_required_folders">Actualiza a Shuttle+</string>
+    <string name="upgraded_message">Has sido actualizado correctamente a Muser+. Agradezco tu apoyo. .\n\nPor favor reinicia la aplicación para asegurarse de que todas las funciones están habilitadas.</string>
+    <string name="upgrade_dialog_message">"La actualización desbloqueara características adicionales en Muser, incluyendo: \n\n\&#8226;-Montones de temas extra  \n\&#8226;-Edición de etiquetas (Soporte limitado en Android 4.4 Kitkat)    \n\&#8226;-Navegación por carpetas     \n\&#8226;-Soporte para ChromeCast    \n\nTambién ayuda a promover un desarrollo futuro.\n\nNo necesitas actualizarte si ya tienes Muser+ "</string>
+    <string name="upgrade_required_folders">Actualiza a Muser+</string>
     <string name="btn_upgrade">"Actualizar "</string>
     <!-- -->
     <string name="get_pro_button_no">No, gracias</string>
@@ -121,7 +121,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">¿Estás seguro de que quieres borrar permanentemente \"<xliff:g id="folder">%s</xliff:g>\"? Todo el contenido de esta carpeta será borrado, incluyendo el contenido no visible en el explorador de archivos de Shuttle.</string>
+    <string name="delete_folder_confirmation_dialog">¿Estás seguro de que quieres borrar permanentemente \"<xliff:g id="folder">%s</xliff:g>\"? Todo el contenido de esta carpeta será borrado, incluyendo el contenido no visible en el explorador de archivos de Muser.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">¿Estás seguro de que quieres borrar permanentemente \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -129,7 +129,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Establecer como tono de llamada</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle requiere permiso de escritura con el fin de establecer el tono.\n\nDespués de conceder el permiso, intenta configurar el tono de llamada de nuevo.</string>
+    <string name="dialog_message_set_ringtone">Muser requiere permiso de escritura con el fin de establecer el tono.\n\nDespués de conceder el permiso, intenta configurar el tono de llamada de nuevo.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> ya existe en esta lista de reproducción. ¿Añadir de todos modos?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -251,7 +251,7 @@
     <string name="pref_title_theme_black">Negro</string>
     <string name="pref_group_palette">Paleta</string>
     <string name="pref_title_palette">Usar colores del álbum</string>
-    <string name="pref_summary_palette">Si se activa, Shuttle detectará el color más prominente en el álbum y usará este color como el \"color primario\" en la aplicación</string>
+    <string name="pref_summary_palette">Si se activa, Muser detectará el color más prominente en el álbum y usará este color como el \"color primario\" en la aplicación</string>
     <string name="pref_title_palette_now_playing">Sólo en la pantalla de \"Escuchando ahora\"</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">Lista Negra/Lista Blanca</string>
@@ -272,7 +272,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Preferir caratulas incorporadas</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Selecciona esta casilla si prefieres que Shuttle busque las carátulas dentro del archivo en lugar de buscar en tus carpetas de música</string>
+    <string name="pref_summary_prefer_embedded_art">Selecciona esta casilla si prefieres que Muser busque las carátulas dentro del archivo en lugar de buscar en tus carpetas de música</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ignorar carátulas incrustadas</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -292,7 +292,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Descargar imágenes de artista o carátulas faltantes</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle descargará todas las carátulas, independientemente de su red. Pueden aplicarse cargos por uso de datos.</string>
+    <string name="pref_warning_download_artwork">Muser descargará todas las carátulas, independientemente de su red. Pueden aplicarse cargos por uso de datos.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Borrar carátula</string>
     <!-- Settings summary for the delete artwork button -->
@@ -313,12 +313,12 @@
     <string name="pref_title_placeholders">Usar marcadores estilo Gmail</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Muestra marcadores estilo \'Gmail\' por defecto
- Si no se selecciona, se utilizará el icono de Shuttle como marcador</string>
+ Si no se selecciona, se utilizará el icono de Muser como marcador</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Habilitar carátula en Pantalla de Bloqueo</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
     <string name="pref_summary_lockscreen">Habilita/Deshabilita los controles e información de artista cuando la pantalla está bloqueada (ICS+)
- \nPrecaución: No seleccione esta opción si usa Shuttle con un receptor Bluetooth</string>
+ \nPrecaución: No seleccione esta opción si usa Muser con un receptor Bluetooth</string>
     <!-- Settings title for the Display heading -->
     <string name="pref_title_display">Pantalla</string>
     <!-- Settings title for the keep screen on checkbox -->
@@ -377,7 +377,7 @@
     <string name="pref_title_faq">"FAQ "</string>
     <string name="pref_summary_faq">"¿Tienes alguna pregunta? ¿Necesitas ayuda? Has click aquí para ver el FAQ (Preguntas frecuentes) @ www.shuttlemusicplayer.com "</string>
     <string name="pref_title_rate">"Agradece "</string>
-    <string name="pref_summary_rate">Si te gusta Shuttle, por favor considera dejar una reseña</string>
+    <string name="pref_summary_rate">Si te gusta Muser, por favor considera dejar una reseña</string>
     <string name="pref_title_headset_beep">Pitido en Skip</string>
     <string name="pref_summary_headset_beep">Beep al saltar la canción a través de controles de auriculares</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -429,9 +429,9 @@
     <string name="save">Guardar</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">No se pudo editar las etiquetas. Si estás usando KitKat, y el archivo está almacenado en la tarjeta SD, la edición de etiquetas podría no funcionar. Esto ocurre debido a cambios recientes por parte de Google referente a los permisos de acceso a la tarjeta SD. ¡Lo sentimos!</string>
-    <string name="tag_editor_document_tree_message">Debido a cambios en Android 5.0, Google ahora requiere que especifique qué carpetas en la tarjeta SD  permitirá una aplicación para editar.\n\nShuttle ahora abrirá un selector de archivos. Por favor seleccione la carpeta principal de los archivos que desea modificar.</string>
+    <string name="tag_editor_document_tree_message">Debido a cambios en Android 5.0, Google ahora requiere que especifique qué carpetas en la tarjeta SD  permitirá una aplicación para editar.\n\nMuser ahora abrirá un selector de archivos. Por favor seleccione la carpeta principal de los archivos que desea modificar.</string>
     <string name="tag_editor_check_permission">Comprobando permisos. Esto puede tardar un rato…\n\n¡Échale la culpa a Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Parece que Shuttle aún no tiene permiso para modificar los archivos. Vuelva a revisar el directorio en el selector de archivos.</string>
+    <string name="tag_editor_document_tree_permission_failed">Parece que Muser aún no tiene permiso para modificar los archivos. Vuelva a revisar el directorio en el selector de archivos.</string>
     <string name="tag_retrieve_error">Ha ocurrido un error al obtener las etiquetas.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -572,7 +572,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">Hecho</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Elija de cuántas semanas atras Shuttle debería buscar música \'reciente\'.</string>
+    <string name="weekpicker_title">Elija de cuántas semanas atras Muser debería buscar música \'reciente\'.</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Descargando Carátula</string>
@@ -664,7 +664,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Reproduciendo ahora  %1$s por %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Si ya ha realizado la actualización de Shuttle, pero sigue apareciendo como la versión gratuita, pulse aquí.</string>
+    <string name="pref_summary_restore_purchases">Si ya ha realizado la actualización de Muser, pero sigue apareciendo como la versión gratuita, pulse aquí.</string>
     <string name="pref_title_restore_purchases">Restaurar compras</string>
     <string name="blacklist_empty">¡No tienes canciones en la lista negra! ¡Hurra!</string>
     <string name="whitelist_empty">¡No tienes carpetas en la lista blanca!</string>
@@ -677,11 +677,11 @@
     <string name="song_info_play_count">Contador de reproducciones</string>
     <string name="song_info_bitrate_suffix">"kbps"</string>
     <string name="song_info_sample_rate_suffix">"kHz"</string>
-    <string name="iab_purchase_restored">Compra restaurada. Por favor reinicia Shuttle</string>
+    <string name="iab_purchase_restored">Compra restaurada. Por favor reinicia Muser</string>
     <string name="iab_purchase_not_found">Compras previas no encontradas.</string>
-    <string name="iab_already_upgraded">Shuttle está siendo actualizado, intenta reiniciando la app.</string>
+    <string name="iab_already_upgraded">Muser está siendo actualizado, intenta reiniciando la app.</string>
     <string name="iab_purchase_failed">Algo salío mal. Por favor, inténtalo de nuevo más tarde</string>
-    <string name="snackbar_rate_text">¿Disfrutas el usar Shuttle?</string>
+    <string name="snackbar_rate_text">¿Disfrutas el usar Muser?</string>
     <string name="snackbar_rate_action">¡Puntúalo!</string>
     <string name="dialog_create_playlist_error">Error al crear lista de reproducción</string>
     <!-- Artwork picker -->
@@ -736,7 +736,7 @@
     <string name="shuffle_albums">Álbum aleatorio</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Se requiere acceso de almacenamiento</string>
-    <string name="saf_access_required_message">Shuttle requiere permiso para acceder a estos archivos. Por favor, elija el directorio que contiene su música.</string>
+    <string name="saf_access_required_message">Muser requiere permiso para acceder a estos archivos. Por favor, elija el directorio que contiene su música.</string>
     <string name="saf_show_files_button">Mostrar archivos</string>
-    <string name="notification_text_shuttle_running">Shuttle se está ejecutando</string>
+    <string name="notification_text_Muser_running">Muser se está ejecutando</string>
 </resources>

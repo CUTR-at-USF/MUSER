@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">DocumentProvider\'it pole saadaval, et käsitleda loa taotlust</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -79,9 +79,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Laulude kogumine...</string>
     <!-- -->
-    <string name="get_pro_title">Uuenda Shuttle+ peale</string>
+    <string name="get_pro_title">Uuenda Muser+ peale</string>
     <!-- -->
-    <string name="get_pro_message">Kui sulle meeldib Shuttle, siis palun mõtle Shuttle+ peale. 
+    <string name="get_pro_message">Kui sulle meeldib Muser, siis palun mõtle Muser+ peale. 
         \n\nFunktsioonid:
         \n• Rohkem teemasi
         \n• Siltide regideerimine
@@ -90,13 +90,13 @@
         \nIt ning see aitab kaasa tulevasele arengule.</string>
     <!-- -->
     <string name="upgraded_title">Aitäh</string>
-    <string name="upgraded_message">Olete edukalt uuendanud Shuttle+ile. Täname abi eest. \n\nPalun taaskäivita äpp, et veenduda, kas kõik funktsioonid toimiksid</string>
+    <string name="upgraded_message">Olete edukalt uuendanud Muser+ile. Täname abi eest. \n\nPalun taaskäivita äpp, et veenduda, kas kõik funktsioonid toimiksid</string>
     <string name="upgrade_dialog_message">• Chromecasti tugi
 \n• Suurem valik värviskeeme
 \n• Siltide muutmine
 \n• Kaustade sirvimine
 \n• Toetad arendust ❤️</string>
-    <string name="upgrade_required_folders">Uuenda Shuttle+ile</string>
+    <string name="upgrade_required_folders">Uuenda Muser+ile</string>
     <string name="btn_upgrade">Uuenda</string>
     <!-- -->
     <string name="get_pro_button_no">Ei, aitäh</string>
@@ -130,7 +130,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Oled sa kindel, et sa tahad kustutada kausta \"<xliff:g id="folder">%s</xliff:g>\"? Kõik asjad selles kaustas kustutatakse. Isegi asjad, mida Shuttle failisirvija ei näe.</string>
+    <string name="delete_folder_confirmation_dialog">Oled sa kindel, et sa tahad kustutada kausta \"<xliff:g id="folder">%s</xliff:g>\"? Kõik asjad selles kaustas kustutatakse. Isegi asjad, mida Muser failisirvija ei näe.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Oled sa kindel, et sa tahad kustutada faili \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -138,7 +138,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Sea helin</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle vajab telefonihelina määramiseks \'seadetesse kirjutamise\' õiguseid.\n\nPärast õiguste andmist, proovi uuesti helinat määrata.</string>
+    <string name="dialog_message_set_ringtone">Muser vajab telefonihelina määramiseks \'seadetesse kirjutamise\' õiguseid.\n\nPärast õiguste andmist, proovi uuesti helinat määrata.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> on juba selles loendis. Kas lisan selle uuesti?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -258,7 +258,7 @@
     <string name="pref_title_theme_black">Must</string>
     <string name="pref_group_palette">Palett</string>
     <string name="pref_title_palette">Kasuta kaanepiltide värve</string>
-    <string name="pref_summary_palette">Kui see valik on sisse lülitatud, siis valib Shuttle kaanepildilt kõige silmapaistvama värvi ning kasutab seda peamise värvina kogu rakenduses.</string>
+    <string name="pref_summary_palette">Kui see valik on sisse lülitatud, siis valib Muser kaanepildilt kõige silmapaistvama värvi ning kasutab seda peamise värvina kogu rakenduses.</string>
     <string name="pref_title_palette_now_playing">Ainult ekraanil \'praegu mängib\'</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">Must/valge nimekiri</string>
@@ -279,7 +279,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Eelista kaasatud kaanepilte</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Märgi see valik, kui sa soovid, et Shuttle otsiks esmalt kaanepilte muusikafailidest ja alles seejärel kaustadest</string>
+    <string name="pref_summary_prefer_embedded_art">Märgi see valik, kui sa soovid, et Muser otsiks esmalt kaanepilte muusikafailidest ja alles seejärel kaustadest</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ignoreeri kaasatud kaanepilte</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -299,7 +299,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Tõmba alla puuduvad esitajate ja albumite pildid</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle laadib alla kõik kaanepildid hoolimata sinu võrgu seadistustest. Lisanduda võivad andmesidetasud.</string>
+    <string name="pref_warning_download_artwork">Muser laadib alla kõik kaanepildid hoolimata sinu võrgu seadistustest. Lisanduda võivad andmesidetasud.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Kustuta albumi kaanepilt</string>
     <!-- Settings summary for the delete artwork button -->
@@ -320,7 +320,7 @@
     <string name="pref_title_placeholders">Kasuta Gmail\'i stiilis kohatäiteid</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Kasutab Gmail\'i stiilis kohatäiteid vaikimisi.
-Kui see on välja lülitatud, siis kasutatakse Shuttle ikooni kohatäitena.</string>
+Kui see on välja lülitatud, siis kasutatakse Muser ikooni kohatäitena.</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Lülita lukustusekraani kaanepilt sisse</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -383,7 +383,7 @@ Kui see on välja lülitatud, siis kasutatakse Shuttle ikooni kohatäitena.</str
     <string name="pref_title_faq">KKK</string>
     <string name="pref_summary_faq">On sul küsimus? Vajad abi? Vajuta siia, et näha www.shuttlemusicplayer.com KKK sektsiooni</string>
     <string name="pref_title_rate">Ütle \"aitäh\"</string>
-    <string name="pref_summary_rate">Kui sulle meeldib Shuttle, palun kaalu arvustuse kirjutamist.</string>
+    <string name="pref_summary_rate">Kui sulle meeldib Muser, palun kaalu arvustuse kirjutamist.</string>
     <string name="pref_title_headset_beep">Piiks vahelejätmisel</string>
     <string name="pref_summary_headset_beep">Tee piiks, kui lugu jäetakse kõrvaklapi nuppudega vahele</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -434,10 +434,10 @@ Kui see on välja lülitatud, siis kasutatakse Shuttle ikooni kohatäitena.</str
     <!-- Button text for saving tags  -->
     <string name="save">Salvesta</string>
     <!-- Message displayed when tag editing fails -->
-    <string name="tag_error">Viga siltide muutmisel. Kui fail on SD-kaardil, siis võib olla, et Shuttlel pole õigusi sellele ligipääsemiseks.</string>
-    <string name="tag_editor_document_tree_message">Muudatuste tõttu Android 5.0-s nõuab Google nüüd, et sa määdad, millistes SD-kaardi kaustades võib äpp muudatusi teha.\n\nShuttle avab nüüd failide valija. Palun vali kaust, milles soovid muudatusi teha.</string>
+    <string name="tag_error">Viga siltide muutmisel. Kui fail on SD-kaardil, siis võib olla, et Muserl pole õigusi sellele ligipääsemiseks.</string>
+    <string name="tag_editor_document_tree_message">Muudatuste tõttu Android 5.0-s nõuab Google nüüd, et sa määdad, millistes SD-kaardi kaustades võib äpp muudatusi teha.\n\nMuser avab nüüd failide valija. Palun vali kaust, milles soovid muudatusi teha.</string>
     <string name="tag_editor_check_permission">Õiguste kontrollimine. Sellega võib veidi aega minna ...\n\nSüüdista Google\'it!</string>
-    <string name="tag_editor_document_tree_permission_failed">Näib, et Shuttle\'il pole ikkagi õigusi nende failide muutmiseks. Kontrolli failide valijaga üle kaustatee.</string>
+    <string name="tag_editor_document_tree_permission_failed">Näib, et Muser\'il pole ikkagi õigusi nende failide muutmiseks. Kontrolli failide valijaga üle kaustatee.</string>
     <string name="tag_retrieve_error">Viga siltide lugemisel.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -670,7 +670,7 @@ Kui see on välja lülitatud, siis kasutatakse Shuttle ikooni kohatäitena.</str
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Praegu mängib %1$s (%2$s)</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Kui sa oled ostnud Shuttle tasulise versiooni, aga ikka näidatakse tasuta versiooni, siis vajuta siia.</string>
+    <string name="pref_summary_restore_purchases">Kui sa oled ostnud Muser tasulise versiooni, aga ikka näidatakse tasuta versiooni, siis vajuta siia.</string>
     <string name="pref_title_restore_purchases">Taasta ostud</string>
     <string name="blacklist_empty">Sa pole ühtegi lugu musta nimekirja kandnud!</string>
     <string name="whitelist_empty">Sa pole ühtegi kausta valgesse nimekirja kandnud!</string>
@@ -683,11 +683,11 @@ Kui see on välja lülitatud, siis kasutatakse Shuttle ikooni kohatäitena.</str
     <string name="song_info_play_count">Esitamiste arv</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Ost on taastatud. Palun taaskäivita Shuttle</string>
+    <string name="iab_purchase_restored">Ost on taastatud. Palun taaskäivita Muser</string>
     <string name="iab_purchase_not_found">Ühtegi varasemat ostu ei leitud.</string>
-    <string name="iab_already_upgraded">Shuttle on juba uuendatud. Proovi rakenduse taaskäivitamist.</string>
+    <string name="iab_already_upgraded">Muser on juba uuendatud. Proovi rakenduse taaskäivitamist.</string>
     <string name="iab_purchase_failed">Midagi läks valesti. Palun proovi hiljem uuesti...</string>
-    <string name="snackbar_rate_text">Naudid Shuttle kasutamist?</string>
+    <string name="snackbar_rate_text">Naudid Muser kasutamist?</string>
     <string name="snackbar_rate_action">Hinda seda!</string>
     <string name="dialog_create_playlist_error">Tõrge esitusloendi loomisel</string>
     <!-- Artwork picker -->
@@ -732,7 +732,7 @@ Kui see on välja lülitatud, siis kasutatakse Shuttle ikooni kohatäitena.</str
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Ei leidnud kaasatud laulusõnu.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric on tasuta ja avatud lähtekoodiga laulusõnade tõmbamise äpp Google Play Poes.\n\nKui see on paidaldatud, siis see avatakse, kui vajutad Shuttle\'s nuppu \'QuickLyric\'.</string>
+    <string name="quicklyric_info">QuickLyric on tasuta ja avatud lähtekoodiga laulusõnade tõmbamise äpp Google Play Poes.\n\nKui see on paidaldatud, siis see avatakse, kui vajutad Muser\'s nuppu \'QuickLyric\'.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Esitusloend</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
@@ -743,7 +743,7 @@ Kui see on välja lülitatud, siis kasutatakse Shuttle ikooni kohatäitena.</str
     <string name="shuffle_albums">Albumi juhuesitus</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Vajalik on ligipääs salvestusmeediale</string>
-    <string name="saf_access_required_message">Shuttle vajab neile failidelel ligipääsemiseks õiguseid. Palun märgi kaust, milles on sinu muusika.</string>
+    <string name="saf_access_required_message">Muser vajab neile failidelel ligipääsemiseks õiguseid. Palun märgi kaust, milles on sinu muusika.</string>
     <string name="saf_show_files_button">Näita faile</string>
-    <string name="notification_text_shuttle_running">Shuttle teenus töötab...</string>
+    <string name="notification_text_Muser_running">Muser teenus töötab...</string>
 </resources>

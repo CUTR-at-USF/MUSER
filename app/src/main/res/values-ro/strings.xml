@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">Niciun DocumentProvider disponibil pentru preluarea solicitării</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -79,9 +79,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Se colectează melodiile…</string>
     <!-- -->
-    <string name="get_pro_title">Upgrade la Shuttle+</string>
+    <string name="get_pro_title">Upgrade la Muser+</string>
     <!-- -->
-    <string name="get_pro_message">Dacă îți place Shuttle, consideră un upgrade.
+    <string name="get_pro_message">Dacă îți place Muser, consideră un upgrade.
 \n\nCaracteristici:
 \nO mulțime de teme suplimentare
 \nEditare de tag-uri (suport limitat pentru Android 4.4 Kitkat)
@@ -89,15 +89,15 @@
 \nSuport pentru ChromeCast\n\nÎn plus, ajută la promovarea dezvoltării ulterioare!</string>
     <!-- -->
     <string name="upgraded_title">Mulțumesc</string>
-    <string name="upgraded_message">Ai trecut cu succes la Shuttle+. Îți apreciez suportul acordat.
+    <string name="upgraded_message">Ai trecut cu succes la Muser+. Îți apreciez suportul acordat.
 \n\nRepornește aplicația pentru a te asigura că toate opțiunile sunt activate</string>
-    <string name="upgrade_dialog_message">Actualizând aplicația vei debloca caracteristici suplimentare în Shuttle, inclusiv:
+    <string name="upgrade_dialog_message">Actualizând aplicația vei debloca caracteristici suplimentare în Muser, inclusiv:
 \n\nO mulțime de teme suplimentare
 \nEditare de tag-uri (suport limitat pentru Android 4.4 Kitkat)
 \nNavigator pentru foldere
 \nSuport pentru ChromeCast
 \n\nÎn plus, ajută la promovarea dezvoltării ulterioare!
-\n\nNu trebuie să faci upgrade dacă ai deja Shuttle+</string>
+\n\nNu trebuie să faci upgrade dacă ai deja Muser+</string>
     <string name="btn_upgrade">Actualizează</string>
     <!-- -->
     <string name="get_pro_button_no">Nu mulțumesc</string>
@@ -126,7 +126,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Ești sigur că vrei să ștergi permanent „<xliff:g id="folder">%s</xliff:g>”? Tot ce se află în acest folder va fi șters, inclusiv lucrurile care s-ar putea să nu fie vizibile în navigarea Shuttle.</string>
+    <string name="delete_folder_confirmation_dialog">Ești sigur că vrei să ștergi permanent „<xliff:g id="folder">%s</xliff:g>”? Tot ce se află în acest folder va fi șters, inclusiv lucrurile care s-ar putea să nu fie vizibile în navigarea Muser.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Ești sigur că vrei să ștergi permanent „<xliff:g id="file">%s</xliff:g>”</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -253,7 +253,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Alege coperți incorporate</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Bifează această căsuță dacă preferi ca Shuttle să caute coperți incorporate în fișierele de muzică înainte de a căuta în directoarele de muzică</string>
+    <string name="pref_summary_prefer_embedded_art">Bifează această căsuță dacă preferi ca Muser să caute coperți incorporate în fișierele de muzică înainte de a căuta în directoarele de muzică</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ignoră coperțile incorporate</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -273,7 +273,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Descarcă coperți lipsă ale artiștilor și albumelor</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle va descărca toate coperțile în ciuda rețelei tale. Se pot percepe tarife pentru date.</string>
+    <string name="pref_warning_download_artwork">Muser va descărca toate coperțile în ciuda rețelei tale. Se pot percepe tarife pentru date.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Șterge coperți</string>
     <!-- Settings summary for the delete artwork button -->
@@ -293,7 +293,7 @@
     <string name="pref_title_placeholders">Folosește substituenți Gmail</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Arată substituenți „Gmail” în mod predefinit.
- Dacă nu este bifat, pictograma Shuttle va fi folosită ca substituent</string>
+ Dacă nu este bifat, pictograma Muser va fi folosită ca substituent</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Activează coperțile de album în ecranul de blocare</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -350,7 +350,7 @@
     <string name="pref_title_faq">Întrebări Frecvente</string>
     <string name="pref_summary_faq">Ai o întrebare? Ai nevoie de ajutor? Click aici pentru a vedea întrebările frecvente pe www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Spune mulțumesc</string>
-    <string name="pref_summary_rate">Dacă îți place Shuttle, lasă o recenzie.</string>
+    <string name="pref_summary_rate">Dacă îți place Muser, lasă o recenzie.</string>
     <!-- Settings title for ignore playlist duplicates -->
     <!-- Settings summary for ignore playlist duplicates -->
     <!-- Displayed on the settings page to choose the default main page -->
@@ -393,9 +393,9 @@
     <string name="save">Salvează</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">A apărut o eroare la editarea tag-urilor.</string>
-    <string name="tag_editor_document_tree_message">Din cauza schimbărilor în Android 5.0, trebuie să specifici ce foldere de pe cardul SD poate edita o aplicație.\n\nShuttle va deschide acum un „file picker”. Alege folderul-părinte a fișierelor pe care vrei să le modifici.</string>
+    <string name="tag_editor_document_tree_message">Din cauza schimbărilor în Android 5.0, trebuie să specifici ce foldere de pe cardul SD poate edita o aplicație.\n\nMuser va deschide acum un „file picker”. Alege folderul-părinte a fișierelor pe care vrei să le modifici.</string>
     <string name="tag_editor_check_permission">Se verifică permisiunile. S-ar putea să dureze puțin...\n\nDă vina pe Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Se pare că Shuttle încă nu are permisiunea de a edita fișierele. Verifică din nou folderul din „file picker”</string>
+    <string name="tag_editor_document_tree_permission_failed">Se pare că Muser încă nu are permisiunea de a edita fișierele. Verifică din nou folderul din „file picker”</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
     <string name="rename_folder">Redenumește folder-ul</string>
@@ -521,7 +521,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">Gata</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Setează câte săptămâni ar trebui să considere Shuttle în căutarea muzicii „recente”.</string>
+    <string name="weekpicker_title">Setează câte săptămâni ar trebui să considere Muser în căutarea muzicii „recente”.</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Se descarcă coperți</string>
@@ -599,7 +599,7 @@
     <!-- Accessibility button description -->
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Dacă ai făcut deja upgrade la Shuttle, dar încă apare ca și versiunea gratuită, apasă asta.</string>
+    <string name="pref_summary_restore_purchases">Dacă ai făcut deja upgrade la Muser, dar încă apare ca și versiunea gratuită, apasă asta.</string>
     <string name="pref_title_restore_purchases">Restabilește achizițiile</string>
     <string name="blacklist_empty">Nu ai melodii în lista neagră!</string>
     <string name="whitelist_empty">Nu ai fișiere în lista albă!</string>
@@ -612,11 +612,11 @@
     <string name="song_info_play_count">Numărul redărilor</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Achiziție retrasă. Restartează Shuttle.</string>
+    <string name="iab_purchase_restored">Achiziție retrasă. Restartează Muser.</string>
     <string name="iab_purchase_not_found">Nu s-au găsit achiziți anterioare.</string>
-    <string name="iab_already_upgraded">Shuttle este deja upgradat. Încearcă să restartezi aplicația.</string>
+    <string name="iab_already_upgraded">Muser este deja upgradat. Încearcă să restartezi aplicația.</string>
     <string name="iab_purchase_failed">Ceva nu a mers bine. Încearcă din nou mai târziu...</string>
-    <string name="snackbar_rate_text">Te bucuri de Shuttle?</string>
+    <string name="snackbar_rate_text">Te bucuri de Muser?</string>
     <string name="snackbar_rate_action">Dă-i o notă!</string>
     <!-- Artwork picker -->
     <!-- Launcher Shortcuts -->

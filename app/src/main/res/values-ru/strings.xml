@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">Провайдер документов недоступен, чтобы предоставить разрешение на запрос</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -78,9 +78,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Поиск песен...</string>
     <!-- -->
-    <string name="get_pro_title">Обновить до Shuttle+</string>
+    <string name="get_pro_title">Обновить до Muser+</string>
     <!-- -->
-    <string name="get_pro_message">Если вам нравится Shuttle Music Player, пожалуйста, подумайте об обновлении до Shuttle+
+    <string name="get_pro_message">Если вам нравится Muser Music Player, пожалуйста, подумайте об обновлении до Muser+
 
 
 Особенности:
@@ -96,14 +96,14 @@
 Это также поможет дальнейшей разработке!</string>
     <!-- -->
     <string name="upgraded_title">Спасибо</string>
-    <string name="upgraded_message">Вы успешно обновились до Shuttle+. Спасибо за Вашу поддержку!
+    <string name="upgraded_message">Вы успешно обновились до Muser+. Спасибо за Вашу поддержку!
 \n\nПожалуйста, перезапустите приложение чтобы включить все функции</string>
     <string name="upgrade_dialog_message">• Поддержка ChromeCast
 \n• Дополнительные темы
 \n• Редактор тэгов
 \n• Просмотр папок
 \n• Поддержка разработки ❤️</string>
-    <string name="upgrade_required_folders">Обновиться до Shuttle+</string>
+    <string name="upgrade_required_folders">Обновиться до Muser+</string>
     <string name="btn_upgrade">Обновить</string>
     <!-- -->
     <string name="get_pro_button_no">Спасибо, не надо</string>
@@ -136,7 +136,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">Да</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Вы уверены, что хотите безвозвратно удалить \"<xliff:g id="folder">%s</xliff:g>\"? Все содержимое этой папки будет удалено, включая то, что могло быть не видно в просмотре файлов Shuttle.</string>
+    <string name="delete_folder_confirmation_dialog">Вы уверены, что хотите безвозвратно удалить \"<xliff:g id="folder">%s</xliff:g>\"? Все содержимое этой папки будет удалено, включая то, что могло быть не видно в просмотре файлов Muser.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Вы уверены, что хотите безвозвратно удалить \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -144,7 +144,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Установить на звонок</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle просит разрешение на  \'запись настроек\', чтобы поставить на звонок.\n\nПосле предоставления разрешения, попробуйте установить рингтон снова.</string>
+    <string name="dialog_message_set_ringtone">Muser просит разрешение на  \'запись настроек\', чтобы поставить на звонок.\n\nПосле предоставления разрешения, попробуйте установить рингтон снова.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> уже существует в этом плейлисте. Всё равно добавить?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -261,7 +261,7 @@
     <string name="pref_title_theme_black">Чёрная</string>
     <string name="pref_group_palette">Палитра</string>
     <string name="pref_title_palette">Использовать цвета из обложки</string>
-    <string name="pref_summary_palette">Если включено, Shuttle обнаружит более заметный цвет из обложки и будет использовать его в качестве основного во всём приложении</string>
+    <string name="pref_summary_palette">Если включено, Muser обнаружит более заметный цвет из обложки и будет использовать его в качестве основного во всём приложении</string>
     <string name="pref_title_palette_now_playing">Только на экране Сейчас играет</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">Белый/чёрный список</string>
@@ -282,7 +282,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Предпочитать встроенные изображения</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Отметьте галочкой, если Вы предпочитаете, что бы Shuttle просматривал обложки сначала в самих файлах, а после уже в папке</string>
+    <string name="pref_summary_prefer_embedded_art">Отметьте галочкой, если Вы предпочитаете, что бы Muser просматривал обложки сначала в самих файлах, а после уже в папке</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Игнорировать встроенную обложку</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -302,7 +302,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Загрузить отсутствующие изображения альбомов и исполнителей</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle загрузит все обложки, несмотря на Вашу сеть. Может взиматься плата за использование трафика.</string>
+    <string name="pref_warning_download_artwork">Muser загрузит все обложки, несмотря на Вашу сеть. Может взиматься плата за использование трафика.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Удалить обложки</string>
     <!-- Settings summary for the delete artwork button -->
@@ -322,7 +322,7 @@
     <!-- Settings title for gmail style placeholders checkbox-->
     <string name="pref_title_placeholders">Использовать иконки в стиле Gmail</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
-    <string name="pref_summary_placeholders">Заполнять значки в стиле \'Gmail\'. Если отключено, будут использоваться значки Shuttle без заполнения</string>
+    <string name="pref_summary_placeholders">Заполнять значки в стиле \'Gmail\'. Если отключено, будут использоваться значки Muser без заполнения</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Включить показ обложки на экране блокировки</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -387,7 +387,7 @@
     <string name="pref_title_faq">Часто задаваемые вопросы</string>
     <string name="pref_summary_faq">Есть вопросы? Нужна помощь? Нажмите сюда для просмотра FAQ на www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Поблагодарить</string>
-    <string name="pref_summary_rate">Если Вам нравится Shuttle, оставьте отзыв, пожалуйста.</string>
+    <string name="pref_summary_rate">Если Вам нравится Muser, оставьте отзыв, пожалуйста.</string>
     <string name="pref_title_headset_beep">Звук при пропуске</string>
     <string name="pref_summary_headset_beep">Звук при пропуске песни через управление наушников</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -439,9 +439,9 @@
     <string name="save">Сохранить</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Невозможно отредактировать теги. Если вы используете Kitkat, и файлы находятся на SD-карте, редактирование тегов невозможно. Это связано с изменениями в политике безопасности Google.</string>
-    <string name="tag_editor_document_tree_message">Вследствие изменений в Android 5.0 Вам необходимо установить, какие папки на SD карте приложению можно модифицировать.\n\nСейчас Shuttle откроет окно проводника. Пожалуйста, выберите начальную директорию, содержащую файлы, какие Вы хотите модифицировать.</string>
+    <string name="tag_editor_document_tree_message">Вследствие изменений в Android 5.0 Вам необходимо установить, какие папки на SD карте приложению можно модифицировать.\n\nСейчас Muser откроет окно проводника. Пожалуйста, выберите начальную директорию, содержащую файлы, какие Вы хотите модифицировать.</string>
     <string name="tag_editor_check_permission">Проверка разрешений. Это может отнять некоторое время...\n\nБлагодарите Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Похоже, Shuttle всё ещё не имеет разрешения модифицировать файлы. Проверьте директорию в окне проводника.</string>
+    <string name="tag_editor_document_tree_permission_failed">Похоже, Muser всё ещё не имеет разрешения модифицировать файлы. Проверьте директорию в окне проводника.</string>
     <string name="tag_retrieve_error">Ошибка при получении тегов</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -676,7 +676,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Сейчас воспроизводится %1$s от %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Если Вы уже приобрели Shuttle, но он до сих пор отображается бесплатной версией, нажмите здесь.</string>
+    <string name="pref_summary_restore_purchases">Если Вы уже приобрели Muser, но он до сих пор отображается бесплатной версией, нажмите здесь.</string>
     <string name="pref_title_restore_purchases">Восстановить покупки</string>
     <string name="blacklist_empty">Вы не внесли в чёрный список ни одной песни!</string>
     <string name="whitelist_empty">Вы не внесли в белый список ни одной песни!</string>
@@ -689,11 +689,11 @@
     <string name="song_info_play_count">Счёт проигрывания</string>
     <string name="song_info_bitrate_suffix">" кбит/с"</string>
     <string name="song_info_sample_rate_suffix">" кГц"</string>
-    <string name="iab_purchase_restored">Покупка восстановлена. Пожалуйста, перезапустите Shuttle</string>
+    <string name="iab_purchase_restored">Покупка восстановлена. Пожалуйста, перезапустите Muser</string>
     <string name="iab_purchase_not_found">Прошлая покупка не найдена.</string>
-    <string name="iab_already_upgraded">Shuttle уже куплен. Попробуйте перезапустить приложение.</string>
+    <string name="iab_already_upgraded">Muser уже куплен. Попробуйте перезапустить приложение.</string>
     <string name="iab_purchase_failed">Что-то пошло не так. Пожалуйста, попробуйте позже...</string>
-    <string name="snackbar_rate_text">Нравится Shuttle?</string>
+    <string name="snackbar_rate_text">Нравится Muser?</string>
     <string name="snackbar_rate_action">Оцените его!</string>
     <string name="dialog_create_playlist_error">Ошибка при создании плейлиста</string>
     <!-- Artwork picker -->
@@ -737,7 +737,7 @@
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Не найден встроенный текст</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric является сборником текстов песен с открытым исходным кодом в Google Play Маркете.\n\nПосле установки, QuickLyric будет открываться из Shuttle всякий раз когда Вы будете нажимать кнопку меню \'QuickLyric\'</string>
+    <string name="quicklyric_info">QuickLyric является сборником текстов песен с открытым исходным кодом в Google Play Маркете.\n\nПосле установки, QuickLyric будет открываться из Muser всякий раз когда Вы будете нажимать кнопку меню \'QuickLyric\'</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Плейлист</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->

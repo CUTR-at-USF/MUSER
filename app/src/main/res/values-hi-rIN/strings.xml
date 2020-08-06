@@ -137,7 +137,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">ओके</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">क्या आप वाकई स्थायी रूप से डिलीट करना चाहते हैं \"<xliff:g id="folder">%s</xliff:g>\"? इस फ़ोल्डर में सभी आइटम डिलीट कर दिए जाएंगे, जिनमें आइटम शामिल हैं जो Shuttle फ़ाइल ब्राउज़र में दिखाई नहीं दे सकते।</string>
+    <string name="delete_folder_confirmation_dialog">क्या आप वाकई स्थायी रूप से डिलीट करना चाहते हैं \"<xliff:g id="folder">%s</xliff:g>\"? इस फ़ोल्डर में सभी आइटम डिलीट कर दिए जाएंगे, जिनमें आइटम शामिल हैं जो Muser फ़ाइल ब्राउज़र में दिखाई नहीं दे सकते।</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">क्या आप वाकई स्थायी रूप से डिलीट करना चाहते हैं \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -145,7 +145,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">रिंगटोन सेट करें</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">रिंगटोन सेट करने के लिए Shuttle को \'राइट सेटिंग्स\' की अनुमति की आवश्यकता है।\n\nअनुमति देने के बाद, अपनी रिंगटोन फिर से सेट करने का प्रयास करें।</string>
+    <string name="dialog_message_set_ringtone">रिंगटोन सेट करने के लिए Muser को \'राइट सेटिंग्स\' की अनुमति की आवश्यकता है।\n\nअनुमति देने के बाद, अपनी रिंगटोन फिर से सेट करने का प्रयास करें।</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> पहले से ही इस प्लेलिस्ट में मौजूद है। जैसे भी इसे जोड़ें?</string>
     <!-- Checkbox text 'apply to all' -->

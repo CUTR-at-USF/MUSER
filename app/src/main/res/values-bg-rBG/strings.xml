@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">Не може да се изпълни поради липсата на DocumentProvider</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -80,9 +80,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Добавяне на песни...</string>
     <!-- -->
-    <string name="get_pro_title">Надстройте до Shuttle+</string>
+    <string name="get_pro_title">Надстройте до Muser+</string>
     <!-- -->
-    <string name="get_pro_message">Ако харесвате музикалния плеър Shuttle, моля обмислете надстройването до Shuttle+.
+    <string name="get_pro_message">Ако харесвате музикалния плеър Muser, моля обмислете надстройването до Muser+.
  \n\nДопълнителни функции:
   \nМножество допълнителни теми
  \nРедактиране на атрибути
@@ -90,8 +90,8 @@
  \nПоддръжка на ChromeCast \n\nОсвен това подпомагате и създателя на приложението.</string>
     <!-- -->
     <string name="upgraded_title">Благодаря Ви</string>
-    <string name="upgraded_message">Вие успешно надстроихте до Shuttle+. Оценявам подкрепата Ви.\n\nМоля рестартирайте приложението, за да се уверите, че всички функции са включени.</string>
-    <string name="upgrade_dialog_message">Актуализирането ще ви отключи допълнителни функции на Shuttle като:\n\n\&#8226;-Голям брой теми\n\&#8226;-Редактиране на информация за изп.(ограничена поддръжка при Андроид 4.4 КитКат)\n\&#8226;-Преглеждане на музика в папки\n\&#8226;-Поддръжка на ChromeCast\n\nПодпомагате за развитието на приложението.\n\nНяма нужда да актуализирате, ако вече притежавате Shuttle+</string>
+    <string name="upgraded_message">Вие успешно надстроихте до Muser+. Оценявам подкрепата Ви.\n\nМоля рестартирайте приложението, за да се уверите, че всички функции са включени.</string>
+    <string name="upgrade_dialog_message">Актуализирането ще ви отключи допълнителни функции на Muser като:\n\n\&#8226;-Голям брой теми\n\&#8226;-Редактиране на информация за изп.(ограничена поддръжка при Андроид 4.4 КитКат)\n\&#8226;-Преглеждане на музика в папки\n\&#8226;-Поддръжка на ChromeCast\n\nПодпомагате за развитието на приложението.\n\nНяма нужда да актуализирате, ако вече притежавате Muser+</string>
     <string name="btn_upgrade">Актуализирай</string>
     <!-- -->
     <string name="get_pro_button_no">Не, благодаря</string>
@@ -124,7 +124,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Сигурни ли сте, че искате да изтриете окончателно  \"<xliff:g id="folder">%s</xliff:g>\"? Всички елементи в папката ще бъдат изтрити, вкл. и тези, които може да не се показват във файловия мениджър на Shuttle.</string>
+    <string name="delete_folder_confirmation_dialog">Сигурни ли сте, че искате да изтриете окончателно  \"<xliff:g id="folder">%s</xliff:g>\"? Всички елементи в папката ще бъдат изтрити, вкл. и тези, които може да не се показват във файловия мениджър на Muser.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Сигурни ли сте, че искате да изтриете окончателно \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -132,7 +132,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Задай тон на звънене</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle има нужда от допълнително разрешение, за да настрои тон на звънене.\n\nСлед като дадете разрешение, опитайте да промените тона на звънене повторно.</string>
+    <string name="dialog_message_set_ringtone">Muser има нужда от допълнително разрешение, за да настрои тон на звънене.\n\nСлед като дадете разрешение, опитайте да промените тона на звънене повторно.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> вече е в този плейлист. Добавяне все пак?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -259,7 +259,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Предпочитане на вградена корица</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Маркирай ако предпочиташ Shuttle да търси корица вградена в музикалните файлове преди да търси в папките с музика</string>
+    <string name="pref_summary_prefer_embedded_art">Маркирай ако предпочиташ Muser да търси корица вградена в музикалните файлове преди да търси в папките с музика</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Игнорирай вградените корици</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -279,7 +279,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Изтегли липсващи изображения на изпълнителя и на обложките на албумите</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle ще изтегля обложки без значение от това към каква мрежа сте свързани. Може да бъде свързано с разходи за данни.</string>
+    <string name="pref_warning_download_artwork">Muser ще изтегля обложки без значение от това към каква мрежа сте свързани. Може да бъде свързано с разходи за данни.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Изтриване на обложката</string>
     <!-- Settings summary for the delete artwork button -->
@@ -300,7 +300,7 @@
     <string name="pref_title_placeholders">Използване на \"Gmail\" стил на иконите</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Използване на стила \"Gmail\" по подразбиране
- Ако опцията не е активна, иконата на Shuttle ще се показва като placeholder</string>
+ Ако опцията не е активна, иконата на Muser ще се показва като placeholder</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Активирай контроли когато екранът е заключен</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -361,7 +361,7 @@
     <string name="pref_title_faq">ЧЗВ</string>
     <string name="pref_summary_faq">Имате въпрос или нужда от помощ? Докоснете тук, за да отворите списъка с въпроси и отговори на www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Кажете \"Благодаря\"</string>
-    <string name="pref_summary_rate">Ако харесвате Shuttle, обмислете написването на ревю.</string>
+    <string name="pref_summary_rate">Ако харесвате Muser, обмислете написването на ревю.</string>
     <!-- Settings title for ignore playlist duplicates -->
     <string name="pref_title_ignore_duplicates">Игнорирай дублиранията в плейлистите</string>
     <!-- Settings summary for ignore playlist duplicates -->
@@ -411,9 +411,9 @@
     <string name="save">Запази</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Неуспех при редактирането на атрибутите. Ако използвате KitKat и файлът се намира във външната памет, тази функция не може да бъде използвана поради ограниченията за работа с SD карти, наложени от Google. Съжаляваме!</string>
-    <string name="tag_editor_document_tree_message">Поради промени в Android 5.0, Google вече изисква да се определят папките на SD картата, които приложението може да редактира.\n\nShuttle ще отвори меню, в което можете да изберете кои папки да позволите да бъдат редактирани.</string>
+    <string name="tag_editor_document_tree_message">Поради промени в Android 5.0, Google вече изисква да се определят папките на SD картата, които приложението може да редактира.\n\nMuser ще отвори меню, в което можете да изберете кои папки да позволите да бъдат редактирани.</string>
     <string name="tag_editor_check_permission">Проверявам дали имам разрешение за това. Може да отнеме малко време...\n\nОт Google са виновни!</string>
-    <string name="tag_editor_document_tree_permission_failed">Изглежда Shuttle не разполага с разрешение да редактира файловете. Проверете отново папката в менюто за избор на папки.</string>
+    <string name="tag_editor_document_tree_permission_failed">Изглежда Muser не разполага с разрешение да редактира файловете. Проверете отново папката в менюто за избор на папки.</string>
     <string name="tag_retrieve_error">Грешка при извличането на таговете.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -540,7 +540,7 @@
     <string name="weekpicker_title">Задаване на часа</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
-    <string name="notif_downloading_art">Shuttle - Изтегляне</string>
+    <string name="notif_downloading_art">Muser - Изтегляне</string>
     <!-- ## SD card error messages ##-->
     <!-- Title of screen when no sd card is present -->
     <string name="sdcard_missing_title">Няма SD карта</string>
@@ -626,7 +626,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Сега се изпълнява песента %1$s на %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Ако сте надстроили Shuttle, но все още се показва като безплатната версия, докоснете тук.</string>
+    <string name="pref_summary_restore_purchases">Ако сте надстроили Muser, но все още се показва като безплатната версия, докоснете тук.</string>
     <string name="pref_title_restore_purchases">Възстанови покупките</string>
     <string name="blacklist_empty">Няма песни в черния списък!</string>
     <string name="whitelist_empty">Няма папки в белия списък!</string>
@@ -639,11 +639,11 @@
     <string name="song_info_play_count">Брой изпълнения</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Покупката е възстановена. Моля, рестартирайте Shuttle</string>
+    <string name="iab_purchase_restored">Покупката е възстановена. Моля, рестартирайте Muser</string>
     <string name="iab_purchase_not_found">Не е намерена предходна покупка.</string>
-    <string name="iab_already_upgraded">Вече сте надстроили Shuttle. Опитайте да рестартирате приложението.</string>
+    <string name="iab_already_upgraded">Вече сте надстроили Muser. Опитайте да рестартирате приложението.</string>
     <string name="iab_purchase_failed">Нещо се обърка. Моля, опитвайте отново по-късно...</string>
-    <string name="snackbar_rate_text">Харесва ли ви Shuttle?</string>
+    <string name="snackbar_rate_text">Харесва ли ви Muser?</string>
     <string name="snackbar_rate_action">Оценето го!</string>
     <string name="dialog_create_playlist_error">Грешка при създаването на плейлист</string>
     <!-- Artwork picker -->

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">找不到可處理這項權限要求的文件提供者</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -77,9 +77,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">正在蒐集曲目...</string>
     <!-- -->
-    <string name="get_pro_title">升級至 Shuttle+</string>
+    <string name="get_pro_title">升級至 Muser+</string>
     <!-- -->
-    <string name="get_pro_message">若您喜歡 Shuttle 音樂播放器，請考慮升級為 Shuttle+
+    <string name="get_pro_message">若您喜歡 Muser 音樂播放器，請考慮升級為 Muser+
 \n\n功能特色：
 \n• 更多配色與主題
 \n• 編輯音樂標籤
@@ -88,14 +88,14 @@
 \n• 這也有助於開發者持續增進產品功能與改善使用體驗</string>
     <!-- -->
     <string name="upgraded_title">感謝您</string>
-    <string name="upgraded_message">您已成功升級至 Shuttle+，非常感謝您的支持。
-\n\n請重新啟動 Shuttle+ 以啟用所有功能</string>
+    <string name="upgraded_message">您已成功升級至 Muser+，非常感謝您的支持。
+\n\n請重新啟動 Muser+ 以啟用所有功能</string>
     <string name="upgrade_dialog_message">• 支援 ChromeCast
 \n• 更多主題
 \n• 音樂標籤編輯
 \n• 資料夾瀏覽模式
 \n• 給予開發者鼓勵 ❤️</string>
-    <string name="upgrade_required_folders">升級至 Shuttle+</string>
+    <string name="upgrade_required_folders">升級至 Muser+</string>
     <string name="btn_upgrade">升級</string>
     <!-- -->
     <string name="get_pro_button_no">不用了，謝謝</string>
@@ -129,7 +129,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">確定</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">您確定要永久刪除「<xliff:g id="folder">%s</xliff:g>」嗎？將會刪除這個資料夾中的所有項目，包含 Shuttle 檔案瀏覽模式中無法檢視的隱藏項目</string>
+    <string name="delete_folder_confirmation_dialog">您確定要永久刪除「<xliff:g id="folder">%s</xliff:g>」嗎？將會刪除這個資料夾中的所有項目，包含 Muser 檔案瀏覽模式中無法檢視的隱藏項目</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">您確定要永久刪除「<xliff:g id="file">%s</xliff:g>」嗎？</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -137,7 +137,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">設為鈴聲</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle 需要「寫入設定」權限才能設定鈴聲。\n\n請在您允許權限後再一次設定鈴聲</string>
+    <string name="dialog_message_set_ringtone">Muser 需要「寫入設定」權限才能設定鈴聲。\n\n請在您允許權限後再一次設定鈴聲</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate">「<xliff:g id="artist">%1$s</xliff:g>—<xliff:g id="song">%2$s</xliff:g>」已存在於這個播放清單中。要繼續加入嗎？</string>
     <!-- Checkbox text 'apply to all' -->
@@ -259,7 +259,7 @@
     <string name="pref_title_theme_black">黑色</string>
     <string name="pref_group_palette">調色板</string>
     <string name="pref_title_palette">使用專輯封面中的色彩</string>
-    <string name="pref_summary_palette">啟用後，Shuttle 將會偵測您的專輯封面影像中較為顯眼的色彩，並將其設為應用程式介面主題的主要色彩</string>
+    <string name="pref_summary_palette">啟用後，Muser 將會偵測您的專輯封面影像中較為顯眼的色彩，並將其設為應用程式介面主題的主要色彩</string>
     <string name="pref_title_palette_now_playing">僅適用於「現正播放」畫面</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">黑 / 白名單</string>
@@ -280,7 +280,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">使用本機或內嵌專輯封面</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">若您的音樂檔案或資料夾中擁有內嵌專輯封面，Shuttle 將會優先使用</string>
+    <string name="pref_summary_prefer_embedded_art">若您的音樂檔案或資料夾中擁有內嵌專輯封面，Muser 將會優先使用</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">略過內嵌專輯封面</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -300,7 +300,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">下載缺少的演出者與專輯封面</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle 將會透過任何網路連線下載所有專輯封面，這可能會使用一些數據用量</string>
+    <string name="pref_warning_download_artwork">Muser 將會透過任何網路連線下載所有專輯封面，這可能會使用一些數據用量</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">刪除專輯封面</string>
     <!-- Settings summary for the delete artwork button -->
@@ -320,7 +320,7 @@
     <!-- Settings title for gmail style placeholders checkbox-->
     <string name="pref_title_placeholders">使用 Gmail 樣式</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
-    <string name="pref_summary_placeholders">顯示 Gmail 樣式的預設專輯封面。若取消勾選則會以 Shuttle 圖示替代</string>
+    <string name="pref_summary_placeholders">顯示 Gmail 樣式的預設專輯封面。若取消勾選則會以 Muser 圖示替代</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">啟用鎖定螢幕播放控制</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -383,7 +383,7 @@
     <string name="pref_title_faq">常見問題</string>
     <string name="pref_summary_faq">有問題或需要協助嗎？請按這裡查詢常見問題 www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">感謝與評分</string>
-    <string name="pref_summary_rate">若您喜歡 Shuttle，您可給予評價</string>
+    <string name="pref_summary_rate">若您喜歡 Muser，您可給予評價</string>
     <string name="pref_title_headset_beep">略過提醒</string>
     <string name="pref_summary_headset_beep">透過耳機跳過曲目時發出提示音</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -434,10 +434,10 @@
     <!-- Button text for saving tags  -->
     <string name="save">儲存</string>
     <!-- Message displayed when tag editing fails -->
-    <string name="tag_error">編輯標籤時發生錯誤。如果檔案存放於 SD 卡，Shuttle 將沒有權限對其進行存取</string>
-    <string name="tag_editor_document_tree_message">由於 Google 對於 Android 5.0 作業系統的規範變更，您必須指定 SD 卡中有哪些資料夾允許應用程式存取內容。\n\nShuttle 將會開啟檔案選取介面，請選擇您要允許應用程式使用的主要資料夾</string>
+    <string name="tag_error">編輯標籤時發生錯誤。如果檔案存放於 SD 卡，Muser 將沒有權限對其進行存取</string>
+    <string name="tag_editor_document_tree_message">由於 Google 對於 Android 5.0 作業系統的規範變更，您必須指定 SD 卡中有哪些資料夾允許應用程式存取內容。\n\nMuser 將會開啟檔案選取介面，請選擇您要允許應用程式使用的主要資料夾</string>
     <string name="tag_editor_check_permission">正在檢查權限，可能需要一段時間…\n\n都是 Google！</string>
-    <string name="tag_editor_document_tree_permission_failed">Shuttle 似乎仍無法取得變更檔案內容的權限。請再確認一次選取介面中所選擇的資料夾路徑</string>
+    <string name="tag_editor_document_tree_permission_failed">Muser 似乎仍無法取得變更檔案內容的權限。請再確認一次選取介面中所選擇的資料夾路徑</string>
     <string name="tag_retrieve_error">檢索標籤時發生錯誤</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -575,7 +575,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">完成</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">設定 Shuttle 要在「最近播放」中顯示多少週前使用過的音樂</string>
+    <string name="weekpicker_title">設定 Muser 要在「最近播放」中顯示多少週前使用過的音樂</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">正在下載專輯封面...</string>
@@ -665,7 +665,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">現正播放 %1$s—%2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">若您已升級 Shuttle，但仍顯示為免費版本，請按這裡</string>
+    <string name="pref_summary_restore_purchases">若您已升級 Muser，但仍顯示為免費版本，請按這裡</string>
     <string name="pref_title_restore_purchases">還原購買資料</string>
     <string name="blacklist_empty">您目前沒有任何已加入至黑名單的曲目</string>
     <string name="whitelist_empty">您目前沒有任何已加入至白名單的資料夾</string>
@@ -678,11 +678,11 @@
     <string name="song_info_play_count">播放次數</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" KHz"</string>
-    <string name="iab_purchase_restored">已還原購買資料。請重新啟動 Shuttle</string>
+    <string name="iab_purchase_restored">已還原購買資料。請重新啟動 Muser</string>
     <string name="iab_purchase_not_found">找不到先前的購買記錄</string>
-    <string name="iab_already_upgraded">Shuttle 已升級完成。請重新啟動本應用程式</string>
+    <string name="iab_already_upgraded">Muser 已升級完成。請重新啟動本應用程式</string>
     <string name="iab_purchase_failed">發生錯誤。請稍後再試</string>
-    <string name="snackbar_rate_text">喜歡 Shuttle 嗎？</string>
+    <string name="snackbar_rate_text">喜歡 Muser 嗎？</string>
     <string name="snackbar_rate_action">立即評分！</string>
     <string name="dialog_create_playlist_error">建立播放清單時發生錯誤</string>
     <!-- Artwork picker -->
@@ -726,7 +726,7 @@
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">找不到內嵌歌詞</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric 是 Google Play 商店中的一款開放原始碼歌詞擷取工具\n安裝完成後，在 Shuttle 按下「QuickLyric」選單即可啟動</string>
+    <string name="quicklyric_info">QuickLyric 是 Google Play 商店中的一款開放原始碼歌詞擷取工具\n安裝完成後，在 Muser 按下「QuickLyric」選單即可啟動</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">播放清單</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
@@ -737,7 +737,7 @@
     <string name="shuffle_albums">隨機播放專輯</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">儲存空間存取要求</string>
-    <string name="saf_access_required_message">Shuttle 需要權限允許才能存取檔案。請選擇您的音樂所在的路徑。</string>
+    <string name="saf_access_required_message">Muser 需要權限允許才能存取檔案。請選擇您的音樂所在的路徑。</string>
     <string name="saf_show_files_button">顯示檔案</string>
-    <string name="notification_text_shuttle_running">Shuttle 服務正在執行…</string>
+    <string name="notification_text_Muser_running">Muser 服務正在執行…</string>
 </resources>

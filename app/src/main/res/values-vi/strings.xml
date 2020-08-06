@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">Không có DocumentProvider khả dụng để xử lý yêu cầu truy nhập</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -77,9 +77,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Đang thu thập bài hát...</string>
     <!-- -->
-    <string name="get_pro_title">Nâng cấp lên Shuttle+</string>
+    <string name="get_pro_title">Nâng cấp lên Muser+</string>
     <!-- -->
-    <string name="get_pro_message">Nếu bạn thích Shuttle, hãy xem xét việc nâng cấp.
+    <string name="get_pro_message">Nếu bạn thích Muser, hãy xem xét việc nâng cấp.
 \n\nTính năng:
 \nThêm nhiều chủ đề
 \nChỉnh sửa thẻ (hỗ trợ có giới hạn trong Android 4.4 Kitkat)
@@ -87,14 +87,14 @@
 \nHỗ trợ ChromeCast\n\nViệc này cũng giúp động viên việc phát triển trong tương lai.</string>
     <!-- -->
     <string name="upgraded_title">Cảm ơn</string>
-    <string name="upgraded_message">Bạn đã nâng cấp thành công lên Shuttle+. Tôi đánh giá cao sự ủng hộ từ bạn.
+    <string name="upgraded_message">Bạn đã nâng cấp thành công lên Muser+. Tôi đánh giá cao sự ủng hộ từ bạn.
 \n\nVui lòng khởi động lại ứng dụng để đảm bảo mọi tính năng được kích hoạt</string>
-    <string name="upgrade_dialog_message">Nâng cấp sẽ mở khoá các tính năng bổ sung trong Shuttle, bao gồm
+    <string name="upgrade_dialog_message">Nâng cấp sẽ mở khoá các tính năng bổ sung trong Muser, bao gồm
         \n\nThêm nhiều chủ đề
         \nChỉnh sửa thẻ (hỗ trợ có giới hạn trong Android 4.4 Kitkat)
         \nDuyệt thư mục
         \nHỗ trợ ChromeCast
-        \n\nViệc này cũng giúp đỡ việc phát triển trong tương lai.\n\nBạn không cần nâng cấp nếu bạn đã có  Shuttle+</string>
+        \n\nViệc này cũng giúp đỡ việc phát triển trong tương lai.\n\nBạn không cần nâng cấp nếu bạn đã có  Muser+</string>
     <string name="btn_upgrade">Nâng cấp</string>
     <!-- -->
     <string name="get_pro_button_no">Không, cảm ơn</string>
@@ -127,7 +127,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Bạn chắc muốn xoá vĩnh viễn \"<xliff:g id="folder">%s</xliff:g>\"? Tất cả các mục trong thư mục này sẽ bị xoá, bao gồm những mục không hiển thị trong trình duyệt tập tin của Shuttle.</string>
+    <string name="delete_folder_confirmation_dialog">Bạn chắc muốn xoá vĩnh viễn \"<xliff:g id="folder">%s</xliff:g>\"? Tất cả các mục trong thư mục này sẽ bị xoá, bao gồm những mục không hiển thị trong trình duyệt tập tin của Muser.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Bạn chắc muốn xoá vĩnh viễn \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -135,7 +135,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Đặt làm nhạc chuông</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle yêu cầu quyền \'ghi thiết lập\' để đặt nhạc chuông.\n\nSau khi cấp quyền, hãy thử đặt nhạc chuông lần nữa.</string>
+    <string name="dialog_message_set_ringtone">Muser yêu cầu quyền \'ghi thiết lập\' để đặt nhạc chuông.\n\nSau khi cấp quyền, hãy thử đặt nhạc chuông lần nữa.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> đã có trong danh sách. Vẫn cứ thêm vào?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -251,7 +251,7 @@
     <string name="pref_title_theme_black">Đen</string>
     <string name="pref_group_palette">Bảng màu</string>
     <string name="pref_title_palette">Dùng màu từ ảnh bìa</string>
-    <string name="pref_summary_palette">Nếu được chọn, Shuttle sẽ phát hiện màu nổi bật nhất trong ảnh bìa và dùng nó làm màu chủ đạo cho ứng dụng</string>
+    <string name="pref_summary_palette">Nếu được chọn, Muser sẽ phát hiện màu nổi bật nhất trong ảnh bìa và dùng nó làm màu chủ đạo cho ứng dụng</string>
     <string name="pref_title_palette_now_playing">Chỉ trong màn hình \'Đang phát\'</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">Danh sách trắng/đen</string>
@@ -272,7 +272,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Ưu tiên ảnh bìa được nhúng sẵn</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Chọn mục này nếu bạn muốn Shuttle tìm ảnh bìa có sẵn trong tập tin nhạc trước khi tìm trong thư mục nhạc</string>
+    <string name="pref_summary_prefer_embedded_art">Chọn mục này nếu bạn muốn Muser tìm ảnh bìa có sẵn trong tập tin nhạc trước khi tìm trong thư mục nhạc</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Bỏ qua ảnh bìa kèm theo</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -292,7 +292,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Tải ảnh nghệ sĩ và album còn thiếu</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle sẽ tải xuống tất cả ảnh bìa mà không phụ thuộc mạng. Phí sử dụng dữ liệu có thể áp dụng.</string>
+    <string name="pref_warning_download_artwork">Muser sẽ tải xuống tất cả ảnh bìa mà không phụ thuộc mạng. Phí sử dụng dữ liệu có thể áp dụng.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Xoá ảnh bìa</string>
     <!-- Settings summary for the delete artwork button -->
@@ -313,7 +313,7 @@
     <string name="pref_title_placeholders">Sử dụng chỗ dành sẵn kiểu Gmail</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Hiển thị mặc định chỗ dành sẵn kiểu \'Gmail\'.
- Nếu không chọn, biểu tượng Shuttle sẽ được sử dụng làm chỗ dành sẵn</string>
+ Nếu không chọn, biểu tượng Muser sẽ được sử dụng làm chỗ dành sẵn</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Kích hoạt ảnh bìa màn hình khoá</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -371,7 +371,7 @@
     <string name="pref_title_faq">FAQ</string>
     <string name="pref_summary_faq">Bạn có câu hỏi? Cần giúp dỡ? Chạm vào đây để xem FAQ @ www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Nói cảm ơn</string>
-    <string name="pref_summary_rate">Nếu bạn thích Shuttle, hãy xem xét để lại một đánh giá</string>
+    <string name="pref_summary_rate">Nếu bạn thích Muser, hãy xem xét để lại một đánh giá</string>
     <string name="pref_title_headset_beep">Beep khi bỏ qua</string>
     <string name="pref_summary_headset_beep">Phát âm beep khi bỏ qua bài hát bằng các nút điều khiển trên tai nghe</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -423,9 +423,9 @@
     <string name="save">Lưu</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Lỗi đã xảy ra khi chỉnh sửa thẻ.</string>
-    <string name="tag_editor_document_tree_message">Vì những thay đổi trong Android 5.0, Google giờ đây yêu cầu bạn chọn thư mục nào trên thẻ nhớ mà một ứng dụng được phép chỉnh sửa.\n\nShuttle sẽ mở trình chọn tập tin. Hãy chọn thư mục chính của những tập tin bạn muốn thay đổi.</string>
+    <string name="tag_editor_document_tree_message">Vì những thay đổi trong Android 5.0, Google giờ đây yêu cầu bạn chọn thư mục nào trên thẻ nhớ mà một ứng dụng được phép chỉnh sửa.\n\nMuser sẽ mở trình chọn tập tin. Hãy chọn thư mục chính của những tập tin bạn muốn thay đổi.</string>
     <string name="tag_editor_check_permission">Đang kiểm tra quyền truy cập. Có thể sẽ mất một lúc...\n\nXin hãy đổ lỗi cho Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Có vẻ như Shuttle vẫn không có quyền chỉnh sửa tập tin. Hãy kiểm tra lại đường dẫn trong trình chọn tập tin.</string>
+    <string name="tag_editor_document_tree_permission_failed">Có vẻ như Muser vẫn không có quyền chỉnh sửa tập tin. Hãy kiểm tra lại đường dẫn trong trình chọn tập tin.</string>
     <string name="tag_retrieve_error">Lỗi đã xảy ra khi nhận thẻ.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -563,7 +563,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">Xong</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Chọn số tuần trước đây mà Shuttle sẽ tìm nhạc \'gần đây\'.</string>
+    <string name="weekpicker_title">Chọn số tuần trước đây mà Muser sẽ tìm nhạc \'gần đây\'.</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Tải xuống ảnh bìa</string>
@@ -653,7 +653,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Hiện đang phát %1$s do %2$s trình bài</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Nếu bạn đã nâng cấp Shuttle rồi nhưng vẫn hiện là bản miễn phí, hãy chạm vào đây.</string>
+    <string name="pref_summary_restore_purchases">Nếu bạn đã nâng cấp Muser rồi nhưng vẫn hiện là bản miễn phí, hãy chạm vào đây.</string>
     <string name="pref_title_restore_purchases">Phục hồi mua hàng</string>
     <string name="blacklist_empty">Bạn chưa đưa bài hát nào vào danh sách đen cả</string>
     <string name="whitelist_empty">Bạn chưa đưa thư mục nào vào danh sách trắng cả!</string>
@@ -666,11 +666,11 @@
     <string name="song_info_play_count">Lần phát</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Đã phục hồi mua hàng. Hãy khởi động lại Shuttle</string>
+    <string name="iab_purchase_restored">Đã phục hồi mua hàng. Hãy khởi động lại Muser</string>
     <string name="iab_purchase_not_found">Không phát hiện đã mua hàng trước đây.</string>
-    <string name="iab_already_upgraded">Shuttle đã được nâng cấp. Hãy thử khởi động lại ứng dụng.</string>
+    <string name="iab_already_upgraded">Muser đã được nâng cấp. Hãy thử khởi động lại ứng dụng.</string>
     <string name="iab_purchase_failed">Có gì đó không đúng. Hãy thử lại sau.</string>
-    <string name="snackbar_rate_text">Thích sử dụng Shuttle?</string>
+    <string name="snackbar_rate_text">Thích sử dụng Muser?</string>
     <string name="snackbar_rate_action">Hãy đánh giá nó!</string>
     <string name="dialog_create_playlist_error">Lỗi tạo danh sách phát</string>
     <!-- Artwork picker -->
@@ -714,7 +714,7 @@
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Không tìm thấy lời nhúng sẵn</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric là một tiện ích tải lời bài hát mã nguồn mở trên CH Play.\n\nKhi được cài đặt, QuickLyric sẽ được mở từ Shuttle lúc bạn chọn nút menu \'QuickLyric\'.</string>
+    <string name="quicklyric_info">QuickLyric là một tiện ích tải lời bài hát mã nguồn mở trên CH Play.\n\nKhi được cài đặt, QuickLyric sẽ được mở từ Muser lúc bạn chọn nút menu \'QuickLyric\'.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Danh sách</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->

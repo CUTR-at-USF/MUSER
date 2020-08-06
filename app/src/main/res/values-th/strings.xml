@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">ไม่มีผู้ให้บริการเอกสารที่สามารถจัดการคำขออนุญาตได้</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -77,9 +77,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">กำลังรวบรวมเพลง...</string>
     <!-- -->
-    <string name="get_pro_title">อัปเกรดเป็น Shuttle+</string>
+    <string name="get_pro_title">อัปเกรดเป็น Muser+</string>
     <!-- -->
-    <string name="get_pro_message">ถ้าคุณชอบ Shuttle โปรดพิจารณาการอัปเกรด
+    <string name="get_pro_message">ถ้าคุณชอบ Muser โปรดพิจารณาการอัปเกรด
 \n\nคุณลักษณะ
 \n• ตันธีมพิเศษ
 \n• การแก้ไขแท็ก
@@ -88,14 +88,14 @@
 นอกจากนี้ยังช่วยส่งเสริมการพัฒนาต่อไป</string>
     <!-- -->
     <string name="upgraded_title">ขอบคุณ</string>
-    <string name="upgraded_message">คุณได้อัปเกรด Shuttle+ เรียบร้อยแล้ว ฉันขอขอบคุณการสนับสนุน
+    <string name="upgraded_message">คุณได้อัปเกรด Muser+ เรียบร้อยแล้ว ฉันขอขอบคุณการสนับสนุน
 \n\nกรุณารีสตาร์ทแอปเพื่อให้แน่ใจว่าคุณลักษณะทั้งหมดถูกเปิดใช้งาน</string>
-    <string name="upgrade_dialog_message">การอัปเกรดจะปลดล็อกคุณสมบัติเพิ่มเติมใน Shuttle ซึ่ง ได้แก่:
+    <string name="upgrade_dialog_message">การอัปเกรดจะปลดล็อกคุณสมบัติเพิ่มเติมใน Muser ซึ่ง ได้แก่:
 \n\n• ตันธีมพิเศษ
 \n• การแก้ไขแท็ก
 \n• การเรียกดูโฟลเดอร์
 \n• การสนับสนุน ChromeCast
-\n\nนอกจากนี้ยังช่วยส่งเสริมการพัฒนาต่อไป\n\n คุณไม่จำเป็นต้องอัปเกรดหากคุณมี Shuttle+ อยู่แล้ว</string>
+\n\nนอกจากนี้ยังช่วยส่งเสริมการพัฒนาต่อไป\n\n คุณไม่จำเป็นต้องอัปเกรดหากคุณมี Muser+ อยู่แล้ว</string>
     <string name="btn_upgrade">อัปเกรด</string>
     <!-- -->
     <string name="get_pro_button_no">ไม่ ขอบคุณ</string>
@@ -128,7 +128,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">ตกลง</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">คุณแน่ใจหรือไม่ว่าต้องการลบ \"<xliff:g id="folder">%s</xliff:g>\"?อย่างถาวร รายการทั้งหมดในโฟลเดอร์นี้จะถูกลบรวมถึงรายการที่อาจไม่สามารถมองเห็นได้ในเบราเซอร์ไฟล์ Shuttle</string>
+    <string name="delete_folder_confirmation_dialog">คุณแน่ใจหรือไม่ว่าต้องการลบ \"<xliff:g id="folder">%s</xliff:g>\"?อย่างถาวร รายการทั้งหมดในโฟลเดอร์นี้จะถูกลบรวมถึงรายการที่อาจไม่สามารถมองเห็นได้ในเบราเซอร์ไฟล์ Muser</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">คุณแน่ใจหรือไม่ว่าต้องการลบ \"<xliff:g id="file">%s</xliff:g>\" อย่างถาวร?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -136,7 +136,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">ตั้งเสียงเรียกเข้า</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle ต้องได้รับอนุญาตให้ \'การตั้งค่าการเขียน\' เพื่อตั้งเสียงเรียกเข้าของคุณ\n\nหลังจากได้รับอนุญาตให้ลองตั้งค่าเสียงเรียกเข้าของคุณอีกครั้ง</string>
+    <string name="dialog_message_set_ringtone">Muser ต้องได้รับอนุญาตให้ \'การตั้งค่าการเขียน\' เพื่อตั้งเสียงเรียกเข้าของคุณ\n\nหลังจากได้รับอนุญาตให้ลองตั้งค่าเสียงเรียกเข้าของคุณอีกครั้ง</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> มีอยู่แล้วในเพลย์ลิสต์นี้ เพิ่มหรือไม่?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -252,7 +252,7 @@
     <string name="pref_title_theme_black">สีดำ</string>
     <string name="pref_group_palette">จานสี</string>
     <string name="pref_title_palette">ใช้สีจากงานศิลปะ</string>
-    <string name="pref_summary_palette">หากเปิดใช้งาน Shuttle จะตรวจจับสีที่โดดเด่นที่สุดในผลงานศิลปะของคุณและใช้เป็นสีหลักตลอดทั้งแอป</string>
+    <string name="pref_summary_palette">หากเปิดใช้งาน Muser จะตรวจจับสีที่โดดเด่นที่สุดในผลงานศิลปะของคุณและใช้เป็นสีหลักตลอดทั้งแอป</string>
     <string name="pref_title_palette_now_playing">เฉพาะบนหน้าจอ \'กำลังเล่น\'</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">รายการที่อนุญาต/บัญชีดำ</string>
@@ -273,7 +273,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">ชอบงานศิลปะที่ฝังอยู่</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">เลือกช่องนี้หากคุณต้องการ Shuttle เพื่อค้นหางานศิลปะที่ฝังอยู่ในไฟล์เพลงของคุณก่อนจะค้นหาในไดเรกทอรีเพลงของคุณ</string>
+    <string name="pref_summary_prefer_embedded_art">เลือกช่องนี้หากคุณต้องการ Muser เพื่อค้นหางานศิลปะที่ฝังอยู่ในไฟล์เพลงของคุณก่อนจะค้นหาในไดเรกทอรีเพลงของคุณ</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">ละเว้นงานศิลปะที่ฝังอยู่</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -293,7 +293,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">ดาวน์โหลดรูปภาพศิลปินและอัลบั้มที่หายไป</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle จะดาวน์โหลดงานศิลปะทั้งหมดโดยไม่คำนึงถึงเครือข่ายของคุณ อาจมีการเรียกเก็บค่าธรรมเนียมการใช้ข้อมูล</string>
+    <string name="pref_warning_download_artwork">Muser จะดาวน์โหลดงานศิลปะทั้งหมดโดยไม่คำนึงถึงเครือข่ายของคุณ อาจมีการเรียกเก็บค่าธรรมเนียมการใช้ข้อมูล</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">ลบงานศิลปะ</string>
     <!-- Settings summary for the delete artwork button -->
@@ -314,7 +314,7 @@
     <string name="pref_title_placeholders">ใช้ Gmail สไตล์ตัวยึด</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">แสดงตัวยึดตำแหน่งแบบ \'Gmail\' ตามค่าเริ่มต้น
-หากไม่ทำเครื่องหมายที่ไอคอน Shuttle จะถูกใช้เป็นตัวยึดแทน</string>
+หากไม่ทำเครื่องหมายที่ไอคอน Muser จะถูกใช้เป็นตัวยึดแทน</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">เปิดใช้งานการล็อกหน้าจองานศิลปะ</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -372,7 +372,7 @@
     <string name="pref_title_faq">คำถามที่พบบ่อย</string>
     <string name="pref_summary_faq">มีคำถาม? ต้องการความช่วยเหลือ? คลิกที่นี่เพื่อดูคำถามที่พบบ่อย @ www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">พูดขอบคุณ</string>
-    <string name="pref_summary_rate">ถ้าคุณชอบ Shuttle โปรดพิจารณาออกความคิดเห็น</string>
+    <string name="pref_summary_rate">ถ้าคุณชอบ Muser โปรดพิจารณาออกความคิดเห็น</string>
     <string name="pref_title_headset_beep">เสียงเตือนเมื่อข้าม</string>
     <string name="pref_summary_headset_beep">เสียงเตือนเมื่อข้ามเพลงผ่านการควบคุมชุดหูฟัง</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -424,9 +424,9 @@
     <string name="save">บันทึก</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">เกิดข้อผิดพลาดในการแก้ไขแท็ก</string>
-    <string name="tag_editor_document_tree_message">เนื่องจากการเปลี่ยนแปลงใน Android 5.0 Google ต้องการให้คุณระบุโฟลเดอร์ในการ์ด SD ที่แอปพลิเคชันสามารถแก้ไขได้\n\nShuttle จะเปิดตัวเลือกไฟล์ โปรดเลือกโฟลเดอร์หลักของไฟล์ที่คุณต้องการแก้ไข</string>
+    <string name="tag_editor_document_tree_message">เนื่องจากการเปลี่ยนแปลงใน Android 5.0 Google ต้องการให้คุณระบุโฟลเดอร์ในการ์ด SD ที่แอปพลิเคชันสามารถแก้ไขได้\n\nMuser จะเปิดตัวเลือกไฟล์ โปรดเลือกโฟลเดอร์หลักของไฟล์ที่คุณต้องการแก้ไข</string>
     <string name="tag_editor_check_permission">กำลังตรวจสอบสิทธิ์ ซึ่งอาจใช้เวลาสักครู่...\nตำหนิ Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">ดูเหมือนว่า Shuttle ยังคงไม่ได้รับอนุญาตให้แก้ไขไฟล์ ตรวจสอบไดเรกทอรีในเครื่องมือเลือกไฟล์</string>
+    <string name="tag_editor_document_tree_permission_failed">ดูเหมือนว่า Muser ยังคงไม่ได้รับอนุญาตให้แก้ไขไฟล์ ตรวจสอบไดเรกทอรีในเครื่องมือเลือกไฟล์</string>
     <string name="tag_retrieve_error">เกิดข้อผิดพลาดในการดึงแท็ก</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -562,7 +562,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">สำเร็จ</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">เลือกกี่สัปดาห์ใน Shuttle ที่ผ่านมาควรค้นหาเพลง \'ล่าสุด\'</string>
+    <string name="weekpicker_title">เลือกกี่สัปดาห์ใน Muser ที่ผ่านมาควรค้นหาเพลง \'ล่าสุด\'</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">กำลังดาวน์โหลดงานศิลปะ</string>
@@ -652,7 +652,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">ตอนนี้กำลังเล่น %1$s โดย %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">ถ้าคุณได้อัปเกรด Shuttle แล้ว แต่ยังคงปรากฏเป็นเวอร์ชันฟรีให้กดปุ่มนี้</string>
+    <string name="pref_summary_restore_purchases">ถ้าคุณได้อัปเกรด Muser แล้ว แต่ยังคงปรากฏเป็นเวอร์ชันฟรีให้กดปุ่มนี้</string>
     <string name="pref_title_restore_purchases">คืนค่าการซื้อ</string>
     <string name="blacklist_empty">คุณยังไม่ได้ใส่รายการเพลงไว้ในบัญชีดำ!</string>
     <string name="whitelist_empty">คุณยังไม่ได้เพิ่มโฟลเดอร์ใดๆ ไว้ในรายการที่อนุญาตพิเศษ!</string>
@@ -665,11 +665,11 @@
     <string name="song_info_play_count">จำนวนการเล่น</string>
     <string name="song_info_bitrate_suffix">"kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">เรียกคืนการแล้ว โปรดรีสตาร์ท Shuttle</string>
+    <string name="iab_purchase_restored">เรียกคืนการแล้ว โปรดรีสตาร์ท Muser</string>
     <string name="iab_purchase_not_found">ไม่พบการซื้อก่อนหน้านี้</string>
-    <string name="iab_already_upgraded">มีการอัปเกรด Shuttle แล้ว ลองเริ่มต้นแอปอีกครั้ง</string>
+    <string name="iab_already_upgraded">มีการอัปเกรด Muser แล้ว ลองเริ่มต้นแอปอีกครั้ง</string>
     <string name="iab_purchase_failed">บางอย่างผิดพลาด กรุณาลองใหม่อีกครั้งในภายหลัง..</string>
-    <string name="snackbar_rate_text">เพลิดเพลินกับการใช้ Shuttle?</string>
+    <string name="snackbar_rate_text">เพลิดเพลินกับการใช้ Muser?</string>
     <string name="snackbar_rate_action">ให้คะแนน!</string>
     <string name="dialog_create_playlist_error">ข้อผิดพลาดในการสร้างเพลย์ลิส</string>
     <!-- Artwork picker -->
@@ -713,7 +713,7 @@
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">ไม่พบเนื้อเพลงที่ฝังอยู่</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric เป็นเครื่องดึงเนื้อเพลงแบบโอเพนซอร์สใน Google Play Store\n\nเมื่อติดตั้งแล้ว QuickLyric จะเปิดขึ้นจาก Shuttle เมื่อใดก็ตามที่คุณกดปุ่มเมนู \'QuickLyric\'</string>
+    <string name="quicklyric_info">QuickLyric เป็นเครื่องดึงเนื้อเพลงแบบโอเพนซอร์สใน Google Play Store\n\nเมื่อติดตั้งแล้ว QuickLyric จะเปิดขึ้นจาก Muser เมื่อใดก็ตามที่คุณกดปุ่มเมนู \'QuickLyric\'</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">เพลย์ลิส</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->

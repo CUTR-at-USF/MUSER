@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">Ez dago dokumentu hornitzailerik eskuragarri baimen eskaera burutzeko</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -79,9 +79,9 @@ abesti ilarara gehituak.</item>
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Abestiak biltzen...</string>
     <!-- -->
-    <string name="get_pro_title">Shuttle+ erosi</string>
+    <string name="get_pro_title">Muser+ erosi</string>
     <!-- -->
-    <string name="get_pro_message">Shuttle gustokoa baduzu, mesedez erostea pentsa ezazu.
+    <string name="get_pro_message">Muser gustokoa baduzu, mesedez erostea pentsa ezazu.
 \n\nEzaugarriak:
 \n• Gai berri piloa
 \n• Etiketen edizioa
@@ -90,14 +90,14 @@ abesti ilarara gehituak.</item>
 \nGarapena aurrera eramaten laguntzen du.</string>
     <!-- -->
     <string name="upgraded_title">Eskerrik asko</string>
-    <string name="upgraded_message">Shuttle+ erosi duzu. Zure laguntza eskertzen dut.
+    <string name="upgraded_message">Muser+ erosi duzu. Zure laguntza eskertzen dut.
 \n\nMesedez berrabiarazi ezazu app-a ezaugarri guztiak aktibatzen direla egiaztatzeko</string>
-    <string name="upgrade_dialog_message">Hobetzeak ezaugarri adizionalak desblokeatuko ditu Shuttle-en: 
+    <string name="upgrade_dialog_message">Hobetzeak ezaugarri adizionalak desblokeatuko ditu Muser-en: 
 \n\n• Gai berri piloa 
 \n• Etiketen edizioa 
 \n• Karpeten ikuspena 
 \n• ChromeCastentzako euskarria
-\n\nGarapena aurrera eramaten laguntzen du.\n\nEz duzu hobetu behar jada Shuttle+ erosita baduzu.</string>
+\n\nGarapena aurrera eramaten laguntzen du.\n\nEz duzu hobetu behar jada Muser+ erosita baduzu.</string>
     <string name="btn_upgrade">Hobetu</string>
     <!-- -->
     <string name="get_pro_button_no">Ez, eskerrik asko</string>
@@ -130,7 +130,7 @@ abesti ilarara gehituak.</item>
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Ziur zaude \"<xliff:g id="folder">%s</xliff:g>\" betirako ezabatu nahi duzula? Karpeta honen elementu guztiak ezabatuko dira, Shuttle-ek ikusi ezin dituen elementuak barne.</string>
+    <string name="delete_folder_confirmation_dialog">Ziur zaude \"<xliff:g id="folder">%s</xliff:g>\" betirako ezabatu nahi duzula? Karpeta honen elementu guztiak ezabatuko dira, Muser-ek ikusi ezin dituen elementuak barne.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Seguru zaude \"<xliff:g id="file">%s</xliff:g>\" betirako ezabatu nahi duzula?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -138,7 +138,7 @@ abesti ilarara gehituak.</item>
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Dei-doinua ezarri</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle-ek idazketa baimenak behar ditu zure dei-doinua ezartzeko.\n\nBaimena eman ostean, saiatu dei-doinua berriro aukeratzen.</string>
+    <string name="dialog_message_set_ringtone">Muser-ek idazketa baimenak behar ditu zure dei-doinua ezartzeko.\n\nBaimena eman ostean, saiatu dei-doinua berriro aukeratzen.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> jada erreprodukzio-zerrendan existizen da. Gehitu nahi duzu?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -254,7 +254,7 @@ abesti ilarara gehituak.</item>
     <string name="pref_title_theme_black">Beltza</string>
     <string name="pref_group_palette">Paleta</string>
     <string name="pref_title_palette">Karatularen koloreak erabili</string>
-    <string name="pref_summary_palette">Aukeratzen bada, Shuttle-ek karatularen kolorea hartuko du, eta interfazearen kolorea aldatuko du karatulara egokitzeko app osoan</string>
+    <string name="pref_summary_palette">Aukeratzen bada, Muser-ek karatularen kolorea hartuko du, eta interfazearen kolorea aldatuko du karatulara egokitzeko app osoan</string>
     <string name="pref_title_palette_now_playing">\'Orain Erreproduzitzen\' pantailan bakarrik</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">Zerrenda zuria/beltza</string>
@@ -275,7 +275,7 @@ abesti ilarara gehituak.</item>
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Txertatutako karatulak priorizatu</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Aktibatu aukera hau Shuttle-ek abesti fitxategian txertatuta dauden karatulak bilatzeko, musika karpetan begiratu baino lehen</string>
+    <string name="pref_summary_prefer_embedded_art">Aktibatu aukera hau Muser-ek abesti fitxategian txertatuta dauden karatulak bilatzeko, musika karpetan begiratu baino lehen</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ez hartu txertatutako karatulak kontuan</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -295,7 +295,7 @@ abesti ilarara gehituak.</item>
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Falta diren artista eta albumen karatulak deskargatu</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle-ek karatula guztiak deskargatuko ditu zure sare konfigurazioa kontuan hartu gabe. Kontuan hartu datuen gastua egon daitekeela.</string>
+    <string name="pref_warning_download_artwork">Muser-ek karatula guztiak deskargatuko ditu zure sare konfigurazioa kontuan hartu gabe. Kontuan hartu datuen gastua egon daitekeela.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Karatulak ezabatu</string>
     <!-- Settings summary for the delete artwork button -->
@@ -316,7 +316,7 @@ abesti ilarara gehituak.</item>
     <string name="pref_title_placeholders">Gmail-en estiloak erabili</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">\'Gmail\' estiloko karatulak erakusten ditu berez.
-Desaktibatzen bada, Shuttle-en ikonoa erabiliko da bere ordez</string>
+Desaktibatzen bada, Muser-en ikonoa erabiliko da bere ordez</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Blokeo-pantailaren karatula aktibatu</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -372,9 +372,9 @@ Desaktibatzen bada, Shuttle-en ikonoa erabiliko da bere ordez</string>
     <!-- Settings summary for toggling 'remember shuff'e-->
     <string name="pref_title_version">Bertsioa</string>
     <string name="pref_title_faq">FAQ</string>
-    <string name="pref_summary_faq">Galdera bat daukazu? Sakatu hemen FAQ-a www.shuttlemusicplayer.com-en ikusteko</string>
+    <string name="pref_summary_faq">Galdera bat daukazu? Sakatu hemen FAQ-a www.musicplayer.com-en ikusteko</string>
     <string name="pref_title_rate">Eskerrak eman</string>
-    <string name="pref_summary_rate">Shuttle gustokoa baduzu, mesedez pentsatu kritika bat idaztea.</string>
+    <string name="pref_summary_rate">Muser gustokoa baduzu, mesedez pentsatu kritika bat idaztea.</string>
     <string name="pref_title_headset_beep">Soinua pasatzean</string>
     <string name="pref_summary_headset_beep">Soinua egin abesti bat pasatzean entzungailuaren kontrolekin</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -426,9 +426,9 @@ Desaktibatzen bada, Shuttle-en ikonoa erabiliko da bere ordez</string>
     <string name="save">Gorde</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Errorea etiketak editatzen.</string>
-    <string name="tag_editor_document_tree_message">Android 5.0 bertsioan aldaketak direla eta, Google-ek orain zein SD txarteleko karpetak editatzeko baimena eman behar diozu app bati.\n\nShuttle-ek orain fitxategi aukeratzaile bat zabalduko du. Mesedez aukeratu modifikatu nahi dituzun fitxategien karpeta aita.</string>
+    <string name="tag_editor_document_tree_message">Android 5.0 bertsioan aldaketak direla eta, Google-ek orain zein SD txarteleko karpetak editatzeko baimena eman behar diozu app bati.\n\nMuser-ek orain fitxategi aukeratzaile bat zabalduko du. Mesedez aukeratu modifikatu nahi dituzun fitxategien karpeta aita.</string>
     <string name="tag_editor_check_permission">Baimenak egiaztatzen. Honek denbora asko eraman dezake...\n\nGoogle-en errua!</string>
-    <string name="tag_editor_document_tree_permission_failed">Dirudienez Shuttle-ek oraindik ez ditu fitxategiak editatzeko baimenik. Begiratu karpeta fitxategi aukeratzailean.</string>
+    <string name="tag_editor_document_tree_permission_failed">Dirudienez Muser-ek oraindik ez ditu fitxategiak editatzeko baimenik. Begiratu karpeta fitxategi aukeratzailean.</string>
     <string name="tag_retrieve_error">Etiketak lortzean errore bat gertatu da</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -565,7 +565,7 @@ karpeta</item>
     <!-- Button name in time span picker -->
     <string name="button_done">Bukatuta</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Aukeratu zenbat aste atzerantz begiratu behar duen Shuttle-ek \'oraingo\' musika bilatzeko</string>
+    <string name="weekpicker_title">Aukeratu zenbat aste atzerantz begiratu behar duen Muser-ek \'oraingo\' musika bilatzeko</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Karatulak deskargatzen</string>
@@ -657,7 +657,7 @@ karpeta</item>
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Orain %1$s - %2$s erreproduzitzen</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Shuttle+ erosi baduzu, baina oraindik doaineko bertsioa agertzen bazaizu, botoi honi eman iezaiozu.</string>
+    <string name="pref_summary_restore_purchases">Muser+ erosi baduzu, baina oraindik doaineko bertsioa agertzen bazaizu, botoi honi eman iezaiozu.</string>
     <string name="pref_title_restore_purchases">Erosketak berreskuratu</string>
     <string name="blacklist_empty">Ez duzu abestirik zerrenda beltzean sartu!</string>
     <string name="whitelist_empty">Ez duzu karpetarik zerrenda zurian sartu!</string>
@@ -670,11 +670,11 @@ karpeta</item>
     <string name="song_info_play_count">Erreprodukzio Kantitatea</string>
     <string name="song_info_bitrate_suffix">" kb/s"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Eroskea berreskuratua. Mesedez Shuttle berrabiarazi ezazu</string>
+    <string name="iab_purchase_restored">Eroskea berreskuratua. Mesedez Muser berrabiarazi ezazu</string>
     <string name="iab_purchase_not_found">Ez da aurreko erosketarik aurkitu.</string>
-    <string name="iab_already_upgraded">Shuttle jada hobetuta dago. Saiatu app-a berrabiarazten.</string>
+    <string name="iab_already_upgraded">Muser jada hobetuta dago. Saiatu app-a berrabiarazten.</string>
     <string name="iab_purchase_failed">Zerbait txarto joan da. Mesedez saiatu berriz geroago...</string>
-    <string name="snackbar_rate_text">Shuttle erabiltzea gustuko?</string>
+    <string name="snackbar_rate_text">Muser erabiltzea gustuko?</string>
     <string name="snackbar_rate_action">Puntua ezazu!</string>
     <string name="dialog_create_playlist_error">Errorea erreprodukzio-zerrenda sortzean</string>
     <!-- Artwork picker -->
@@ -718,7 +718,7 @@ karpeta</item>
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Ez dira txertatutako hitzak aurkitu.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric abesti-hitzak lortzeko kode zabalduko app bat da Google Play Storen.\n\nInstalatzerakoan, \'QuickLyric\' menuko botoiari ematerakoan Shuttle-etik zabalduko da.</string>
+    <string name="quicklyric_info">QuickLyric abesti-hitzak lortzeko kode zabalduko app bat da Google Play Storen.\n\nInstalatzerakoan, \'QuickLyric\' menuko botoiari ematerakoan Muser-etik zabalduko da.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Zerrenda</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->

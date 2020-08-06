@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
     <string name="R.string.toast_no_document_provider">İzin isteği için kullanılabilir bir Döküman Sağlayıcı mevcut değil</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -79,9 +79,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Şarkılar toplanıyor...</string>
     <!-- -->
-    <string name="get_pro_title">Shuttle+ \'a Yükselt</string>
+    <string name="get_pro_title">Muser+ \'a Yükselt</string>
     <!-- -->
-    <string name="get_pro_message">Eğer Shuttle\'ı beğendiyseniz, lütfen pro sürüme yükseltmeyi bir düşünün.
+    <string name="get_pro_message">Eğer Muser\'ı beğendiyseniz, lütfen pro sürüme yükseltmeyi bir düşünün.
 \n\nÖzellikler:
 \n• Ekstra tonlarda tema
 \n• Etiket düzenleme
@@ -90,14 +90,14 @@
 \n\ Üstelik uygulamanın geliştirilmesine de yardımcı olur.</string>
     <!-- -->
     <string name="upgraded_title">Teşekkürler</string>
-    <string name="upgraded_message">Başarıyla Shuttle+\'a yükselttiniz. Desteğiniz için çok teşekkür ederim.
+    <string name="upgraded_message">Başarıyla Muser+\'a yükselttiniz. Desteğiniz için çok teşekkür ederim.
 \n\nTüm özelliklerin etkinleştirilmesini sağlamak için lütfen uygulamayı yeniden başlatın</string>
     <string name="upgrade_dialog_message">• ChromeCast Desteği
 \n• Ekstra temalar
 \n• Etiket düzenleme
 \n• Klasörlere göz atma
 \n• Geliştirmeyi destekle ❤️</string>
-    <string name="upgrade_required_folders">Shuttle+ \'a Yükselt</string>
+    <string name="upgrade_required_folders">Muser+ \'a Yükselt</string>
     <string name="btn_upgrade">Yükselt</string>
     <!-- -->
     <string name="get_pro_button_no">Hayır teşekkürler</string>
@@ -131,7 +131,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">TAMAM</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">\"<xliff:g id="folder">%s</xliff:g>\" Kalıcı olarak silmek istediğinizden emin misiniz? Shuttle dosya tarayıcısında görünmeyebilecek öğeler de dahil olmak üzere, bu klasördeki tüm öğeleri silecektir.</string>
+    <string name="delete_folder_confirmation_dialog">\"<xliff:g id="folder">%s</xliff:g>\" Kalıcı olarak silmek istediğinizden emin misiniz? Muser dosya tarayıcısında görünmeyebilecek öğeler de dahil olmak üzere, bu klasördeki tüm öğeleri silecektir.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">\"<xliff:g id="file">%s</xliff:g>\"  kalıcı olarak silmek istediğinizden emin misiniz?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -139,7 +139,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Zil sesi olarak ayarla</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle, zil sesini ayarlamak için \'ayarları yazma\' izni gerektirir.\n\nİzin verdikten sonra zil sesini tekrar ayarlamayı deneyin.</string>
+    <string name="dialog_message_set_ringtone">Muser, zil sesini ayarlamak için \'ayarları yazma\' izni gerektirir.\n\nİzin verdikten sonra zil sesini tekrar ayarlamayı deneyin.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> zaten çalma listesinde var. Yine de eklensin mi?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -261,7 +261,7 @@
     <string name="pref_title_theme_black">Siyah</string>
     <string name="pref_group_palette">Renk Paleti</string>
     <string name="pref_title_palette">Albüm Kapağından Renkler Kullan</string>
-    <string name="pref_summary_palette">Etkinleştirilirse, Shuttle albüm kapağında ki en belirgin rengi algılar ve bunu uygulamanın tamamında \'ana renk\' olarak kullanır</string>
+    <string name="pref_summary_palette">Etkinleştirilirse, Muser albüm kapağında ki en belirgin rengi algılar ve bunu uygulamanın tamamında \'ana renk\' olarak kullanır</string>
     <string name="pref_title_palette_now_playing">Yalnızca \'Şimdi Çalınıyor\' Ekranında</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">Beyaz/Kara Liste</string>
@@ -282,7 +282,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Yerleşik albüm kapağını tercih et</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Müzik dizinlerinde arama yapmadan önce, Shuttle\'ın müzik dosyalarınızda gömülü resimleri aramasını tercih ederseniz bu kutuyu işaretleyin</string>
+    <string name="pref_summary_prefer_embedded_art">Müzik dizinlerinde arama yapmadan önce, Muser\'ın müzik dosyalarınızda gömülü resimleri aramasını tercih ederseniz bu kutuyu işaretleyin</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Yerleşik albüm kapaklarını yoksay</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -302,7 +302,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Eksik sanatçı ve albüm kapaklarını indir</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle ağ tercihinizi (Wi-Fi veya Mobil veri) dikkate almadan tüm albüm kapaklarını indirir. Veri kullanım ücreti alınabilir.</string>
+    <string name="pref_warning_download_artwork">Muser ağ tercihinizi (Wi-Fi veya Mobil veri) dikkate almadan tüm albüm kapaklarını indirir. Veri kullanım ücreti alınabilir.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Albüm Kapaklarını Sil</string>
     <!-- Settings summary for the delete artwork button -->
@@ -323,7 +323,7 @@
     <string name="pref_title_placeholders">Gmail Tarzı Harf Görsellerini Kullan</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Varsayılan olarak \'Gmail\' tarzı harf görselleri kullanılacaktır.
-Bu seçenek işaretli değilse, Shuttle simgesi kullanılacaktır.</string>
+Bu seçenek işaretli değilse, Muser simgesi kullanılacaktır.</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Kilit Ekranında Albüm Kapağını Etkinleştir</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -386,7 +386,7 @@ Bu seçenek işaretli değilse, Shuttle simgesi kullanılacaktır.</string>
     <string name="pref_title_faq">SSS</string>
     <string name="pref_summary_faq">Bir sorunuz mu var? Yardıma mı ihtiyacınız var? SSS leri görmek için buraya tıklayın @ www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Teşekkür Et</string>
-    <string name="pref_summary_rate">Eğer Shuttle\'ı beğendiyseniz, lütfen bir yorum bırakmayı düşünün.</string>
+    <string name="pref_summary_rate">Eğer Muser\'ı beğendiyseniz, lütfen bir yorum bırakmayı düşünün.</string>
     <string name="pref_title_headset_beep">Bip Sesini Atla</string>
     <string name="pref_summary_headset_beep">Kulaklık kontrolleriyle şarkı atlanırken bip sesi</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -437,10 +437,10 @@ Bu seçenek işaretli değilse, Shuttle simgesi kullanılacaktır.</string>
     <!-- Button text for saving tags  -->
     <string name="save">Kaydet</string>
     <!-- Message displayed when tag editing fails -->
-    <string name="tag_error">Etiketleri düzenlerken bir hata oluştu. Dosya bir SD Kartta kayıtlıysa, Shuttle\'ın buna erişim izni olmayabilir.</string>
-    <string name="tag_editor_document_tree_message">Android 5.0 \'daki değişiklikler nedeniyle Google, şimdi bir SD karttaki hangi uygulamanın hangi klasörleri düzenlenmesine izin verdiğinizi belirtmenizi gerektiriyor.\n\nShuttle şimdi dosya seçiciyi açacaktır. Değiştirmek istediğiniz dosyaların üst klasörünü seçin.</string>
+    <string name="tag_error">Etiketleri düzenlerken bir hata oluştu. Dosya bir SD Kartta kayıtlıysa, Muser\'ın buna erişim izni olmayabilir.</string>
+    <string name="tag_editor_document_tree_message">Android 5.0 \'daki değişiklikler nedeniyle Google, şimdi bir SD karttaki hangi uygulamanın hangi klasörleri düzenlenmesine izin verdiğinizi belirtmenizi gerektiriyor.\n\nMuser şimdi dosya seçiciyi açacaktır. Değiştirmek istediğiniz dosyaların üst klasörünü seçin.</string>
     <string name="tag_editor_check_permission">İzinler denetleniyor. Bu biraz zaman alabilir ...\n\nGoogle\'ı suçlayın!</string>
-    <string name="tag_editor_document_tree_permission_failed">Görünüşe göre Shuttle hala dosyaları düzenleme iznine sahip değil. Dosya seçicideki dizini kontrol edin.</string>
+    <string name="tag_editor_document_tree_permission_failed">Görünüşe göre Muser hala dosyaları düzenleme iznine sahip değil. Dosya seçicideki dizini kontrol edin.</string>
     <string name="tag_retrieve_error">Etiketler alınırken bir hata oluştu.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -580,7 +580,7 @@ dosyalar</item>
     <!-- Button name in time span picker -->
     <string name="button_done">Tamam</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Geçmişte Shuttle\'ın \'son\' müzik için kaç hafta araması gerektiğini seçin.</string>
+    <string name="weekpicker_title">Geçmişte Muser\'ın \'son\' müzik için kaç hafta araması gerektiğini seçin.</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Albüm Kapağı İndiriliyor</string>
@@ -672,7 +672,7 @@ dosyalar</item>
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Şimdi %2$s sanatçısından %1$s çalınıyor</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Shuttle\'ı zaten yükselttiyseniz ancak hala ücretsiz sürüm olarak görünüyorsa, bu tuşa basın.</string>
+    <string name="pref_summary_restore_purchases">Muser\'ı zaten yükselttiyseniz ancak hala ücretsiz sürüm olarak görünüyorsa, bu tuşa basın.</string>
     <string name="pref_title_restore_purchases">Satın Almayı Geri Yükle</string>
     <string name="blacklist_empty">Herhangi bir şarkı kara listede değil!</string>
     <string name="whitelist_empty">Herhangi bir klasör beyaz listede değil!</string>
@@ -685,11 +685,11 @@ dosyalar</item>
     <string name="song_info_play_count">Çalma Sayısı</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Satın alma geri yüklendi. Lütfen Shuttle\'ı tekrar başlatın</string>
+    <string name="iab_purchase_restored">Satın alma geri yüklendi. Lütfen Muser\'ı tekrar başlatın</string>
     <string name="iab_purchase_not_found">Geçmiş satın alma bulunamadı.</string>
-    <string name="iab_already_upgraded">Shuttle zaten yükseltilmiş. Uygulamayı yeniden başlatmayı deneyin.</string>
+    <string name="iab_already_upgraded">Muser zaten yükseltilmiş. Uygulamayı yeniden başlatmayı deneyin.</string>
     <string name="iab_purchase_failed">Bir şeyler yanlış gitti. Lütfen daha sonra tekrar deneyin..</string>
-    <string name="snackbar_rate_text">Shuttle kullanmaktan keyif aldınız mı?</string>
+    <string name="snackbar_rate_text">Muser kullanmaktan keyif aldınız mı?</string>
     <string name="snackbar_rate_action">Oy Verin!</string>
     <string name="dialog_create_playlist_error">Çalma listesi oluşturma hatası</string>
     <!-- Artwork picker -->
@@ -734,7 +734,7 @@ dosyalar</item>
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Hiçbir şarkı sözü bulunamadı.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric,  Google Play Store\'da bulunan açık kaynak kodlu şarkı sözü bulma uygulamasıdır.\n\nKurulduktan sonra, Shuttle içerisinde ki \'QuickLyric\' düğmesine dokunduğunuzda sizi uygulama içindeki şarkı sözlerine yönlendirir.</string>
+    <string name="quicklyric_info">QuickLyric,  Google Play Store\'da bulunan açık kaynak kodlu şarkı sözü bulma uygulamasıdır.\n\nKurulduktan sonra, Muser içerisinde ki \'QuickLyric\' düğmesine dokunduğunuzda sizi uygulama içindeki şarkı sözlerine yönlendirir.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Çalma listesi</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
@@ -745,7 +745,7 @@ dosyalar</item>
     <string name="shuffle_albums">Albüm karıştır</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Depolama Erişimi Gerekli</string>
-    <string name="saf_access_required_message">Shuttle, bu dosyalara erişim için izin istiyor. Lütfen şarkılarınızın bulunduğu dizini seçin.</string>
+    <string name="saf_access_required_message">Muser, bu dosyalara erişim için izin istiyor. Lütfen şarkılarınızın bulunduğu dizini seçin.</string>
     <string name="saf_show_files_button">Dosyaları göster</string>
-    <string name="notification_text_shuttle_running">Shuttle servisi çalışıyor…</string>
+    <string name="notification_text_Muser_running">Muser servisi çalışıyor…</string>
 </resources>
