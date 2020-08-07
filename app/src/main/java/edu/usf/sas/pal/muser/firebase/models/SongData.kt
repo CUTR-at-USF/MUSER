@@ -5,7 +5,7 @@ package edu.usf.sas.pal.muser.firebase.models
  * A model class that holds the information about the song that is currently being played by the
  * user.
  */
-data class CurrentSongInfo
+data class SongData
 
 /**
  * [id] - The id of the track.
