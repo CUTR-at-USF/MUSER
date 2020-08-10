@@ -44,6 +44,7 @@ data class SongData
  val duration: Long?,
  val dateAdded: Int?,
  val year: Int?,
+ val path: String?,
  val playCount: Int?,
  val sampleRateLabel: String?,
  val formatLabel: String?
