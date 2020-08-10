@@ -16,5 +16,7 @@ data class SongAction
 (val action:String,
  val currentTimeMs: Long,
  val nanoTime: Long,
+ val startTime: Long?,
+ val endTime: Long?,
  val song: SongData
 )
