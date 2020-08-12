@@ -1,4 +1,4 @@
-package edu.usf.sas.pal.muser.firebase.models
+package edu.usf.sas.pal.muser.firebase.model
 
 
 /**

@@ -1,4 +1,4 @@
-package edu.usf.sas.pal.muser.firebase.models;
+package edu.usf.sas.pal.muser.firebase.model;
 
 /**
  *  The provider class that stores different types of action that can be performed by the user
