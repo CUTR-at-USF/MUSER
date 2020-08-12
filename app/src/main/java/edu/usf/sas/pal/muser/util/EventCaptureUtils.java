@@ -20,11 +20,12 @@ public class EventCaptureUtils {
      * @return - Event object
      */
     public static Event captureEvent(Song song, String capturedEvent, Context context){
-        long a = 0;
-        long b = 0;
+        long currentTimeMS = System.currentTimeMillis();
+        long nanoTime = System.nanoTime();
         SongData songData = populateSongData(song, context);
         // TODO populate currentTimeMs, NanoTime, startTime and elaspedTime.
-        return new Event(capturedEvent, 0, 0, a,b, songData);
+        int elapsedTime = (int) (System.currentTimeMillis() - song.startTime);
+        return new Event(capturedEvent, currentTimeMS, nanoTime, song.startTime, elapsedTime, songData);
     }
 
     /**
