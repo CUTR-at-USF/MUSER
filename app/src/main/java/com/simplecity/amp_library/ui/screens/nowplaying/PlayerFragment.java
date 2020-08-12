@@ -68,6 +68,7 @@ import com.simplecity.amp_library.ui.views.SizableSeekBar;
 import com.simplecity.amp_library.ui.views.SnowfallView;
 import com.simplecity.amp_library.ui.views.multisheet.MultiSheetSlideEventRelay;
 import com.simplecity.amp_library.utils.LogUtils;
+import com.simplecity.amp_library.utils.MusicServiceConnectionUtils;
 import com.simplecity.amp_library.utils.PlaceholderProvider;
 import com.simplecity.amp_library.utils.RingtoneManager;
 import com.simplecity.amp_library.utils.SettingsManager;
@@ -76,6 +77,8 @@ import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.color.ArgbEvaluator;
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils;
 import dagger.android.support.AndroidSupportInjection;
+import edu.usf.sas.pal.muser.firebase.model.EventProvider;
+import edu.usf.sas.pal.muser.util.EventCaptureUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -224,6 +227,9 @@ public class PlayerFragment extends BaseFragment implements
         if (playPauseView != null) {
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
+                Song song = getSong();
+                String event = EventProvider.EVENT_PAUSE.getEvent();
+                EventCaptureUtils.captureEvent(song, event, getContext());
                 return Unit.INSTANCE;
             }));
         }
@@ -752,5 +758,13 @@ public class PlayerFragment extends BaseFragment implements
     @Override
     public void showRingtoneSetMessage() {
         Toast.makeText(getContext(), R.string.ringtone_set_new, Toast.LENGTH_SHORT).show();
+    }
+
+    @Nullable
+    public Song getSong() {
+        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
+            return MusicServiceConnectionUtils.serviceBinder.getService().getSong();
+        }
+        return null;
     }
 }
