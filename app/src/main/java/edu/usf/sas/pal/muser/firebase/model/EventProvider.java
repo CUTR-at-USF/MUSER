@@ -1,17 +1,20 @@
 package edu.usf.sas.pal.muser.firebase.model;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  *  The provider enumerator that stores different types of action that can be performed by the user
  *  on a sound track.
  */
 public enum EventProvider {
 
-        EVENT_PLAY("Play"),
-        EVENT_PLAY_MANUAL("PLAY_MANUAL"),
-        EVENT_PAUSE("Pause"),
-        EVENT_SKIP("Skip"),
-        EVENT_REPEAT("Repeat"),
-        EVENT_SEEK("Seek");
+        PLAY("PLAY"),
+        PLAY_MANUAL("PLAY_MANUAL"),
+        PAUSE("PAUSE"),
+        PAUSE_MANUAL("PAUSE_MANUAL"),
+        SKIP("SKIP"),
+        REPEAT("REPEAT"),
+        SEEK("SEEK");
 
         private String event;
 
@@ -19,7 +22,8 @@ public enum EventProvider {
             this.event = event;
         }
 
-        public String getEvent(){
+        @NotNull
+        public String toString(){
             return event;
         }
 }
