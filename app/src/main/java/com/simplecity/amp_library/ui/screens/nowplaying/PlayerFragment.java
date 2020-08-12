@@ -179,6 +179,9 @@ public class PlayerFragment extends BaseFragment implements
 
     private boolean isExpanded;
 
+    String event = "";
+
+
     @Nullable
     private ValueAnimator colorAnimator;
 
@@ -228,7 +231,11 @@ public class PlayerFragment extends BaseFragment implements
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
                 Song song = getSong();
-                String event = EventProvider.EVENT_PAUSE.getEvent();
+                if(isPlaying())
+                    event = EventProvider.EVENT_PLAY_MANUAL.getEvent();
+                else
+                    event = EventProvider.EVENT_PAUSE.getEvent();
+                Log.d(TAG, "onViewCreated: " + event);
                 EventCaptureUtils.captureEvent(song, event, getContext());
                 return Unit.INSTANCE;
             }));
@@ -761,10 +768,17 @@ public class PlayerFragment extends BaseFragment implements
     }
 
     @Nullable
-    public Song getSong() {
+    private Song getSong() {
         if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
             return MusicServiceConnectionUtils.serviceBinder.getService().getSong();
         }
         return null;
+    }
+
+    private boolean isPlaying(){
+        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
+            return MusicServiceConnectionUtils.serviceBinder.getService().isPlaying();
+        }
+        return false;
     }
 }
