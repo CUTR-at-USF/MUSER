@@ -7,6 +7,7 @@ package edu.usf.sas.pal.muser.firebase.model;
 public enum EventProvider {
 
         EVENT_PLAY("Play"),
+        EVENT_PLAY_MANUAL("PLAY_MANUAL"),
         EVENT_PAUSE("Pause"),
         EVENT_SKIP("Skip"),
         EVENT_REPEAT("Repeat"),
