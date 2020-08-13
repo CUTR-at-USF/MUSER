@@ -23,7 +23,7 @@ public class EventUtils {
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();
         SongData songData = newSongData(song, context);
-        int elapsedTime = (int) (System.currentTimeMillis() - song.startTime);
+        long elapsedTime =  System.currentTimeMillis() - song.startTime;
         return new Event(capturedEvent, currentTimeMS, nanoTime, song.startTime, elapsedTime, songData);
     }
 

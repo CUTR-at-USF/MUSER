@@ -232,9 +232,9 @@ public class PlayerFragment extends BaseFragment implements
                 presenter.togglePlayback();
                 Song song = getSong();
                 if(isPlaying())
-                    event = EventProvider.EVENT_PLAY_MANUAL.getEvent();
+                    event = EventProvider.PLAY.toString();
                 else
-                    event = EventProvider.EVENT_PAUSE.getEvent();
+                    event = EventProvider.PLAY_MANUAL.toString();
                 Log.d(TAG, "onViewCreated: " + event);
                 EventUtils.newEvent(song, event, getContext());
                 return Unit.INSTANCE;
