@@ -25,7 +25,7 @@ data class SongData
  * [year] - The year during which the track was released.
  * [playCount] - The number of times the user played this track.
  * [sampleRateLabel] - The sample rate of the song.
- * [formatLabel] - The format of the song. (mp3 or Flac etc.)
+ * [formatLabel] - The format of the song. (mp3 or wav etc.)
  */
 (val id: Long,
  val name: String,

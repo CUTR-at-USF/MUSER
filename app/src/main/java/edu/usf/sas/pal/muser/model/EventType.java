@@ -8,22 +8,13 @@ import org.jetbrains.annotations.NotNull;
  */
 public enum EventType {
 
-        PLAY("PLAY"),
-        PLAY_MANUAL("PLAY_MANUAL"),
-        PAUSE("PAUSE"),
-        PAUSE_MANUAL("PAUSE_MANUAL"),
-        SKIP("SKIP"),
-        REPEAT("REPEAT"),
-        SEEK("SEEK");
+        PLAY,
+        PLAY_MANUAL,
+        PAUSE,
+        PAUSE_MANUAL,
+        SKIP,
+        REPEAT,
+        SEEK
 
-        private String event;
 
-        EventType(String event) {
-            this.event = event;
-        }
-
-        @NotNull
-        public String toString(){
-            return event;
-        }
 }

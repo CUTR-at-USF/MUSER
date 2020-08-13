@@ -15,7 +15,7 @@ data class Event
  * [elapsedTime] - Elapsed time of the song when the event occurred.
  * [song] - Song on which the action was performed.
  */
-(val event:String,
+(val event:EventType,
  val currentTimeMs: Long,
  val nanoTime: Long,
  val startTime: Long,

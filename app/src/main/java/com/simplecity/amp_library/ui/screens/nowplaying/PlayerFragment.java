@@ -179,9 +179,6 @@ public class PlayerFragment extends BaseFragment implements
 
     private boolean isExpanded;
 
-    String event = "";
-
-
     @Nullable
     private ValueAnimator colorAnimator;
 
@@ -231,10 +228,11 @@ public class PlayerFragment extends BaseFragment implements
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
                 Song song = getSong();
+                EventType event;
                 if(isPlaying())
-                    event = EventType.PLAY.toString();
+                    event = EventType.PLAY_MANUAL;
                 else
-                    event = EventType.PLAY_MANUAL.toString();
+                    event = EventType.PAUSE_MANUAL;
                 Log.d(TAG, "onViewCreated: " + event);
                 EventUtils.newEvent(song, event, getContext());
                 return Unit.INSTANCE;
