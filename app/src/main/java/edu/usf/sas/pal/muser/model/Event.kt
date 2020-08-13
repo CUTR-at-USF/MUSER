@@ -1,4 +1,4 @@
-package edu.usf.sas.pal.muser.firebase.model
+package edu.usf.sas.pal.muser.model
 
 /**
  * A model class that stores the actions performed on the song track. The actions like play, pause,

@@ -5,8 +5,8 @@ import android.content.Context;
 import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.model.Song;
 
-import edu.usf.sas.pal.muser.firebase.model.Event;
-import edu.usf.sas.pal.muser.firebase.model.SongData;
+import edu.usf.sas.pal.muser.model.Event;
+import edu.usf.sas.pal.muser.model.SongData;
 
 
 

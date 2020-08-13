@@ -1,4 +1,4 @@
-package edu.usf.sas.pal.muser.firebase.model;
+package edu.usf.sas.pal.muser.model;
 
 import org.jetbrains.annotations.NotNull;
 
