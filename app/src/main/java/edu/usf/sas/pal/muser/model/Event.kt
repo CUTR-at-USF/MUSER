@@ -18,7 +18,7 @@ data class Event
 (val event:String,
  val currentTimeMs: Long,
  val nanoTime: Long,
- val startTime: Long?,
- val elapsedTime: Long?,
+ val startTime: Long,
+ val elapsedTime: Long,
  val song: SongData
 )
