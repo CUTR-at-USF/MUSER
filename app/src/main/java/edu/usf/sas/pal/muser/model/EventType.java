@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
  *  The provider enumerator that stores different types of action that can be performed by the user
  *  on a sound track.
  */
-public enum EventProvider {
+public enum EventType {
 
         PLAY("PLAY"),
         PLAY_MANUAL("PLAY_MANUAL"),
@@ -18,7 +18,7 @@ public enum EventProvider {
 
         private String event;
 
-        EventProvider(String event) {
+        EventType(String event) {
             this.event = event;
         }
 

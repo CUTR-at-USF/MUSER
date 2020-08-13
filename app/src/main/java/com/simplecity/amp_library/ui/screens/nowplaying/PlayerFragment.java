@@ -77,7 +77,7 @@ import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.color.ArgbEvaluator;
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils;
 import dagger.android.support.AndroidSupportInjection;
-import edu.usf.sas.pal.muser.model.EventProvider;
+import edu.usf.sas.pal.muser.model.EventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
@@ -232,9 +232,9 @@ public class PlayerFragment extends BaseFragment implements
                 presenter.togglePlayback();
                 Song song = getSong();
                 if(isPlaying())
-                    event = EventProvider.PLAY.toString();
+                    event = EventType.PLAY.toString();
                 else
-                    event = EventProvider.PLAY_MANUAL.toString();
+                    event = EventType.PLAY_MANUAL.toString();
                 Log.d(TAG, "onViewCreated: " + event);
                 EventUtils.newEvent(song, event, getContext());
                 return Unit.INSTANCE;
