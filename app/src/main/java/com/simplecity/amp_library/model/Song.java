@@ -210,7 +210,7 @@ public class Song implements
      *
      * @return the elapsed time of this track (in millis)
      */
-    private long getElapsedTime() {
+    public long getElapsedTime() {
         if (isPaused) {
             return elapsedTime;
         } else {
