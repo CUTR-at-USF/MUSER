@@ -15,6 +15,4 @@ public enum EventType {
         SKIP,
         REPEAT,
         SEEK
-
-
 }

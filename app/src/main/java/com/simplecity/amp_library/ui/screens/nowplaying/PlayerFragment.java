@@ -229,7 +229,7 @@ public class PlayerFragment extends BaseFragment implements
                 presenter.togglePlayback();
                 Song song = getSong();
                 EventType eventType;
-                if(isPlaying())
+                if (isPlaying())
                     eventType = EventType.PLAY_MANUAL;
                 else
                     eventType = EventType.PAUSE_MANUAL;
