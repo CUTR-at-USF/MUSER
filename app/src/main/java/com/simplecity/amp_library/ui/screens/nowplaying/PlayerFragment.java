@@ -228,13 +228,13 @@ public class PlayerFragment extends BaseFragment implements
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
                 Song song = getSong();
-                EventType event;
+                EventType eventType;
                 if(isPlaying())
-                    event = EventType.PLAY_MANUAL;
+                    eventType = EventType.PLAY_MANUAL;
                 else
-                    event = EventType.PAUSE_MANUAL;
-                Log.d(TAG, "onViewCreated: " + event);
-                EventUtils.newEvent(song, event, getContext());
+                    eventType = EventType.PAUSE_MANUAL;
+                Log.d(TAG, "onViewCreated: " + eventType);
+                EventUtils.newEvent(song, eventType, getContext());
                 return Unit.INSTANCE;
             }));
         }
