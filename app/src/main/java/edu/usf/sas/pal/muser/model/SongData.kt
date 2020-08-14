@@ -1,5 +1,8 @@
 package edu.usf.sas.pal.muser.model
 
+import android.content.Context
+import com.simplecity.amp_library.model.Song
+
 
 /**
  * A model class that holds the information about the song that is currently being played by the
@@ -48,4 +51,10 @@ data class SongData
  val playCount: Int?,
  val sampleRateLabel: String?,
  val formatLabel: String?
-)
+){
+    constructor(song: Song, context: Context): this(song.id, song.name, song.artistId, song.albumName, song.albumId,
+            song.albumName, song.playlistSongId, song.playlistSongPlayOrder, song.lastPlayed,
+            song.track, song.discNumber, song.getBitrateLabel(context), song.getFileSizeLabel(),
+            song.isPodcast, song.duration, song.dateAdded, song.year, song.path, song.playCount,
+            song.getSampleRateLabel(context), song.getFormatLabel())
+}
