@@ -8,8 +8,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import edu.usf.sas.pal.muser.constants.EventConstants;
 import edu.usf.sas.pal.muser.model.Event;
 
-public class EventFirebaseIOUtils {
-    private static final String TAG = "EventFirebaseIO";
+public class FirebaseIOUtils {
+    private static final String TAG = "FirebaseIO";
 
     private static String buildDocumentPathByUid(String uid, String folder) {
         return "users/" + uid + "/" + folder;
@@ -19,7 +19,7 @@ public class EventFirebaseIOUtils {
                                                                                String recordId,
                                                                                String folder){
         String path = buildDocumentPathByUid(userId, folder);
-        FirebaseFirestore firebaseFirestore =FirebaseFirestore.getInstance();
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
         return firebaseFirestore.collection(path).document(recordId);
     }
 
@@ -30,7 +30,7 @@ public class EventFirebaseIOUtils {
 
         documentReference.set(event)
                 .addOnCompleteListener(task -> {
-                      if (task.isSuccessful()){
+                      if (task.isSuccessful()) {
                           Log.d(TAG, "Event saved with ID " + documentReference.getId());
                       }
                       else {
