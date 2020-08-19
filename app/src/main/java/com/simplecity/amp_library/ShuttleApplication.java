@@ -41,6 +41,7 @@ import com.squareup.leakcanary.RefWatcher;
 import com.uber.rxdogtag.RxDogTag;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
@@ -99,6 +100,12 @@ public class ShuttleApplication extends DaggerApplication {
             // You should not init your app in this process.
             return;
         }
+
+        String email = "a@a.com";
+        // TODO
+        //  check for email address validity
+        //  if true call registerUser()
+        //  else ask email once again
 
         // Todo: Remove for production builds. Useful for tracking down crashes in beta.
         RxDogTag.install();
@@ -377,5 +384,9 @@ public class ShuttleApplication extends DaggerApplication {
                 .penaltyLog()
                 .penaltyFlashScreen()
                 .build());
+    }
+
+    public void registerUser(String email){
+        FirebaseIOUtils.registerUser(email);
     }
 }

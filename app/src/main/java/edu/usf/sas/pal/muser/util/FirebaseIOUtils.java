@@ -2,8 +2,12 @@ package edu.usf.sas.pal.muser.util;
 
 import android.util.Log;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import edu.usf.sas.pal.muser.constants.EventConstants;
 import edu.usf.sas.pal.muser.model.Event;
@@ -46,5 +50,36 @@ public class FirebaseIOUtils {
         } else {
             Log.d(TAG, message);
         }
+    }
+
+    public static void registerUser(String email){
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        firebaseAuth.signInAnonymously()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "Firebase user initialized with id:" + firebaseAuth.getUid());
+                        // TODO save email address to Google APP Scripts
+                        initFirebaseUserWithId(firebaseAuth.getUid());
+                    } else {
+                        logErrorMessage(task.getException(),
+                                "user initialization failed: ");
+                    }
+                });
+    }
+
+    public static void initFirebaseUserWithId(String userId){
+        FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
+        DocumentReference documentReference = firebaseFirestore.collection("users/")
+                                              .document(userId + "/");
+        Map<String, String> map = new HashMap<>();
+        map.put("userId", userId);
+        documentReference.set(map).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Log.d(TAG, "Firebase initialized with user id: " + userId);
+            } else {
+                logErrorMessage(task.getException(),
+                        "Firebase failed to initialize with user id");
+            }
+        });
     }
 }
