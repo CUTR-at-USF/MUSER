@@ -18,13 +18,13 @@ public class EventUtils {
      * @param capturedEvent - The event that was captured.
      * @param context - The context of the Fragment.
      */
-    public static void newEvent(Song song, EventType capturedEvent, Context context){
+    public static Event newEvent(Song song, EventType capturedEvent, Context context){
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();
         SongData songData = new SongData(song, context);
         long elapsedTime =  song.getElapsedTime();
-        Event event = new Event(capturedEvent, currentTimeMS, nanoTime, song.startTime, elapsedTime,
-                      songData);
+        return new Event(capturedEvent, currentTimeMS, nanoTime, song.startTime, elapsedTime,
+                         songData);
     }
 
 }

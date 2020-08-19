@@ -86,10 +86,6 @@ public class ShuttleApplication extends DaggerApplication {
     @Inject
     SettingsManager settingsManager;
 
-    private static ShuttleApplication mApp;
-
-    private SharedPreferences mPrefs;
-
     @Override
     public void onCreate() {
         super.onCreate();
@@ -381,13 +377,5 @@ public class ShuttleApplication extends DaggerApplication {
                 .penaltyLog()
                 .penaltyFlashScreen()
                 .build());
-    }
-
-    public static ShuttleApplication get() {
-        return mApp;
-    }
-
-    public static SharedPreferences getPrefs() {
-        return get().mPrefs;
     }
 }

@@ -32,8 +32,7 @@ public class FirebaseIOUtils {
                 .addOnCompleteListener(task -> {
                       if (task.isSuccessful()) {
                           Log.d(TAG, "Event saved with ID " + documentReference.getId());
-                      }
-                      else {
+                      } else {
                           logErrorMessage(task.getException(), "Event Save Failed");
                       }
                 });
