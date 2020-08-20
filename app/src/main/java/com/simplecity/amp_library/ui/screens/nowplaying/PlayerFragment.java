@@ -77,7 +77,7 @@ import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.color.ArgbEvaluator;
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils;
 import dagger.android.support.AndroidSupportInjection;
-import edu.usf.sas.pal.muser.model.EventType;
+import edu.usf.sas.pal.muser.model.PlayerEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
@@ -228,13 +228,13 @@ public class PlayerFragment extends BaseFragment implements
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
                 Song song = getSong();
-                EventType eventType;
+                PlayerEventType playerEventType;
                 if (isPlaying())
-                    eventType = EventType.PLAY_MANUAL;
+                    playerEventType = PlayerEventType.PLAY_MANUAL;
                 else
-                    eventType = EventType.PAUSE_MANUAL;
-                Log.d(TAG, "onViewCreated: " + eventType);
-                EventUtils.newEvent(song, eventType, getContext());
+                    playerEventType = PlayerEventType.PAUSE_MANUAL;
+                Log.d(TAG, "onViewCreated: " + playerEventType);
+                EventUtils.newEvent(song, playerEventType, getContext());
                 return Unit.INSTANCE;
             }));
         }

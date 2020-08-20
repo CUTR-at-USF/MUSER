@@ -5,7 +5,7 @@ import android.content.Context;
 import com.simplecity.amp_library.model.Song;
 
 import edu.usf.sas.pal.muser.model.Event;
-import edu.usf.sas.pal.muser.model.EventType;
+import edu.usf.sas.pal.muser.model.PlayerEventType;
 import edu.usf.sas.pal.muser.model.SongData;
 
 
@@ -18,7 +18,7 @@ public class EventUtils {
      * @param capturedEvent - The event that was captured.
      * @param context - The context of the Fragment.
      */
-    public static Event newEvent(Song song, EventType capturedEvent, Context context){
+    public static Event newEvent(Song song, PlayerEventType capturedEvent, Context context){
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();
         SongData songData = new SongData(song, context);

@@ -8,14 +8,14 @@ package edu.usf.sas.pal.muser.model
 data class Event
 
 /**
- * [event] - The event attribute includes events like play, pause, skip, repeat and seek.
+ * [playerEvent] - The event attribute includes events like play, pause, skip, repeat and seek.
  * [currentTimeMs] - Stores the timestamp of the action recorded.
  * [nanoTime] - Stores the  value of the running JVM's time source in nanoseconds.
  * [startTime] - Start time of the song.
  * [elapsedTime] - Elapsed time of the song when the event occurred.
  * [song] - Song on which the action was performed.
  */
-(val event:EventType,
+(val playerEvent: PlayerEventType,
  val currentTimeMs: Long,
  val nanoTime: Long,
  val startTime: Long,
