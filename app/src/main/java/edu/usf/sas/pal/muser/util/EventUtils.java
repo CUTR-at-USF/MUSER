@@ -4,10 +4,11 @@ import android.content.Context;
 
 import com.simplecity.amp_library.model.Song;
 
-import edu.usf.sas.pal.muser.model.Event;
+import edu.usf.sas.pal.muser.model.PlayerEvent;
 import edu.usf.sas.pal.muser.model.PlayerEventType;
 import edu.usf.sas.pal.muser.model.SongData;
-
+import edu.usf.sas.pal.muser.model.UiAction;
+import edu.usf.sas.pal.muser.model.UiActionType;
 
 
 public class EventUtils {
@@ -18,13 +19,21 @@ public class EventUtils {
      * @param capturedEvent - The event that was captured.
      * @param context - The context of the Fragment.
      */
-    public static Event newEvent(Song song, PlayerEventType capturedEvent, Context context){
+    public static PlayerEvent newPlayerEvent(Song song, PlayerEventType capturedEvent, Context context){
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();
         SongData songData = new SongData(song, context);
         long elapsedTime =  song.getElapsedTime();
-        return new Event(capturedEvent, currentTimeMS, nanoTime, song.startTime, elapsedTime,
+        return new PlayerEvent(capturedEvent, currentTimeMS, nanoTime, song.startTime, elapsedTime,
                          songData);
     }
 
+    public static UiAction newUiAction(Song song, UiActionType capturedUiAction, Context context){
+        long currentTimeMS = System.currentTimeMillis();
+        long nanoTime = System.nanoTime();
+        SongData songData = new SongData(song, context);
+        long elapsedTime =  song.getElapsedTime();
+        return new UiAction(capturedUiAction, currentTimeMS, nanoTime, song.startTime, elapsedTime,
+                songData);
+    }
 }

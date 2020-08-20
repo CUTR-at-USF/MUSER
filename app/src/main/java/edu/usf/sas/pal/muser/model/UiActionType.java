@@ -1,6 +1,6 @@
 package edu.usf.sas.pal.muser.model;
 
-public enum UiEventType {
+public enum UiActionType {
          PLAY,
          PAUSE,
          SKIP,

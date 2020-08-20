@@ -78,6 +78,7 @@ import com.simplecity.amp_library.utils.color.ArgbEvaluator;
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils;
 import dagger.android.support.AndroidSupportInjection;
 import edu.usf.sas.pal.muser.model.PlayerEventType;
+import edu.usf.sas.pal.muser.model.UiActionType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
@@ -229,12 +230,17 @@ public class PlayerFragment extends BaseFragment implements
                 presenter.togglePlayback();
                 Song song = getSong();
                 PlayerEventType playerEventType;
-                if (isPlaying())
-                    playerEventType = PlayerEventType.PLAY_MANUAL;
-                else
-                    playerEventType = PlayerEventType.PAUSE_MANUAL;
+                UiActionType uiActionType;
+                if (isPlaying()) {
+                    playerEventType = PlayerEventType.PLAY;
+                    uiActionType = UiActionType.PLAY;
+                } else {
+                    playerEventType = PlayerEventType.PAUSE;
+                    uiActionType = UiActionType.PAUSE;
+                }
                 Log.d(TAG, "onViewCreated: " + playerEventType);
-                EventUtils.newEvent(song, playerEventType, getContext());
+                EventUtils.newPlayerEvent(song, playerEventType, getContext());
+                EventUtils.newUiAction(song, uiActionType, getContext());
                 return Unit.INSTANCE;
             }));
         }
