@@ -14,10 +14,11 @@ import edu.usf.sas.pal.muser.model.UiActionType;
 public class EventUtils {
 
     /**
-     * Function to populate the Event data class.
+     * Function to populate the PlayerEvent data class.
      * @param song - The song for which the event occurred.
      * @param capturedEvent - The event that was captured.
      * @param context - The context of the Fragment.
+     * @return PlayerEvent object
      */
     public static PlayerEvent newPlayerEvent(Song song, PlayerEventType capturedEvent, Context context){
         long currentTimeMS = System.currentTimeMillis();
@@ -28,6 +29,13 @@ public class EventUtils {
                          songData);
     }
 
+    /**
+     * Function to populate the UiAction data class
+     * @param song - The song for which the action was performed.
+     * @param capturedUiAction - The action that was captured
+     * @param context - The context of the fragment.
+     * @return UiAction object
+     */
     public static UiAction newUiAction(Song song, UiActionType capturedUiAction, Context context){
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();

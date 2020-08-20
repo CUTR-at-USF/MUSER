@@ -3,8 +3,8 @@ package edu.usf.sas.pal.muser.model;
 import org.jetbrains.annotations.NotNull;
 
 /**
- *  The provider enumerator that stores different types of action that can be performed by the user
- *  on a sound track.
+ *  The enumerator that stores different types of events that occur while playing
+ *  a sound track.
  */
 public enum PlayerEventType {
         PLAY,
