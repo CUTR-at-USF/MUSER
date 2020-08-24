@@ -7,8 +7,8 @@ import com.simplecity.amp_library.model.Song;
 import edu.usf.sas.pal.muser.model.PlayerEvent;
 import edu.usf.sas.pal.muser.model.PlayerEventType;
 import edu.usf.sas.pal.muser.model.SongData;
-import edu.usf.sas.pal.muser.model.UiAction;
-import edu.usf.sas.pal.muser.model.UiActionType;
+import edu.usf.sas.pal.muser.model.UiEvent;
+import edu.usf.sas.pal.muser.model.UiEventType;
 
 
 public class EventUtils {
@@ -36,12 +36,12 @@ public class EventUtils {
      * @param context - The context of the fragment.
      * @return UiAction object
      */
-    public static UiAction newUiAction(Song song, UiActionType capturedUiAction, Context context){
+    public static UiEvent newUiEvent(Song song, UiEventType capturedUiAction, Context context){
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();
         SongData songData = new SongData(song, context);
         long elapsedTime =  song.getElapsedTime();
-        return new UiAction(capturedUiAction, currentTimeMS, nanoTime, song.startTime, elapsedTime,
+        return new UiEvent(capturedUiAction, currentTimeMS, nanoTime, song.startTime, elapsedTime,
                 songData);
     }
 }

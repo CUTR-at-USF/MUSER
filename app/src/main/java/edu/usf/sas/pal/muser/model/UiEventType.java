@@ -4,7 +4,7 @@ package edu.usf.sas.pal.muser.model;
  * The enumerator that stores different types of action that can be performed by the user
  * on a sound track.
  */
-public enum UiActionType {
+public enum UiEventType {
          PLAY,
          PAUSE,
          SKIP,
