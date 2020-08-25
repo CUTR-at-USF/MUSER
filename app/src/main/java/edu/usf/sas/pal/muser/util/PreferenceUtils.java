@@ -19,6 +19,6 @@ public class PreferenceUtils {
     }
 
     public static void saveString(String key, String value) {
-        saveString(ShuttleApplication.getPrefs(), key, value);
+
     }
 }
