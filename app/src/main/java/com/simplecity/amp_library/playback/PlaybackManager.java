@@ -537,8 +537,10 @@ public class PlaybackManager implements Playback.Callbacks {
     void togglePlayback() {
         if (isPlaying()) {
             pause(true);
+            // TODO capture PAUSE event
         } else {
             play();
+            // TODO capture PLAY event
         }
     }
 
