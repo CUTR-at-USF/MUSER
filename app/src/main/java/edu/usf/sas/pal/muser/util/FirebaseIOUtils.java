@@ -8,9 +8,11 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 import edu.usf.sas.pal.muser.constants.EventConstants;
-import edu.usf.sas.pal.muser.model.Event;
+import edu.usf.sas.pal.muser.model.PlayerEvent;
+import edu.usf.sas.pal.muser.model.UiEvent;
 
 public class FirebaseIOUtils {
     private static final String TAG = "FirebaseIO";
@@ -27,19 +29,45 @@ public class FirebaseIOUtils {
         return firebaseFirestore.collection(path).document(recordId);
     }
 
-    public static void saveEvent(Event event, String userId, String recordID){
+    public static void savePlayerEvent(PlayerEvent playerEvent){
+        String userId = PreferenceUtils.getString(EventConstants.USER_ID);
+        String recordID = getRecordID();
         DocumentReference documentReference =
                 getFirebaseDocReferenceByUserIDAndRecordId(userId, recordID,
-                        EventConstants.FIREBASE_EVENT_FOLDER);
+                        EventConstants.FIREBASE_PLAYER_EVENT_FOLDER);
 
-        documentReference.set(event)
+        documentReference.set(playerEvent)
                 .addOnCompleteListener(task -> {
                       if (task.isSuccessful()) {
-                          Log.d(TAG, "Event saved with ID " + documentReference.getId());
+                          Log.d(TAG, "playerEvent saved with ID " + documentReference.getId());
                       } else {
-                          logErrorMessage(task.getException(), "Event Save Failed");
+                          logErrorMessage(task.getException(), "playerEvent Save Failed");
                       }
                 });
+    }
+
+    public static void saveUiEvent(UiEvent uiEvent){
+        String userId = PreferenceUtils.getString(EventConstants.USER_ID);
+        String recordID = getRecordID();
+        DocumentReference documentReference =
+                getFirebaseDocReferenceByUserIDAndRecordId(userId, recordID,
+                        EventConstants.FIREBASE_UI_EVENT_FOLDER);
+
+        documentReference.set(uiEvent)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Log.d(TAG, "UiEvent saved with ID " + documentReference.getId());
+                    } else {
+                        logErrorMessage(task.getException(), "UiEvent Save Failed");
+                    }
+                });
+    }
+
+    private static String getRecordID(){
+        long rPrefix = PreferenceUtils.getLong(EventConstants.RECORD_ID, 0);
+        String recordID = rPrefix++ + "-" + UUID.randomUUID().toString();
+        PreferenceUtils.saveLong(EventConstants.RECORD_ID, rPrefix);
+        return recordID;
     }
 
     public static void logErrorMessage(Exception e, String message) {
@@ -59,6 +87,7 @@ public class FirebaseIOUtils {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "Firebase user initialized with id:" + firebaseAuth.getUid());
                         // TODO save email address to Google APP Scripts
+                        PreferenceUtils.saveString(EventConstants.USER_ID, firebaseAuth.getUid());
                         initFirebaseUserWithId(firebaseAuth.getUid());
                     } else {
                         logErrorMessage(task.getException(),
@@ -82,4 +111,5 @@ public class FirebaseIOUtils {
             }
         });
     }
+
 }

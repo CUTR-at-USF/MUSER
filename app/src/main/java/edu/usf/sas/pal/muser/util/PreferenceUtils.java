@@ -19,6 +19,29 @@ public class PreferenceUtils {
     }
 
     public static void saveString(String key, String value) {
+        saveString(ShuttleApplication.getPrefs(), key, value);
+    }
 
+    public static String getString(String key){
+        return ShuttleApplication.getPrefs().getString(key, null);
+    }
+
+    @TargetApi(9)
+    public static void saveLong(SharedPreferences prefs, String key, long value) {
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putLong(key, value);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+            edit.apply();
+        } else {
+            edit.commit();
+        }
+    }
+    public static void saveLong(String key, long value) {
+        saveLong(ShuttleApplication.getPrefs(), key, value);
+    }
+
+    public static long getLong(String key, long defaultValue) {
+        return ShuttleApplication.getPrefs().getLong(key, defaultValue);
     }
 }

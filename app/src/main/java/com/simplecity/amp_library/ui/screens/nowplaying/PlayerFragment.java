@@ -77,9 +77,12 @@ import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.color.ArgbEvaluator;
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils;
 import dagger.android.support.AndroidSupportInjection;
+import edu.usf.sas.pal.muser.model.PlayerEvent;
 import edu.usf.sas.pal.muser.model.PlayerEventType;
+import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -239,8 +242,10 @@ public class PlayerFragment extends BaseFragment implements
                     uiEventType = UiEventType.PAUSE;
                 }
                 Log.d(TAG, "onViewCreated: " + playerEventType);
-                EventUtils.newPlayerEvent(song, playerEventType, getContext());
-                EventUtils.newUiEvent(song, uiEventType, getContext());
+                PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, getContext());
+                FirebaseIOUtils.savePlayerEvent(playerEvent);
+                UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, getContext());
+                FirebaseIOUtils.saveUiEvent(uiEvent);
                 return Unit.INSTANCE;
             }));
         }

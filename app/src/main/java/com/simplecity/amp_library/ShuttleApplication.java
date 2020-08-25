@@ -87,10 +87,16 @@ public class ShuttleApplication extends DaggerApplication {
     @Inject
     SettingsManager settingsManager;
 
+    private SharedPreferences mPrefs;
+
+    private static ShuttleApplication mApp;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
+        mApp = this;
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         DaggerAppComponent.builder()
                 .create(this)
                 .inject(this);
@@ -389,5 +395,13 @@ public class ShuttleApplication extends DaggerApplication {
 
     private void registerUser(String email){
         FirebaseIOUtils.registerUser(email);
+    }
+
+    public static ShuttleApplication get() {
+        return mApp;
+    }
+
+    public static SharedPreferences getPrefs() {
+        return get().mPrefs;
     }
 }
