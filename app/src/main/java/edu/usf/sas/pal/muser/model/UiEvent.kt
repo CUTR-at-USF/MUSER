@@ -14,5 +14,5 @@ data class UiEvent
  override val nanoTime: Long,
  override val startTime: Long,
  override val elapsedTime: Long,
- override val song: SongData
+ override val song: SongData?
 ) : Event

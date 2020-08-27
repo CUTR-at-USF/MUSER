@@ -19,5 +19,5 @@ interface Event
     val nanoTime: Long
     val startTime: Long
     val elapsedTime: Long
-    val song: SongData
+    val song: SongData?
 }
