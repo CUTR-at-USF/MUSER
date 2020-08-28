@@ -10,14 +10,10 @@ interface Event
 /**
  * [currentTimeMs] - Stores the timestamp of the action recorded.
  * [nanoTime] - Stores the  value of the running JVM's time source in nanoseconds.
- * [startTime] - Start time of the song.
- * [elapsedTime] - Elapsed time of the song when the event occurred.
  * [song] - Song on which the action was performed.
  */
 {
     val currentTimeMs: Long
     val nanoTime: Long
-    val startTime: Long
-    val elapsedTime: Long
     val song: SongData?
 }

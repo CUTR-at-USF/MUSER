@@ -12,7 +12,5 @@ data class UiEvent
 (val uiEventType: UiEventType,
  override val currentTimeMs: Long,
  override val nanoTime: Long,
- override val startTime: Long,
- override val elapsedTime: Long,
  override val song: SongData?
 ) : Event
