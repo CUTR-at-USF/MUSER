@@ -232,18 +232,12 @@ public class PlayerFragment extends BaseFragment implements
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
                 Song song = getSong();
-                PlayerEventType playerEventType;
                 UiEventType uiEventType;
                 if (isPlaying()) {
-                    playerEventType = PlayerEventType.PLAY;
                     uiEventType = UiEventType.PLAY;
                 } else {
-                    playerEventType = PlayerEventType.PAUSE;
                     uiEventType = UiEventType.PAUSE;
                 }
-                Log.d(TAG, "onViewCreated: " + playerEventType);
-                PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, getContext());
-                FirebaseIOUtils.savePlayerEvent(playerEvent);
                 UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, getContext());
                 FirebaseIOUtils.saveUiEvent(uiEvent);
                 return Unit.INSTANCE;
