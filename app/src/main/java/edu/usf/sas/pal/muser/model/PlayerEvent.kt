@@ -13,5 +13,6 @@ data class PlayerEvent
     val playerEventType: PlayerEventType,
     override val currentTimeMs: Long,
     override val nanoTime: Long,
+    override val seekPositionMs: Long,
     override val song: SongData
 ) : Event

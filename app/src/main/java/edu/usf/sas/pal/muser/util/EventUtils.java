@@ -1,8 +1,11 @@
 package edu.usf.sas.pal.muser.util;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.simplecity.amp_library.model.Song;
+import com.simplecity.amp_library.playback.MediaManager;
+import com.simplecity.amp_library.utils.MusicServiceConnectionUtils;
 
 import edu.usf.sas.pal.muser.model.PlayerEvent;
 import edu.usf.sas.pal.muser.model.PlayerEventType;
@@ -24,7 +27,8 @@ public class EventUtils {
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();
         SongData songData = new SongData(song, context);
-        return new PlayerEvent(capturedEvent, currentTimeMS, nanoTime,
+        long seekPositionMs = getPosition();
+        return new PlayerEvent(capturedEvent, currentTimeMS, nanoTime, seekPositionMs,
                          songData);
     }
 
@@ -39,7 +43,24 @@ public class EventUtils {
         long currentTimeMS = System.currentTimeMillis();
         long nanoTime = System.nanoTime();
         SongData songData = new SongData(song, context);
-        return new UiEvent(capturedUiAction, currentTimeMS, nanoTime,
+        long seekPositionMs = getPosition();
+        return new UiEvent(capturedUiAction, currentTimeMS, nanoTime, seekPositionMs,
                 songData);
+    }
+
+    /**
+     * function to get the seek position of the track.
+     * @return current seek position
+     */
+    public static long getPosition() {
+        if (MusicServiceConnectionUtils.serviceBinder != null &&
+                MusicServiceConnectionUtils.serviceBinder.getService() != null) {
+            try {
+                return MusicServiceConnectionUtils.serviceBinder.getService().getSeekPosition();
+            } catch (final Exception e) {
+                Log.e("EventUtils", "getPosition() returned error: " + e.toString());
+            }
+        }
+        return 0;
     }
 }
