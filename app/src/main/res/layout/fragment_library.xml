@@ -43,6 +43,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
                     app:tabIndicatorHeight="3dp"
+                    android:tag=":aesthetic_ignore"
                     app:tabMode="scrollable"/>
 
                 <android.support.v7.widget.Toolbar
@@ -51,6 +52,8 @@
                     android:layout_height="?attr/actionBarSize"
                     android:transitionName="toolbar"
                     app:layout_collapseMode="none"
+                    android:tag=":aesthetic_ignore"
+
                     app:title="@string/library_title"/>
 
                 <include

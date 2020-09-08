@@ -90,23 +90,10 @@ public class BreadcrumbView extends RelativeLayout implements Breadcrumb, OnClic
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-
-        Aesthetic.get(getContext())
-                .colorPrimary()
-                .take(1)
-                .subscribe(color -> ViewBackgroundAction.create(this)
-                        .accept(color), onErrorLogAndRethrow());
-
-        aestheticDisposable = (Aesthetic.get(getContext())
-                .colorPrimary()
-                .compose(distinctToMainThread())
-                .subscribe(color -> ViewBackgroundAction.create(this)
-                        .accept(color), onErrorLogAndRethrow()));
     }
 
     @Override
     protected void onDetachedFromWindow() {
-        aestheticDisposable.dispose();
         super.onDetachedFromWindow();
     }
 

@@ -148,12 +148,6 @@ public class LibraryController extends BaseFragment implements
 
         setupViewPager();
 
-        compositeDisposable.add(Aesthetic.get(getContext())
-                .colorPrimary()
-                .compose(distinctToMainThread())
-                .subscribe(color -> ViewBackgroundAction.create(appBarLayout)
-                        .accept(color), onErrorLogAndRethrow()));
-
         return rootView;
     }
 
