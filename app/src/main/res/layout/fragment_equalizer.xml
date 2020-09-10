@@ -20,6 +20,7 @@
         android:minHeight="?attr/actionBarSize"
         android:title="@string/equalizer"
         android:transitionName="toolbar"
+        android:tag=":aesthetic_ignore"
         app:navigationIcon="?attr/homeAsUpIndicator"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:theme="?attr/toolbar_theme"/>
