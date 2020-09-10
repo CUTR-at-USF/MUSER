@@ -37,8 +37,6 @@ public class BreadcrumbView extends RelativeLayout implements Breadcrumb, OnClic
 
     private List<BreadcrumbListener> mBreadcrumbListeners;
 
-    private Disposable aestheticDisposable;
-
     /**
      * Constructor of <code>BreadcrumbView</code>
      */

@@ -12,8 +12,6 @@ import static com.afollestad.aesthetic.Rx.onErrorLogAndRethrow;
 
 public class ThemedStatusBarView extends StatusBarView {
 
-    private Disposable bgSubscription;
-
     public ThemedStatusBarView(Context context) {
         super(context);
     }
@@ -44,7 +42,6 @@ public class ThemedStatusBarView extends StatusBarView {
 
     @Override
     protected void onDetachedFromWindow() {
-        //bgSubscription.dispose();
         super.onDetachedFromWindow();
     }
 }

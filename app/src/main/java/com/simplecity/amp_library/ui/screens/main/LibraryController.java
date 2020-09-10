@@ -110,8 +110,6 @@ public class LibraryController extends BaseFragment implements
     @Inject
     AnalyticsManager analyticsManager;
 
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
-
     private Disposable tabChangedDisposable;
 
     private Unbinder unbinder;
@@ -174,7 +172,6 @@ public class LibraryController extends BaseFragment implements
     @Override
     public void onDestroyView() {
         pager.setAdapter(null);
-        compositeDisposable.clear();
         unbinder.unbind();
         super.onDestroyView();
     }
