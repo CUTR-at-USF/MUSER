@@ -107,7 +107,7 @@
         android:contentDescription="@string/btn_fab_shuffle"
         android:src="@drawable/ic_shuffle_24dp"
         app:fabSize="normal"
-        android:background="@color/colorPrimaryDark"
+        android:backgroundTint="@color/colorPrimaryDark"
         app:layout_anchor="@id/app_bar"
         android:tag=":aesthetic_ignore"
         app:layout_anchorGravity="bottom|end"
