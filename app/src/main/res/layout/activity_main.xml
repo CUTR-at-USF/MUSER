@@ -24,6 +24,7 @@
             android:id="@+id/navDrawerFragment"
             android:name="com.simplecity.amp_library.ui.screens.drawer.DrawerFragment"
             android:layout_width="match_parent"
+            android:tag=":aesthetic_ignore"
             android:layout_height="match_parent"/>
 
     </android.support.design.widget.NavigationView>
