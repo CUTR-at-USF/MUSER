@@ -2,8 +2,6 @@ package com.simplecity.amp_library.ui.screens.drawer;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
@@ -214,7 +212,7 @@ public class DrawerParent implements Parent<DrawerChild> {
         holder.expandableIcon.setImageDrawable(arrowDrawable);
 
         holder.expandableIcon.setVisibility(getChildList().isEmpty() ? View.GONE : View.VISIBLE);
-        holder.icon.setColorFilter(Color.BLACK);
+
         holder.icon.setImageResource(iconResId);
         if (iconResId != -1) {
             holder.icon.setVisibility(View.VISIBLE);

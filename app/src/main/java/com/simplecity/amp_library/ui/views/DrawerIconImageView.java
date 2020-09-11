@@ -13,6 +13,8 @@ import io.reactivex.disposables.Disposable;
 
 public class DrawerIconImageView extends AppCompatImageView {
 
+    Disposable aestheticDisposable;
+
     @Nullable
     private Drawable drawable;
 
@@ -43,6 +45,13 @@ public class DrawerIconImageView extends AppCompatImageView {
         super.setImageDrawable(drawable);
     }
 
+    protected Observable<Pair> getColorObservable() {
+        return Observable.combineLatest(
+                Aesthetic.get(getContext()).textColorPrimary(),
+                Aesthetic.get(getContext()).colorAccent(),
+                Pair::new);
+    }
+
     @Override
     public void setActivated(boolean activated) {
         super.setActivated(activated);
@@ -68,10 +77,16 @@ public class DrawerIconImageView extends AppCompatImageView {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+
+        if (!isInEditMode()) {
+            aestheticDisposable = getColorObservable().subscribe(pair -> invalidateColors((int) pair.first, (int) pair.second));
+        }
     }
 
     @Override
     protected void onDetachedFromWindow() {
+        aestheticDisposable.dispose();
+
         super.onDetachedFromWindow();
     }
 }
