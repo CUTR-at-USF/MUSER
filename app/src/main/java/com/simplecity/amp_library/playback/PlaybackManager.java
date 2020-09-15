@@ -367,6 +367,7 @@ public class PlaybackManager implements Playback.Callbacks {
                 && !queueManager.getCurrentPlaylist().isEmpty()
                 && queueManager.nextPlayPos < queueManager.getCurrentPlaylist().size()) {
             final Song nextSong = queueManager.getCurrentPlaylist().get(queueManager.nextPlayPos).getSong();
+            // adds to queue, log here.
             playback.setNextDataSource(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI + "/" + nextSong.id);
         } else {
             playback.setNextDataSource(null);
@@ -604,11 +605,13 @@ public class PlaybackManager implements Playback.Callbacks {
 
         if (trackDidChange) {
             queueManager.queuePosition = queueManager.nextPlayPos;
+            newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.PLAY);
             notifyChange(InternalIntents.META_CHANGED);
             setNextTrack();
         } else {
             if (!next(false)) {
                 // If we failed to move to the next track, then playback is complete.
+                newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.PAUSE);
                 notifyChange(InternalIntents.PLAY_STATE_CHANGED);
             }
         }
