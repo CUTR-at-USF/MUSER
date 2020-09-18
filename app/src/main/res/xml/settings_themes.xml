@@ -33,7 +33,8 @@
     </android.support.v7.preference.PreferenceCategory>
 
     <android.support.v7.preference.PreferenceCategory
-        android:title="@string/pref_group_palette">
+        android:title="@string/pref_group_palette"
+        app:isPreferenceVisible="false">
 
         <android.support.v7.preference.SwitchPreferenceCompat
             android:defaultValue="true"
@@ -44,6 +45,7 @@
         <android.support.v7.preference.SwitchPreferenceCompat
             android:dependency="pref_theme_use_palette"
             android:key="pref_theme_use_palette_now_playing"
+            android:defaultValue="true"
             android:title="@string/pref_title_palette_now_playing"/>
 
     </android.support.v7.preference.PreferenceCategory>

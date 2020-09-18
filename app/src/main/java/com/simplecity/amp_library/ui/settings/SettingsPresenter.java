@@ -213,8 +213,8 @@ public class SettingsPresenter extends PurchasePresenter<SettingsView> {
     public void usePaletteNowPlayingOnlyClicked(Context context, boolean usePaletteNowPlayingOnly) {
         // If we're only using palette for 'now playing', set the primary color back to default
         if (usePaletteNowPlayingOnly) {
-            int storedPrimaryColor = settingsManager.getPrimaryColor();
-            int storedAccentColor = settingsManager.getAccentColor();
+            int storedPrimaryColor = context.getResources().getColor(R.color.colorPrimary);
+            int storedAccentColor = context.getResources().getColor(R.color.colorAccent);
 
             Aesthetic.get(context)
                     .colorPrimary(storedPrimaryColor == -1 ? ContextCompat.getColor(context, R.color.md_blue_500) : storedPrimaryColor)
