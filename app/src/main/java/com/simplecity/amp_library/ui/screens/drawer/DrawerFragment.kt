@@ -141,10 +141,16 @@ class DrawerFragment : BaseFragment(), DrawerView, View.OnCreateContextMenuListe
     override fun onResume() {
         super.onResume()
 
+        // Todo: Move this crap to presenter
+        disposables.add(Aesthetic.get(context)
+            .colorPrimary()
+            .compose(Rx.distinctToMainThread())
+            .subscribe { color ->
+                backgroundPlaceholder!!.setColorFilter(color!!, PorterDuff.Mode.MULTIPLY)
                 if (mediaManager.song == null) {
                     background_image.setImageDrawable(backgroundPlaceholder)
                 }
-
+            })
 
         playerPresenter.updateTrackInfo()
 

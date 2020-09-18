@@ -12,6 +12,8 @@ import static com.afollestad.aesthetic.Rx.onErrorLogAndRethrow;
 
 public class ThemedStatusBarView extends StatusBarView {
 
+    private Disposable bgSubscription;
+
     public ThemedStatusBarView(Context context) {
         super(context);
     }
@@ -38,10 +40,23 @@ public class ThemedStatusBarView extends StatusBarView {
         // So, we'll just do a take(1), and since we're calling from the main thread, we don't need to worry
         // about distinctToMainThread() for this call. This prevents the 'flickering' of colors.
 
+        Aesthetic.get(getContext())
+                .colorStatusBar()
+                .take(1)
+                .subscribe(
+                        ViewBackgroundAction.create(this), onErrorLogAndRethrow()
+                );
+
+        bgSubscription = Aesthetic.get(getContext()).colorStatusBar()
+                .compose(Rx.distinctToMainThread())
+                .subscribe(
+                        ViewBackgroundAction.create(this), onErrorLogAndRethrow()
+                );
     }
 
     @Override
     protected void onDetachedFromWindow() {
+        bgSubscription.dispose();
         super.onDetachedFromWindow();
     }
 }
