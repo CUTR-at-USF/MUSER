@@ -79,6 +79,7 @@ public class MainActivity extends BaseActivity implements
     @Inject
     SettingsManager settingsManager;
 
+    @SuppressLint("ResourceType")
     @Override
     public void onCreate(Bundle savedInstanceState) {
         AndroidInjection.inject(this);
@@ -86,23 +87,20 @@ public class MainActivity extends BaseActivity implements
 
         analyticsManager.dropBreadcrumb(TAG, "onCreate()");
 
+        setContentView(R.layout.activity_main);
+
         // If we haven't set any defaults, do that now
         if (Aesthetic.isFirstTime(this)) {
 
-            ThemeUtils.Theme theme = ThemeUtils.getRandom();
-
             Aesthetic.get(this)
-                    .activityTheme(theme.isDark ? R.style.AppTheme : R.style.AppTheme_Light)
-                    .isDark(theme.isDark)
-                    .colorPrimaryRes(theme.primaryColor)
-                    .colorAccentRes(theme.accentColor)
+                    .activityTheme(R.style.AppTheme_Light)
+                    .isDark(false)
+                    .colorPrimaryRes(R.color.colorPrimary)
+                    .colorAccentRes(R.color.colorAccent)
                     .colorStatusBarAuto()
                     .apply();
 
-            analyticsManager.logInitialTheme(theme);
         }
-
-        setContentView(R.layout.activity_main);
 
         Permiso.getInstance().setActivity(this);
 
