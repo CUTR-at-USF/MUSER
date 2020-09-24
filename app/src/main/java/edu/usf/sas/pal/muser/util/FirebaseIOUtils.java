@@ -1,5 +1,6 @@
 package edu.usf.sas.pal.muser.util;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -11,6 +12,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import edu.usf.sas.pal.muser.constants.EventConstants;
+import edu.usf.sas.pal.muser.manager.UserRegistrationManager;
 import edu.usf.sas.pal.muser.model.PlayerEvent;
 import edu.usf.sas.pal.muser.model.UiEvent;
 
@@ -80,15 +82,16 @@ public class FirebaseIOUtils {
         }
     }
 
-    public static void registerUser(String email){
+    public static void registerUser(String email, Context context){
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
         firebaseAuth.signInAnonymously()
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "Firebase user initialized with id:" + firebaseAuth.getUid());
                         // TODO save email address to Google APP Scripts
-                        PreferenceUtils.saveString(EventConstants.USER_ID, firebaseAuth.getUid());
+                        UserRegistrationManager.optInUser(firebaseAuth.getUid());
                         initFirebaseUserWithId(firebaseAuth.getUid());
+                        UserRegistrationManager.switchToBaseActivity(context);
                     } else {
                         logErrorMessage(task.getException(),
                                 "user initialization failed: ");

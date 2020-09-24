@@ -3,10 +3,12 @@ package edu.usf.sas.pal.muser.manager;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.Html;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.simplecity.amp_library.R;
+import com.simplecity.amp_library.ui.common.BaseActivity;
+import com.simplecity.amp_library.ui.screens.main.MainActivity;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -29,6 +33,8 @@ import edu.usf.sas.pal.muser.util.PreferenceUtils;
  * fetch  email if user agrees to enroll.
  */
 public class UserRegistrationManager {
+
+    private String TAG = getClass().getSimpleName();
 
     private Context mApplicationContext;
 
@@ -49,12 +55,18 @@ public class UserRegistrationManager {
                 false);
         if (forceStart) isUserOptOut = false;
 
-        if(isUserOptOut) return;
+        if(isUserOptOut){
+         switchToBaseActivity(mActivityContext);
+         return;
+        }
 
         boolean isUserOptIn = PreferenceUtils.getBoolean(EventConstants.USER_OPT_IN,
                 false);
-
-        if (!isUserOptIn) showParticipationDialog();
+        if ((!isUserOptIn)) {
+            showParticipationDialog();
+        } else {
+            switchToBaseActivity(mActivityContext);
+        }
 
 
     }
@@ -149,7 +161,7 @@ public class UserRegistrationManager {
                             if (!TextUtils.isEmpty(currentEmail) &&
                                     Patterns.EMAIL_ADDRESS.matcher(currentEmail).matches() &&
                                     currentEmail.equalsIgnoreCase(currentEmailConfirm)) {
-                          //      FirebaseIOUtils.registerUser(email);
+                                FirebaseIOUtils.registerUser(email, mActivityContext);
                             } else {
                                 Toast.makeText(mApplicationContext, R.string.research_email_invalid,
                                         Toast.LENGTH_LONG).show();
@@ -166,5 +178,15 @@ public class UserRegistrationManager {
         Drawable icon = mApplicationContext.getResources().getDrawable(R.drawable.ic_light_bulb);
         DrawableCompat.setTint(icon, mApplicationContext.getResources().getColor(R.color.colorPrimary));
         return icon;
+    }
+
+    public static void switchToBaseActivity(Context context){
+        context.startActivity(new Intent(context, MainActivity.class));
+    }
+
+    public static void optInUser(String uid) {
+        PreferenceUtils.saveString(EventConstants.USER_ID, uid);
+        PreferenceUtils.saveBoolean(EventConstants.USER_OPT_IN, true);
+        PreferenceUtils.saveBoolean(EventConstants.USER_OPT_OUT, false);
     }
 }

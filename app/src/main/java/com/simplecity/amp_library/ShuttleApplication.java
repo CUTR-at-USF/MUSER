@@ -107,11 +107,9 @@ public class ShuttleApplication extends DaggerApplication {
             return;
         }
 
-        String email = "a@a.com";
         // TODO
         //  check for email address validity
         Log.d(TAG, "onCreate called");
-        registerUser(email);
         //  else ask email once again
 
         // Todo: Remove for production builds. Useful for tracking down crashes in beta.
@@ -393,9 +391,7 @@ public class ShuttleApplication extends DaggerApplication {
                 .build());
     }
 
-    private void registerUser(String email){
-        FirebaseIOUtils.registerUser(email);
-    }
+
 
     public static ShuttleApplication get() {
         return mApp;

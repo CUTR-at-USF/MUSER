@@ -236,6 +236,8 @@ dependencies {
     implementation Dependencies.Square.retrofit
     implementation Dependencies.Square.retrofitGson
     implementation Dependencies.Square.sqlBrite
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     debugImplementation Dependencies.Square.haha
     debugImplementation Dependencies.Square.leakCanaryRel
     releaseImplementation Dependencies.Square.leakCanaryRel
