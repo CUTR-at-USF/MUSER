@@ -469,7 +469,7 @@ public class FolderFragment extends BaseFragment implements
                                             break;
                                         }
                                     }
-                                    newUiEvent(songs.get(index));
+                                    newUiEvent(songs.get(index), UiEventType.PLAY);
                                     mediaManager.playAll(songs, index, true, () -> {
                                         if (isAdded() && getContext() != null) {
                                             // Todo: Show playback failed toast
@@ -486,8 +486,8 @@ public class FolderFragment extends BaseFragment implements
         }
     }
 
-    private static void newUiEvent(Song song){
-        UiEvent uiEvent = EventUtils.newUiEvent(song, UiEventType.PLAY, ShuttleApplication.get());
+    private static void newUiEvent(Song song, UiEventType uiEventType){
+        UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get());
         FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 

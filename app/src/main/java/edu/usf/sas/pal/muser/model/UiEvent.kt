@@ -1,8 +1,8 @@
 package edu.usf.sas.pal.muser.model
 
 /**
- *  A model class that stores different types of events actions performed on the song and implements
- *  Event interface.
+ *  A model class that implements the Event interface and stores user interface interaction events.
+ *  The timestamp and type of event, song position, and song metadata is captured.
  */
 data class UiEvent
 

@@ -30,12 +30,7 @@ public class PreferenceUtils {
     public static void saveLong(SharedPreferences prefs, String key, long value) {
         SharedPreferences.Editor edit = prefs.edit();
         edit.putLong(key, value);
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
-            edit.apply();
-        } else {
-            edit.commit();
-        }
+        edit.apply();
     }
     public static void saveLong(String key, long value) {
         saveLong(ShuttleApplication.getPrefs(), key, value);

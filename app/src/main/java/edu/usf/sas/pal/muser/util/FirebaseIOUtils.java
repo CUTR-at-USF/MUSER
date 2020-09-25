@@ -63,7 +63,7 @@ public class FirebaseIOUtils {
                 });
     }
 
-    private static String getRecordID(){
+    private static synchronized String getRecordID(){
         long rPrefix = PreferenceUtils.getLong(EventConstants.RECORD_ID, 0);
         String recordID = rPrefix++ + "-" + UUID.randomUUID().toString();
         PreferenceUtils.saveLong(EventConstants.RECORD_ID, rPrefix);
@@ -72,9 +72,7 @@ public class FirebaseIOUtils {
 
     public static void logErrorMessage(Exception e, String message) {
         if (e != null) {
-            Log.d(TAG, message +
-                    e.getMessage());
-            e.printStackTrace();
+            Log.d(TAG, message + e.getMessage());
         } else {
             Log.d(TAG, message);
         }

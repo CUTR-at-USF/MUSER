@@ -367,7 +367,7 @@ public class PlaybackManager implements Playback.Callbacks {
                 && !queueManager.getCurrentPlaylist().isEmpty()
                 && queueManager.nextPlayPos < queueManager.getCurrentPlaylist().size()) {
             final Song nextSong = queueManager.getCurrentPlaylist().get(queueManager.nextPlayPos).getSong();
-            // adds to queue, log here.
+            // TODO - this adds a song to the queue. Log as new PlayerEventType like PlayerEventType.ADDED_TO_QUEUE
             playback.setNextDataSource(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI + "/" + nextSong.id);
         } else {
             playback.setNextDataSource(null);
@@ -545,7 +545,7 @@ public class PlaybackManager implements Playback.Callbacks {
         notifyChange(InternalIntents.PLAY_STATE_CHANGED);
     }
 
-    static void newPlayerEvent(Song song, PlayerEventType playerEventType){
+     void newPlayerEvent(Song song, PlayerEventType playerEventType){
         PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, ShuttleApplication.get());
         FirebaseIOUtils.savePlayerEvent(playerEvent);
     }

@@ -416,7 +416,7 @@ public class MusicService extends MediaBrowserServiceCompat {
                         if (isPlaying()) {
 
                             // It's not possible to be playing and the service not be started. No ANR
-                            newUiEvent(queueManager.getCurrentSong(), UiEventType.PLAY);
+                            newUiEvent(queueManager.getCurrentSong(), UiEventType.PAUSE);
                             pause(intent.getBooleanExtra(MediaButtonCommand.FORCE_PREVIOUS, false));
                         } else {
 
