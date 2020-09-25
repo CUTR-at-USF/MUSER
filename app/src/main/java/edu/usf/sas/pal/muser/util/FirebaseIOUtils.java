@@ -97,30 +97,24 @@ public class FirebaseIOUtils {
 
                             @Override
                             protected Integer doInBackground(Void... voids) {
-
+                                int responseCode = 0;
                                 try {
-                                    int responseCode = UserRegistrationManager
+                                     responseCode = UserRegistrationManager
                                             .saveEmailAddress(firebaseAuth.getUid(),
                                             email);
-                                    publishProgress(responseCode);
+
                                 } catch (IOException e) {
                                     Log.e(TAG, "doInBackground: "
                                             + Arrays.toString(e.getStackTrace()));
                                 }
-                                return null;
+                                return responseCode;
                             }
 
                             @Override
-                            protected void onProgressUpdate(Integer... responseCode) {
-                                if (responseCode[0] == 200) {
+                            protected void onPostExecute(Integer responseCode) {
+                                if (responseCode == 200) {
                                     UserRegistrationManager
                                             .optInUser(firebaseAuth.getUid());
-                                    Toast.makeText(ShuttleApplication.get(),
-                                            "Enrollment Successful", Toast.LENGTH_SHORT).show();
-                                }
-                                else{
-                                    Toast.makeText(ShuttleApplication.get(),
-                                            "Enrollment Failed", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }.execute();
