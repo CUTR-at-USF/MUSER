@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.Html;
 import android.text.TextUtils;
@@ -17,12 +18,17 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.simplecity.amp_library.R;
-import com.simplecity.amp_library.ui.common.BaseActivity;
+import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.ui.screens.main.MainActivity;
 
+import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 import edu.usf.sas.pal.muser.constants.EventConstants;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
@@ -34,7 +40,7 @@ import edu.usf.sas.pal.muser.util.PreferenceUtils;
  */
 public class UserRegistrationManager {
 
-    private String TAG = getClass().getSimpleName();
+    private static String TAG = UserRegistrationManager.class.getSimpleName();
 
     private Context mApplicationContext;
 
@@ -56,7 +62,7 @@ public class UserRegistrationManager {
         if (forceStart) isUserOptOut = false;
 
         if(isUserOptOut){
-         switchToBaseActivity(mActivityContext);
+         switchToMainActivity(mActivityContext);
          return;
         }
 
@@ -65,7 +71,7 @@ public class UserRegistrationManager {
         if ((!isUserOptIn)) {
             showParticipationDialog();
         } else {
-            switchToBaseActivity(mActivityContext);
+            switchToMainActivity(mActivityContext);
         }
 
 
@@ -161,7 +167,7 @@ public class UserRegistrationManager {
                             if (!TextUtils.isEmpty(currentEmail) &&
                                     Patterns.EMAIL_ADDRESS.matcher(currentEmail).matches() &&
                                     currentEmail.equalsIgnoreCase(currentEmailConfirm)) {
-                                FirebaseIOUtils.registerUser(email, mActivityContext);
+                                FirebaseIOUtils.registerUser(currentEmail, mActivityContext);
                             } else {
                                 Toast.makeText(mApplicationContext, R.string.research_email_invalid,
                                         Toast.LENGTH_LONG).show();
@@ -180,7 +186,7 @@ public class UserRegistrationManager {
         return icon;
     }
 
-    public static void switchToBaseActivity(Context context){
+    public static void switchToMainActivity(Context context){
         context.startActivity(new Intent(context, MainActivity.class));
     }
 
@@ -189,4 +195,24 @@ public class UserRegistrationManager {
         PreferenceUtils.saveBoolean(EventConstants.USER_OPT_IN, true);
         PreferenceUtils.saveBoolean(EventConstants.USER_OPT_OUT, false);
     }
+
+    public static Uri buildUri(String uid, String email) {
+        return Uri.parse(ShuttleApplication.get().getResources().getString(R.string.
+                research_participants_url)).buildUpon().appendQueryParameter("id", uid)
+                .appendQueryParameter("email", email).build();
+    }
+
+
+    public static int saveEmailAddress(String uid, String email) throws IOException {
+        return saveMapping(buildUri(uid,email));
+
+    }
+
+    public static int saveMapping(Uri uri) throws IOException {
+        URL url = new URL(uri.toString());
+        HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.setReadTimeout(30 * 1000);
+        return httpURLConnection.getResponseCode();
+    }
+
 }

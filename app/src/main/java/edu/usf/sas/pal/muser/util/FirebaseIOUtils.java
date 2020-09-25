@@ -1,12 +1,17 @@
 package edu.usf.sas.pal.muser.util;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.simplecity.amp_library.ShuttleApplication;
 
+import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -88,10 +93,39 @@ public class FirebaseIOUtils {
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "Firebase user initialized with id:" + firebaseAuth.getUid());
-                        // TODO save email address to Google APP Scripts
-                        UserRegistrationManager.optInUser(firebaseAuth.getUid());
+                        new AsyncTask<Void, Integer, Integer>(){
+
+                            @Override
+                            protected Integer doInBackground(Void... voids) {
+
+                                try {
+                                    int responseCode = UserRegistrationManager
+                                            .saveEmailAddress(firebaseAuth.getUid(),
+                                            email);
+                                    publishProgress(responseCode);
+                                } catch (IOException e) {
+                                    Log.e(TAG, "doInBackground: "
+                                            + Arrays.toString(e.getStackTrace()));
+                                }
+                                return null;
+                            }
+
+                            @Override
+                            protected void onProgressUpdate(Integer... responseCode) {
+                                if (responseCode[0] == 200) {
+                                    UserRegistrationManager
+                                            .optInUser(firebaseAuth.getUid());
+                                    Toast.makeText(ShuttleApplication.get(),
+                                            "Enrollment Successful", Toast.LENGTH_SHORT).show();
+                                }
+                                else{
+                                    Toast.makeText(ShuttleApplication.get(),
+                                            "Enrollment Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }.execute();
                         initFirebaseUserWithId(firebaseAuth.getUid());
-                        UserRegistrationManager.switchToBaseActivity(context);
+                        UserRegistrationManager.switchToMainActivity(context);
                     } else {
                         logErrorMessage(task.getException(),
                                 "user initialization failed: ");
