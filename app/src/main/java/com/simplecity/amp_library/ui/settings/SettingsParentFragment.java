@@ -274,6 +274,14 @@ public class SettingsParentFragment extends BaseNavigationController implements
                 });
             }
 
+            Preference setDefaultThemePreference = findPreference(SettingsManager.KEY_PREF_SET_DEFAULT_THEME);
+            if (setDefaultThemePreference != null){
+                setDefaultThemePreference.setOnPreferenceClickListener(preference -> {
+                    settingsPresenter.setDefaultThemeClicked(getContext());
+                    return true;
+                });
+            }
+
             SwitchPreferenceCompat tintNavBarColorPreference = (SwitchPreferenceCompat) findPreference(SettingsManager.KEY_PREF_NAV_BAR);
             if (tintNavBarColorPreference != null) {
                 tintNavBarColorPreference.setOnPreferenceChangeListener((preference, newValue) -> {
