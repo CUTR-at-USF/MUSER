@@ -146,7 +146,7 @@ public class QueueManager {
         notifyQueueChanged();
     }
 
-    static void newPlayerEvent(Song song, PlayerEventType playerEventType){
+    void newPlayerEvent(Song song, PlayerEventType playerEventType){
         PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, ShuttleApplication.get());
         FirebaseIOUtils.savePlayerEvent(playerEvent);
     }
