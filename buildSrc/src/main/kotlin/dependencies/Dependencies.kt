@@ -103,6 +103,8 @@ object Dependencies {
             const val firebaseRemoteConfig = "16.1.0"
             const val constraintLayout = "2.0.0-alpha3"
             const val chromeCastFramework = "16.1.0"
+            const val firebaseFireStore = "16.0.0"
+            const val firebaseAuth = "16.1.0"
         }
 
         const val cardView = "com.android.support:cardview-v7:${Versions.supportLib}"
@@ -112,6 +114,8 @@ object Dependencies {
         const val supportv4 = "com.android.support:support-v4:${Versions.supportLib}"
         const val firebaseCore = "com.google.firebase:firebase-core:${Versions.firebaseCore}"
         const val firebaseRemoteConfig = "com.google.firebase:firebase-config:${Versions.firebaseRemoteConfig}"
+        const val firebaseFireStore = "com.google.firebase:firebase-firestore:${Versions.firebaseFireStore}"
+        const val firebaseAuth = "com.google.firebase:firebase-auth:${Versions.firebaseAuth}"
         const val appcompat = "com.android.support:appcompat-v7:${Versions.supportLib}"
         const val mediarouter = "com.android.support:mediarouter-v7:${Versions.supportLib}"
         const val constraintLayout = "com.android.support.constraint:constraint-layout:${Versions.constraintLayout}"

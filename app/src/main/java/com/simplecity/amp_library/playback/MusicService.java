@@ -41,6 +41,11 @@ import com.simplecity.amp_library.utils.SettingsManager;
 import com.simplecity.amp_library.utils.ShuttleUtils;
 import com.simplecity.amp_library.utils.playlists.FavoritesPlaylistManager;
 import dagger.android.AndroidInjection;
+import edu.usf.sas.pal.muser.model.PlayerEventType;
+import edu.usf.sas.pal.muser.model.UiEvent;
+import edu.usf.sas.pal.muser.model.UiEventType;
+import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.Completable;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -411,12 +416,12 @@ public class MusicService extends MediaBrowserServiceCompat {
                         if (isPlaying()) {
 
                             // It's not possible to be playing and the service not be started. No ANR
-
+                            newUiEvent(queueManager.getCurrentSong(), UiEventType.PAUSE);
                             pause(intent.getBooleanExtra(MediaButtonCommand.FORCE_PREVIOUS, false));
                         } else {
 
                             // Same as ServiceCommand.PLAY
-
+                            newUiEvent(queueManager.getCurrentSong(), UiEventType.PLAY);
                             play();
                         }
                         break;
@@ -1192,5 +1197,11 @@ public class MusicService extends MediaBrowserServiceCompat {
         public void stopForegroundImpl(boolean removeNotification, boolean withDelay) {
             MusicService.this.stopForegroundImpl(removeNotification, withDelay);
         }
+    }
+
+    private static void newUiEvent(Song song, UiEventType uiEventType){
+        UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType,
+                ShuttleApplication.get());
+        FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 }

@@ -8,6 +8,7 @@ import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -25,6 +26,7 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.IntStream;
 import com.annimon.stream.Stream;
 import com.simplecity.amp_library.R;
+import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.data.Repository;
 import com.simplecity.amp_library.interfaces.Breadcrumb;
 import com.simplecity.amp_library.interfaces.BreadcrumbListener;
@@ -58,6 +60,11 @@ import com.simplecity.amp_library.utils.sorting.SortManager;
 import com.simplecityapps.recycler_adapter.adapter.ViewModelAdapter;
 import com.simplecityapps.recycler_adapter.model.ViewModel;
 import com.simplecityapps.recycler_adapter.recyclerview.RecyclerListener;
+
+import edu.usf.sas.pal.muser.model.UiEvent;
+import edu.usf.sas.pal.muser.model.UiEventType;
+import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -462,6 +469,7 @@ public class FolderFragment extends BaseFragment implements
                                             break;
                                         }
                                     }
+                                    newUiEvent(songs.get(index), UiEventType.PLAY);
                                     mediaManager.playAll(songs, index, true, () -> {
                                         if (isAdded() && getContext() != null) {
                                             // Todo: Show playback failed toast
@@ -476,6 +484,11 @@ public class FolderFragment extends BaseFragment implements
         } else if (folderView.baseFileObject.fileType != FileType.FILE) {
             changeDir(new File(folderView.baseFileObject.path));
         }
+    }
+
+    private static void newUiEvent(Song song, UiEventType uiEventType){
+        UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get());
+        FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 
     @Override

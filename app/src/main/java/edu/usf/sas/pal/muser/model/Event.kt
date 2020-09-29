@@ -1,24 +1,21 @@
 package edu.usf.sas.pal.muser.model
 
 /**
- * A model class that stores the actions performed on the song track. The actions like play, pause,
- * skip, repeat and seek are stored along with the nested [SongData] class.
- */
+ * A model interface that defines timestamps and song position, along with the song, which can be
+ * extended to record various types of events.
+*/
 
-data class Event
+interface Event
 
 /**
- * [event] - The event attribute includes events like play, pause, skip, repeat and seek.
  * [currentTimeMs] - Stores the timestamp of the action recorded.
  * [nanoTime] - Stores the  value of the running JVM's time source in nanoseconds.
- * [startTime] - Start time of the song.
- * [elapsedTime] - Elapsed time of the song when the event occurred.
+ * [seekPositionMs] - Stores the seek position of the track.
  * [song] - Song on which the action was performed.
  */
-(val event:EventType,
- val currentTimeMs: Long,
- val nanoTime: Long,
- val startTime: Long,
- val elapsedTime: Long,
- val song: SongData
-)
+{
+    val currentTimeMs: Long
+    val nanoTime: Long
+    val seekPositionMs: Long
+    val song: SongData?
+}

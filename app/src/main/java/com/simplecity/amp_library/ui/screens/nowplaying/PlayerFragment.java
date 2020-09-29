@@ -77,8 +77,12 @@ import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.color.ArgbEvaluator;
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils;
 import dagger.android.support.AndroidSupportInjection;
-import edu.usf.sas.pal.muser.model.EventType;
+import edu.usf.sas.pal.muser.model.PlayerEvent;
+import edu.usf.sas.pal.muser.model.PlayerEventType;
+import edu.usf.sas.pal.muser.model.UiEvent;
+import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -228,13 +232,14 @@ public class PlayerFragment extends BaseFragment implements
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
                 Song song = getSong();
-                EventType eventType;
-                if (isPlaying())
-                    eventType = EventType.PLAY_MANUAL;
-                else
-                    eventType = EventType.PAUSE_MANUAL;
-                Log.d(TAG, "onViewCreated: " + eventType);
-                EventUtils.newEvent(song, eventType, getContext());
+                UiEventType uiEventType;
+                if (isPlaying()) {
+                    uiEventType = UiEventType.PLAY;
+                } else {
+                    uiEventType = UiEventType.PAUSE;
+                }
+                UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, getContext());
+                FirebaseIOUtils.saveUiEvent(uiEvent);
                 return Unit.INSTANCE;
             }));
         }

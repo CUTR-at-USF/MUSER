@@ -41,6 +41,7 @@ import com.squareup.leakcanary.RefWatcher;
 import com.uber.rxdogtag.RxDogTag;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
@@ -86,10 +87,16 @@ public class ShuttleApplication extends DaggerApplication {
     @Inject
     SettingsManager settingsManager;
 
+    private SharedPreferences mPrefs;
+
+    private static ShuttleApplication mApp;
+
     @Override
     public void onCreate() {
         super.onCreate();
 
+        mApp = this;
+        mPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         DaggerAppComponent.builder()
                 .create(this)
                 .inject(this);
@@ -99,6 +106,13 @@ public class ShuttleApplication extends DaggerApplication {
             // You should not init your app in this process.
             return;
         }
+
+        String email = "a@a.com";
+        // TODO
+        //  check for email address validity
+        Log.d(TAG, "onCreate called");
+        registerUser(email);
+        //  else ask email once again
 
         // Todo: Remove for production builds. Useful for tracking down crashes in beta.
         RxDogTag.install();
@@ -377,5 +391,17 @@ public class ShuttleApplication extends DaggerApplication {
                 .penaltyLog()
                 .penaltyFlashScreen()
                 .build());
+    }
+
+    private void registerUser(String email){
+        FirebaseIOUtils.registerUser(email);
+    }
+
+    public static ShuttleApplication get() {
+        return mApp;
+    }
+
+    public static SharedPreferences getPrefs() {
+        return get().mPrefs;
     }
 }

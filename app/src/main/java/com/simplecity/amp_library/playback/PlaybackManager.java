@@ -13,6 +13,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.media.session.MediaSessionCompat;
 import android.util.Log;
+
+import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.data.Repository;
 import com.simplecity.amp_library.model.Song;
 import com.simplecity.amp_library.playback.constants.InternalIntents;
@@ -22,6 +24,11 @@ import com.simplecity.amp_library.ui.screens.queue.QueueItemKt;
 import com.simplecity.amp_library.utils.LogUtils;
 import com.simplecity.amp_library.utils.SettingsManager;
 import com.simplecity.amp_library.utils.SleepTimer;
+
+import edu.usf.sas.pal.muser.model.PlayerEvent;
+import edu.usf.sas.pal.muser.model.PlayerEventType;
+import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -360,6 +367,7 @@ public class PlaybackManager implements Playback.Callbacks {
                 && !queueManager.getCurrentPlaylist().isEmpty()
                 && queueManager.nextPlayPos < queueManager.getCurrentPlaylist().size()) {
             final Song nextSong = queueManager.getCurrentPlaylist().get(queueManager.nextPlayPos).getSong();
+            // TODO - this adds a song to the queue. Log as new PlayerEventType like PlayerEventType.ADDED_TO_QUEUE
             playback.setNextDataSource(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI + "/" + nextSong.id);
         } else {
             playback.setNextDataSource(null);
@@ -434,6 +442,8 @@ public class PlaybackManager implements Playback.Callbacks {
         }
         playback.pause(fade);
         equalizer.closeEqualizerSessions(false, getAudioSessionId());
+        Song song = queueManager.getCurrentSong();
+        newPlayerEvent(song, PlayerEventType.PAUSE);
         notifyChange(InternalIntents.PLAY_STATE_CHANGED);
         musicServiceCallbacks.scheduleDelayedShutdown();
     }
@@ -530,10 +540,15 @@ public class PlaybackManager implements Playback.Callbacks {
                 playAutoShuffleList();
             }
         }
-
+        Song song = queueManager.getCurrentSong();
+        newPlayerEvent(song, PlayerEventType.PLAY);
         notifyChange(InternalIntents.PLAY_STATE_CHANGED);
     }
 
+     void newPlayerEvent(Song song, PlayerEventType playerEventType){
+        PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, ShuttleApplication.get());
+        FirebaseIOUtils.savePlayerEvent(playerEvent);
+    }
     void togglePlayback() {
         if (isPlaying()) {
             pause(true);
@@ -590,11 +605,13 @@ public class PlaybackManager implements Playback.Callbacks {
 
         if (trackDidChange) {
             queueManager.queuePosition = queueManager.nextPlayPos;
+            newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.PLAY);
             notifyChange(InternalIntents.META_CHANGED);
             setNextTrack();
         } else {
             if (!next(false)) {
                 // If we failed to move to the next track, then playback is complete.
+                newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.PAUSE);
                 notifyChange(InternalIntents.PLAY_STATE_CHANGED);
             }
         }

@@ -48,6 +48,9 @@ import com.simplecityapps.recycler_adapter.adapter.ViewModelAdapter
 import com.simplecityapps.recycler_adapter.model.ViewModel
 import com.simplecityapps.recycler_adapter.recyclerview.RecyclerListener
 import dagger.android.support.AndroidSupportInjection
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.disposables.CompositeDisposable
 import java.util.ArrayList
 import javax.inject.Inject
@@ -182,6 +185,8 @@ class SuggestedFragment :
     inner class SongClickListener(val songs: List<Song>) : SuggestedSongView.ClickListener {
 
         override fun onSongClick(song: Song, holder: SuggestedSongView.ViewHolder) {
+            val uiEvent = EventUtils.newUiEvent(song, UiEventType.PLAY, context)
+            FirebaseIOUtils.saveUiEvent(uiEvent)
             mediaManager.playAll(songs, songs.indexOf(song), true) {
                 onPlaybackFailed()
             }

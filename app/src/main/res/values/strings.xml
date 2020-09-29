@@ -283,6 +283,12 @@
     <string name="pref_summary_tinted_nav">Enable/disable the navigation bar tint</string>
     <!-- Settings title for the themes -->
     <string name="pref_string_title_themes">Themes</string>
+    <!-- Setting title for set default theme preference-->
+    <!-- TODO to translate -->
+    <string name = "pref_string_set_default_theme">Set Default theme</string>
+    <!-- Summary of set default theme preference-->
+    <!-- TODO to translate -->
+    <string name = "pref_summary_set_default_theme">Sets the theme of the app back to the default MUSER color</string>
     <!--Settings titles for the themes -->
     <string name="pref_title_base_theme">Base Theme</string>
     <string name="pref_summary_base_theme">Choose your base theme (light or dark)</string>

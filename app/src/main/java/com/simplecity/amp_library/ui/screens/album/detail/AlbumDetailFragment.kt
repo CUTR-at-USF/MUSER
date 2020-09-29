@@ -68,6 +68,9 @@ import com.simplecityapps.recycler_adapter.adapter.ViewModelAdapter
 import com.simplecityapps.recycler_adapter.model.ViewModel
 import com.simplecityapps.recycler_adapter.recyclerview.RecyclerListener
 import dagger.android.support.AndroidSupportInjection
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
@@ -400,6 +403,8 @@ class AlbumDetailFragment :
 
     private var songClickListener: SongView.ClickListener = object : SongView.ClickListener {
         override fun onSongClick(position: Int, songView: SongView) {
+            val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context)
+            FirebaseIOUtils.saveUiEvent(uiEvent)
             if (!contextualToolbarHelper!!.handleClick(songView, Single.just(listOf(songView.song)))) {
                 presenter.play(songView.song)
             }

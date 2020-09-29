@@ -26,10 +26,15 @@ import com.simplecity.amp_library.ui.dialog.UpgradeDialog;
 import com.simplecity.amp_library.ui.screens.nowplaying.PlayerPresenter;
 import com.simplecity.amp_library.ui.views.PlayPauseView;
 import com.simplecity.amp_library.ui.views.PlayerViewAdapter;
+import com.simplecity.amp_library.utils.MusicServiceConnectionUtils;
 import com.simplecity.amp_library.utils.PlaceholderProvider;
 import com.simplecity.amp_library.utils.SettingsManager;
 import com.simplecity.multisheetview.ui.view.MultiSheetView;
 import dagger.android.support.AndroidSupportInjection;
+import edu.usf.sas.pal.muser.model.UiEvent;
+import edu.usf.sas.pal.muser.model.UiEventType;
+import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.disposables.CompositeDisposable;
 import javax.inject.Inject;
 import kotlin.Unit;
@@ -95,6 +100,17 @@ public class MiniPlayerFragment extends BaseFragment {
 
         playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
             presenter.togglePlayback();
+            Song song = getSong();
+            UiEventType uiEventType;
+            if (isPlaying()) {
+                uiEventType = UiEventType.PLAY;
+            } else {
+                uiEventType = UiEventType.PAUSE;
+            }
+            if (song != null) {
+                UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, getContext());
+                FirebaseIOUtils.saveUiEvent(uiEvent);
+            }
             return Unit.INSTANCE;
         }));
 
@@ -247,4 +263,19 @@ public class MiniPlayerFragment extends BaseFragment {
             UpgradeDialog.Companion.newInstance().show(getChildFragmentManager());
         }
     };
+
+    @Nullable
+    private Song getSong() {
+        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
+            return MusicServiceConnectionUtils.serviceBinder.getService().getSong();
+        }
+        return null;
+    }
+
+    private boolean isPlaying(){
+        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
+            return MusicServiceConnectionUtils.serviceBinder.getService().isPlaying();
+        }
+        return false;
+    }
 }

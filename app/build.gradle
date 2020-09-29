@@ -225,6 +225,8 @@ dependencies {
     implementation Dependencies.Google.supportv4
     implementation Dependencies.Google.firebaseCore
     implementation Dependencies.Google.firebaseRemoteConfig
+    implementation Dependencies.Google.firebaseFireStore
+    implementation Dependencies.Google.firebaseAuth
     implementation Dependencies.Google.constraintLayout
     implementation Dependencies.Google.chromeCastFramework
 

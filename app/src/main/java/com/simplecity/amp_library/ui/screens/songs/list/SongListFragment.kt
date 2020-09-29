@@ -4,12 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.PopupMenu
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Toast
 import com.bumptech.glide.RequestManager
 import com.simplecity.amp_library.R
@@ -27,24 +22,23 @@ import com.simplecity.amp_library.ui.screens.playlist.dialog.CreatePlaylistDialo
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuContract
 import com.simplecity.amp_library.ui.screens.tagger.TaggerDialog
 import com.simplecity.amp_library.ui.views.ContextualToolbar
-import com.simplecity.amp_library.utils.ContextualToolbarHelper
-import com.simplecity.amp_library.utils.LogUtils
-import com.simplecity.amp_library.utils.RingtoneManager
-import com.simplecity.amp_library.utils.SettingsManager
+import com.simplecity.amp_library.utils.*
 import com.simplecity.amp_library.utils.extensions.share
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils
 import com.simplecity.amp_library.utils.playlists.PlaylistMenuHelper
 import com.simplecity.amp_library.utils.sorting.SongSortHelper
 import com.simplecity.amp_library.utils.sorting.SortManager
-import com.simplecity.amp_library.utils.withArgs
 import com.simplecityapps.recycler_adapter.adapter.CompletionListUpdateCallbackAdapter
 import com.simplecityapps.recycler_adapter.model.ViewModel
 import com.simplecityapps.recycler_adapter.recyclerview.RecyclerListener
 import dagger.android.support.AndroidSupportInjection
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import kotlinx.android.synthetic.main.fragment_recycler.recyclerView
+import kotlinx.android.synthetic.main.fragment_recycler.*
 import javax.inject.Inject
 
 class SongListFragment :
@@ -294,6 +288,8 @@ class SongListFragment :
 
     override fun onSongClick(position: Int, songView: SongView) {
         if (!contextualToolbarHelper!!.handleClick(songView, songView.song)) {
+            val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context)
+            FirebaseIOUtils.saveUiEvent(uiEvent)
             songsPresenter.play(songView.song)
         }
     }

@@ -3,6 +3,7 @@ package com.simplecity.amp_library.playback;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import com.annimon.stream.Stream;
+import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.data.Repository;
 import com.simplecity.amp_library.model.Song;
 import com.simplecity.amp_library.playback.constants.InternalIntents;
@@ -12,6 +13,11 @@ import com.simplecity.amp_library.ui.screens.queue.QueueItem;
 import com.simplecity.amp_library.ui.screens.queue.QueueItemKt;
 import com.simplecity.amp_library.utils.LogUtils;
 import com.simplecity.amp_library.utils.SettingsManager;
+
+import edu.usf.sas.pal.muser.model.PlayerEvent;
+import edu.usf.sas.pal.muser.model.PlayerEventType;
+import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
@@ -135,9 +141,14 @@ public class QueueManager {
         }
 
         openCurrentAndNext.run();
-
+        newPlayerEvent(getCurrentSong(), PlayerEventType.PLAY);
         notifyMetaChanged();
         notifyQueueChanged();
+    }
+
+    void newPlayerEvent(Song song, PlayerEventType playerEventType){
+        PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, ShuttleApplication.get());
+        FirebaseIOUtils.savePlayerEvent(playerEvent);
     }
 
     void previous() {
