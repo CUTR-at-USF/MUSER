@@ -6,8 +6,6 @@ public class EventConstants {
 
     public static String FIREBASE_UI_EVENT_FOLDER = "ui-events";
 
-    public static final String RECORD_ID = "eventRecordID";
-
     public static final String USER_OPT_OUT = "userOptOut";
 
     public static final String USER_OPT_IN = "userOptIn";
