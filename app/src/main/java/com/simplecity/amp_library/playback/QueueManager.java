@@ -141,13 +141,13 @@ public class QueueManager {
         }
 
         openCurrentAndNext.run();
-        newPlayerEvent(getCurrentSong());
+        newPlayerEvent(getCurrentSong(), PlayerEventType.PLAY);
         notifyMetaChanged();
         notifyQueueChanged();
     }
 
-    static void newPlayerEvent(Song song){
-        PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, PlayerEventType.PLAY, ShuttleApplication.get());
+    void newPlayerEvent(Song song, PlayerEventType playerEventType){
+        PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, ShuttleApplication.get());
         FirebaseIOUtils.savePlayerEvent(playerEvent);
     }
 

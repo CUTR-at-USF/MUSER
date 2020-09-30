@@ -403,8 +403,7 @@ class AlbumDetailFragment :
 
     private var songClickListener: SongView.ClickListener = object : SongView.ClickListener {
         override fun onSongClick(position: Int, songView: SongView) {
-            val uiEventType = UiEventType.PLAY
-            val uiEvent = EventUtils.newUiEvent(songView.song, uiEventType, context)
+            val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context)
             FirebaseIOUtils.saveUiEvent(uiEvent)
             if (!contextualToolbarHelper!!.handleClick(songView, Single.just(listOf(songView.song)))) {
                 presenter.play(songView.song)

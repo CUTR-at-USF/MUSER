@@ -1,9 +1,9 @@
 package edu.usf.sas.pal.muser.model
 
 /**
- * A model interface that stores the actions performed on the song track. The actions like play, pause,
- * skip, repeat and seek are stored along with the nested [SongData] class.
- */
+ * A model interface that defines timestamps and song position, along with the song, which can be
+ * extended to record various types of events.
+*/
 
 interface Event
 

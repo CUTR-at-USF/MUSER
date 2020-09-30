@@ -50,7 +50,7 @@ public class EventUtils {
 
     /**
      * function to get the seek position of the track.
-     * @return current seek position
+     * @return current seek position. 0 if there's an error
      */
     public static long getPosition() {
         if (MusicServiceConnectionUtils.serviceBinder != null &&

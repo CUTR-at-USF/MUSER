@@ -1,8 +1,8 @@
 package edu.usf.sas.pal.muser.model
 
 /**
- * A model data class that stores the event occurred while playing a song and implements the
- * Event interface.
+ * A model class that implements the Event interface and stores music player events that impact the
+ * music the user hears. The timestamp and type of event, song position, and song metadata is captured
  */
 data class PlayerEvent
 
