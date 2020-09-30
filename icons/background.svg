@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="108px" height="108px" viewBox="0 0 108 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="108px" height="108px" viewBox="0 0 108 108" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>background</title>
     <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
             <stop stop-color="#B5EAF3" offset="0%"></stop>
             <stop stop-color="#7ED1E4" offset="100%"></stop>
         </linearGradient>
+        <linearGradient x1="50%" y1="1.20738636%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#C8EAF1" offset="0%"></stop>
+            <stop stop-color="#059BAD" offset="100%"></stop>
+        </linearGradient>
     </defs>
     <g id="background" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect fill="url(#linearGradient-1)" x="0" y="0" width="108" height="108"></rect>
+        <rect fill="url(#linearGradient-2)" x="0" y="0" width="108" height="108"></rect>
     </g>
 </svg>
