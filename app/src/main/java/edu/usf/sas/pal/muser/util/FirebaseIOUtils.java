@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
 
 import java.io.IOException;
@@ -113,8 +114,16 @@ public class FirebaseIOUtils {
                             @Override
                             protected void onPostExecute(Integer responseCode) {
                                 if (responseCode == 200) {
+                                    Toast.makeText(context,
+                                            context.getResources().getString(R.string.toast_enrollment_successful),
+                                            Toast.LENGTH_SHORT);
                                     UserRegistrationManager
                                             .optInUser(firebaseAuth.getUid());
+                                }
+                                else{
+                                    Toast.makeText(context,
+                                            context.getResources().getString(R.string.toast_enrollment_failed),
+                                            Toast.LENGTH_SHORT);
                                 }
                             }
                         }.execute();

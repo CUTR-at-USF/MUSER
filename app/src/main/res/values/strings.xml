@@ -857,4 +857,6 @@
     <string name="research_email_message">Please provide your email address for the online surveys</string>
     <string name="email_dialog_save">Save</string>
     <string name="research_email_invalid">Please re-enter your email</string>
+    <string name="toast_enrollment_successful">Enrollment successful</string>
+    <string name="toast_enrollment_failed">Enrollment failed</string>
 </resources>
