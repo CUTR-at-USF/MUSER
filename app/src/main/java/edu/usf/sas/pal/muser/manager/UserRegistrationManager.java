@@ -1,7 +1,7 @@
 package edu.usf.sas.pal.muser.manager;
 
 import android.app.Activity;
-import android.app.AlertDialog;
+import android.support.v7.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -17,6 +17,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.ui.screens.main.MainActivity;
@@ -78,21 +79,23 @@ public class UserRegistrationManager {
     private void showParticipationDialog() {
         View view = LayoutInflater.from(mActivityContext).inflate(R.layout.research_participation_dialog, null);
         CheckBox neverShowDialog = view.findViewById(R.id.research_never_ask_again);
-
-        new AlertDialog.Builder(mActivityContext)
-                .setView(view)
-                .setTitle(R.string.register_user_opt_in_title)
-                .setIcon(createIcon())
-                .setCancelable(false)
-                .setPositiveButton(R.string.research_user_dialog_yes,
-                       (dialogInterface, i) -> showInformedConsent())
-                .setNegativeButton(R.string.research_user_dialog_no,
-                        (dialogInterface, i) -> {
-                            if (neverShowDialog.isChecked()){
-                                optOutUser();
-                            }
-                        })
-                .create()
+        new MaterialDialog.Builder(mActivityContext)
+                .customView(view, false)
+                .title(R.string.register_user_opt_in_title)
+                .icon(createIcon())
+                .limitIconToDefaultSize()
+                .cancelable(false)
+                .positiveText(R.string.research_user_dialog_yes)
+                .positiveColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
+                .onPositive(((dialog, which) -> showInformedConsent()))
+                .negativeText(R.string.research_user_dialog_no)
+                .onNegative(((dialog, which) -> {
+                    if (neverShowDialog.isChecked()) {
+                        optOutUser();
+                    }
+                }))
+                .negativeColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
+                .build()
                 .show();
     }
 
@@ -103,21 +106,25 @@ public class UserRegistrationManager {
 
     private void showInformedConsent() {
         String consentHtml = getHtmlConsentDocument();
-        new AlertDialog.Builder(mActivityContext)
-                .setMessage(Html.fromHtml(consentHtml))
-                .setTitle(R.string.register_user_opt_in_title)
-                .setIcon(createIcon())
-                .setCancelable(false)
-                .setPositiveButton(R.string.participation_consent_agree,
-                        (dialog, which) -> {
-                            showEmailDialog();
-                        })
-                .setNegativeButton(R.string.participation_consent_disagree,
-                        (dialog, which) -> {
-                            optOutUser();
-                        })
-                .create().show();
-    }
+        new MaterialDialog.Builder(mActivityContext)
+                .title(R.string.register_user_opt_in_title)
+                .content(Html.fromHtml(consentHtml))
+                .icon(createIcon())
+                .limitIconToDefaultSize()
+                .cancelable(false)
+                .positiveText(R.string.participation_consent_agree)
+                .positiveColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
+                .onPositive((dialog, which) -> {
+                    showEmailDialog();
+                })
+                .negativeText(R.string.participation_consent_disagree)
+                .negativeColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
+                .onNegative((dialog, which) -> {
+                    optOutUser();
+                })
+                .build()
+                .show();
+}
 
     private String getHtmlConsentDocument() {
         InputStream inputStream = mApplicationContext.getResources().
@@ -151,16 +158,15 @@ public class UserRegistrationManager {
         if (email != null) {
             emailEditText.setText(email);
         }
-
-        new AlertDialog.Builder(mActivityContext)
-                .setTitle(R.string.register_user_opt_in_title)
-                .setMessage(R.string.research_email_message)
-                .setIcon(createIcon())
-                .setCancelable(false)
-                .setView(editTextView)
-                .setPositiveButton(R.string.email_dialog_save,
-                        (dialog, which) -> {
-                            String currentEmail = emailEditText.getText().toString();
+        new MaterialDialog.Builder(mActivityContext)
+                .title(R.string.register_user_opt_in_title)
+                .icon(createIcon())
+                .limitIconToDefaultSize()
+                .customView(editTextView, false)
+                .positiveText(R.string.email_dialog_save)
+                .positiveColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
+                .onPositive((dialog, which) -> {
+                    String currentEmail = emailEditText.getText().toString();
                             String currentEmailConfirm = emailEditTextConfirm.getText().toString();
                             if (!TextUtils.isEmpty(currentEmail) &&
                                     Patterns.EMAIL_ADDRESS.matcher(currentEmail).matches() &&
@@ -173,8 +179,9 @@ public class UserRegistrationManager {
                                 // Show the dialog again if the email is invalid
                                 showEmailDialog(currentEmail);
                             }
-                        })
-                .create().show();
+                })
+                .build()
+                .show();
     }
 
 

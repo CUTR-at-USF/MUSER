@@ -38,5 +38,6 @@
         android:id="@+id/research_never_ask_again"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:text="@string/never_ask_again_message" />
 </LinearLayout>
