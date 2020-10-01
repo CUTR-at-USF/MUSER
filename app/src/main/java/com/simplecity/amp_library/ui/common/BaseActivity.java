@@ -32,6 +32,8 @@ import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
+import edu.usf.sas.pal.muser.manager.UserRegistrationManager;
+
 import java.util.List;
 import javax.inject.Inject;
 
@@ -71,6 +73,8 @@ public abstract class BaseActivity extends AestheticActivity implements
             public void onPermissionResult(Permiso.ResultSet resultSet) {
                 if (resultSet.areAllPermissionsGranted()) {
                     bindService();
+                    new UserRegistrationManager(getApplicationContext(), BaseActivity.this)
+                            .registerParticipant();
                 } else {
                     Toast.makeText(BaseActivity.this, "Permission check failed", Toast.LENGTH_LONG).show();
                     finish();

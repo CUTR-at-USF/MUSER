@@ -114,15 +114,17 @@ public class FirebaseIOUtils {
                             protected void onPostExecute(Integer responseCode) {
                                 if (responseCode == 200) {
                                     Toast.makeText(context,
-                                            context.getResources().getString(R.string.toast_enrollment_successful),
-                                            Toast.LENGTH_SHORT);
+                                            ShuttleApplication.get()
+                                                    .getResources().getString(R.string.toast_enrollment_successful),
+                                            Toast.LENGTH_SHORT).show();
                                     UserRegistrationManager
                                             .optInUser(firebaseAuth.getUid());
                                 }
                                 else{
                                     Toast.makeText(context,
-                                            context.getResources().getString(R.string.toast_enrollment_failed),
-                                            Toast.LENGTH_SHORT);
+                                            ShuttleApplication.get()
+                                                    .getResources().getString(R.string.toast_enrollment_failed),
+                                            Toast.LENGTH_SHORT).show();
                                 }
                             }
                         }.execute();
