@@ -182,29 +182,6 @@ public class UserRegistrationManager {
                 })
                 .build()
                 .show();
-//        new AlertDialog.Builder(mActivityContext)
-//                .setTitle(R.string.register_user_opt_in_title)
-//                .setMessage(R.string.research_email_message)
-//                .setIcon(createIcon())
-//                .setCancelable(false)
-//                .setView(editTextView)
-//                .setPositiveButton(R.string.email_dialog_save,
-//                        (dialog, which) -> {
-//                            String currentEmail = emailEditText.getText().toString();
-//                            String currentEmailConfirm = emailEditTextConfirm.getText().toString();
-//                            if (!TextUtils.isEmpty(currentEmail) &&
-//                                    Patterns.EMAIL_ADDRESS.matcher(currentEmail).matches() &&
-//                                    currentEmail.equalsIgnoreCase(currentEmailConfirm)) {
-//                                FirebaseIOUtils.registerUser(currentEmail, mActivityContext);
-//                            } else {
-//                                Toast.makeText(mApplicationContext, R.string.research_email_invalid,
-//                                        Toast.LENGTH_LONG).show();
-//                                // Android automatically dismisses the dialog.
-//                                // Show the dialog again if the email is invalid
-//                                showEmailDialog(currentEmail);
-//                            }
-//                        })
-//                .create().show();
     }
 
 
