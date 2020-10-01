@@ -843,7 +843,6 @@
 
     <string name="notification_text_shuttle_running">Shuttle service running…</string>
 
-
     <!--User Registration-->
     <string name="register_user_opt_in_message">We\'d like your help with research to improve the music service.</string>
     <string name="never_ask_again_message"> Never ask again</string>
