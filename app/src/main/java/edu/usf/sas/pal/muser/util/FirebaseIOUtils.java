@@ -80,8 +80,7 @@ public class FirebaseIOUtils {
 
     public static void logErrorMessage(Exception e, String message) {
         if (e != null) {
-            Log.d(TAG, message +
-                    e.getMessage());
+            Log.d(TAG, message + e.getMessage());
             e.printStackTrace();
         } else {
             Log.d(TAG, message);

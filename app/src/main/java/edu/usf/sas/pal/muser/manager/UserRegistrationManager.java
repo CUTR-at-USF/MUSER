@@ -59,11 +59,11 @@ public class UserRegistrationManager {
         // TODO check possible limit of enrollment from a certain location?
         boolean isUserOptOut = PreferenceUtils.getBoolean(EventConstants.USER_OPT_OUT,
                 false);
-        if (forceStart) isUserOptOut = false;
+        if (forceStart) { isUserOptOut = false; }
 
-        if(isUserOptOut){
-         switchToMainActivity(mActivityContext);
-         return;
+        if (isUserOptOut){
+            switchToMainActivity(mActivityContext);
+            return;
         }
 
         boolean isUserOptIn = PreferenceUtils.getBoolean(EventConstants.USER_OPT_IN,
@@ -73,8 +73,6 @@ public class UserRegistrationManager {
         } else {
             switchToMainActivity(mActivityContext);
         }
-
-
     }
 
     private void showParticipationDialog() {

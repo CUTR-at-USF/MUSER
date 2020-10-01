@@ -40,7 +40,6 @@ public class PreferenceUtils {
         return ShuttleApplication.getPrefs().getLong(key, defaultValue);
     }
 
-
     @TargetApi(9)
     public static void saveBoolean(SharedPreferences prefs, String key, boolean value) {
         SharedPreferences.Editor edit = prefs.edit();
