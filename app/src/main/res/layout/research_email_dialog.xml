@@ -8,6 +8,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/research_email_message"
+        android:layout_marginBottom="20dp">
+    </TextView>
+
     <EditText
         android:id="@+id/tb_email_edittext"
         android:layout_width="match_parent"
