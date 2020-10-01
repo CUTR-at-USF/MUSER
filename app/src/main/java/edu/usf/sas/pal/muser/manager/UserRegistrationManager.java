@@ -181,8 +181,7 @@ public class UserRegistrationManager {
 
 
     private Drawable createIcon() {
-        Drawable icon = mApplicationContext.getResources().getDrawable(R.drawable.ic_light_bulb);
-        DrawableCompat.setTint(icon, mApplicationContext.getResources().getColor(R.color.colorPrimary));
+        Drawable icon = mApplicationContext.getResources().getDrawable(R.drawable.ic_launcher_foreground);
         return icon;
     }
 
