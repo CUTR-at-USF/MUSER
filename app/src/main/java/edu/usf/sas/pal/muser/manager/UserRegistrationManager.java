@@ -177,7 +177,6 @@ public class UserRegistrationManager {
                 .show();
     }
 
-
     private Drawable createIcon() {
         return mApplicationContext.getResources().getDrawable(R.drawable.ic_launcher_foreground);
     }
@@ -197,7 +196,6 @@ public class UserRegistrationManager {
                 research_participants_url)).buildUpon().appendQueryParameter("id", uid)
                 .appendQueryParameter("email", email).build();
     }
-
 
     public static int saveEmailAddress(String uid, String email) throws IOException {
         return saveMapping(buildUri(uid,email));
