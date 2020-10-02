@@ -845,8 +845,8 @@
 
     <!--User Registration-->
     <string name="register_user_opt_in_message">We\'d like your help with research to improve the music service.</string>
-    <string name="never_ask_again_message"> Never ask again</string>
-    <string name="register_user_opt_in_title"> Help us improve MUSER!</string>
+    <string name="never_ask_again_message">Never ask again</string>
+    <string name="register_user_opt_in_title">Help us improve MUSER!</string>
     <string name="research_user_dialog_yes">Yes</string>
     <string name="research_user_dialog_no">No</string>
     <string name="participation_consent_agree">Agree</string>

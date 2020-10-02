@@ -37,7 +37,7 @@ import edu.usf.sas.pal.muser.util.PreferenceUtils;
 
 /**
  * Manager class to handle user registration. Creates dialogs to prompt the user about the study
- * fetch  email if user agrees to enroll.
+ * and collect their email if user agrees to enroll.
  */
 public class UserRegistrationManager {
 
@@ -163,6 +163,7 @@ public class UserRegistrationManager {
                 .icon(createIcon())
                 .limitIconToDefaultSize()
                 .customView(editTextView, false)
+                .cancelable(false)
                 .positiveText(R.string.email_dialog_save)
                 .positiveColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive((dialog, which) -> {
@@ -209,7 +210,6 @@ public class UserRegistrationManager {
 
     public static int saveEmailAddress(String uid, String email) throws IOException {
         return saveMapping(buildUri(uid,email));
-
     }
 
     public static int saveMapping(Uri uri) throws IOException {
@@ -218,5 +218,4 @@ public class UserRegistrationManager {
         httpURLConnection.setReadTimeout(30 * 1000);
         return httpURLConnection.getResponseCode();
     }
-
 }

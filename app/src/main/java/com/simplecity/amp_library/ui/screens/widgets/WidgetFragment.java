@@ -39,7 +39,7 @@ public class WidgetFragment extends BaseFragment {
     /**
      * Creates a new instance of the {@link WidgetFragment}
      *
-     * @param widgetLayoutResId the id of the research_participation_dialog to use for the widget
+     * @param widgetLayoutResId the id of the layout to use for the widget
      * @return a new instance of {@link WidgetFragment}
      */
     public static WidgetFragment newInstance(int widgetLayoutResId) {
