@@ -48,7 +48,7 @@ public class PreferenceUtils {
     public static void saveBoolean(String key, boolean value) {
         saveBoolean(ShuttleApplication.getPrefs(), key, value);
     }
-    
+
     public static boolean getBoolean(String key, boolean defaultValue) {
         return ShuttleApplication.getPrefs().getBoolean(key, defaultValue);
     }

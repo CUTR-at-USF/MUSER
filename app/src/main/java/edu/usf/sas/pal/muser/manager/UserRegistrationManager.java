@@ -10,7 +10,6 @@ import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
@@ -74,7 +73,6 @@ public class UserRegistrationManager {
 
     private void showParticipationDialog() {
         View view = LayoutInflater.from(mActivityContext).inflate(R.layout.research_participation_dialog, null);
-        CheckBox neverShowDialog = view.findViewById(R.id.research_never_ask_again);
         new MaterialDialog.Builder(mActivityContext)
                 .customView(view, false)
                 .title(R.string.register_user_opt_in_title)
@@ -86,9 +84,6 @@ public class UserRegistrationManager {
                 .onPositive(((dialog, which) -> showInformedConsent()))
                 .negativeText(R.string.research_user_dialog_no)
                 .onNegative(((dialog, which) -> {
-                    if (neverShowDialog.isChecked()) {
-                        optOutUser();
-                    }
                     showParticipationRequiredDialog();
                 }))
                 .negativeColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
