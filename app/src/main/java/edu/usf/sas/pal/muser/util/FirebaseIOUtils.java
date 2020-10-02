@@ -4,23 +4,20 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
-
+import edu.usf.sas.pal.muser.constants.EventConstants;
+import edu.usf.sas.pal.muser.manager.UserRegistrationManager;
+import edu.usf.sas.pal.muser.model.PlayerEvent;
+import edu.usf.sas.pal.muser.model.UiEvent;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
-import edu.usf.sas.pal.muser.constants.EventConstants;
-import edu.usf.sas.pal.muser.manager.UserRegistrationManager;
-import edu.usf.sas.pal.muser.model.PlayerEvent;
-import edu.usf.sas.pal.muser.model.UiEvent;
 
 public class FirebaseIOUtils {
     private static final String TAG = "FirebaseIO";
@@ -71,7 +68,7 @@ public class FirebaseIOUtils {
                 });
     }
 
-    private static String getRecordID(){
+    private static synchronized String getRecordID(){
         long rPrefix = PreferenceUtils.getLong(EventConstants.RECORD_ID, 0);
         String recordID = rPrefix++ + "-" + UUID.randomUUID().toString();
         PreferenceUtils.saveLong(EventConstants.RECORD_ID, rPrefix);
