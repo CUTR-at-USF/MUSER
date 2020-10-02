@@ -844,7 +844,7 @@
     <string name="notification_text_shuttle_running">Shuttle service running…</string>
 
     <!--User Registration-->
-    <string name="register_user_opt_in_message">Currently MUSER is only available for participants in USF research. Would you like to join the study?</string>
+    <string name="register_user_opt_in_message">Currently MUSER is only available for use by participants in USF research. Would you like to join the study?</string>
     <string name="never_ask_again_message">Never ask again</string>
     <string name="register_user_opt_in_title">Participate in research</string>
     <string name="research_user_dialog_yes">Yes</string>
