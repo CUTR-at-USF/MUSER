@@ -47,6 +47,10 @@ public class UserRegistrationManager {
         registerParticipant(false);
     }
 
+    /**
+     * Registers the participant
+     * @param forceStart if true, forces the enrollment dialog even if the user has previously opted out
+     */
     public void registerParticipant(boolean forceStart){
         boolean isUserOptOut = PreferenceUtils.getBoolean(EventConstants.USER_OPT_OUT,
                 false);
@@ -117,7 +121,7 @@ public class UserRegistrationManager {
                 })
                 .build()
                 .show();
-}
+    }
 
     private String getHtmlConsentDocument() {
         InputStream inputStream = mApplicationContext.getResources().
