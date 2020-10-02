@@ -1,6 +1,7 @@
 package edu.usf.sas.pal.muser.manager;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -37,7 +38,7 @@ import edu.usf.sas.pal.muser.util.PreferenceUtils;
 
 /**
  * Manager class to handle user registration. Creates dialogs to prompt the user about the study
- * fetch  email if user agrees to enroll.
+ * and collect their email if user agrees to enroll.
  */
 public class UserRegistrationManager {
 
@@ -93,6 +94,7 @@ public class UserRegistrationManager {
                     if (neverShowDialog.isChecked()) {
                         optOutUser();
                     }
+                    showParticipationRequiredDialog();
                 }))
                 .negativeColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
                 .build()
@@ -120,7 +122,7 @@ public class UserRegistrationManager {
                 .negativeText(R.string.participation_consent_disagree)
                 .negativeColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
                 .onNegative((dialog, which) -> {
-                    optOutUser();
+                    showParticipationRequiredDialog();
                 })
                 .build()
                 .show();
@@ -163,6 +165,7 @@ public class UserRegistrationManager {
                 .icon(createIcon())
                 .limitIconToDefaultSize()
                 .customView(editTextView, false)
+                .cancelable(false)
                 .positiveText(R.string.email_dialog_save)
                 .positiveColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive((dialog, which) -> {
@@ -186,8 +189,7 @@ public class UserRegistrationManager {
 
 
     private Drawable createIcon() {
-        Drawable icon = mApplicationContext.getResources().getDrawable(R.drawable.ic_launcher_foreground);
-        return icon;
+        return mApplicationContext.getResources().getDrawable(R.drawable.ic_launcher_foreground);
     }
 
     public static void switchToMainActivity(Context context){
@@ -209,7 +211,6 @@ public class UserRegistrationManager {
 
     public static int saveEmailAddress(String uid, String email) throws IOException {
         return saveMapping(buildUri(uid,email));
-
     }
 
     public static int saveMapping(Uri uri) throws IOException {
@@ -219,4 +220,20 @@ public class UserRegistrationManager {
         return httpURLConnection.getResponseCode();
     }
 
+    public void showParticipationRequiredDialog(){
+        new MaterialDialog.Builder(mActivityContext)
+                .cancelable(false)
+                .title(R.string.participation_required_title)
+                .icon(createIcon())
+                .limitIconToDefaultSize()
+                .content(R.string.participation_required_message)
+                .positiveText(R.string.participation_required_ok)
+                .positiveColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
+                .onPositive((dialog, which) -> {
+                    ((Activity) mActivityContext).finish();
+                    System.exit(0);
+                })
+                .build()
+                .show();
+    }
 }

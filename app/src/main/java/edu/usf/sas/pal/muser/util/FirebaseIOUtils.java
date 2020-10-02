@@ -94,7 +94,6 @@ public class FirebaseIOUtils {
                     if (task.isSuccessful()) {
                         Log.d(TAG, "Firebase user initialized with id:" + firebaseAuth.getUid());
                         new AsyncTask<Void, Integer, Integer>(){
-
                             @Override
                             protected Integer doInBackground(Void... voids) {
                                 int responseCode = 0;
@@ -102,7 +101,6 @@ public class FirebaseIOUtils {
                                      responseCode = UserRegistrationManager
                                             .saveEmailAddress(firebaseAuth.getUid(),
                                             email);
-
                                 } catch (IOException e) {
                                     Log.e(TAG, "doInBackground: "
                                             + Arrays.toString(e.getStackTrace()));
