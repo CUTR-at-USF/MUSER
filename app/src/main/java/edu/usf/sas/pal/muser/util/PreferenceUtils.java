@@ -1,10 +1,7 @@
 package edu.usf.sas.pal.muser.util;
 
 import android.annotation.TargetApi;
-import android.app.Application;
 import android.content.SharedPreferences;
-import android.os.Build;
-
 import com.simplecity.amp_library.ShuttleApplication;
 
 /**
@@ -32,6 +29,7 @@ public class PreferenceUtils {
         edit.putLong(key, value);
         edit.apply();
     }
+
     public static void saveLong(String key, long value) {
         saveLong(ShuttleApplication.getPrefs(), key, value);
     }
@@ -50,6 +48,7 @@ public class PreferenceUtils {
     public static void saveBoolean(String key, boolean value) {
         saveBoolean(ShuttleApplication.getPrefs(), key, value);
     }
+    
     public static boolean getBoolean(String key, boolean defaultValue) {
         return ShuttleApplication.getPrefs().getBoolean(key, defaultValue);
     }
