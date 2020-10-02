@@ -1,6 +1,7 @@
 package edu.usf.sas.pal.muser.manager;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -93,6 +94,7 @@ public class UserRegistrationManager {
                     if (neverShowDialog.isChecked()) {
                         optOutUser();
                     }
+                    showParticipationRequiredDialog();
                 }))
                 .negativeColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
                 .build()
@@ -120,7 +122,7 @@ public class UserRegistrationManager {
                 .negativeText(R.string.participation_consent_disagree)
                 .negativeColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
                 .onNegative((dialog, which) -> {
-                    optOutUser();
+                    showParticipationRequiredDialog();
                 })
                 .build()
                 .show();
@@ -187,8 +189,7 @@ public class UserRegistrationManager {
 
 
     private Drawable createIcon() {
-        Drawable icon = mApplicationContext.getResources().getDrawable(R.drawable.ic_launcher_foreground);
-        return icon;
+        return mApplicationContext.getResources().getDrawable(R.drawable.ic_launcher_foreground);
     }
 
     public static void switchToMainActivity(Context context){
@@ -217,5 +218,22 @@ public class UserRegistrationManager {
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setReadTimeout(30 * 1000);
         return httpURLConnection.getResponseCode();
+    }
+
+    public void showParticipationRequiredDialog(){
+        new MaterialDialog.Builder(mActivityContext)
+                .cancelable(false)
+                .title(R.string.participation_required_title)
+                .icon(createIcon())
+                .limitIconToDefaultSize()
+                .content(R.string.participation_required_message)
+                .positiveText(R.string.participation_required_ok)
+                .positiveColor(mActivityContext.getResources().getColor(R.color.colorPrimaryDark))
+                .onPositive((dialog, which) -> {
+                    ((Activity) mActivityContext).finish();
+                    System.exit(0);
+                })
+                .build()
+                .show();
     }
 }

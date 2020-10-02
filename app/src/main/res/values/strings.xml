@@ -858,4 +858,7 @@
     <string name="research_email_invalid">Please re-enter your email</string>
     <string name="toast_enrollment_successful">Enrollment successful</string>
     <string name="toast_enrollment_failed">Enrollment failed</string>
+    <string name="participation_required_title">Participation required</string>
+    <string name="participation_required_message">Currently all users of this app are required to enroll in the research study. The app will now exit. If you\'d like to enroll, please restart the app.</string>
+    <string name="participation_required_ok">OK</string>
 </resources>
