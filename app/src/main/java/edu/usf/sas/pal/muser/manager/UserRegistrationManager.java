@@ -1,40 +1,30 @@
 package edu.usf.sas.pal.muser.manager;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.support.v7.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.support.v4.graphics.drawable.DrawableCompat;
 import android.text.Html;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.ui.screens.main.MainActivity;
-
-import java.io.BufferedInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import edu.usf.sas.pal.muser.constants.EventConstants;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import edu.usf.sas.pal.muser.util.PreferenceUtils;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * Manager class to handle user registration. Creates dialogs to prompt the user about the study
@@ -58,10 +48,11 @@ public class UserRegistrationManager {
     }
 
     public void registerParticipant(boolean forceStart){
-        // TODO check possible limit of enrollment from a certain location?
         boolean isUserOptOut = PreferenceUtils.getBoolean(EventConstants.USER_OPT_OUT,
                 false);
-        if (forceStart) { isUserOptOut = false; }
+        if (forceStart) {
+            isUserOptOut = false;
+        }
 
         if (isUserOptOut){
             switchToMainActivity(mActivityContext);
