@@ -129,8 +129,6 @@ public class MainActivity extends BaseActivity implements
     public void onResume() {
         super.onResume();
         analyticsManager.dropBreadcrumb(TAG, "onCreate()");
-
-        showChangelogDialog();
     }
 
     @Override
