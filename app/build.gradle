@@ -128,16 +128,6 @@ android {
         setIgnore(debugIgnore || releaseIgnore)
     }
 
-    // Set the version code for release builds
-    applicationVariants.all { variant ->
-        if (variant.buildType.name == "release") {
-            def newVersionCode = generateVersionCode()
-            variant.outputs.all { output ->
-                output.setVersionCodeOverride(newVersionCode)
-            }
-        }
-    }
-
     // Used to enable Java8 features
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
