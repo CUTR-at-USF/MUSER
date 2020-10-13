@@ -104,6 +104,14 @@ android {
 
             buildConfigField("String", "LASTFM_API_KEY", "\"${getProperty(getProperties('../private.properties'), 'LASTFM_API_KEY')}\"")
         }
+      // Append the version name to the end of aligned APKs
+      android.applicationVariants.all { variant ->
+        if (variant.buildType.name == "release") {
+          variant.outputs.all { output ->
+            outputFileName = "${variant.name}-v${variant.versionName}.apk"
+          }
+        }
+      }
     }
 
     // Ignore useless variants, such as devRelease.
