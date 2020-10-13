@@ -7,6 +7,10 @@
 # For more details, see
 #   http://developer.android.com/guide/developing/tools/proguard.html
 
+
+# Don't rename class names - this makes stack traces much easier to read/troubleshoot
+-dontobfuscate
+
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
 -keepattributes SourceFile,LineNumberTable
