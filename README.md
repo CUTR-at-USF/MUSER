@@ -8,7 +8,7 @@ An Android app used in USF research on music therapy. Based on the open-source [
 
 #### Build
 
-If you'd like to build the project yourself and test changes, see our [build documentation](BUILD.md)
+If you'd like to build the project yourself, see our [build documentation](BUILD.md).
 
 #### License
 
