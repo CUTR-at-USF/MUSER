@@ -2,9 +2,9 @@
 
 We use [Gradle build flavors](http://developer.android.com/tools/building/configuring-gradle.html#workBuildVariants) to enable a number of different build variants of MUSER.
 
-Shuttle defines the variants along a single dimension `all` in `build.gradle` and then filters out some of the combined variants programmatically in `build.gradle` for those that don't make sense (e.g., devRelease).
+MUSER is based on the open-source [Shuttle](https://github.com/timusus/Shuttle) app. Shuttle defines a number of variants along a single dimension `all` in `build.gradle` and then filters out some of the combined variants programmatically in `build.gradle` for those that don't make sense (e.g., `devRelease`).
 
-The list of all possible build variants that is possible app are:-
+The list of all possible build variants that are used in Shuttle are:
 
 * `amazonFreeRelease`
 * `amazonPaidRelease`
@@ -12,9 +12,9 @@ The list of all possible build variants that is possible app are:-
 * `freeRelease`
 * `paidRelease`
 
-But, in the case of MUSER, we'd be using `devDebug` amd `freeRelease` variants
+But, in the case of MUSER, we only use the `devDebug` amd `freeRelease` variants for debug and release variants, respectively.
 
-The below instructions assume you're going to be building for the `debug` variant for testing on Google devices (i.e.,, `devDebug`).
+The below instructions assume you're going to be building for the `debug` variant for testing on Google devices (i.e., `devDebug`).
 
 ### Prerequisites for both Android Studio and Gradle
 
@@ -58,8 +58,8 @@ key.keypassword=<your_key_password>
 
 Note that the paths in these files always use the Unix path separator `/`, even on Windows. If you use the Windows path separator `\` you will get the error `No value has been specified for property 'signingConfig.keyAlias'.`
 
-Since we don't use any other release variants, you can simply and go ahead use:
+In MUSER we use the `freeRelease` variant for releases, which has been modified to include features normally restricted to the paid release variant in Shuttle. To build this release variant, do:
 
 `gradlew assembleFreeRelease`
 
-or if you don't want to use the command line, then you can select the appropriate build variant from left task bar of the IDE and select the variant you would like. Then on the top menu, go to Build --> Build Bundles or APKs --> Build APK
+..or if you don't want to use the command line, then you can select the appropriate build variant from left task bar of the IDE and select the variant you would like. Then on the top menu, go to Build --> Build Bundles or APKs --> Build APK
