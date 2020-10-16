@@ -6,16 +6,9 @@
 
 An Android app used in USF research on music therapy. Based on the open-source [Shuttle](https://github.com/timusus/Shuttle) app.
 
-#### Development
+#### Build
 
-We use the `devDebug` variant for development and testing
-
-#### Release
-
-To create a new release, run the following command on the command line:
-`gradlew assembleFreeRelease`
-
-Then, upload the `app-free-release.apk` to the Google Play Console.
+If you'd like to build the project yourself and test changes, see our [build documentation](BUILD.md)
 
 #### License
 
