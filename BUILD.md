@@ -2,18 +2,19 @@
 
 We use [Gradle build flavors](http://developer.android.com/tools/building/configuring-gradle.html#workBuildVariants) to enable a number of different build variants of MUSER.
 
-For now, We have one  Gradle "platform" flavor dimensions:
+Shuttle defines the variants along a single dimension `all` in `build.gradle` and then filters out some of the combined variants programmatically in `build.gradle` for those that don't make sense (e.g., devRelease).
 
-* **Google** = Normal Google Play release
+The list of all possible build variants that is possible app are:-
 
-...and one Gradle "brand" flavor dimensions:
+* `amazonFreeRelease`
+* `amazonPaidRelease`
+* `devDebug`
+* `freeRelease`
+* `paidRelease`
 
-* **free** = Original MUSER brand
-* **debug** = Debug variant of the MUSER
+But, in the case of MUSER, we'd be using `devDebug` amd `freeRelease` variants
 
-We have one build variant with one release and one debug type resulting in 2 build variants. 
-
-The below instructions assume you're going to be building for the **Google** platform flavor and original **debug** brand by default (e.g., `devDebug`).
+The below instructions assume you're going to be building for the `debug` variant for testing on Google devices (i.e.,, `devDebug`).
 
 ### Prerequisites for both Android Studio and Gradle
 
@@ -31,7 +32,7 @@ The below instructions assume you're going to be building for the **Google** pla
 
 ### Building from the command line using Gradle
 
-1. Set the `JAVA_HOME` environmental variables to point to your JDK folder (e.g. `C:\Program Files\Java\jdk1.6.0_27`)
+1. Set the `JAVA_HOME` environmental variables to point to your JDK folder (e.g. `C:\Program Files\Java\jdk1.7.0_27`)
 1. Download and install the [Android SDK](http://developer.android.com/sdk/index.html). Make sure to install the Google APIs for your API level (e.g. 17), the Android SDK Build-tools version for your `buildToolsVersion` version, the Android Support Repository and the Google Repository.
 1. Set the `ANDROID_HOME` environmental variable to your Android SDK location.
 1. To build and push the app to the device, run `gradlew installdevDebug` from the command line at the root of the project.
@@ -57,9 +58,8 @@ key.keypassword=<your_key_password>
 
 Note that the paths in these files always use the Unix path separator `/`, even on Windows. If you use the Windows path separator `\` you will get the error `No value has been specified for property 'signingConfig.keyAlias'.`
 
-Then, to build all flavors run:
+Since we don't use any other release variants, you can simply and go ahead use:
 
-`gradlew assembleRelease`
+`gradlew assembleFreeRelease`
 
-(If you want to assemble just the Google variant, use `gradlew assembleFreeRelease`)
 or if you don't want to use the command line, then you can select the appropriate build variant from left task bar of the IDE and select the variant you would like. Then on the top menu, go to Build --> Build Bundles or APKs --> Build APK
