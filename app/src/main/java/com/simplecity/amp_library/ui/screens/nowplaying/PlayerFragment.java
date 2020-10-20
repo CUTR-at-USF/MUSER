@@ -771,7 +771,7 @@ public class PlayerFragment extends BaseFragment implements
     }
 
     @Nullable
-    private Song getSong() {
+    public static Song getSong() {
         if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
             return MusicServiceConnectionUtils.serviceBinder.getService().getSong();
         }

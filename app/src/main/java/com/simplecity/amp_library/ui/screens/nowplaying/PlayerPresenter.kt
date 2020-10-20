@@ -3,6 +3,7 @@ package com.simplecity.amp_library.ui.screens.nowplaying
 import android.app.Activity
 import android.content.Context
 import android.content.IntentFilter
+import android.util.Log
 import com.cantrowitz.rxbroadcast.RxBroadcast
 import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.playback.MediaManager
@@ -10,11 +11,15 @@ import com.simplecity.amp_library.playback.PlaybackMonitor
 import com.simplecity.amp_library.playback.constants.InternalIntents
 import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuPresenter
+import com.simplecity.amp_library.utils.FileHelper.getSong
 import com.simplecity.amp_library.utils.LogUtils
 import com.simplecity.amp_library.utils.SettingsManager
 import com.simplecity.amp_library.utils.ShuttleUtils
 import com.simplecity.amp_library.utils.menu.song.SongsMenuCallbacks
 import com.simplecity.amp_library.utils.playlists.FavoritesPlaylistManager
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -184,6 +189,7 @@ class PlayerPresenter @Inject constructor(
     }
 
     fun skip() {
+        saveUiEvent(UiEventType.SKIP)
         mediaManager.next()
     }
 
@@ -295,5 +301,12 @@ class PlayerPresenter @Inject constructor(
     companion object {
 
         private const val TAG = "PlayerPresenter"
+    }
+
+    fun saveUiEvent(uiEventType: UiEventType){
+        if (PlayerFragment.getSong() != null) {
+            val uiEvent = EventUtils.newUiEvent(PlayerFragment.getSong(), uiEventType, context)
+            FirebaseIOUtils.saveUiEvent(uiEvent)
+        }
     }
 }
