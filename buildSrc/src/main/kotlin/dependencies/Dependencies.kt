@@ -3,8 +3,8 @@ package dependencies
 object Dependencies {
 
     const val minSdk = 21
-    const val targetSdk = 28
-    const val compileSdk = 28
+    const val targetSdk = 29
+    const val compileSdk = 29
 
     object Versions {
         const val nanoHttp = "2.3.1"
