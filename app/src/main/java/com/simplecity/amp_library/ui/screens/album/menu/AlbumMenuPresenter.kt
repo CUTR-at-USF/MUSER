@@ -1,10 +1,12 @@
 package com.simplecity.amp_library.ui.screens.album.menu
 
+import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.model.Album
 import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.playback.MediaManager
+import com.simplecity.amp_library.playback.QueueManager
 import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.screens.album.menu.AlbumMenuContract.View
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay
@@ -15,11 +17,18 @@ import com.simplecity.amp_library.utils.LogUtils
 import com.simplecity.amp_library.utils.extensions.getSongs
 import com.simplecity.amp_library.utils.extensions.getSongsSingle
 import com.simplecity.amp_library.utils.playlists.PlaylistManager
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
+import edu.usf.sas.pal.muser.util.SongUtils
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import java.util.*
+import java.util.logging.Handler
 import javax.inject.Inject
+import kotlin.concurrent.schedule
 
 class AlbumMenuPresenter @Inject constructor(
     private val playlistManager: PlaylistManager,
@@ -62,6 +71,9 @@ class AlbumMenuPresenter @Inject constructor(
 
     override fun play(album: Album) {
         mediaManager.playAll(album.getSongsSingle(songsRepository)) { view?.onPlaybackFailed() }
+        Timer().schedule(200) {
+            newUiEvent(UiEventType.PLAY)
+        }
     }
 
     override fun editTags(album: Album) {
@@ -125,4 +137,11 @@ class AlbumMenuPresenter @Inject constructor(
         const val TAG = "AlbumMenuContract"
     }
 
+    fun newUiEvent(uiEventType: UiEventType){
+        val song = SongUtils.getSong()
+        if (song != null) {
+            val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
+            FirebaseIOUtils.saveUiEvent(uiEvent)
+        }
+    }
 }
