@@ -371,7 +371,7 @@ public class MusicService extends MediaBrowserServiceCompat {
 
                         // Possible solution: (A) Show the Shuttle notification, despite the fact that music isn't playing. Need to customise notification to allow for an empty queue (no current song)
                         // We could try to generate a queue of random songs as well, but there's no guarantee the user has music on their device.
-
+                        newUiEvent(queueManager.getCurrentSong(), UiEventType.SKIP);
                         gotoNext(true);
 
                         break;
