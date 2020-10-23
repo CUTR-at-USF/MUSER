@@ -1,5 +1,9 @@
 package edu.usf.sas.pal.muser.model
 
+import com.simplecity.amp_library.model.Album
+import com.simplecity.amp_library.model.AlbumArtist
+import com.simplecity.amp_library.model.Artist
+
 /**
  *  A model class that implements the Event interface and stores user interface interaction events.
  *  The timestamp and type of event, song position, and song metadata is captured.
@@ -12,6 +16,8 @@ data class UiEvent
 (val uiEventType: UiEventType,
  override val currentTimeMs: Long,
  override val nanoTime: Long,
- override val seekPositionMs: Long,
- override val song: SongData?
+ override val seekPositionMs: Long = 0,
+ override val song: SongData? = null,
+ val album: Album? = null,
+ val albumArtist: AlbumArtist? = null
 ) : Event
