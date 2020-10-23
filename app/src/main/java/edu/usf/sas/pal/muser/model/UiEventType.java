@@ -7,7 +7,7 @@ package edu.usf.sas.pal.muser.model;
 public enum UiEventType {
          PLAY,
          PAUSE,
-         SKIP,
+         NEXT,
          REPEAT,
          SEEK,
          CREATE_PLAYLIST,

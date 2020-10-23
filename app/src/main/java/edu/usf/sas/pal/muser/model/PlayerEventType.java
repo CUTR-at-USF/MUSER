@@ -9,7 +9,7 @@ import org.jetbrains.annotations.NotNull;
 public enum PlayerEventType {
         PLAY,
         PAUSE,
-        SKIP,
+        NEXT,
         REPEAT,
         SEEK
 }

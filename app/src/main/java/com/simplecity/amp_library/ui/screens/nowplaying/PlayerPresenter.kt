@@ -3,7 +3,6 @@ package com.simplecity.amp_library.ui.screens.nowplaying
 import android.app.Activity
 import android.content.Context
 import android.content.IntentFilter
-import android.util.Log
 import com.cantrowitz.rxbroadcast.RxBroadcast
 import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.playback.MediaManager
@@ -11,7 +10,6 @@ import com.simplecity.amp_library.playback.PlaybackMonitor
 import com.simplecity.amp_library.playback.constants.InternalIntents
 import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuPresenter
-import com.simplecity.amp_library.utils.FileHelper.getSong
 import com.simplecity.amp_library.utils.LogUtils
 import com.simplecity.amp_library.utils.SettingsManager
 import com.simplecity.amp_library.utils.ShuttleUtils
@@ -189,7 +187,7 @@ class PlayerPresenter @Inject constructor(
     }
 
     fun skip() {
-        saveUiEvent(UiEventType.SKIP)
+        saveUiEvent(UiEventType.NEXT)
         mediaManager.next()
     }
 
