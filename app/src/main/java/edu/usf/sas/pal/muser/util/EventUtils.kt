@@ -53,8 +53,9 @@ object EventUtils {
     fun newUiAlbumEvent(album: Album, capturedUiAction: UiEventType): UiEvent {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
+        val albumData = AlbumData(album)
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, album = album)
+                nanoTime = nanoTime, album = albumData)
     }
 
     /**
@@ -68,8 +69,9 @@ object EventUtils {
     fun newUiAlbumArtistEvent(albumArtist: AlbumArtist, capturedUiAction: UiEventType): UiEvent {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
+        val albumArtistData = AlbumArtistData(albumArtist)
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, albumArtist = albumArtist)
+                nanoTime = nanoTime, albumArtist = albumArtistData)
     }
 
     /**

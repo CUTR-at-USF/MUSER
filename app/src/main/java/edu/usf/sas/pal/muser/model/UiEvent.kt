@@ -18,6 +18,6 @@ data class UiEvent
  override val nanoTime: Long,
  override val seekPositionMs: Long = 0,
  override val song: SongData? = null,
- val album: Album? = null,
- val albumArtist: AlbumArtist? = null
+ val album: AlbumData? = null,
+ val albumArtist: AlbumArtistData? = null
 ) : Event

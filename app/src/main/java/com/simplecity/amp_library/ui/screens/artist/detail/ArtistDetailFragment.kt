@@ -154,7 +154,7 @@ class ArtistDetailFragment :
 
     private val songClickListener = object : SongView.ClickListener {
         override fun onSongClick(position: Int, songView: SongView) {
-            val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context)
+            val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context!!)
             FirebaseIOUtils.saveUiEvent(uiEvent)
             if (!contextualToolbarHelper!!.handleClick(songView, Single.just(listOf(songView.song)))) {
                 presenter.songClicked(songView.song)

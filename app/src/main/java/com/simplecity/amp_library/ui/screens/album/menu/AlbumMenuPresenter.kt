@@ -71,9 +71,7 @@ class AlbumMenuPresenter @Inject constructor(
 
     override fun play(album: Album) {
         mediaManager.playAll(album.getSongsSingle(songsRepository)) { view?.onPlaybackFailed() }
-        Timer().schedule(200) {
-            newUiEvent(UiEventType.PLAY)
-        }
+        newUiEvent(UiEventType.PLAY_ALBUM, album)
     }
 
     override fun editTags(album: Album) {
@@ -137,11 +135,8 @@ class AlbumMenuPresenter @Inject constructor(
         const val TAG = "AlbumMenuContract"
     }
 
-    fun newUiEvent(uiEventType: UiEventType){
-        val song = SongUtils.getSong()
-        if (song != null) {
-            val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
+    fun newUiEvent(uiEventType: UiEventType, album: Album){
+            val uiEvent = EventUtils.newUiAlbumEvent(album, uiEventType)
             FirebaseIOUtils.saveUiEvent(uiEvent)
-        }
     }
 }
