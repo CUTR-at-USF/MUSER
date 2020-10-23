@@ -2,6 +2,8 @@ package edu.usf.sas.pal.muser.util
 
 import android.content.Context
 import android.util.Log
+import com.simplecity.amp_library.model.Album
+import com.simplecity.amp_library.model.AlbumArtist
 import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.utils.MusicServiceConnectionUtils
 import edu.usf.sas.pal.muser.model.*
@@ -39,6 +41,35 @@ object EventUtils {
         val seekPositionMs = position
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData)
+    }
+
+    /**
+     * Function to populate the UiAction class with Album data when the overflow button is clicked
+     * @param album - The Album for which the action was performed
+     * @param capturedUiAction = The action that was captured.
+     * @return UiAction object
+     */
+    @JvmStatic
+    fun newUiAlbumEvent(album: Album, capturedUiAction: UiEventType): UiEvent {
+        val currentTimeMS = System.currentTimeMillis()
+        val nanoTime = System.nanoTime()
+        return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
+                nanoTime = nanoTime, album = album)
+    }
+
+    /**
+     * Function to populate the UiAction class with AlbumArtist data when the overflow button is clicked
+     * @param albumArtist - The Album Artist for which the action was performed
+     * @param capturedUiAction = The action that was captured.
+     * @return UiAction object
+     */
+
+    @JvmStatic
+    fun newUiAlbumArtistEvent(albumArtist: AlbumArtist, capturedUiAction: UiEventType): UiEvent {
+        val currentTimeMS = System.currentTimeMillis()
+        val nanoTime = System.nanoTime()
+        return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
+                nanoTime = nanoTime, albumArtist = albumArtist)
     }
 
     /**
