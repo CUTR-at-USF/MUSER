@@ -69,7 +69,13 @@ object EventUtils {
     fun newUiAlbumArtistEvent(albumArtist: AlbumArtist, capturedUiAction: UiEventType): UiEvent {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
-        val albumArtistData = AlbumArtistData(albumArtist)
+        val albums = mutableListOf<AlbumData>()
+        albumArtist.albums.forEach{
+            val albumData = AlbumData(it.id, it.name, it.artists, it.albumArtistName, it.year,
+                             it.numSongs, it.numDiscs, it.dateAdded, it.paths)
+            albums.add(albumData)
+        }
+        val albumArtistData = AlbumArtistData(albumArtist, albums)
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, albumArtist = albumArtistData)
     }
