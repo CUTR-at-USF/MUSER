@@ -9,7 +9,7 @@ public enum UiEventType {
          PLAY_ALBUM,
          PLAY_ALBUM_ARTIST,
          PAUSE,
-         SKIP,
+         NEXT,
          REPEAT,
          SEEK,
          CREATE_PLAYLIST,

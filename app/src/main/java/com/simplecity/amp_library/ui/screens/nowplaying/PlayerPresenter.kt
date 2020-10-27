@@ -15,6 +15,9 @@ import com.simplecity.amp_library.utils.SettingsManager
 import com.simplecity.amp_library.utils.ShuttleUtils
 import com.simplecity.amp_library.utils.menu.song.SongsMenuCallbacks
 import com.simplecity.amp_library.utils.playlists.FavoritesPlaylistManager
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -184,6 +187,7 @@ class PlayerPresenter @Inject constructor(
     }
 
     fun skip() {
+        saveUiEvent(UiEventType.NEXT)
         mediaManager.next()
     }
 
@@ -295,5 +299,12 @@ class PlayerPresenter @Inject constructor(
     companion object {
 
         private const val TAG = "PlayerPresenter"
+    }
+
+    fun saveUiEvent(uiEventType: UiEventType){
+        if (PlayerFragment.getSong() != null) {
+            val uiEvent = EventUtils.newUiEvent(PlayerFragment.getSong(), uiEventType, context)
+            FirebaseIOUtils.saveUiEvent(uiEvent)
+        }
     }
 }

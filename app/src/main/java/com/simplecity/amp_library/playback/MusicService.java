@@ -41,7 +41,6 @@ import com.simplecity.amp_library.utils.SettingsManager;
 import com.simplecity.amp_library.utils.ShuttleUtils;
 import com.simplecity.amp_library.utils.playlists.FavoritesPlaylistManager;
 import dagger.android.AndroidInjection;
-import edu.usf.sas.pal.muser.model.PlayerEventType;
 import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
@@ -371,7 +370,7 @@ public class MusicService extends MediaBrowserServiceCompat {
 
                         // Possible solution: (A) Show the Shuttle notification, despite the fact that music isn't playing. Need to customise notification to allow for an empty queue (no current song)
                         // We could try to generate a queue of random songs as well, but there's no guarantee the user has music on their device.
-
+                        newUiEvent(queueManager.getCurrentSong(), UiEventType.NEXT);
                         gotoNext(true);
 
                         break;

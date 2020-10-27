@@ -482,6 +482,7 @@ public class PlaybackManager implements Playback.Callbacks {
      * @return true if the we've successfully moved to the next track.
      */
     public boolean next(boolean force) {
+        newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.NEXT);
         notifyChange(InternalIntents.TRACK_ENDING);
 
         int nextPosition = getNextPosition(force);
@@ -491,6 +492,7 @@ public class PlaybackManager implements Playback.Callbacks {
         }
 
         setQueuePosition(nextPosition);
+        newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.PLAY);
         return true;
     }
 
