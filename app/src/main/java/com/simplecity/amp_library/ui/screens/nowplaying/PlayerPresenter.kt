@@ -18,6 +18,7 @@ import com.simplecity.amp_library.utils.playlists.FavoritesPlaylistManager
 import edu.usf.sas.pal.muser.model.UiEventType
 import edu.usf.sas.pal.muser.util.EventUtils
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils
+import edu.usf.sas.pal.muser.util.MusicServiceUtils
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -302,8 +303,8 @@ class PlayerPresenter @Inject constructor(
     }
 
     fun saveUiEvent(uiEventType: UiEventType){
-        if (PlayerFragment.getSong() != null) {
-            val uiEvent = EventUtils.newUiEvent(PlayerFragment.getSong(), uiEventType, context)
+        if (MusicServiceUtils.getSong() != null) {
+            val uiEvent = EventUtils.newUiEvent(MusicServiceUtils.getSong()!!, uiEventType, context)
             FirebaseIOUtils.saveUiEvent(uiEvent)
         }
     }
