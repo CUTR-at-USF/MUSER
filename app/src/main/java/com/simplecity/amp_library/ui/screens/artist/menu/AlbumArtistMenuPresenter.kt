@@ -70,7 +70,7 @@ class AlbumArtistMenuPresenter @Inject constructor(
     }
 
     override fun play(albumArtist: AlbumArtist) {
-        mediaManager.playAll(albumArtist.   getSongsSingle(songsRepository)) { view?.onPlaybackFailed() }
+        mediaManager.playAll(albumArtist.getSongsSingle(songsRepository)) { view?.onPlaybackFailed() }
         newUiEvent(UiEventType.PLAY_ALBUM_ARTIST, albumArtist)
     }
 
