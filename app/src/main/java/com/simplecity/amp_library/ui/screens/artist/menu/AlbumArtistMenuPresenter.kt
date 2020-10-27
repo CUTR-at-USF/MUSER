@@ -1,6 +1,5 @@
 package com.simplecity.amp_library.ui.screens.album.menu
 
-import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.model.AlbumArtist
 import com.simplecity.amp_library.model.Playlist
@@ -15,19 +14,15 @@ import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuPresenter
 import com.simplecity.amp_library.utils.LogUtils
 import com.simplecity.amp_library.utils.Operators
 import com.simplecity.amp_library.utils.extensions.getSongs
-import com.simplecity.amp_library.utils.extensions.getSongsSingle
 import com.simplecity.amp_library.utils.playlists.PlaylistManager
 import com.simplecity.amp_library.utils.sorting.SortManager
 import edu.usf.sas.pal.muser.model.UiEventType
 import edu.usf.sas.pal.muser.util.EventUtils
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils
-import edu.usf.sas.pal.muser.util.SongUtils
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import java.util.*
 import javax.inject.Inject
-import kotlin.concurrent.schedule
 
 class AlbumArtistMenuPresenter @Inject constructor(
     private val playlistManager: PlaylistManager,

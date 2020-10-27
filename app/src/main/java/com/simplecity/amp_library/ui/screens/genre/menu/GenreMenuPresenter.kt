@@ -10,12 +10,11 @@ import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.screens.album.menu.AlbumMenuPresenter
 import com.simplecity.amp_library.utils.LogUtils
 import com.simplecity.amp_library.utils.extensions.getSongs
-import com.simplecity.amp_library.utils.extensions.getSongsSingle
 import com.simplecity.amp_library.utils.playlists.PlaylistManager
 import edu.usf.sas.pal.muser.model.UiEventType
 import edu.usf.sas.pal.muser.util.EventUtils
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils
-import edu.usf.sas.pal.muser.util.SongUtils
+import edu.usf.sas.pal.muser.util.MusicServiceUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import java.util.*
@@ -78,7 +77,7 @@ class GenreMenuPresenter @Inject constructor(
         )
     }
     fun newUiEvent(uiEventType: UiEventType){
-        val song = SongUtils.getSong()
+        val song = MusicServiceUtils.getSong()
         if (song != null) {
             val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
             FirebaseIOUtils.saveUiEvent(uiEvent)

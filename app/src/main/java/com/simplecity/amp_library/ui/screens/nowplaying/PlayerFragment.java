@@ -48,6 +48,7 @@ import com.simplecity.amp_library.glide.palette.ColorSet;
 import com.simplecity.amp_library.glide.palette.ColorSetTranscoder;
 import com.simplecity.amp_library.model.Playlist;
 import com.simplecity.amp_library.model.Song;
+import com.simplecity.amp_library.playback.MusicService;
 import com.simplecity.amp_library.playback.QueueManager;
 import com.simplecity.amp_library.rx.UnsafeAction;
 import com.simplecity.amp_library.rx.UnsafeConsumer;
@@ -83,6 +84,7 @@ import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
+import edu.usf.sas.pal.muser.util.MusicServiceUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -231,9 +233,9 @@ public class PlayerFragment extends BaseFragment implements
         if (playPauseView != null) {
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
-                Song song = getSong();
+                Song song = MusicServiceUtils.getSong();
                 UiEventType uiEventType;
-                if (isPlaying()) {
+                if (MusicServiceUtils.isPlaying()) {
                     uiEventType = UiEventType.PLAY;
                 } else {
                     uiEventType = UiEventType.PAUSE;
@@ -768,20 +770,5 @@ public class PlayerFragment extends BaseFragment implements
     @Override
     public void showRingtoneSetMessage() {
         Toast.makeText(getContext(), R.string.ringtone_set_new, Toast.LENGTH_SHORT).show();
-    }
-
-    @Nullable
-    private Song getSong() {
-        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
-            return MusicServiceConnectionUtils.serviceBinder.getService().getSong();
-        }
-        return null;
-    }
-
-    private boolean isPlaying(){
-        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
-            return MusicServiceConnectionUtils.serviceBinder.getService().isPlaying();
-        }
-        return false;
     }
 }

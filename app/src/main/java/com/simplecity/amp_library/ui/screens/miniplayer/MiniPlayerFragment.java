@@ -35,6 +35,7 @@ import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
+import edu.usf.sas.pal.muser.util.MusicServiceUtils;
 import io.reactivex.disposables.CompositeDisposable;
 import javax.inject.Inject;
 import kotlin.Unit;
@@ -100,9 +101,9 @@ public class MiniPlayerFragment extends BaseFragment {
 
         playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
             presenter.togglePlayback();
-            Song song = getSong();
+            Song song = MusicServiceUtils.getSong();
             UiEventType uiEventType;
-            if (isPlaying()) {
+            if (MusicServiceUtils.isPlaying()) {
                 uiEventType = UiEventType.PLAY;
             } else {
                 uiEventType = UiEventType.PAUSE;
@@ -263,19 +264,4 @@ public class MiniPlayerFragment extends BaseFragment {
             UpgradeDialog.Companion.newInstance().show(getChildFragmentManager());
         }
     };
-
-    @Nullable
-    private Song getSong() {
-        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
-            return MusicServiceConnectionUtils.serviceBinder.getService().getSong();
-        }
-        return null;
-    }
-
-    private boolean isPlaying(){
-        if (MusicServiceConnectionUtils.serviceBinder != null && MusicServiceConnectionUtils.serviceBinder.getService() != null) {
-            return MusicServiceConnectionUtils.serviceBinder.getService().isPlaying();
-        }
-        return false;
-    }
 }
