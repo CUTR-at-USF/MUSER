@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.IntentFilter
 import com.cantrowitz.rxbroadcast.RxBroadcast
 import com.simplecity.amp_library.ShuttleApplication
+import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.playback.MediaManager
 import com.simplecity.amp_library.playback.PlaybackMonitor
 import com.simplecity.amp_library.playback.constants.InternalIntents
@@ -303,8 +304,9 @@ class PlayerPresenter @Inject constructor(
     }
 
     fun saveUiEvent(uiEventType: UiEventType){
-        if (MusicServiceUtils.getSong() != null) {
-            val uiEvent = EventUtils.newUiEvent(MusicServiceUtils.getSong()!!, uiEventType, context)
+        val song = MusicServiceUtils.getSong()
+        if (song != null) {
+            val uiEvent = EventUtils.newUiEvent(song, uiEventType, context)
             FirebaseIOUtils.saveUiEvent(uiEvent)
         }
     }

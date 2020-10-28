@@ -288,9 +288,12 @@ class SongListFragment :
 
     override fun onSongClick(position: Int, songView: SongView) {
         if (!contextualToolbarHelper!!.handleClick(songView, songView.song)) {
-            val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context!!)
-            FirebaseIOUtils.saveUiEvent(uiEvent)
-            songsPresenter.play(songView.song)
+            val context = context
+            if (context != null) {
+                val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context)
+                FirebaseIOUtils.saveUiEvent(uiEvent)
+                songsPresenter.play(songView.song)
+            }
         }
     }
 

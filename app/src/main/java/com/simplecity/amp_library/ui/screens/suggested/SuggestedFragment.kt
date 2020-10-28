@@ -185,8 +185,11 @@ class SuggestedFragment :
     inner class SongClickListener(val songs: List<Song>) : SuggestedSongView.ClickListener {
 
         override fun onSongClick(song: Song, holder: SuggestedSongView.ViewHolder) {
-            val uiEvent = EventUtils.newUiEvent(song, UiEventType.PLAY, context!!)
-            FirebaseIOUtils.saveUiEvent(uiEvent)
+            val context = context
+            if (context != null) {
+                val uiEvent = EventUtils.newUiEvent(song, UiEventType.PLAY, context)
+                FirebaseIOUtils.saveUiEvent(uiEvent)
+            }
             mediaManager.playAll(songs, songs.indexOf(song), true) {
                 onPlaybackFailed()
             }
