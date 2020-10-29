@@ -2,6 +2,7 @@ package com.simplecity.amp_library.ui.screens.genre.menu
 
 import android.content.Context
 import com.simplecity.amp_library.ShuttleApplication
+import com.simplecity.amp_library.model.AlbumArtist
 import com.simplecity.amp_library.model.Genre
 import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.model.Song
@@ -49,11 +50,9 @@ class GenreMenuPresenter @Inject constructor(
     }
 
     override fun play(genre: Genre) {
+        newUiEvent(UiEventType.PLAY_GENRE, genre)
         mediaManager.playAll(genre.getSongs(context)) {
             view?.onPlaybackFailed()
-        }
-        Timer().schedule(200) {
-            newUiEvent(UiEventType.PLAY)
         }
     }
 
@@ -76,11 +75,8 @@ class GenreMenuPresenter @Inject constructor(
                 )
         )
     }
-    fun newUiEvent(uiEventType: UiEventType){
-        val song = MusicServiceUtils.getSong()
-        if (song != null) {
-            val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
-            FirebaseIOUtils.saveUiEvent(uiEvent)
-        }
+    fun newUiEvent(uiEventType: UiEventType, genre: Genre){
+        val uiEvent = EventUtils.newUiGenreEvent(genre, uiEventType)
+        FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 }

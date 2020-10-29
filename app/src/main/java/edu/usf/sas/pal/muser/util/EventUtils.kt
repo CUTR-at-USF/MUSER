@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.simplecity.amp_library.model.Album
 import com.simplecity.amp_library.model.AlbumArtist
+import com.simplecity.amp_library.model.Genre
 import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.utils.MusicServiceConnectionUtils
 import edu.usf.sas.pal.muser.model.*
@@ -61,7 +62,7 @@ object EventUtils {
     /**
      * Function to populate the UiAction class with AlbumArtist data when the overflow button is clicked
      * @param albumArtist - The Album Artist for which the action was performed
-     * @param capturedUiAction = The action that was captured.
+     * @param capturedUiAction - The action that was captured.
      * @return UiAction object
      */
 
@@ -78,6 +79,21 @@ object EventUtils {
         val albumArtistData = AlbumArtistData(albumArtist, albums)
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, albumArtist = albumArtistData)
+    }
+
+    /**
+     * Function to populate the UiAction class with Genre data when the overflow button is clicked
+     * @param genre - The Genre for which the action was performed.
+     * @param capturedUiAction - The action that was captured
+     * @return UiAction object
+     */
+    @JvmStatic
+    fun newUiGenreEvent(genre: Genre, capturedUiAction: UiEventType): UiEvent {
+        val currentTimeMS = System.currentTimeMillis()
+        val nanoTime = System.nanoTime()
+        val genreData = GenreData(genre)
+        return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
+                nanoTime = nanoTime, genre = genreData)
     }
 
     /**

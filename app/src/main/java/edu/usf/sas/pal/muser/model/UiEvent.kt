@@ -19,5 +19,6 @@ data class UiEvent
  override val seekPositionMs: Long = 0,
  override val song: SongData? = null,
  val album: AlbumData? = null,
- val albumArtist: AlbumArtistData? = null
+ val albumArtist: AlbumArtistData? = null,
+ val genre: GenreData? = null
 ) : Event
