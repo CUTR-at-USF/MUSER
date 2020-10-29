@@ -1,8 +1,6 @@
 package com.simplecity.amp_library.ui.screens.genre.menu
 
 import android.content.Context
-import com.simplecity.amp_library.ShuttleApplication
-import com.simplecity.amp_library.model.AlbumArtist
 import com.simplecity.amp_library.model.Genre
 import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.model.Song
@@ -15,12 +13,9 @@ import com.simplecity.amp_library.utils.playlists.PlaylistManager
 import edu.usf.sas.pal.muser.model.UiEventType
 import edu.usf.sas.pal.muser.util.EventUtils
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils
-import edu.usf.sas.pal.muser.util.MusicServiceUtils
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import java.util.*
 import javax.inject.Inject
-import kotlin.concurrent.schedule
 
 class GenreMenuPresenter @Inject constructor(
     private val context: Context,

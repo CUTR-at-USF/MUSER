@@ -48,7 +48,6 @@ import com.simplecity.amp_library.glide.palette.ColorSet;
 import com.simplecity.amp_library.glide.palette.ColorSetTranscoder;
 import com.simplecity.amp_library.model.Playlist;
 import com.simplecity.amp_library.model.Song;
-import com.simplecity.amp_library.playback.MusicService;
 import com.simplecity.amp_library.playback.QueueManager;
 import com.simplecity.amp_library.rx.UnsafeAction;
 import com.simplecity.amp_library.rx.UnsafeConsumer;
@@ -78,13 +77,10 @@ import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.color.ArgbEvaluator;
 import com.simplecity.amp_library.utils.menu.song.SongMenuUtils;
 import dagger.android.support.AndroidSupportInjection;
-import edu.usf.sas.pal.muser.model.PlayerEvent;
-import edu.usf.sas.pal.muser.model.PlayerEventType;
 import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
-import edu.usf.sas.pal.muser.util.MusicServiceUtils;
 import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
@@ -233,9 +229,9 @@ public class PlayerFragment extends BaseFragment implements
         if (playPauseView != null) {
             playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
                 presenter.togglePlayback();
-                Song song = MusicServiceUtils.getSong();
+                Song song = MusicServiceConnectionUtils.getSong();
                 UiEventType uiEventType;
-                if (MusicServiceUtils.isPlaying()) {
+                if (MusicServiceConnectionUtils.isPlaying()) {
                     uiEventType = UiEventType.PLAY;
                 } else {
                     uiEventType = UiEventType.PAUSE;

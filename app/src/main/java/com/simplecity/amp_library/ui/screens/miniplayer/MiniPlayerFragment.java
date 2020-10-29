@@ -35,7 +35,6 @@ import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
-import edu.usf.sas.pal.muser.util.MusicServiceUtils;
 import io.reactivex.disposables.CompositeDisposable;
 import javax.inject.Inject;
 import kotlin.Unit;
@@ -101,9 +100,9 @@ public class MiniPlayerFragment extends BaseFragment {
 
         playPauseView.setOnClickListener(v -> playPauseView.toggle(() -> {
             presenter.togglePlayback();
-            Song song = MusicServiceUtils.getSong();
+            Song song = MusicServiceConnectionUtils.getSong();
             UiEventType uiEventType;
-            if (MusicServiceUtils.isPlaying()) {
+            if (MusicServiceConnectionUtils.isPlaying()) {
                 uiEventType = UiEventType.PLAY;
             } else {
                 uiEventType = UiEventType.PAUSE;

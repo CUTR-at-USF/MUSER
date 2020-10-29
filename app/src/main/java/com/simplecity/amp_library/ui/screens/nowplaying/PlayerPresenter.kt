@@ -5,13 +5,13 @@ import android.content.Context
 import android.content.IntentFilter
 import com.cantrowitz.rxbroadcast.RxBroadcast
 import com.simplecity.amp_library.ShuttleApplication
-import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.playback.MediaManager
 import com.simplecity.amp_library.playback.PlaybackMonitor
 import com.simplecity.amp_library.playback.constants.InternalIntents
 import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuPresenter
 import com.simplecity.amp_library.utils.LogUtils
+import com.simplecity.amp_library.utils.MusicServiceConnectionUtils
 import com.simplecity.amp_library.utils.SettingsManager
 import com.simplecity.amp_library.utils.ShuttleUtils
 import com.simplecity.amp_library.utils.menu.song.SongsMenuCallbacks
@@ -19,7 +19,6 @@ import com.simplecity.amp_library.utils.playlists.FavoritesPlaylistManager
 import edu.usf.sas.pal.muser.model.UiEventType
 import edu.usf.sas.pal.muser.util.EventUtils
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils
-import edu.usf.sas.pal.muser.util.MusicServiceUtils
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -304,7 +303,7 @@ class PlayerPresenter @Inject constructor(
     }
 
     fun saveUiEvent(uiEventType: UiEventType){
-        val song = MusicServiceUtils.getSong()
+        val song = MusicServiceConnectionUtils.getSong()
         if (song != null) {
             val uiEvent = EventUtils.newUiEvent(song, uiEventType, context)
             FirebaseIOUtils.saveUiEvent(uiEvent)
