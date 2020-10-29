@@ -18,12 +18,12 @@ object EventUtils {
      * @return PlayerEvent object
      */
     @JvmStatic
-    fun newPlayerEvent(song: Song?, capturedEvent: PlayerEventType?, context: Context?): PlayerEvent {
+    fun newPlayerEvent(song: Song, capturedEvent: PlayerEventType, context: Context): PlayerEvent {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
-        val songData = SongData(song!!, context!!)
+        val songData = SongData(song, context)
         val seekPositionMs = position
-        return PlayerEvent(capturedEvent!!, currentTimeMS, nanoTime, seekPositionMs,
+        return PlayerEvent(capturedEvent, currentTimeMS, nanoTime, seekPositionMs,
                 songData)
     }
 
