@@ -147,10 +147,8 @@ public class QueueManager {
     }
 
     void newPlayerEvent(Song song, PlayerEventType playerEventType){
-        if (song != null) {
-            PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, ShuttleApplication.get());
-            FirebaseIOUtils.savePlayerEvent(playerEvent);
-        }
+        PlayerEvent playerEvent = EventUtils.newPlayerEvent(song, playerEventType, ShuttleApplication.get());
+        FirebaseIOUtils.savePlayerEvent(playerEvent);
     }
 
     void previous() {
