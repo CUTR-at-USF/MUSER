@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 import com.simplecity.amp_library.model.Song;
 import com.simplecity.amp_library.playback.LocalBinder;
@@ -93,6 +94,18 @@ public class MusicServiceConnectionUtils {
             return serviceBinder.getService().isPlaying();
         }
         return false;
+    }
+
+    public static long getPosition(){
+        if (serviceBinder != null &&
+                serviceBinder.getService() != null) {
+            try {
+                return serviceBinder.getService().getSeekPosition();
+            } catch (Exception e) {
+                Log.e("EventUtils", "getPosition() returned error: " + e);
+            }
+        }
+        return 0;
     }
 
     public static final class ServiceToken {

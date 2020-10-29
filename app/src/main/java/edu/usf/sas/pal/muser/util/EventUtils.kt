@@ -22,7 +22,7 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
-        val seekPositionMs = position
+        val seekPositionMs = MusicServiceConnectionUtils.getPosition()
         return PlayerEvent(capturedEvent, currentTimeMS, nanoTime, seekPositionMs,
                 songData)
     }
@@ -39,7 +39,7 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
-        val seekPositionMs = position
+        val seekPositionMs = MusicServiceConnectionUtils.getPosition();
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData)
     }
@@ -95,21 +95,4 @@ object EventUtils {
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, genre = genreData)
     }
-
-    /**
-     * function to get the seek position of the track.
-     * @return current seek position. 0 if there's an error
-     */
-    val position: Long
-        get() {
-            if (MusicServiceConnectionUtils.serviceBinder != null &&
-                    MusicServiceConnectionUtils.serviceBinder.service != null) {
-                try {
-                    return MusicServiceConnectionUtils.serviceBinder.service.seekPosition
-                } catch (e: Exception) {
-                    Log.e("EventUtils", "getPosition() returned error: $e")
-                }
-            }
-            return 0
-        }
 }
