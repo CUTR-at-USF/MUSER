@@ -8,6 +8,7 @@ import android.view.*
 import android.widget.Toast
 import com.bumptech.glide.RequestManager
 import com.simplecity.amp_library.R
+import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.ui.adapters.SectionedAdapter
@@ -288,12 +289,10 @@ class SongListFragment :
 
     override fun onSongClick(position: Int, songView: SongView) {
         if (!contextualToolbarHelper!!.handleClick(songView, songView.song)) {
-            val context = context
-            if (context != null) {
-                val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY, context)
+                val uiEvent = EventUtils.newUiEvent(songView.song, UiEventType.PLAY,
+                          ShuttleApplication.get())
                 FirebaseIOUtils.saveUiEvent(uiEvent)
                 songsPresenter.play(songView.song)
-            }
         }
     }
 
