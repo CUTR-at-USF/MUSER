@@ -304,9 +304,7 @@ class PlayerPresenter @Inject constructor(
 
     fun saveUiEvent(uiEventType: UiEventType){
         val song = MusicServiceConnectionUtils.getSong()
-        if (song != null) {
-            val uiEvent = EventUtils.newUiEvent(song, uiEventType, context)
+            val uiEvent = EventUtils.newUiEvent(song!!, uiEventType, context)
             FirebaseIOUtils.saveUiEvent(uiEvent)
-        }
     }
 }
