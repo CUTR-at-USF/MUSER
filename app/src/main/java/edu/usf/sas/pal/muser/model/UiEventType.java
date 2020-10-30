@@ -11,6 +11,7 @@ public enum UiEventType {
          PLAY_GENRE,
          PAUSE,
          NEXT,
+         PREV,
          REPEAT,
          SEEK,
          CREATE_PLAYLIST,

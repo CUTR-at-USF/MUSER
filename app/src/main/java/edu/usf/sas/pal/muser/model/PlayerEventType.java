@@ -11,5 +11,6 @@ public enum PlayerEventType {
         PAUSE,
         NEXT,
         REPEAT,
-        SEEK
+        SEEK,
+        PREV
 }
