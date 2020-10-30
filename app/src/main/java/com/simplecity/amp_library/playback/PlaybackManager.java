@@ -500,10 +500,12 @@ public class PlaybackManager implements Playback.Callbacks {
      * @param force true to ignore the current seek position & repeat mode.
      */
     public void previous(boolean force) {
+        newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.PREV);
         if (force || getSeekPosition() <= 2000) {
             queueManager.previous();
             stop(false);
             load(false, true, 0);
+            newPlayerEvent(queueManager.getCurrentSong(), PlayerEventType.PLAY);
         } else {
             seekTo(0);
             play();
