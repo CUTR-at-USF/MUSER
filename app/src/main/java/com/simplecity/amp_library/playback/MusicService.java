@@ -382,7 +382,7 @@ public class MusicService extends MediaBrowserServiceCompat {
                         // - No queue: ANR
 
                         // Possible solution: (A) Show the Shuttle notification, despite the fact that music isn't playing. Need to customise notification to allow for an empty queue (no current song)
-
+                        newUiEvent(queueManager.getCurrentSong(), UiEventType.PREV);
                         previous(false);
 
                         break;

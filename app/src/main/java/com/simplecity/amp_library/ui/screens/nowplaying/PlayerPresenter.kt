@@ -193,6 +193,7 @@ class PlayerPresenter @Inject constructor(
     }
 
     fun prev(force: Boolean) {
+        saveUiEvent(UiEventType.PREV)
         mediaManager.previous(force)
     }
 
