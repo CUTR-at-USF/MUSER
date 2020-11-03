@@ -828,6 +828,7 @@ public class MusicService extends MediaBrowserServiceCompat {
                 if (getRepeatMode() == QueueManager.RepeatMode.ONE) {
                     setRepeatMode(QueueManager.RepeatMode.ALL);
                 }
+                newUiEvent(queueManager.getCurrentSong(), UiEventType.SHUFFLE_ON);
                 showToast(R.string.shuffle_on_notif);
                 break;
             case QueueManager.ShuffleMode.ON:
@@ -840,6 +841,7 @@ public class MusicService extends MediaBrowserServiceCompat {
                     }
                 }
                 notifyChange(InternalIntents.QUEUE_CHANGED);
+                newUiEvent(queueManager.getCurrentSong(), UiEventType.SHUFFLE_OFF);
                 showToast(R.string.shuffle_off_notif);
                 break;
         }
