@@ -849,14 +849,17 @@ public class MusicService extends MediaBrowserServiceCompat {
         switch (getRepeatMode()) {
             case QueueManager.RepeatMode.OFF:
                 setRepeatMode(QueueManager.RepeatMode.ALL);
+                newUiEvent(queueManager.getCurrentSong(), UiEventType.REPEAT_ALL_SONGS);
                 showToast(R.string.repeat_all_notif);
                 break;
             case QueueManager.RepeatMode.ALL:
                 setRepeatMode(QueueManager.RepeatMode.ONE);
+                newUiEvent(queueManager.getCurrentSong(), UiEventType.REPEAT_CURRENT_SONG);
                 showToast(R.string.repeat_current_notif);
                 break;
             case QueueManager.RepeatMode.ONE:
                 setRepeatMode(QueueManager.RepeatMode.OFF);
+                newUiEvent(queueManager.getCurrentSong(), UiEventType.REPEAT_OFF);
                 showToast(R.string.repeat_off_notif);
                 break;
         }
