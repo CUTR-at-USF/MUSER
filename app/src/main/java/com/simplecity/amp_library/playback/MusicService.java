@@ -805,8 +805,10 @@ public class MusicService extends MediaBrowserServiceCompat {
             favoritesPlaylistManager.toggleFavorite(song, isFavorite -> {
                 if (isFavorite) {
                     Toast.makeText(MusicService.this, getString(R.string.song_to_favourites, song.name), Toast.LENGTH_SHORT).show();
+                    newUiEvent(queueManager.getCurrentSong(), UiEventType.FAVORITE);
                 } else {
                     Toast.makeText(MusicService.this, getString(R.string.song_removed_from_favourites, song.name), Toast.LENGTH_SHORT).show();
+                    newUiEvent(queueManager.getCurrentSong(), UiEventType.UNFAVORITE);
                 }
                 notifyChange(InternalIntents.FAVORITE_CHANGED);
                 return Unit.INSTANCE;
