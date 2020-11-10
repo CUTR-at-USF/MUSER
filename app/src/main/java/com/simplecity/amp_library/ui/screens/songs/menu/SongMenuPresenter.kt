@@ -41,7 +41,7 @@ open class SongMenuPresenter @Inject constructor(
     override fun addToPlaylist(playlist: Playlist, songs: List<Song>) {
         if (playlist.type == Playlist.Type.FAVORITES) {
             songs.forEach {
-                newUiEvent(UiEventType.FAVORITE, it)
+                newUiEvent(it)
             }
         }
         playlistManager.addToPlaylist(playlist, songs) { numSongs ->
@@ -141,8 +141,8 @@ open class SongMenuPresenter @Inject constructor(
         const val TAG = "SongMenuPresenter"
     }
 
-    private fun newUiEvent(uiEventType: UiEventType, song: Song){
-        val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
+    private fun newUiEvent(song: Song){
+        val uiEvent = EventUtils.newUiEvent(song, UiEventType.FAVORITE, ShuttleApplication.get())
         FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 }

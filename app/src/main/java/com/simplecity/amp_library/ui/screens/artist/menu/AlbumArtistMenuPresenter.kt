@@ -46,7 +46,7 @@ class AlbumArtistMenuPresenter @Inject constructor(
         getSongs(albumArtists) { songs ->
             if (playlist.type == Playlist.Type.FAVORITES) {
                 songs.forEach {
-                    newUiEvent(UiEventType.FAVORITE, it)
+                    newUiEvent(it)
                 }
             }
             playlistManager.addToPlaylist(playlist, songs) { numSongs ->
@@ -73,7 +73,7 @@ class AlbumArtistMenuPresenter @Inject constructor(
 
     override fun play(albumArtist: AlbumArtist) {
         mediaManager.playAll(albumArtist.getSongsSingle(songsRepository)) { view?.onPlaybackFailed() }
-        newUiAlbumArtistEvent(UiEventType.PLAY_ALBUM_ARTIST, albumArtist)
+        newUiAlbumArtistEvent(albumArtist)
     }
 
     override fun editTags(albumArtist: AlbumArtist) {
@@ -136,13 +136,13 @@ class AlbumArtistMenuPresenter @Inject constructor(
         const val TAG = "AlbumMenuContract"
     }
 
-    private fun newUiAlbumArtistEvent(uiEventType: UiEventType, albumArtist: AlbumArtist){
-        val uiEvent = EventUtils.newUiAlbumArtistEvent(albumArtist, uiEventType)
+    private fun newUiAlbumArtistEvent(albumArtist: AlbumArtist){
+        val uiEvent = EventUtils.newUiAlbumArtistEvent(albumArtist, UiEventType.PLAY_ALBUM_ARTIST)
         FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 
-    private fun newUiEvent(uiEventType: UiEventType, song: Song){
-        val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
+    private fun newUiEvent(song: Song){
+        val uiEvent = EventUtils.newUiEvent(song, UiEventType.FAVORITE, ShuttleApplication.get())
         FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 }
