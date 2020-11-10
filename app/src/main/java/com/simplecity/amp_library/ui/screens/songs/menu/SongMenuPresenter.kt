@@ -1,6 +1,7 @@
 package com.simplecity.amp_library.ui.screens.songs.menu
 
 import android.content.Context
+import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.data.Repository.AlbumArtistsRepository
 import com.simplecity.amp_library.model.Playlist
@@ -13,6 +14,9 @@ import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuContract.View
 import com.simplecity.amp_library.utils.LogUtils
 import com.simplecity.amp_library.utils.RingtoneManager
 import com.simplecity.amp_library.utils.playlists.PlaylistManager
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -35,6 +39,11 @@ open class SongMenuPresenter @Inject constructor(
     }
 
     override fun addToPlaylist(playlist: Playlist, songs: List<Song>) {
+        if (playlist.type == Playlist.Type.FAVORITES) {
+            songs.forEach {
+                newUiEvent(UiEventType.FAVORITE, it)
+            }
+        }
         playlistManager.addToPlaylist(playlist, songs) { numSongs ->
             view?.onSongsAddedToPlaylist(playlist, numSongs)
         }
@@ -130,5 +139,10 @@ open class SongMenuPresenter @Inject constructor(
 
     companion object {
         const val TAG = "SongMenuPresenter"
+    }
+
+    private fun newUiEvent(uiEventType: UiEventType, song: Song){
+        val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
+        FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 }
