@@ -1,6 +1,7 @@
 package com.simplecity.amp_library.ui.screens.genre.menu
 
 import android.content.Context
+import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.model.Genre
 import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.model.Song
@@ -30,6 +31,11 @@ class GenreMenuPresenter @Inject constructor(
 
     override fun addToPlaylist(playlist: Playlist, genre: Genre) {
         getSongs(genre) { songs ->
+            if (playlist.type == Playlist.Type.FAVORITES) {
+                songs.forEach {
+                    newUiEvent(UiEventType.FAVORITE, it)
+                }
+            }
             playlistManager.addToPlaylist(playlist, songs) { numSongs ->
                 view?.onSongsAddedToPlaylist(playlist, numSongs)
             }
@@ -45,7 +51,7 @@ class GenreMenuPresenter @Inject constructor(
     }
 
     override fun play(genre: Genre) {
-        newUiEvent(UiEventType.PLAY_GENRE, genre)
+        newUiGenreEvent(UiEventType.PLAY_GENRE, genre)
         mediaManager.playAll(genre.getSongs(context)) {
             view?.onPlaybackFailed()
         }
@@ -70,8 +76,13 @@ class GenreMenuPresenter @Inject constructor(
                 )
         )
     }
-    fun newUiEvent(uiEventType: UiEventType, genre: Genre){
+    private fun newUiGenreEvent(uiEventType: UiEventType, genre: Genre){
         val uiEvent = EventUtils.newUiGenreEvent(genre, uiEventType)
+        FirebaseIOUtils.saveUiEvent(uiEvent)
+    }
+
+    private fun newUiEvent(uiEventType: UiEventType, song: Song){
+        val uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get())
         FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 }
