@@ -495,8 +495,10 @@ public class FolderFragment extends BaseFragment implements
     public void onFileObjectOverflowClick(View v, FolderView folderView) {
         PopupMenu menu = new PopupMenu(getActivity(), v);
         FolderMenuUtils.INSTANCE.setupFolderMenu(menu, folderView.baseFileObject, playlistMenuHelper);
-        menu.setOnMenuItemClickListener(FolderMenuUtils.INSTANCE.getFolderMenuClickListener(this, mediaManager, songsRepository, folderView, playlistManager, callbacks));
-        menu.show();
+        if (getContext() != null) {
+            menu.setOnMenuItemClickListener(FolderMenuUtils.INSTANCE.getFolderMenuClickListener(getContext(), this, mediaManager, songsRepository, folderView, playlistManager, callbacks));
+            menu.show();
+        }
     }
 
     @Override

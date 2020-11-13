@@ -184,6 +184,7 @@ object FolderMenuUtils {
     }
 
     fun getFolderMenuClickListener(
+        context: Context,
         fragment: Fragment,
         mediaManager: MediaManager,
         songsRepository: SongsRepository,
@@ -192,13 +193,14 @@ object FolderMenuUtils {
         callbacks: Callbacks
     ): PopupMenu.OnMenuItemClickListener? {
         when (folderView.baseFileObject.fileType) {
-            FileType.FILE -> return getFileMenuClickListener(fragment, mediaManager, songsRepository, folderView, folderView.baseFileObject as FileObject, playlistManager, callbacks)
-            FileType.FOLDER -> return getFolderMenuClickListener(fragment, mediaManager, songsRepository, folderView, folderView.baseFileObject as FolderObject, playlistManager, callbacks)
+            FileType.FILE -> return getFileMenuClickListener(context, fragment, mediaManager, songsRepository, folderView, folderView.baseFileObject as FileObject, playlistManager, callbacks)
+            FileType.FOLDER -> return getFolderMenuClickListener(context, fragment, mediaManager, songsRepository, folderView, folderView.baseFileObject as FolderObject, playlistManager, callbacks)
         }
         return null
     }
 
     private fun getFolderMenuClickListener(
+        context: Context,
         fragment: Fragment,
         mediaManager: MediaManager,
         songsRepository: SongsRepository,
@@ -228,6 +230,7 @@ object FolderMenuUtils {
                 Defs.PLAYLIST_SELECTED -> {
                     getSongsForFolderObject(songsRepository, folderObject).subscribe { songs ->
                         MenuUtils.addToPlaylist(
+                            context,
                             playlistManager,
                             menuItem.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist,
                             songs
@@ -265,6 +268,7 @@ object FolderMenuUtils {
     }
 
     private fun getFileMenuClickListener(
+        context: Context,
         fragment: Fragment,
         mediaManager: MediaManager,
         songsRepository: SongsRepository,
@@ -299,6 +303,7 @@ object FolderMenuUtils {
                 Defs.PLAYLIST_SELECTED -> {
                     getSongForFile(songsRepository, fileObject).subscribe({ song ->
                         MenuUtils.addToPlaylist(
+                            context,
                             playlistManager,
                             menuItem.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist,
                             listOf(song)
