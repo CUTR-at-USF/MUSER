@@ -281,7 +281,7 @@ class GenreDetailFragment :
     }
 
     override fun onMenuItemClick(item: MenuItem): Boolean {
-        if (!GenreMenuUtils.getGenreClickListener(genre, presenter).onMenuItemClick(item)) {
+        if (!GenreMenuUtils.getGenreClickListener(context!!, genre, presenter).onMenuItemClick(item)) {
             val albumSortOrder = AlbumSortHelper.handleAlbumDetailMenuSortOrderClicks(item)
             if (albumSortOrder != null) {
                 sortManager.genreDetailAlbumsSortOrder = albumSortOrder

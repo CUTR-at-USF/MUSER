@@ -1,5 +1,6 @@
 package com.simplecity.amp_library.utils.menu.genre
 
+import android.content.Context
 import android.support.v7.widget.PopupMenu
 import com.simplecity.amp_library.R
 import com.simplecity.amp_library.model.Genre
@@ -9,7 +10,7 @@ import com.simplecity.amp_library.utils.playlists.PlaylistManager
 
 object GenreMenuUtils {
 
-    fun getGenreClickListener(genre: Genre, callbacks: GenreMenuCallbacks): PopupMenu.OnMenuItemClickListener {
+    fun getGenreClickListener(context: Context, genre: Genre, callbacks: GenreMenuCallbacks): PopupMenu.OnMenuItemClickListener {
         return PopupMenu.OnMenuItemClickListener { item ->
             when (item.itemId) {
                 Defs.NEW_PLAYLIST -> {
@@ -17,7 +18,7 @@ object GenreMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 Defs.PLAYLIST_SELECTED -> {
-                    callbacks.addToPlaylist(item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, genre)
+                    callbacks.addToPlaylist(context, item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, genre)
                     return@OnMenuItemClickListener true
                 }
                 R.id.play -> {

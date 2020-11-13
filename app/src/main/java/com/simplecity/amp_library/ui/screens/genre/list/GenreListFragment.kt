@@ -114,7 +114,7 @@ class GenreListFragment :
         val subMenu = popupMenu.menu.findItem(R.id.addToPlaylist).subMenu
         playlistMenuHelper.createPlaylistMenu(subMenu)
 
-        popupMenu.setOnMenuItemClickListener(GenreMenuUtils.getGenreClickListener(genre, presenter))
+        popupMenu.setOnMenuItemClickListener(GenreMenuUtils.getGenreClickListener(context!!, genre, presenter))
         popupMenu.show()
     }
 
