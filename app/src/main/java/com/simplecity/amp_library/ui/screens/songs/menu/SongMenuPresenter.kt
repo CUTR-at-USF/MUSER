@@ -44,7 +44,7 @@ open class SongMenuPresenter @Inject constructor(
                 newUiEvent(it)
             }
         }
-        playlistManager.addToPlaylist(playlist, songs) { numSongs ->
+        playlistManager.addToPlaylist(context, playlist, songs) { numSongs ->
             view?.onSongsAddedToPlaylist(playlist, numSongs)
         }
     }

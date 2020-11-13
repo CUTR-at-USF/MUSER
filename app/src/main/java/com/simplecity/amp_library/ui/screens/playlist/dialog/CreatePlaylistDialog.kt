@@ -122,7 +122,7 @@ class CreatePlaylistDialog : DialogFragment() {
                                     val playlist = Playlist(Type.USER_CREATED, uri.lastPathSegment!!.toLong(), name, true, false, true, true, true)
 
                                     songsToAdd?.let {
-                                        playlistManager.addToPlaylist(playlist, songsToAdd) { numSongs ->
+                                        playlistManager.addToPlaylist(context!!, playlist, songsToAdd) { numSongs ->
                                             if (activity != null) {
                                                 Toast.makeText(activity, activity.resources.getQuantityString(R.plurals.NNNtrackstoplaylist, numSongs, numSongs), Toast.LENGTH_LONG).show()
                                             }

@@ -1,5 +1,6 @@
 package com.simplecity.amp_library.utils.menu.album
 
+import android.content.Context
 import com.simplecity.amp_library.model.Album
 import com.simplecity.amp_library.model.Playlist
 import io.reactivex.Single
@@ -8,7 +9,7 @@ interface AlbumsMenuCallbacks {
 
     fun createPlaylistFromAlbums(albums: List<Album>)
 
-    fun addAlbumsToPlaylist(playlist: Playlist, albums: List<Album>)
+    fun addAlbumsToPlaylist(context: Context, playlist: Playlist, albums: List<Album>)
 
     fun addAlbumsToQueue(albums: List<Album>)
 
@@ -35,8 +36,8 @@ fun AlbumsMenuCallbacks.createPlaylistFromAlbums(albums: Single<List<Album>>) {
     transform(albums) { albums -> createPlaylistFromAlbums(albums) }
 }
 
-fun AlbumsMenuCallbacks.addAlbumsToPlaylist(playlist: Playlist, albums: Single<List<Album>>) {
-    transform(albums) { albums -> addAlbumsToPlaylist(playlist, albums) }
+fun AlbumsMenuCallbacks.addAlbumsToPlaylist(context: Context, playlist: Playlist, albums: Single<List<Album>>) {
+    transform(albums) { albums -> addAlbumsToPlaylist(context, playlist, albums) }
 }
 
 fun AlbumsMenuCallbacks.playAlbumsNext(albums: Single<List<Album>>) {
@@ -59,8 +60,8 @@ fun AlbumsMenuCallbacks.createPlaylistFromAlbums(album: Album) {
     createPlaylistFromAlbums(listOf(album))
 }
 
-fun AlbumsMenuCallbacks.addAlbumsToPlaylist(playlist: Playlist, album: Album) {
-    addAlbumsToPlaylist(playlist, listOf(album))
+fun AlbumsMenuCallbacks.addAlbumsToPlaylist(context: Context, playlist: Playlist, album: Album) {
+    addAlbumsToPlaylist(context, playlist, listOf(album))
 }
 
 fun AlbumsMenuCallbacks.addAlbumsToQueue(album: Album) {

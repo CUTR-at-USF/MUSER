@@ -1,5 +1,6 @@
 package com.simplecity.amp_library.utils.menu.album
 
+import android.content.Context
 import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.Toolbar
 import com.simplecity.amp_library.R
@@ -26,7 +27,7 @@ object AlbumMenuUtils {
         playlistMenuHelper.createPlaylistMenu(subMenu)
     }
 
-    fun getAlbumMenuClickListener(selectedAlbums: Single<List<Album>>, callbacks: AlbumsMenuCallbacks): Toolbar.OnMenuItemClickListener {
+    fun getAlbumMenuClickListener(context: Context, selectedAlbums: Single<List<Album>>, callbacks: AlbumsMenuCallbacks): Toolbar.OnMenuItemClickListener {
         return Toolbar.OnMenuItemClickListener { item ->
             when (item.itemId) {
                 Defs.NEW_PLAYLIST -> {
@@ -34,7 +35,7 @@ object AlbumMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 Defs.PLAYLIST_SELECTED -> {
-                    callbacks.addAlbumsToPlaylist(item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, selectedAlbums)
+                    callbacks.addAlbumsToPlaylist(context, item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, selectedAlbums)
                     return@OnMenuItemClickListener true
                 }
                 R.id.playNext -> {
@@ -54,7 +55,7 @@ object AlbumMenuUtils {
         }
     }
 
-    fun getAlbumMenuClickListener(album: Album, callbacks: AlbumsMenuCallbacks): PopupMenu.OnMenuItemClickListener {
+    fun getAlbumMenuClickListener(context: Context, album: Album, callbacks: AlbumsMenuCallbacks): PopupMenu.OnMenuItemClickListener {
         return PopupMenu.OnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.play -> {
@@ -70,7 +71,7 @@ object AlbumMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 Defs.PLAYLIST_SELECTED -> {
-                    callbacks.addAlbumsToPlaylist(item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, album)
+                    callbacks.addAlbumsToPlaylist(context, item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, album)
                     return@OnMenuItemClickListener true
                 }
                 R.id.addToQueue -> {

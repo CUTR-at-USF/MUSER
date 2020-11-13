@@ -484,7 +484,7 @@ class SearchFragment :
         override fun onAlbumOverflowClicked(v: View, album: Album) {
             val menu = PopupMenu(v.context, v)
             AlbumMenuUtils.setupAlbumMenu(menu, playlistMenuHelper, true)
-            menu.setOnMenuItemClickListener(AlbumMenuUtils.getAlbumMenuClickListener(album, presenter))
+            menu.setOnMenuItemClickListener(AlbumMenuUtils.getAlbumMenuClickListener(context!!, album, presenter))
             menu.show()
         }
     }

@@ -86,7 +86,7 @@ class QueuePresenter @Inject constructor(
 
     override fun saveQueue(context: Context, item: MenuItem) {
         val playlist = item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist
-        playlistManager.addToPlaylist(playlist, mediaManager.queue.toSongs(), null)
+        playlistManager.addToPlaylist(context, playlist, mediaManager.queue.toSongs(), null)
     }
 
     override fun clearQueue() {

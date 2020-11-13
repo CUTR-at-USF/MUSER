@@ -1,5 +1,6 @@
 package com.simplecity.amp_library.ui.screens.album.menu
 
+import android.content.Context
 import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.model.Album
@@ -40,14 +41,14 @@ class AlbumMenuPresenter @Inject constructor(
         }
     }
 
-    override fun addAlbumsToPlaylist(playlist: Playlist, albums: List<Album>) {
+    override fun addAlbumsToPlaylist(context: Context, playlist: Playlist, albums: List<Album>) {
         getSongs(albums) { songs ->
             if (playlist.type == Playlist.Type.FAVORITES) {
                 songs.forEach {
                     newUiEvent(it)
                 }
             }
-            playlistManager.addToPlaylist(playlist, songs) { numSongs ->
+            playlistManager.addToPlaylist(context, playlist, songs) { numSongs ->
                 view?.onSongsAddedToPlaylist(playlist, numSongs)
             }
         }

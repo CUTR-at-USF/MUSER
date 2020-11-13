@@ -489,7 +489,7 @@ class GenreDetailFragment :
         override fun onAlbumOverflowClicked(v: View, album: Album) {
             val popupMenu = PopupMenu(v.context, v)
             AlbumMenuUtils.setupAlbumMenu(popupMenu, playlistMenuHelper, true)
-            popupMenu.setOnMenuItemClickListener(AlbumMenuUtils.getAlbumMenuClickListener(album, presenter))
+            popupMenu.setOnMenuItemClickListener(AlbumMenuUtils.getAlbumMenuClickListener(context!!, album, presenter))
             popupMenu.show()
         }
     }

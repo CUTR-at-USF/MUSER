@@ -256,7 +256,7 @@ class AlbumDetailFragment :
     }
 
     override fun onMenuItemClick(item: MenuItem): Boolean {
-        if (!AlbumMenuUtils.getAlbumMenuClickListener(album, presenter).onMenuItemClick(item)) {
+        if (!AlbumMenuUtils.getAlbumMenuClickListener(context!!, album, presenter).onMenuItemClick(item)) {
             val songSortOder = SongSortHelper.handleSongMenuSortOrderClicks(item)
             if (songSortOder != null) {
                 sortManager.albumDetailSongsSortOrder = songSortOder

@@ -216,7 +216,7 @@ class SuggestedFragment :
     override fun onAlbumOverflowClicked(v: View, album: Album) {
         val menu = PopupMenu(context!!, v)
         AlbumMenuUtils.setupAlbumMenu(menu, playlistMenuHelper, true)
-        menu.setOnMenuItemClickListener(AlbumMenuUtils.getAlbumMenuClickListener(album, presenter))
+        menu.setOnMenuItemClickListener(AlbumMenuUtils.getAlbumMenuClickListener(context!!, album, presenter))
         menu.show()
     }
 

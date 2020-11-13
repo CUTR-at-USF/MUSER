@@ -55,7 +55,7 @@ class PlaylistManager @Inject constructor(
         applicationContext.contentResolver.delete(PlayCountTable.URI, null, null)
     }
 
-    fun addToPlaylist(playlist: Playlist, songs: List<Song>, callback: ((Int) -> Unit)?): Disposable? {
+    fun addToPlaylist(context: Context, playlist: Playlist, songs: List<Song>, callback: ((Int) -> Unit)?): Disposable? {
         if (songs.isEmpty()) {
             return null
         }
@@ -90,7 +90,7 @@ class PlaylistManager @Inject constructor(
                             applyToAll.text = String.format(applicationContext.getString(R.string.dialog_checkbox_playlist_duplicate_apply_all), duplicates.size)
 
                             // Fixme: Should not use application context to present dialog.
-                            MaterialDialog.Builder(applicationContext)
+                            MaterialDialog.Builder(context)
                                 .title(R.string.dialog_title_playlist_duplicates)
                                 .customView(customView, false)
                                 .positiveText(R.string.dialog_button_playlist_duplicate_add)
@@ -255,7 +255,7 @@ class PlaylistManager @Inject constructor(
                     if (progressDialog != null && progressDialog.isShowing) {
                         progressDialog.dismiss()
                     }
-                    addToPlaylist(playlist, songs, callback)
+                    addToPlaylist(context, playlist, songs, callback)
                 },
                 { error -> LogUtils.logException(TAG, "Error getting songs for file object", error) }
             )

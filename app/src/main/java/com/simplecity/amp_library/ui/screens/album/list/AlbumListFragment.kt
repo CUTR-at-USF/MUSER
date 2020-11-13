@@ -286,7 +286,7 @@ class AlbumListFragment :
         val subMenu = menu.menu.findItem(R.id.addToPlaylist).subMenu
         playlistMenuHelper.createPlaylistMenu(subMenu)
         menu.setOnMenuItemClickListener(
-            AlbumMenuUtils.getAlbumMenuClickListener(album, presenter)
+            AlbumMenuUtils.getAlbumMenuClickListener(context!!, album, presenter)
         )
         menu.show()
     }
@@ -326,7 +326,7 @@ class AlbumListFragment :
                 .subscribe()
 
             contextualToolbar.setOnMenuItemClickListener(
-                AlbumMenuUtils.getAlbumMenuClickListener(
+                AlbumMenuUtils.getAlbumMenuClickListener(context!!,
                     Single.defer { Single.just(contextualToolbarHelper!!.items) },
                     presenter
                 )

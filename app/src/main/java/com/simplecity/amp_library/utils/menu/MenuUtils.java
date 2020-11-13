@@ -1,6 +1,7 @@
 package com.simplecity.amp_library.utils.menu;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import com.simplecity.amp_library.data.Repository;
@@ -35,8 +36,8 @@ public class MenuUtils {
     }
 
     // Todo: Remove context requirement
-    public static void addToPlaylist(PlaylistManager playlistManager, Playlist playlist, List<Song> songs, Function1<Integer, Unit> insertCallback) {
-        playlistManager.addToPlaylist(playlist, songs, insertCallback);
+    public static void addToPlaylist(Context context, PlaylistManager playlistManager, Playlist playlist, List<Song> songs, Function1<Integer, Unit> insertCallback) {
+        playlistManager.addToPlaylist(context, playlist, songs, insertCallback);
     }
 
     public static void addToQueue(MediaManager mediaManager, List<Song> songs, @NonNull UnsafeConsumer<Integer> onSongsAddedToQueue) {

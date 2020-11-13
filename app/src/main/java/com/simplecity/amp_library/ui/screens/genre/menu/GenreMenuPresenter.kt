@@ -29,14 +29,14 @@ class GenreMenuPresenter @Inject constructor(
         }
     }
 
-    override fun addToPlaylist(playlist: Playlist, genre: Genre) {
+    override fun addToPlaylist(context: Context, playlist: Playlist, genre: Genre) {
         getSongs(genre) { songs ->
             if (playlist.type == Playlist.Type.FAVORITES) {
                 songs.forEach {
                     newUiEvent(it)
                 }
             }
-            playlistManager.addToPlaylist(playlist, songs) { numSongs ->
+            playlistManager.addToPlaylist(context, playlist, songs) { numSongs ->
                 view?.onSongsAddedToPlaylist(playlist, numSongs)
             }
         }
