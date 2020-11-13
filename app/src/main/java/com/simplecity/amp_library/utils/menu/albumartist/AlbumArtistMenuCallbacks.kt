@@ -1,5 +1,6 @@
 package com.simplecity.amp_library.utils.menu.albumartist
 
+import android.content.Context
 import com.simplecity.amp_library.model.AlbumArtist
 import com.simplecity.amp_library.model.Playlist
 import io.reactivex.Single
@@ -8,7 +9,7 @@ interface AlbumArtistMenuCallbacks {
 
     fun createArtistsPlaylist(albumArtists: List<AlbumArtist>)
 
-    fun addArtistsToPlaylist(playlist: Playlist, albumArtists: List<AlbumArtist>)
+    fun addArtistsToPlaylist(context: Context, playlist: Playlist, albumArtists: List<AlbumArtist>)
 
     fun addArtistsToQueue(albumArtists: List<AlbumArtist>)
 
@@ -37,8 +38,8 @@ fun AlbumArtistMenuCallbacks.createArtistsPlaylist(albumArtists: Single<List<Alb
     transform(albumArtists) { albumArtists -> createArtistsPlaylist(albumArtists) }
 }
 
-fun AlbumArtistMenuCallbacks.addArtistsToPlaylist(playlist: Playlist, albumArtists: Single<List<AlbumArtist>>) {
-    transform(albumArtists) { albumArtists -> addArtistsToPlaylist(playlist, albumArtists) }
+fun AlbumArtistMenuCallbacks.addArtistsToPlaylist(context: Context, playlist: Playlist, albumArtists: Single<List<AlbumArtist>>) {
+    transform(albumArtists) { albumArtists -> addArtistsToPlaylist(context, playlist, albumArtists) }
 }
 
 fun AlbumArtistMenuCallbacks.playArtistsNext(albumArtists: Single<List<AlbumArtist>>) {
@@ -61,8 +62,8 @@ fun AlbumArtistMenuCallbacks.createArtistsPlaylist(albumArtist: AlbumArtist) {
     createArtistsPlaylist(listOf(albumArtist))
 }
 
-fun AlbumArtistMenuCallbacks.addArtistsToPlaylist(playlist: Playlist, albumArtist: AlbumArtist) {
-    addArtistsToPlaylist(playlist, listOf(albumArtist))
+fun AlbumArtistMenuCallbacks.addArtistsToPlaylist(context: Context, playlist: Playlist, albumArtist: AlbumArtist) {
+    addArtistsToPlaylist(context, playlist, listOf(albumArtist))
 }
 
 fun AlbumArtistMenuCallbacks.addArtistsToQueue(albumArtist: AlbumArtist) {

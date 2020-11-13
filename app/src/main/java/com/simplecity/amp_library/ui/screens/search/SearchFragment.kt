@@ -504,7 +504,7 @@ class SearchFragment :
             val menu = PopupMenu(v.context, v)
             menu.inflate(R.menu.menu_artist)
             menu.setOnMenuItemClickListener(
-                    AlbumArtistMenuUtils.getAlbumArtistClickListener(albumArtist, presenter))
+                    AlbumArtistMenuUtils.getAlbumArtistClickListener(context!!, albumArtist, presenter))
             menu.show()
         }
     }

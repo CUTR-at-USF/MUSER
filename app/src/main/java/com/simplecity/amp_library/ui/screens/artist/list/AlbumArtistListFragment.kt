@@ -276,7 +276,7 @@ class AlbumArtistListFragment :
             )
 
             contextualToolbar.setOnMenuItemClickListener(
-                AlbumArtistMenuUtils.getAlbumArtistMenuClickListener(Single.defer { Single.just(contextualToolbarHelper!!.items) }, presenter)
+                AlbumArtistMenuUtils.getAlbumArtistMenuClickListener(context!!, Single.defer { Single.just(contextualToolbarHelper!!.items) }, presenter)
             )
 
             contextualToolbarHelper = ContextualToolbarHelper(context!!, contextualToolbar, object : ContextualToolbarHelper.Callback {
@@ -342,7 +342,7 @@ class AlbumArtistListFragment :
         menu.inflate(R.menu.menu_artist)
         val subMenu = menu.menu.findItem(R.id.addToPlaylist).subMenu
         playlistMenuHelper.createPlaylistMenu(subMenu)
-        menu.setOnMenuItemClickListener(AlbumArtistMenuUtils.getAlbumArtistClickListener(albumArtist, presenter))
+        menu.setOnMenuItemClickListener(AlbumArtistMenuUtils.getAlbumArtistClickListener(context!!, albumArtist, presenter))
         menu.show()
     }
 

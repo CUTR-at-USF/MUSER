@@ -1,5 +1,7 @@
 package com.simplecity.amp_library.utils.menu.albumartist
 
+import android.content.Context
+import android.support.v7.widget.ContentFrameLayout
 import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.Toolbar
 import com.simplecity.amp_library.R
@@ -11,7 +13,7 @@ import io.reactivex.Single
 
 object AlbumArtistMenuUtils {
 
-    fun getAlbumArtistMenuClickListener(selectedAlbumArtists: Single<List<AlbumArtist>>, callbacks: AlbumArtistMenuCallbacks): Toolbar.OnMenuItemClickListener {
+    fun getAlbumArtistMenuClickListener(context: Context, selectedAlbumArtists: Single<List<AlbumArtist>>, callbacks: AlbumArtistMenuCallbacks): Toolbar.OnMenuItemClickListener {
         return Toolbar.OnMenuItemClickListener { item ->
             when (item.itemId) {
                 Defs.NEW_PLAYLIST -> {
@@ -19,7 +21,7 @@ object AlbumArtistMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 Defs.PLAYLIST_SELECTED -> {
-                    callbacks.addArtistsToPlaylist(item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, selectedAlbumArtists)
+                    callbacks.addArtistsToPlaylist(context, item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, selectedAlbumArtists)
                     return@OnMenuItemClickListener true
                 }
                 R.id.playNext -> {
@@ -39,7 +41,7 @@ object AlbumArtistMenuUtils {
         }
     }
 
-    fun getAlbumArtistClickListener(albumArtist: AlbumArtist, callbacks: AlbumArtistMenuCallbacks): PopupMenu.OnMenuItemClickListener {
+    fun getAlbumArtistClickListener(context: Context, albumArtist: AlbumArtist, callbacks: AlbumArtistMenuCallbacks): PopupMenu.OnMenuItemClickListener {
         return PopupMenu.OnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.play -> {
@@ -55,7 +57,7 @@ object AlbumArtistMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 Defs.PLAYLIST_SELECTED -> {
-                    callbacks.addArtistsToPlaylist(item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, albumArtist)
+                    callbacks.addArtistsToPlaylist(context, item.intent.getSerializableExtra(PlaylistManager.ARG_PLAYLIST) as Playlist, albumArtist)
                     return@OnMenuItemClickListener true
                 }
                 R.id.addToQueue -> {
