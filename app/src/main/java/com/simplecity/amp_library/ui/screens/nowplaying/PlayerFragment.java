@@ -602,15 +602,17 @@ public class PlayerFragment extends BaseFragment implements
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-        if (!SongMenuUtils.INSTANCE.getSongMenuClickListener(mediaManager.getSong(), presenter).onMenuItemClick(item)) {
-            switch (item.getItemId()) {
-                case R.id.favorite:
-                    ((FavoriteActionBarView) item.getActionView()).toggle();
-                    presenter.toggleFavorite();
-                    return true;
-                case R.id.lyrics:
-                    presenter.showLyrics();
-                    return true;
+        if (getContext() != null) {
+            if (!SongMenuUtils.INSTANCE.getSongMenuClickListener(getContext(), mediaManager.getSong(), presenter).onMenuItemClick(item)) {
+                switch (item.getItemId()) {
+                    case R.id.favorite:
+                        ((FavoriteActionBarView) item.getActionView()).toggle();
+                        presenter.toggleFavorite();
+                        return true;
+                    case R.id.lyrics:
+                        presenter.showLyrics();
+                        return true;
+                }
             }
         }
 

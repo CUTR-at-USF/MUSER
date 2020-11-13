@@ -196,6 +196,7 @@ class SongListFragment :
 
             contextualToolbar.setOnMenuItemClickListener(
                 SongMenuUtils.getSongMenuClickListener(
+                    context!!,
                     Single.defer { Single.just(contextualToolbarHelper!!.items) },
                     songsPresenter
                 )
@@ -299,7 +300,7 @@ class SongListFragment :
     override fun onSongOverflowClick(position: Int, view: View, song: Song) {
         val menu = PopupMenu(context!!, view)
         SongMenuUtils.setupSongMenu(menu, false, true, playlistMenuHelper)
-        menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(song, songsPresenter))
+        menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, songsPresenter))
         menu.show()
     }
 

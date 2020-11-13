@@ -209,7 +209,7 @@ class QueueFragment :
         override fun onQueueItemOverflowClick(position: Int, view: View, queueViewBinder: QueueViewBinder) {
             val menu = PopupMenu(view.context, view)
             QueueMenuUtils.setupQueueSongMenu(menu, playlistMenuHelper)
-            menu.setOnMenuItemClickListener(QueueMenuUtils.getQueueMenuClickListener(queueViewBinder.queueItem, queuePresenter))
+            menu.setOnMenuItemClickListener(QueueMenuUtils.getQueueMenuClickListener(context!!, queueViewBinder.queueItem, queuePresenter))
             menu.show()
         }
 
@@ -257,7 +257,7 @@ class QueueFragment :
 
         val sub = cabToolbar.menu.findItem(R.id.queue_add_to_playlist).subMenu
         disposables.add(playlistMenuHelper.createUpdatingPlaylistMenu(sub).subscribe())
-        cabToolbar.setOnMenuItemClickListener(QueueMenuUtils.getQueueMenuClickListener(Single.fromCallable { cabHelper.items }, queuePresenter) { cabHelper.finish() })
+        cabToolbar.setOnMenuItemClickListener(QueueMenuUtils.getQueueMenuClickListener(context!!, Single.fromCallable { cabHelper.items }, queuePresenter) { cabHelper.finish() })
 
         cabHelper = ContextualToolbarHelper(context, cabToolbar, object : Callback {
             override fun notifyItemChanged(viewModel: SelectableViewModel) {

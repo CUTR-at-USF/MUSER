@@ -197,7 +197,7 @@ class SuggestedFragment :
         override fun onSongOverflowClicked(v: View, position: Int, song: Song) {
             val popupMenu = PopupMenu(context!!, v)
             SongMenuUtils.setupSongMenu(popupMenu, false, true, playlistMenuHelper)
-            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(song, presenter))
+            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, presenter))
             popupMenu.show()
         }
     }

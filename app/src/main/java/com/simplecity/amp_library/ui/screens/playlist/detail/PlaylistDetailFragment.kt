@@ -436,7 +436,7 @@ class PlaylistDetailFragment :
             disposables.add(playlistMenuHelper.createUpdatingPlaylistMenu(sub).subscribe())
 
             contextualToolbar.setOnMenuItemClickListener(
-                SongMenuUtils.getSongMenuClickListener(Single.defer { Operators.reduceSongSingles(contextualToolbarHelper!!.items) }, presenter)
+                SongMenuUtils.getSongMenuClickListener(context!!, Single.defer { Operators.reduceSongSingles(contextualToolbarHelper!!.items) }, presenter)
             )
 
             contextualToolbarHelper = object : ContextualToolbarHelper<Single<List<Song>>>(context!!, contextualToolbar, object : ContextualToolbarHelper.Callback {
@@ -546,7 +546,7 @@ class PlaylistDetailFragment :
         override fun onSongOverflowClick(position: Int, v: View, song: Song) {
             val popupMenu = PopupMenu(v.context, v)
             SongMenuUtils.setupSongMenu(popupMenu, playlist.canEdit, true, playlistMenuHelper)
-            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(song, presenter))
+            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, presenter))
             popupMenu.show()
         }
 

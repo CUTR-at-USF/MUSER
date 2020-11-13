@@ -1,5 +1,6 @@
 package com.simplecity.amp_library.utils.menu.queue
 
+import android.content.Context
 import android.support.v7.widget.PopupMenu
 import android.support.v7.widget.Toolbar
 import com.simplecity.amp_library.R
@@ -19,10 +20,10 @@ object QueueMenuUtils {
         playlistMenuHelper.createPlaylistMenu(subMenu)
     }
 
-    fun getQueueMenuClickListener(queueItems: Single<List<QueueItem>>, callbacks: QueueMenuCallbacks, closeCab: () -> Unit): Toolbar.OnMenuItemClickListener {
+    fun getQueueMenuClickListener(context: Context, queueItems: Single<List<QueueItem>>, callbacks: QueueMenuCallbacks, closeCab: () -> Unit): Toolbar.OnMenuItemClickListener {
         return Toolbar.OnMenuItemClickListener { item ->
 
-            if (SongMenuUtils.getSongMenuClickListener(queueItems.map { it.toSongs() }, callbacks).onMenuItemClick(item)) {
+            if (SongMenuUtils.getSongMenuClickListener(context, queueItems.map { it.toSongs() }, callbacks).onMenuItemClick(item)) {
                 closeCab()
             } else {
                 when (item.itemId) {
@@ -37,7 +38,7 @@ object QueueMenuUtils {
         }
     }
 
-    fun getQueueMenuClickListener(queueItem: QueueItem, callbacks: QueueMenuCallbacks): PopupMenu.OnMenuItemClickListener {
+    fun getQueueMenuClickListener(context: Context, queueItem: QueueItem, callbacks: QueueMenuCallbacks): PopupMenu.OnMenuItemClickListener {
         return PopupMenu.OnMenuItemClickListener { item ->
 
             when (item.itemId) {
@@ -51,7 +52,7 @@ object QueueMenuUtils {
                 }
             }
 
-            SongMenuUtils.getSongMenuClickListener(queueItem.song, callbacks).onMenuItemClick(item)
+            SongMenuUtils.getSongMenuClickListener(context, queueItem.song, callbacks).onMenuItemClick(item)
         }
     }
 }

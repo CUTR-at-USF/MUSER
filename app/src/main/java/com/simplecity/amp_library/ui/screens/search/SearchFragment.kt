@@ -408,6 +408,7 @@ class SearchFragment :
             disposables.add(playlistMenuHelper.createUpdatingPlaylistMenu(sub).subscribe())
 
             contextualToolbar.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(
+                    context!!,
                     Single.defer { Operators.reduceSongSingles(contextualToolbarHelper!!.items) },
                     presenter
             ))
@@ -461,7 +462,7 @@ class SearchFragment :
         override fun onSongOverflowClick(position: Int, v: View, song: Song) {
             val menu = PopupMenu(v.context, v)
             SongMenuUtils.setupSongMenu(menu, false, true, playlistMenuHelper)
-            menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(song, presenter))
+            menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, presenter))
             menu.show()
         }
 

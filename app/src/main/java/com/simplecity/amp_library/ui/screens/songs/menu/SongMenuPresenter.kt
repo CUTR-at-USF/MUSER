@@ -38,7 +38,7 @@ open class SongMenuPresenter @Inject constructor(
         view?.presentCreatePlaylistDialog(songs)
     }
 
-    override fun addToPlaylist(playlist: Playlist, songs: List<Song>) {
+    override fun addToPlaylist(context: Context, playlist: Playlist, songs: List<Song>) {
         if (playlist.type == Playlist.Type.FAVORITES) {
             songs.forEach {
                 newUiEvent(it)
