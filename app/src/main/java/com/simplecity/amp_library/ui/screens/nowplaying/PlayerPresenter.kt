@@ -228,11 +228,13 @@ class PlayerPresenter @Inject constructor(
             val duration = mediaManager.duration
             if (newpos >= duration) {
                 // move to next track
+                saveUiEvent(UiEventType.NEXT)
                 mediaManager.next()
                 startSeekPos -= duration // is OK to go negative
                 newpos -= duration
             }
             if (delta - lastSeekEventTime > 250 || repeatCount < 0) {
+                saveUiEvent(UiEventType.SCAN_FORWARD)
                 mediaManager.seekTo(newpos)
                 lastSeekEventTime = delta
             }

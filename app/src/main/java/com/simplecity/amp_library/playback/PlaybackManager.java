@@ -427,7 +427,9 @@ public class PlaybackManager implements Playback.Callbacks {
         }
 
         playback.seekTo(position);
-
+        Song song = queueManager.getCurrentSong();
+        if (song != null)
+            newPlayerEvent(song, PlayerEventType.SEEK);
         notifyChange(InternalIntents.POSITION_CHANGED);
     }
 
