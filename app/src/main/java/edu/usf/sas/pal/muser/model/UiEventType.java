@@ -15,6 +15,7 @@ public enum UiEventType {
          REPEAT_OFF,
          REPEAT_ALL_SONGS,
          REPEAT_CURRENT_SONG,
+         SCAN_FORWARD,
          FAVORITE,
          UNFAVORITE,
          SEEK,
