@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -48,6 +49,7 @@ import com.simplecity.amp_library.glide.palette.ColorSet;
 import com.simplecity.amp_library.glide.palette.ColorSetTranscoder;
 import com.simplecity.amp_library.model.Playlist;
 import com.simplecity.amp_library.model.Song;
+import com.simplecity.amp_library.playback.MusicService;
 import com.simplecity.amp_library.playback.QueueManager;
 import com.simplecity.amp_library.rx.UnsafeAction;
 import com.simplecity.amp_library.rx.UnsafeConsumer;
@@ -236,8 +238,7 @@ public class PlayerFragment extends BaseFragment implements
                 } else {
                     uiEventType = UiEventType.PAUSE;
                 }
-                UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, getContext());
-                FirebaseIOUtils.saveUiEvent(uiEvent);
+                newUiEvent(song, uiEventType, getContext(), 0);
                 return Unit.INSTANCE;
             }));
         }
@@ -328,11 +329,18 @@ public class PlayerFragment extends BaseFragment implements
 
             disposables.add(sharedSeekBarEvents.subscribe(
                     seekBarChangeEvent -> {
+                        UiEventType uiEventType = null;
                         if (seekBarChangeEvent instanceof SeekBarStartChangeEvent) {
+                            uiEventType = UiEventType.SEEK_START;
                             isSeeking = true;
                         } else if (seekBarChangeEvent instanceof SeekBarStopChangeEvent) {
+                            uiEventType = UiEventType.SEEK_STOP;
                             isSeeking = false;
                         }
+                        Song song = MusicServiceConnectionUtils.getSong();
+                        if (uiEventType != null)
+                            newUiEvent(song, uiEventType, getContext(), MusicServiceConnectionUtils
+                                                                        .getPosition());
                     },
                     error -> LogUtils.logException(TAG, "Error in seek change event", error))
             );
@@ -721,6 +729,11 @@ public class PlayerFragment extends BaseFragment implements
                 Aesthetic.get(getContext()).colorAccent(),
                 Pair::new
         ).map(pair -> ColorSet.Companion.fromPrimaryAccentColors(getContext(), pair.first, pair.second));
+    }
+
+    private void newUiEvent(Song song, UiEventType uiEventType, Context context, long position){
+        UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, context, position);
+        FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 
     // SongMenuContract.View implementation

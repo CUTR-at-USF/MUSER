@@ -487,7 +487,7 @@ public class FolderFragment extends BaseFragment implements
     }
 
     private static void newUiEvent(Song song, UiEventType uiEventType){
-        UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get());
+        UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, ShuttleApplication.get(), 0);
         FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 

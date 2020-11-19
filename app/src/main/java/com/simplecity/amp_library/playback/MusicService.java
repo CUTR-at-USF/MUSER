@@ -1207,7 +1207,7 @@ public class MusicService extends MediaBrowserServiceCompat {
 
     private static void newUiEvent(Song song, UiEventType uiEventType){
         UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType,
-                ShuttleApplication.get());
+                ShuttleApplication.get(), 0);
         FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 }

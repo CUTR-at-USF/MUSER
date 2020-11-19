@@ -35,11 +35,13 @@ object EventUtils {
      * @return UiAction object
      */
     @JvmStatic
-    fun newUiEvent(song: Song, capturedUiAction: UiEventType, context: Context): UiEvent {
+    fun newUiEvent(song: Song, capturedUiAction: UiEventType, context: Context, position: Long = 0): UiEvent {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
-        val seekPositionMs = MusicServiceConnectionUtils.getPosition();
+        var seekPositionMs = position
+        if (seekPositionMs == 0L)
+            seekPositionMs = MusicServiceConnectionUtils.getPosition()
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData)
     }
