@@ -238,7 +238,7 @@ public class PlayerFragment extends BaseFragment implements
                 } else {
                     uiEventType = UiEventType.PAUSE;
                 }
-                newUiEvent(song, uiEventType, getContext(), 0);
+                newUiEvent(song, uiEventType, getContext(), Long.MAX_VALUE);
                 return Unit.INSTANCE;
             }));
         }

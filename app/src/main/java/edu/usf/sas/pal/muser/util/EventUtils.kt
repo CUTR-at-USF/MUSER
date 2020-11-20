@@ -28,29 +28,40 @@ object EventUtils {
     }
 
     /**
-     * Function to populate the UiAction data class
+     * Function to populate the UiEvent data class
      * @param song - The song for which the action was performed.
      * @param capturedUiAction - The action that was captured
      * @param context - The context of the fragment.
-     * @return UiAction object
+     * @param seekPosition - seek position of the song calculated outside the function. If the seek
+     * position is Long.MAX_VALUE, the seek position is calculated inside the function
+     * @return UiEvent object
      */
     @JvmStatic
-    fun newUiEvent(song: Song, capturedUiAction: UiEventType, context: Context, position: Long = 0): UiEvent {
+    fun newUiEvent(song: Song, capturedUiAction: UiEventType, context: Context, seekPosition: Long = Long.MAX_VALUE): UiEvent {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
-        var seekPositionMs = position
-        if (seekPositionMs == 0L)
+        var seekPositionMs = seekPosition
+        if (seekPositionMs == Long.MAX_VALUE)
             seekPositionMs = MusicServiceConnectionUtils.getPosition()
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData)
     }
 
     /**
-     * Function to populate the UiAction class with Album data when the overflow button is clicked
+     *  @see newUiEvent(Song, UiEventType, Context, Long)
+     */
+
+    @JvmStatic
+    fun newUiEvent(song: Song, capturedUiAction: UiEventType, context: Context): UiEvent{
+        return newUiEvent(song, capturedUiAction, context, Long.MAX_VALUE)
+    }
+
+    /**
+     * Function to populate the UiEvent class with Album data when the overflow button is clicked
      * @param album - The Album for which the action was performed
      * @param capturedUiAction = The action that was captured.
-     * @return UiAction object
+     * @return UiEvent object
      */
     @JvmStatic
     fun newUiAlbumEvent(album: Album, capturedUiAction: UiEventType): UiEvent {
@@ -62,10 +73,10 @@ object EventUtils {
     }
 
     /**
-     * Function to populate the UiAction class with AlbumArtist data when the overflow button is clicked
+     * Function to populate the UiEvent class with AlbumArtist data when the overflow button is clicked
      * @param albumArtist - The Album Artist for which the action was performed
      * @param capturedUiAction - The action that was captured.
-     * @return UiAction object
+     * @return UiEvent object
      */
 
     @JvmStatic
@@ -84,10 +95,10 @@ object EventUtils {
     }
 
     /**
-     * Function to populate the UiAction class with Genre data when the overflow button is clicked
+     * Function to populate the UiEvent class with Genre data when the overflow button is clicked
      * @param genre - The Genre for which the action was performed.
      * @param capturedUiAction - The action that was captured
-     * @return UiAction object
+     * @return UiEvent object
      */
     @JvmStatic
     fun newUiGenreEvent(genre: Genre, capturedUiAction: UiEventType): UiEvent {
