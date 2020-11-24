@@ -20,7 +20,7 @@ public enum UiEventType {
          FAVORITE,
          UNFAVORITE,
          SEEK_START,
-         SEEK_STOP,
+         SEEK_STOP, // seek position for SEEK_STOP will always match SEEK_START in the case of skipping seek positions using the seek bar
          SHUFFLE_ON,
          SHUFFLE_OFF,
          CREATE_PLAYLIST,
