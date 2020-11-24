@@ -238,7 +238,7 @@ public class PlayerFragment extends BaseFragment implements
                 } else {
                     uiEventType = UiEventType.PAUSE;
                 }
-                newUiEvent(song, uiEventType, getContext(), Long.MAX_VALUE);
+                newUiEvent(song, uiEventType, getContext());
                 return Unit.INSTANCE;
             }));
         }
@@ -339,8 +339,11 @@ public class PlayerFragment extends BaseFragment implements
                         }
                         Song song = MusicServiceConnectionUtils.getSong();
                         if (uiEventType != null)
+                            /* called  MusicServiceConnectionUtils.getPosition() here to fix a lag
+                            2 -3 seconds in the seekPosition value when the same function is called
+                            from EventUtils.newUiEvent()*/
                             newUiEvent(song, uiEventType, getContext(), MusicServiceConnectionUtils
-                                                                        .getPosition());
+                                    .getPosition());
                     },
                     error -> LogUtils.logException(TAG, "Error in seek change event", error))
             );
@@ -733,6 +736,11 @@ public class PlayerFragment extends BaseFragment implements
 
     private void newUiEvent(Song song, UiEventType uiEventType, Context context, long position){
         UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, context, position);
+        FirebaseIOUtils.saveUiEvent(uiEvent);
+    }
+
+    private void newUiEvent(Song song, UiEventType uiEventType, Context context){
+        UiEvent uiEvent = EventUtils.newUiEvent(song, uiEventType, context);
         FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 

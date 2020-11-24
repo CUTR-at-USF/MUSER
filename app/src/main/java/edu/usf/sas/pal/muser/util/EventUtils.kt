@@ -42,8 +42,9 @@ object EventUtils {
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
         var seekPositionMs = seekPosition
-        if (seekPositionMs == Long.MAX_VALUE)
+        if (seekPositionMs == Long.MAX_VALUE) {
             seekPositionMs = MusicServiceConnectionUtils.getPosition()
+        }
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData)
     }
