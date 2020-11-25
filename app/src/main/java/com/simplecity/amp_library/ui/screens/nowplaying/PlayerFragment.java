@@ -334,19 +334,17 @@ public class PlayerFragment extends BaseFragment implements
                             uiEventType = UiEventType.SEEK_START;
                             isSeeking = true;
                         } else if (seekBarChangeEvent instanceof SeekBarStopChangeEvent) {
-                            /*
-                                seek position for SEEK_STOP will always match SEEK_START in the case
-                                of skipping seek positions using the seek bar. Works fine as intended
-                                to when dragging the seekbar.
-                             */
+//                              seek position for SEEK_STOP will always match SEEK_START in the case
+//                              of skipping seek positions using the seek bar. Works fine as intended
+//                              to when dragging the seekbar.
                             uiEventType = UiEventType.SEEK_STOP;
                             isSeeking = false;
                         }
                         Song song = MusicServiceConnectionUtils.getSong();
                         if (uiEventType != null)
-                            /* called  MusicServiceConnectionUtils.getPosition() here to fix a lag
-                            2 -3 seconds in the seekPosition value when the same function is called
-                            from EventUtils.newUiEvent()*/
+//                            called  MusicServiceConnectionUtils.getPosition() here to fix a lag
+//                            2 -3 seconds in the seekPosition value when the same function is called
+//                            from EventUtils.newUiEvent()
                             newUiEvent(song, uiEventType, getContext(), MusicServiceConnectionUtils
                                     .getPosition());
                     },
