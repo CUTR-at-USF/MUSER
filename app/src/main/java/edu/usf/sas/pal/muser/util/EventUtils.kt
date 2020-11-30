@@ -1,6 +1,13 @@
 package edu.usf.sas.pal.muser.util
 
 import android.content.Context
+import android.content.Context.AUDIO_SERVICE
+import android.media.AudioDeviceInfo
+import android.media.AudioManager
+import android.os.Build
+import android.provider.MediaStore
+import android.support.annotation.RequiresApi
+import android.support.v4.content.ContextCompat.getSystemService
 import android.util.Log
 import com.simplecity.amp_library.model.Album
 import com.simplecity.amp_library.model.AlbumArtist
@@ -9,7 +16,11 @@ import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.utils.MusicServiceConnectionUtils
 import edu.usf.sas.pal.muser.model.*
 
+
 object EventUtils {
+
+    private const val TAG = "EventUtils"
+
     /**
      * Function to populate the PlayerEvent data class.
      * @param song - The song for which the event occurred.
@@ -41,6 +52,7 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
+        val volumeData = HeadphoneUtils.getVolumeData(context)
         var seekPositionMs = seekPosition
         if (seekPositionMs == Long.MAX_VALUE) {
             seekPositionMs = MusicServiceConnectionUtils.getPosition()
