@@ -9,6 +9,7 @@ import android.provider.MediaStore
 import android.support.annotation.RequiresApi
 import android.support.v4.content.ContextCompat.getSystemService
 import android.util.Log
+import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.model.Album
 import com.simplecity.amp_library.model.AlbumArtist
 import com.simplecity.amp_library.model.Genre
@@ -33,9 +34,10 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
+        val volumeData = HeadphoneUtils.getVolumeData(context)
         val seekPositionMs = MusicServiceConnectionUtils.getPosition()
         return PlayerEvent(capturedEvent, currentTimeMS, nanoTime, seekPositionMs,
-                songData)
+                songData, volumeData = volumeData)
     }
 
     /**
@@ -58,7 +60,8 @@ object EventUtils {
             seekPositionMs = MusicServiceConnectionUtils.getPosition()
         }
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData)
+                nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData,
+                volumeData = volumeData)
     }
 
     /**
@@ -81,8 +84,9 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val albumData = AlbumData(album)
+        val volumeData = HeadphoneUtils.getVolumeData(ShuttleApplication.get())
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, album = albumData)
+                nanoTime = nanoTime, album = albumData, volumeData = volumeData)
     }
 
     /**
@@ -103,8 +107,9 @@ object EventUtils {
             albums.add(albumData)
         }
         val albumArtistData = AlbumArtistData(albumArtist, albums)
+        val volumeData = HeadphoneUtils.getVolumeData(ShuttleApplication.get())
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, albumArtist = albumArtistData)
+                nanoTime = nanoTime, albumArtist = albumArtistData, volumeData = volumeData)
     }
 
     /**
@@ -118,7 +123,8 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val genreData = GenreData(genre)
+        val volumeData = HeadphoneUtils.getVolumeData(ShuttleApplication.get())
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, genre = genreData)
+                nanoTime = nanoTime, genre = genreData, volumeData = volumeData)
     }
 }

@@ -30,7 +30,7 @@ object HeadphoneUtils {
                  volumeLevelDB = if (isSpeakerOn(context)) {
                      audioManager.getStreamVolumeDb(AudioManager.STREAM_MUSIC,
                              volumeLevel, AudioDeviceInfo.TYPE_BUILTIN_SPEAKER)
-                 } else{
+                 } else {
                      audioManager.getStreamVolumeDb(AudioManager.STREAM_MUSIC,
                              volumeLevel, deviceType)
                  }
@@ -74,7 +74,7 @@ object HeadphoneUtils {
                     }
                 }
             }
-            else{
+            else {
                 isSpeakerOn = !audioManager.isWiredHeadsetOn && !audioManager.isWiredHeadsetOn
                         && !audioManager.isBluetoothScoOn
             }
