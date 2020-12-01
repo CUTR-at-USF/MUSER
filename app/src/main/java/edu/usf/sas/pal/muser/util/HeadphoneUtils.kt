@@ -11,6 +11,12 @@ object HeadphoneUtils {
 
     private const val TAG = "HeadphoneUtils"
     private var deviceType = 0
+
+    /**
+     * Function to populate volume data class.
+     * @param context - context of the activity/fragment.
+     * @return VolumeData object.
+     */
     @JvmStatic
      fun getVolumeData(context: Context): VolumeData? {
          val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager?
@@ -34,6 +40,11 @@ object HeadphoneUtils {
         return null
      }
 
+    /**
+     * Function to check if the built in speaker is used or not
+     * @param context - context of the activity/fragment
+     * @return isSpeakerOn true or false.
+     */
     @JvmStatic
     fun isSpeakerOn(context: Context): Boolean{
         val headsetTypes: Array<Int>
@@ -62,6 +73,10 @@ object HeadphoneUtils {
                         }
                     }
                 }
+            }
+            else{
+                isSpeakerOn = !audioManager.isWiredHeadsetOn && !audioManager.isWiredHeadsetOn
+                        && !audioManager.isBluetoothScoOn
             }
         }
         return isSpeakerOn
