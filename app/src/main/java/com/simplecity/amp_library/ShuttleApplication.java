@@ -6,6 +6,7 @@ import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.media.MediaRouter;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
@@ -42,6 +43,7 @@ import com.uber.rxdogtag.RxDogTag;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
+import edu.usf.sas.pal.muser.util.HeadphoneUtils;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
@@ -51,10 +53,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.inject.Inject;
+
 import org.jaudiotagger.audio.AudioFile;
 import org.jaudiotagger.audio.AudioFileIO;
 import org.jaudiotagger.audio.exceptions.CannotReadException;
@@ -90,6 +94,10 @@ public class ShuttleApplication extends DaggerApplication {
     private SharedPreferences mPrefs;
 
     private static ShuttleApplication mApp;
+
+    MediaRouter.Callback callback;
+
+    int currentVolume = 0;
 
     @Override
     public void onCreate() {
@@ -197,6 +205,14 @@ public class ShuttleApplication extends DaggerApplication {
                 .onErrorComplete()
                 .subscribeOn(Schedulers.io())
                 .subscribe();
+
+        currentVolume = Objects.requireNonNull(HeadphoneUtils.getVolumeData(mApp)).getCurrentVolumeLevel();
+        MediaRouter mediaRouter = (MediaRouter) getApplicationContext().getSystemService(MEDIA_ROUTER_SERVICE);
+        setupCallback();
+        if (mediaRouter != null) {
+            mediaRouter.addCallback(MediaRouter.ROUTE_TYPE_USER, callback,
+                    MediaRouter.CALLBACK_FLAG_UNFILTERED_EVENTS);
+        }
     }
 
     @Override
@@ -399,5 +415,56 @@ public class ShuttleApplication extends DaggerApplication {
 
     public static SharedPreferences getPrefs() {
         return get().mPrefs;
+    }
+
+    private void setupCallback(){
+        callback = new MediaRouter.Callback() {
+            @Override
+            public void onRouteSelected(MediaRouter router, int type, MediaRouter.RouteInfo info) {
+
+            }
+
+            @Override
+            public void onRouteUnselected(MediaRouter router, int type, MediaRouter.RouteInfo info) {
+
+            }
+
+            @Override
+            public void onRouteAdded(MediaRouter router, MediaRouter.RouteInfo info) {
+                Log.d(TAG, "onRouteAdded: Addedle" );
+            }
+
+            @Override
+            public void onRouteRemoved(MediaRouter router, MediaRouter.RouteInfo info) {
+
+            }
+
+            @Override
+            public void onRouteChanged(MediaRouter router, MediaRouter.RouteInfo info) {
+
+            }
+
+            @Override
+            public void onRouteGrouped(MediaRouter router, MediaRouter.RouteInfo info, MediaRouter.RouteGroup group, int index) {
+
+            }
+
+            @Override
+            public void onRouteUngrouped(MediaRouter router, MediaRouter.RouteInfo info, MediaRouter.RouteGroup group) {
+
+            }
+
+            @Override
+            public void onRouteVolumeChanged(MediaRouter router, MediaRouter.RouteInfo info) {
+                Log.d(TAG, "onRouteVolumeChanged: " + currentVolume + " " + info.getVolume());
+                if (info.getVolume() >= currentVolume){
+                    Log.d(TAG, "onRouteVolumeChanged: UP");
+                }
+                else {
+                    Log.d(TAG, "onRouteVolumeChanged: DOWN");
+                }
+                currentVolume = info.getVolume();
+            }
+        };
     }
 }
