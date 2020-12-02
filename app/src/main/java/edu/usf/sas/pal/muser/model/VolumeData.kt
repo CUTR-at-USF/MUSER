@@ -1,8 +1,8 @@
 package edu.usf.sas.pal.muser.model
 
 data class VolumeData
-(var currentVolumeLevel: Int = 0,
- var volumeMax: Int = 0,
- var volumeMin: Int = 0,
- var volumeDB: Float = 0F
+(val currentVolumeLevel: Int = Int.MIN_VALUE,
+ val volumeMax: Int = Int.MAX_VALUE,
+ val volumeMin: Int? = Int.MIN_VALUE,
+ val volumeDB: Float? = Float.NaN
 )
