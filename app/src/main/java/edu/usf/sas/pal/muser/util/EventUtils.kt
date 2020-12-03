@@ -127,4 +127,13 @@ object EventUtils {
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, genre = genreData, audioData = audioData)
     }
+
+    @JvmStatic
+    fun newUiVolumeEvent(capturedUiAction: UiEventType, context: Context): UiEvent{
+        val currentTimeMS = System.currentTimeMillis()
+        val nanoTime = System.nanoTime()
+        val audioData = HeadphoneUtils.getAudioData(context)
+        return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
+                nanoTime = nanoTime, audioData = audioData)
+    }
 }

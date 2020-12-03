@@ -42,6 +42,10 @@ import com.squareup.leakcanary.RefWatcher;
 import com.uber.rxdogtag.RxDogTag;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
+import edu.usf.sas.pal.muser.model.UiEvent;
+import edu.usf.sas.pal.muser.model.UiEventType;
+import edu.usf.sas.pal.muser.model.VolumeData;
+import edu.usf.sas.pal.muser.util.EventUtils;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import edu.usf.sas.pal.muser.util.HeadphoneUtils;
 import io.reactivex.Completable;
@@ -417,6 +421,11 @@ public class ShuttleApplication extends DaggerApplication {
         return get().mPrefs;
     }
 
+    public void newUiEvent(UiEventType uiEventType){
+        UiEvent uiEvent = EventUtils.newUiVolumeEvent(uiEventType, mApp);
+        FirebaseIOUtils.saveUiEvent(uiEvent);
+    }
+
     private void setupCallback(){
         callback = new MediaRouter.Callback() {
             @Override
@@ -457,11 +466,12 @@ public class ShuttleApplication extends DaggerApplication {
             @Override
             public void onRouteVolumeChanged(MediaRouter router, MediaRouter.RouteInfo info) {
                 Log.d(TAG, "onRouteVolumeChanged: " + currentVolume + " " + info.getVolume());
-                if (info.getVolume() >= currentVolume){
-                    Log.d(TAG, "onRouteVolumeChanged: UP");
-                }
-                else {
-                    Log.d(TAG, "onRouteVolumeChanged: DOWN");
+                if (info.getVolume() > currentVolume){
+                    newUiEvent(UiEventType.VOLUME_UP);
+                } else if (info.getVolume() == currentVolume){
+                    newUiEvent(UiEventType.VOLUME_NO_CHANGE);
+                } else {
+                    newUiEvent(UiEventType.VOLUME_DOWN);
                 }
                 currentVolume = info.getVolume();
             }

@@ -25,5 +25,8 @@ public enum UiEventType {
          SHUFFLE_OFF,
          CREATE_PLAYLIST,
          SELECT_CATEGORY,
-         SELECT_ARTIST
+         SELECT_ARTIST,
+         VOLUME_UP,
+         VOLUME_DOWN,
+         VOLUME_NO_CHANGE
 }
