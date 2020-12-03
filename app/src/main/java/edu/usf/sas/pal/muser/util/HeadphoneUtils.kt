@@ -5,6 +5,8 @@ import android.media.AudioDeviceInfo
 import android.media.AudioManager
 import android.os.Build
 import android.util.Log
+import edu.usf.sas.pal.muser.model.AudioData
+import edu.usf.sas.pal.muser.model.AudioDeviceType
 import edu.usf.sas.pal.muser.model.VolumeData
 
 object HeadphoneUtils {
@@ -80,6 +82,30 @@ object HeadphoneUtils {
             }
         }
         return isSpeakerOn
+    }
+
+    /**
+     * function to get the current deviceType. Should be called after
+     * @see isSpeakerOn function.
+     * @return AudioDeviceType object
+     */
+    @JvmStatic
+    fun getDeviceType(): AudioDeviceType {
+        return AudioDeviceType.values()[deviceType]
+    }
+
+    fun getAudioData(context: Context): AudioData {
+        val audioDeviceType: AudioDeviceType = if (isSpeakerOn(context)) {
+            AudioDeviceType.TYPE_BUILTIN_SPEAKER
+        } else {
+            getDeviceType()
+        }
+        val volumeData = getVolumeData(context)
+        var audioData = AudioData(AudioDeviceType.TYPE_UNKNOWN, VolumeData())
+        if (volumeData != null) {
+            audioData = AudioData(audioDeviceType, volumeData)
+        }
+        return audioData
     }
 
  }

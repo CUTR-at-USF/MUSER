@@ -34,10 +34,10 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
-        val volumeData = HeadphoneUtils.getVolumeData(context)
+        val audioData = HeadphoneUtils.getAudioData(context)
         val seekPositionMs = MusicServiceConnectionUtils.getPosition()
         return PlayerEvent(capturedEvent, currentTimeMS, nanoTime, seekPositionMs,
-                songData, volumeData = volumeData)
+                songData, audioData = audioData)
     }
 
     /**
@@ -54,14 +54,14 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val songData = SongData(song, context)
-        val volumeData = HeadphoneUtils.getVolumeData(context)
+        val audioData = HeadphoneUtils.getAudioData(context)
         var seekPositionMs = seekPosition
         if (seekPositionMs == Long.MAX_VALUE) {
             seekPositionMs = MusicServiceConnectionUtils.getPosition()
         }
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
                 nanoTime = nanoTime, seekPositionMs = seekPositionMs, song = songData,
-                volumeData = volumeData)
+                audioData = audioData)
     }
 
     /**
@@ -84,9 +84,9 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val albumData = AlbumData(album)
-        val volumeData = HeadphoneUtils.getVolumeData(ShuttleApplication.get())
+        val audioData = HeadphoneUtils.getAudioData(ShuttleApplication.get())
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, album = albumData, volumeData = volumeData)
+                nanoTime = nanoTime, album = albumData, audioData = audioData)
     }
 
     /**
@@ -107,9 +107,9 @@ object EventUtils {
             albums.add(albumData)
         }
         val albumArtistData = AlbumArtistData(albumArtist, albums)
-        val volumeData = HeadphoneUtils.getVolumeData(ShuttleApplication.get())
+        val audioData = HeadphoneUtils.getAudioData(ShuttleApplication.get())
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, albumArtist = albumArtistData, volumeData = volumeData)
+                nanoTime = nanoTime, albumArtist = albumArtistData, audioData = audioData)
     }
 
     /**
@@ -123,8 +123,8 @@ object EventUtils {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val genreData = GenreData(genre)
-        val volumeData = HeadphoneUtils.getVolumeData(ShuttleApplication.get())
+        val audioData = HeadphoneUtils.getAudioData(ShuttleApplication.get())
         return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
-                nanoTime = nanoTime, genre = genreData, volumeData = volumeData)
+                nanoTime = nanoTime, genre = genreData, audioData = audioData)
     }
 }
