@@ -12,7 +12,21 @@ import edu.usf.sas.pal.muser.model.VolumeData
 object HeadphoneUtils {
 
     private const val TAG = "HeadphoneUtils"
-    private var deviceType = 0
+
+
+    fun getAudioData(context: Context): AudioData {
+        val audioDeviceType: AudioDeviceType = if (isSpeakerOn(context).second) {
+            AudioDeviceType.TYPE_BUILTIN_SPEAKER
+        } else {
+            AudioDeviceType.values()[isSpeakerOn(context).first]
+        }
+        val volumeData = getVolumeData(context)
+        var audioData = AudioData(AudioDeviceType.TYPE_UNKNOWN, VolumeData())
+        if (volumeData != null) {
+            audioData = AudioData(audioDeviceType, volumeData)
+        }
+        return audioData
+    }
 
     /**
      * Function to populate volume data class.
@@ -29,12 +43,12 @@ object HeadphoneUtils {
              var volumeLevelDB = Float.MIN_VALUE
              if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                  volumeMin = audioManager.getStreamMinVolume(AudioManager.STREAM_MUSIC)
-                 volumeLevelDB = if (isSpeakerOn(context)) {
+                 volumeLevelDB = if (isSpeakerOn(context).second) {
                      audioManager.getStreamVolumeDb(AudioManager.STREAM_MUSIC,
                              volumeLevel, AudioDeviceInfo.TYPE_BUILTIN_SPEAKER)
                  } else {
                      audioManager.getStreamVolumeDb(AudioManager.STREAM_MUSIC,
-                             volumeLevel, deviceType)
+                             volumeLevel, isSpeakerOn(context).first)
                  }
              }
              return VolumeData(volumeLevel, volumeMax, volumeMin, volumeLevelDB)
@@ -48,10 +62,10 @@ object HeadphoneUtils {
      * @return isSpeakerOn true or false.
      */
     @JvmStatic
-    fun isSpeakerOn(context: Context): Boolean{
+    fun isSpeakerOn(context: Context): Pair<Int, Boolean> {
         val headsetTypes: Array<Int>
         val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager?
-        var isSpeakerOn = true
+        var (deviceType, isSpeakerOn) = Pair(0, true)
         if (audioManager != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 //  AudioDeviceInfo.TYPE_USB_HEADSET is only supported for devices with API_LEVEL > 26
@@ -75,37 +89,11 @@ object HeadphoneUtils {
                         }
                     }
                 }
-            }
-            else {
-                isSpeakerOn = !audioManager.isWiredHeadsetOn && !audioManager.isWiredHeadsetOn
+            } else {
+                isSpeakerOn = !audioManager.isWiredHeadsetOn && !audioManager.isBluetoothA2dpOn
                         && !audioManager.isBluetoothScoOn
             }
         }
-        return isSpeakerOn
+        return Pair(deviceType, isSpeakerOn)
     }
-
-    /**
-     * function to get the current deviceType. Should be called after
-     * @see isSpeakerOn function.
-     * @return AudioDeviceType object
-     */
-    @JvmStatic
-    fun getDeviceType(): AudioDeviceType {
-        return AudioDeviceType.values()[deviceType]
-    }
-
-    fun getAudioData(context: Context): AudioData {
-        val audioDeviceType: AudioDeviceType = if (isSpeakerOn(context)) {
-            AudioDeviceType.TYPE_BUILTIN_SPEAKER
-        } else {
-            getDeviceType()
-        }
-        val volumeData = getVolumeData(context)
-        var audioData = AudioData(AudioDeviceType.TYPE_UNKNOWN, VolumeData())
-        if (volumeData != null) {
-            audioData = AudioData(audioDeviceType, volumeData)
-        }
-        return audioData
-    }
-
  }

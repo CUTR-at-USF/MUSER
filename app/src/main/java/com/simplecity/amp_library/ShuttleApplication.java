@@ -34,7 +34,6 @@ import com.simplecity.amp_library.utils.InputMethodManagerLeaks;
 import com.simplecity.amp_library.utils.LegacyUtils;
 import com.simplecity.amp_library.utils.LogUtils;
 import com.simplecity.amp_library.utils.SettingsManager;
-import com.simplecity.amp_library.utils.ShuttleUtils;
 import com.simplecity.amp_library.utils.StringUtils;
 import com.simplecity.amp_library.utils.extensions.GenreExtKt;
 import com.squareup.leakcanary.LeakCanary;
@@ -44,7 +43,6 @@ import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
-import edu.usf.sas.pal.muser.model.VolumeData;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import edu.usf.sas.pal.muser.util.HeadphoneUtils;
@@ -98,8 +96,6 @@ public class ShuttleApplication extends DaggerApplication {
     private SharedPreferences mPrefs;
 
     private static ShuttleApplication mApp;
-
-    MediaRouter.Callback callback;
 
     int currentVolume = 0;
 
@@ -212,9 +208,8 @@ public class ShuttleApplication extends DaggerApplication {
 
         currentVolume = Objects.requireNonNull(HeadphoneUtils.getVolumeData(mApp)).getCurrentVolumeLevel();
         MediaRouter mediaRouter = (MediaRouter) getApplicationContext().getSystemService(MEDIA_ROUTER_SERVICE);
-        setupCallback();
         if (mediaRouter != null) {
-            mediaRouter.addCallback(MediaRouter.ROUTE_TYPE_USER, callback,
+            mediaRouter.addCallback(MediaRouter.ROUTE_TYPE_USER, createMediaRouterCallback(),
                     MediaRouter.CALLBACK_FLAG_UNFILTERED_EVENTS);
         }
     }
@@ -426,42 +421,28 @@ public class ShuttleApplication extends DaggerApplication {
         FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 
-    private void setupCallback(){
-        callback = new MediaRouter.Callback() {
+    private MediaRouter.Callback createMediaRouterCallback(){
+        return new MediaRouter.Callback() {
             @Override
-            public void onRouteSelected(MediaRouter router, int type, MediaRouter.RouteInfo info) {
-
-            }
+            public void onRouteSelected(MediaRouter router, int type, MediaRouter.RouteInfo info) {}
 
             @Override
-            public void onRouteUnselected(MediaRouter router, int type, MediaRouter.RouteInfo info) {
-
-            }
+            public void onRouteUnselected(MediaRouter router, int type, MediaRouter.RouteInfo info) {}
 
             @Override
-            public void onRouteAdded(MediaRouter router, MediaRouter.RouteInfo info) {
-                Log.d(TAG, "onRouteAdded: Addedle" );
-            }
+            public void onRouteAdded(MediaRouter router, MediaRouter.RouteInfo info) {}
 
             @Override
-            public void onRouteRemoved(MediaRouter router, MediaRouter.RouteInfo info) {
-
-            }
+            public void onRouteRemoved(MediaRouter router, MediaRouter.RouteInfo info) {}
 
             @Override
-            public void onRouteChanged(MediaRouter router, MediaRouter.RouteInfo info) {
-
-            }
+            public void onRouteChanged(MediaRouter router, MediaRouter.RouteInfo info) {}
 
             @Override
-            public void onRouteGrouped(MediaRouter router, MediaRouter.RouteInfo info, MediaRouter.RouteGroup group, int index) {
-
-            }
+            public void onRouteGrouped(MediaRouter router, MediaRouter.RouteInfo info, MediaRouter.RouteGroup group, int index) {}
 
             @Override
-            public void onRouteUngrouped(MediaRouter router, MediaRouter.RouteInfo info, MediaRouter.RouteGroup group) {
-
-            }
+            public void onRouteUngrouped(MediaRouter router, MediaRouter.RouteInfo info, MediaRouter.RouteGroup group) {}
 
             @Override
             public void onRouteVolumeChanged(MediaRouter router, MediaRouter.RouteInfo info) {
