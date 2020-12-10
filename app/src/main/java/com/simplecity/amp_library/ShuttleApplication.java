@@ -45,7 +45,7 @@ import edu.usf.sas.pal.muser.model.UiEvent;
 import edu.usf.sas.pal.muser.model.UiEventType;
 import edu.usf.sas.pal.muser.util.EventUtils;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
-import edu.usf.sas.pal.muser.util.HeadphoneUtils;
+import edu.usf.sas.pal.muser.util.AudioDeviceUtils;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.schedulers.Schedulers;
@@ -206,7 +206,7 @@ public class ShuttleApplication extends DaggerApplication {
                 .subscribeOn(Schedulers.io())
                 .subscribe();
 
-        currentVolume = Objects.requireNonNull(HeadphoneUtils.getVolumeData(mApp)).getCurrentVolumeLevel();
+        currentVolume = AudioDeviceUtils.getVolumeData(mApp).getCurrentVolumeLevel();
         MediaRouter mediaRouter = (MediaRouter) getApplicationContext().getSystemService(MEDIA_ROUTER_SERVICE);
         if (mediaRouter != null) {
             mediaRouter.addCallback(MediaRouter.ROUTE_TYPE_USER, createMediaRouterCallback(),

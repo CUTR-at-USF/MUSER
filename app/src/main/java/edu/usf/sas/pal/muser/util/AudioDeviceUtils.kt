@@ -9,11 +9,11 @@ import edu.usf.sas.pal.muser.model.AudioData
 import edu.usf.sas.pal.muser.model.AudioDeviceType
 import edu.usf.sas.pal.muser.model.VolumeData
 
-object HeadphoneUtils {
+object AudioDeviceUtils {
 
     private const val TAG = "HeadphoneUtils"
 
-
+    @JvmStatic
     fun getAudioData(context: Context): AudioData {
         val audioDeviceType: AudioDeviceType = if (isSpeakerOn(context).second) {
             AudioDeviceType.TYPE_BUILTIN_SPEAKER
@@ -21,11 +21,7 @@ object HeadphoneUtils {
             AudioDeviceType.values()[isSpeakerOn(context).first]
         }
         val volumeData = getVolumeData(context)
-        return if (volumeData != null) {
-            AudioData(audioDeviceType, volumeData)
-        } else {
-            AudioData(AudioDeviceType.TYPE_UNKNOWN, VolumeData())
-        }
+        return AudioData(audioDeviceType, volumeData)
     }
 
     /**
@@ -34,7 +30,7 @@ object HeadphoneUtils {
      * @return VolumeData object.
      */
     @JvmStatic
-     fun getVolumeData(context: Context): VolumeData? {
+     fun getVolumeData(context: Context): VolumeData {
          val audioManager = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager?
          if (audioManager != null) {
              val volumeLevel = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC)
@@ -53,13 +49,13 @@ object HeadphoneUtils {
              }
              return VolumeData(volumeLevel, volumeMax, volumeMin, volumeLevelDB)
          }
-        return null
+        return VolumeData()
      }
 
     /**
      * Function to check if the built in speaker is used or not
      * @param context - context of the activity/fragment
-     * @return isSpeakerOn true or false.
+     * @return Pair(deviceType, isSpeakerOn)
      */
     @JvmStatic
     fun isSpeakerOn(context: Context): Pair<Int, Boolean> {
