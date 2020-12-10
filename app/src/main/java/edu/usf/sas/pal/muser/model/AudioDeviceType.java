@@ -1,5 +1,12 @@
 package edu.usf.sas.pal.muser.model;
 
+/**
+ * These values MUST be in the order of the variable values with the same name in Android's
+ * android.media.AudioDeviceInfo class (https://developer.android.com/reference/android/media/AudioDeviceInfo).
+ * For example, on Android TYPE_UNKNOWN has the value of 1, TYPE_BUILTIN_EARPIECE is 2, etc.
+ * If enums are added below out-of-order with the values of the Android enums then the incorrect
+ * values will be stored within the app when getting information from the AudioManager.
+ */
 public enum AudioDeviceType {
     TYPE_UNKNOWN,
     TYPE_BUILTIN_EARPIECE,
