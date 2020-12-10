@@ -64,7 +64,7 @@ object AudioDeviceUtils {
         var (deviceType, isSpeakerOn) = Pair(0, true)
         if (audioManager != null) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                //  AudioDeviceInfo.TYPE_USB_HEADSET is only supported for devices with API_LEVEL > 26
+                //  AudioDeviceInfo.TYPE_USB_HEADSET is only supported for devices with API_LEVEL >= 26
                 headsetTypes = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     arrayOf(AudioDeviceInfo.TYPE_BLUETOOTH_A2DP, AudioDeviceInfo.TYPE_BLUETOOTH_SCO,
                             AudioDeviceInfo.TYPE_WIRED_HEADSET, AudioDeviceInfo.TYPE_WIRED_HEADPHONES,
