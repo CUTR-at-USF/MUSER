@@ -21,11 +21,11 @@ object HeadphoneUtils {
             AudioDeviceType.values()[isSpeakerOn(context).first]
         }
         val volumeData = getVolumeData(context)
-        var audioData = AudioData(AudioDeviceType.TYPE_UNKNOWN, VolumeData())
-        if (volumeData != null) {
-            audioData = AudioData(audioDeviceType, volumeData)
+        return if (volumeData != null) {
+            AudioData(audioDeviceType, volumeData)
+        } else {
+            AudioData(AudioDeviceType.TYPE_UNKNOWN, VolumeData())
         }
-        return audioData
     }
 
     /**
