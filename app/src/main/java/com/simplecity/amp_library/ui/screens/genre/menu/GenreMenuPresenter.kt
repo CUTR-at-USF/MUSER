@@ -40,6 +40,7 @@ class GenreMenuPresenter @Inject constructor(
                 view?.onSongsAddedToPlaylist(playlist, numSongs)
             }
         }
+        newUiGenreEvent(genre, UiEventType.ADD_TO_PLAYLIST_GENRE)
     }
 
     override fun addToQueue(genre: Genre) {

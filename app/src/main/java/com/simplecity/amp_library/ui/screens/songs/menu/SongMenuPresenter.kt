@@ -48,6 +48,9 @@ open class SongMenuPresenter @Inject constructor(
         playlistManager.addToPlaylist(context, playlist, songs) { numSongs ->
             view?.onSongsAddedToPlaylist(playlist, numSongs)
         }
+        songs.forEach {
+            newUiEvent(it, UiEventType.ADD_TO_PLAYLIST)
+        }
     }
 
     override fun addToQueue(songs: List<Song>) {

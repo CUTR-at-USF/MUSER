@@ -54,6 +54,9 @@ class AlbumArtistMenuPresenter @Inject constructor(
                 view?.onSongsAddedToPlaylist(playlist, numSongs)
             }
         }
+        albumArtists.forEach {
+            newUiAlbumArtistEvent(it, UiEventType.ADD_TO_PLAYLIST_ALBUM_ARTIST)
+        }
     }
 
     override fun addArtistsToQueue(albumArtists: List<AlbumArtist>) {
