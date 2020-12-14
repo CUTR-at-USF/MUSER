@@ -68,11 +68,14 @@ class AlbumMenuPresenter @Inject constructor(
                 view?.onSongsAddedToQueue(numSongs)
             }
         }
+        albums.forEach{
+            newUiAlbumEvent(it, UiEventType.PLAY_ALBUM_NEXT)
+        }
     }
 
     override fun play(album: Album) {
         mediaManager.playAll(album.getSongsSingle(songsRepository)) { view?.onPlaybackFailed() }
-        newUiAlbumEvent(album)
+        newUiAlbumEvent(album, UiEventType.PLAY_ALBUM)
     }
 
     override fun editTags(album: Album) {
@@ -136,8 +139,8 @@ class AlbumMenuPresenter @Inject constructor(
         const val TAG = "AlbumMenuContract"
     }
 
-    private fun newUiAlbumEvent(album: Album){
-            val uiEvent = EventUtils.newUiAlbumEvent(album, UiEventType.PLAY_ALBUM)
+    private fun newUiAlbumEvent(album: Album, uiEventType: UiEventType){
+            val uiEvent = EventUtils.newUiAlbumEvent(album, uiEventType)
             FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 
