@@ -13,6 +13,7 @@ import android.support.annotation.StringRes;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.provider.DocumentFile;
+import android.util.Log;
 import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.annimon.stream.Collectors;
@@ -22,6 +23,7 @@ import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.data.Repository;
 import com.simplecity.amp_library.model.Album;
 import com.simplecity.amp_library.model.AlbumArtist;
+import com.simplecity.amp_library.model.Artist;
 import com.simplecity.amp_library.model.Song;
 import com.simplecity.amp_library.playback.MediaManager;
 import com.simplecity.amp_library.saf.SafManager;
@@ -32,6 +34,10 @@ import com.simplecity.amp_library.utils.SettingsManager;
 import com.simplecity.amp_library.utils.extensions.AlbumExtKt;
 import com.simplecity.amp_library.utils.extensions.SongExtKt;
 import dagger.android.support.AndroidSupportInjection;
+import edu.usf.sas.pal.muser.model.UiEvent;
+import edu.usf.sas.pal.muser.model.UiEventType;
+import edu.usf.sas.pal.muser.util.EventUtils;
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
@@ -282,6 +288,26 @@ public class DeleteDialog extends DialogFragment implements SafManager.SafDialog
                                 .subscribe(deletedSongs -> {
                                     if (DeleteDialog.this.isAdded()) {
                                         if (deletedSongs > 0) {
+                                            switch(type) {
+                                                case Type.ALBUMS:
+                                                    for (Album album : albums) {
+                                                        UiEvent uiEvent = EventUtils.newUiAlbumEvent
+                                                                (album, UiEventType.DELETE_ALBUM);
+                                                        FirebaseIOUtils.saveUiEvent(uiEvent);
+                                                    }
+                                                case Type.ARTISTS:
+                                                    for (AlbumArtist artist : artists) {
+                                                        UiEvent uiEvent = EventUtils.newUiAlbumArtistEvent
+                                                                (artist, UiEventType.DELETE_ALBUM_ARTIST);
+                                                        FirebaseIOUtils.saveUiEvent(uiEvent);
+                                                    }
+                                                case Type.SONGS:
+                                                    for (Song song : songs) {
+                                                        UiEvent uiEvent = EventUtils.newUiEvent
+                                                                (song, UiEventType.DELETE, getContext());
+                                                        FirebaseIOUtils.saveUiEvent(uiEvent);
+                                                    }
+                                            }
                                             Toast.makeText(getContext(), getString(R.string.delete_songs_success_toast, deletedSongs), Toast.LENGTH_SHORT).show();
                                         } else {
                                             Toast.makeText(getContext(), getString(R.string.delete_songs_failure_toast), Toast.LENGTH_SHORT).show();
@@ -318,6 +344,7 @@ public class DeleteDialog extends DialogFragment implements SafManager.SafDialog
             return deletedSongs;
         });
     }
+
 
     void tidyUp(@NonNull List<Song> deletedSongs) {
         if (deletedSongs.isEmpty()) {
