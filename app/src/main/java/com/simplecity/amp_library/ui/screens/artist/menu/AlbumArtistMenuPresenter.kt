@@ -19,6 +19,7 @@ import com.simplecity.amp_library.utils.Operators
 import com.simplecity.amp_library.utils.extensions.getSongs
 import com.simplecity.amp_library.utils.playlists.PlaylistManager
 import com.simplecity.amp_library.utils.sorting.SortManager
+import edu.usf.sas.pal.muser.model.UiEvent
 import edu.usf.sas.pal.muser.model.UiEventType
 import edu.usf.sas.pal.muser.util.EventUtils
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils
@@ -113,6 +114,7 @@ class AlbumArtistMenuPresenter @Inject constructor(
             view?.onPlaybackFailed()
             Unit
         }
+        newUiAlbumArtistEvent(albumArtist, UiEventType.ALBUM_SHUFFLE)
     }
 
     override fun <T> transform(src: Single<List<T>>, dst: (List<T>) -> Unit) {

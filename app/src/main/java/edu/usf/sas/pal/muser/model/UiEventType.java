@@ -17,6 +17,7 @@ public enum UiEventType {
          ADD_TO_PLAYLIST_ALBUM,
          ADD_TO_PLAYLIST_ALBUM_ARTIST,
          ADD_TO_PLAYLIST_GENRE,
+         ALBUM_SHUFFLE,
          DELETE,
          DELETE_ALBUM,
          DELETE_ALBUM_ARTIST,
