@@ -79,6 +79,11 @@ public class ShuttleApplication extends DaggerApplication {
 
     private RefWatcher refWatcher;
 
+    private static ShuttleApplication instance;
+
+    public static synchronized ShuttleApplication getInstance() {
+        return instance;
+    }
     public HashMap<String, UserSelectedArtwork> userSelectedArtwork = new HashMap<>();
 
     private static Logger jaudioTaggerLogger1 = Logger.getLogger("org.jaudiotagger.audio");

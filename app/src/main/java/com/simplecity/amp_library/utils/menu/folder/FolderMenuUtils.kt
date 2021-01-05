@@ -75,8 +75,8 @@ object FolderMenuUtils {
             .observeOn(AndroidSchedulers.mainThread())
     }
 
-    private fun getSongsForFolderObject(songsRepository: SongsRepository, folderObject: FolderObject): Single<List<Song>> {
-        return FileHelper.getSongList(songsRepository, File(folderObject.path), true, false)
+    private fun getSongsForFolderObject(folderObject: FolderObject): Single<List<Song>> {
+        return FileHelper.getSongList(File(folderObject.path), true, false)
     }
 
     private fun scanFile(context: Context, fileObject: FileObject, callbacks: Callbacks) {
@@ -213,22 +213,22 @@ object FolderMenuUtils {
         return PopupMenu.OnMenuItemClickListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.play -> {
-                    MenuUtils.play(mediaManager, getSongsForFolderObject(songsRepository, folderObject)) { callbacks.onPlaybackFailed() }
+                    MenuUtils.play(mediaManager, getSongsForFolderObject(folderObject)) { callbacks.onPlaybackFailed() }
                     return@OnMenuItemClickListener true
                 }
                 R.id.playNext -> {
-                    callbacks.playNext(getSongsForFolderObject(songsRepository, folderObject))
+                    callbacks.playNext(getSongsForFolderObject(folderObject))
                     return@OnMenuItemClickListener true
                 }
                 Defs.NEW_PLAYLIST -> {
                     MenuUtils.newPlaylist(
                         fragment,
-                        getSongsForFolderObject(songsRepository, folderObject)
+                        getSongsForFolderObject(folderObject)
                     )
                     return@OnMenuItemClickListener true
                 }
                 Defs.PLAYLIST_SELECTED -> {
-                    getSongsForFolderObject(songsRepository, folderObject).subscribe { songs ->
+                    getSongsForFolderObject(folderObject).subscribe { songs ->
                         MenuUtils.addToPlaylist(
                             context,
                             playlistManager,
@@ -239,7 +239,7 @@ object FolderMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 R.id.addToQueue -> {
-                    MenuUtils.addToQueue(mediaManager, getSongsForFolderObject(songsRepository, folderObject)) { callbacks.onSongsAddedToQueue(it) }
+                    MenuUtils.addToQueue(mediaManager, getSongsForFolderObject(folderObject)) { callbacks.onSongsAddedToQueue(it) }
                     return@OnMenuItemClickListener true
                 }
                 R.id.scan -> {
@@ -247,11 +247,11 @@ object FolderMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 R.id.whitelist -> {
-                    callbacks.whitelist(getSongsForFolderObject(songsRepository, folderObject))
+                    callbacks.whitelist(getSongsForFolderObject(folderObject))
                     return@OnMenuItemClickListener true
                 }
                 R.id.blacklist -> {
-                    callbacks.blacklist(getSongsForFolderObject(songsRepository, folderObject))
+                    callbacks.blacklist(getSongsForFolderObject(folderObject))
                     return@OnMenuItemClickListener true
                 }
                 R.id.rename -> {

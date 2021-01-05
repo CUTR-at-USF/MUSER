@@ -216,10 +216,11 @@ public class FileHelper {
      * @param recursive whether to recursively check the sub-directories for song Id's
      * @return List<Song> a list of the songs for the given fileObject's directory & sub-directories
      */
-    public static Single<List<Song>> getSongList(Repository.SongsRepository songsRepository, File file, boolean recursive, boolean inSameDir) {
+    public static Single<List<Song>> getSongList(File file, boolean recursive, boolean inSameDir) {
         return Single.fromCallable(
                 () -> walk(file, new ArrayList<>(), recursive, inSameDir))
-                .flatMap(filePaths -> songsRepository.getSongs(song -> song.path.contains(FileHelper.getPath(inSameDir ? file.getParentFile() : file)))
+                .flatMap(filePaths -> DataManager.getInstance()
+                        .getSongsObservable(song -> song.path.contains(FileHelper.getPath(inSameDir ? file.getParentFile() : file)))
                         .first(Collections.emptyList()))
                 .subscribeOn(Schedulers.io());
     }

@@ -164,10 +164,10 @@ public final class ShuttleUtils {
         return context.getResources().getBoolean(R.bool.isTablet);
     }
 
-    public static Single<List<Song>> getSongsForFileObjects(Repository.SongsRepository songsRepository, List<BaseFileObject> fileObjects) {
+    public static Single<List<Song>> getSongsForFileObjects(List<BaseFileObject> fileObjects) {
 
         List<Single<List<Song>>> observables = Stream.of(fileObjects)
-                .map(fileObject -> FileHelper.getSongList(songsRepository, new File(fileObject.path), true, false))
+                .map(fileObject -> FileHelper.getSongList(new File(fileObject.path), true, false))
                 .toList();
 
         return Single.concat(observables)

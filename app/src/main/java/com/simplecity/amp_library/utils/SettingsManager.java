@@ -22,6 +22,11 @@ public class SettingsManager extends BaseSettingsManager {
         super(sharedPreferences);
     }
 
+    private static SettingsManager instance;
+
+    public static SettingsManager getInstance() {
+        return instance;
+    }
     // Support
     public static String KEY_PREF_CHANGELOG = "pref_changelog";
     public static String KEY_PREF_FAQ = "pref_faq";

@@ -457,7 +457,7 @@ public class FolderFragment extends BaseFragment implements
     public void onFileObjectClick(int position, FolderView folderView) {
         if (contextualToolbarHelper != null && !contextualToolbarHelper.handleClick(folderView, folderView.baseFileObject)) {
             if (folderView.baseFileObject.fileType == FileType.FILE) {
-                FileHelper.getSongList(songsRepository, new File(folderView.baseFileObject.path), false, true)
+                FileHelper.getSongList(new File(folderView.baseFileObject.path), false, true)
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
                                 songs -> {

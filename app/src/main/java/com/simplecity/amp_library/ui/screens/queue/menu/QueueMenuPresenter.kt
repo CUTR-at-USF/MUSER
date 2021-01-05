@@ -4,6 +4,7 @@ import android.content.Context
 import com.simplecity.amp_library.data.Repository.AlbumArtistsRepository
 import com.simplecity.amp_library.data.Repository.AlbumsRepository
 import com.simplecity.amp_library.data.Repository.BlacklistRepository
+import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.playback.MediaManager
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay
 import com.simplecity.amp_library.ui.screens.queue.QueueItem
@@ -31,6 +32,9 @@ class QueueMenuPresenter @Inject constructor(
     albumsRepository,
     navigationEventRelay
 ), QueueMenuContract.Presenter {
+    override fun removeSong(song: Song) {
+        TODO("Not yet implemented")
+    }
 
     override fun moveToNext(queueItem: QueueItem) {
         mediaManager.moveToNext(queueItem)

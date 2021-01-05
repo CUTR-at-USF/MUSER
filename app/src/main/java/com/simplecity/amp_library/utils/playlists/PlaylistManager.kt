@@ -247,7 +247,7 @@ class PlaylistManager @Inject constructor(
             progressDialog!!.show()
         }
 
-        return ShuttleUtils.getSongsForFileObjects(songsRepository, fileObjects)
+        return ShuttleUtils.getSongsForFileObjects(fileObjects)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(

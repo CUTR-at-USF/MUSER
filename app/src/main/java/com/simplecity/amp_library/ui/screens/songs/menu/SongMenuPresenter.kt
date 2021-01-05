@@ -132,6 +132,10 @@ open class SongMenuPresenter @Inject constructor(
             ))
     }
 
+    override fun removeSong(song: Song) {
+        TODO("Not yet implemented")
+    }
+
     override fun <T> transform(src: Single<List<T>>, dst: (List<T>) -> Unit) {
         addDisposable(
             src
