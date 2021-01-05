@@ -29,6 +29,7 @@ import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.gms.cast.framework.CastButtonFactory
 import com.simplecity.amp_library.R
+import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.cast.CastManager
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.glide.utils.AlwaysCrossFade
@@ -149,6 +150,8 @@ class PlaylistDetailFragment :
 
         adapter = ViewModelAdapter()
 
+        ShuttleApplication.adapter = adapter
+        ShuttleApplication.playlist = playlist
         // Todo: On playlist deleted
         //Toast.makeText(getContext(), R.string.playlist_deleted_message, Toast.LENGTH_SHORT).show();
         //getNavigationController().popViewController();

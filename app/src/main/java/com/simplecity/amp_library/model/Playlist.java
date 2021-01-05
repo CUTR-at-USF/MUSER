@@ -9,6 +9,7 @@ import com.annimon.stream.Optional;
 import com.annimon.stream.Stream;
 import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
+import com.simplecity.amp_library.rx.UnsafeConsumer;
 import com.simplecity.amp_library.sql.providers.PlayCountTable;
 import com.simplecity.amp_library.sql.sqlbrite.SqlBriteUtils;
 import com.simplecity.amp_library.utils.ComparisonUtils;
@@ -120,8 +121,8 @@ public class Playlist implements Serializable {
         }
     }
 
-    public void removeSong(@NonNull Song song, PlaylistManager playlistManager, @Nullable Function1<Boolean, Unit> success) {
-        playlistManager.removeFromPlaylist(this, song, success);
+    public void removeSong(@NonNull Song song, @Nullable UnsafeConsumer<Boolean> success) {
+        PlaylistUtils.removeFromPlaylist(this, song, success);
     }
 
     public boolean moveSong(Context context, int from, int to) {
