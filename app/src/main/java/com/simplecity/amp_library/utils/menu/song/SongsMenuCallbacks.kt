@@ -33,6 +33,8 @@ interface SongsMenuCallbacks {
 
     fun goToGenre(song: Song)
 
+    fun removeSong(song: Song)
+
     fun <T> transform(src: Single<List<T>>, dst: (List<T>) -> Unit)
 }
 

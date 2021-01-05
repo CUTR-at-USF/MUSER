@@ -107,6 +107,10 @@ object SongMenuUtils {
                     callbacks.blacklist(song)
                     return@OnMenuItemClickListener true
                 }
+                R.id.remove -> {
+                    callbacks.removeSong(song)
+                    return@OnMenuItemClickListener true
+                }
                 R.id.delete -> {
                     callbacks.delete(song)
                     return@OnMenuItemClickListener true
