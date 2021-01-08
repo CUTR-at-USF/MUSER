@@ -83,14 +83,10 @@ public class ShuttleApplication extends DaggerApplication {
 
     private static ShuttleApplication instance;
 
-    public static ViewModelAdapter adapter = new ViewModelAdapter();
-
-    public static Playlist playlist;
-
-
     public static synchronized ShuttleApplication getInstance() {
         return instance;
     }
+
     public HashMap<String, UserSelectedArtwork> userSelectedArtwork = new HashMap<>();
 
     private static Logger jaudioTaggerLogger1 = Logger.getLogger("org.jaudiotagger.audio");

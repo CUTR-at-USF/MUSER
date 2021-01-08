@@ -5,8 +5,6 @@ import android.util.Log
 import com.annimon.stream.Stream
 import com.annimon.stream.function.Predicate
 import com.simplecity.amp_library.ShuttleApplication
-import com.simplecity.amp_library.ShuttleApplication.adapter
-import com.simplecity.amp_library.ShuttleApplication.playlist
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.data.Repository.AlbumArtistsRepository
 import com.simplecity.amp_library.model.Playlist
@@ -17,6 +15,7 @@ import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.modelviews.SongView
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay.NavigationEvent
+import com.simplecity.amp_library.ui.screens.playlist.detail.PlaylistDetailFragment
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuContract.View
 import com.simplecity.amp_library.utils.LogUtils
 import com.simplecity.amp_library.utils.RingtoneManager
@@ -141,12 +140,12 @@ open class SongMenuPresenter @Inject constructor(
 
     override fun removeSong(song: Song) {
         Log.d(TAG, "removeSong: here")
-        val songView: ViewModel<*> = Stream.of<ViewModel<*>>(adapter.items).filter(Predicate<ViewModel<*>> { value: ViewModel<*>? -> value is SongView && (value as SongView).song === song }).findFirst().orElse(null)
-        val index: Int = adapter.items.indexOf(songView)
-        playlist.removeSong(song, UnsafeConsumer<Boolean> { success: Boolean? ->
+        val songView: ViewModel<*> = Stream.of<ViewModel<*>>(PlaylistDetailFragment.adapter.items).filter(Predicate<ViewModel<*>> { value: ViewModel<*>? -> value is SongView && (value as SongView).song === song }).findFirst().orElse(null)
+        val index: Int = PlaylistDetailFragment.adapter.items.indexOf(songView)
+        PlaylistDetailFragment.playlist.removeSong(song, UnsafeConsumer<Boolean> { success: Boolean? ->
             if (!success!!) {
-                // Playlist removal failed, re-insert adapter item
-                adapter.addItem(index, songView)
+                // Playlist removal failed, re-insert _root_ide_package_.com.simplecity.amp_library.ui.screens.playlist.detail.PlaylistDetailFragment.adapter item
+                PlaylistDetailFragment.adapter.addItem(index, songView)
             }
         })
     }

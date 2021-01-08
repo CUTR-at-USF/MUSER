@@ -99,10 +99,6 @@ class PlaylistDetailFragment :
     DrawerLockManager.DrawerLock,
     ContextualToolbarHost {
 
-    private lateinit var playlist: Playlist
-
-    private lateinit var adapter: ViewModelAdapter
-
     private var disposables = CompositeDisposable()
 
     private var collapsingToolbarTextColor: ColorStateList? = null
@@ -150,8 +146,6 @@ class PlaylistDetailFragment :
 
         adapter = ViewModelAdapter()
 
-        ShuttleApplication.adapter = adapter
-        ShuttleApplication.playlist = playlist
         // Todo: On playlist deleted
         //Toast.makeText(getContext(), R.string.playlist_deleted_message, Toast.LENGTH_SHORT).show();
         //getNavigationController().popViewController();
@@ -648,12 +642,23 @@ class PlaylistDetailFragment :
 
         private const val ARG_PLAYLIST = "playlist"
 
+        lateinit var playlist: Playlist
+
+        lateinit var adapter: ViewModelAdapter
+
+        private lateinit var instance: PlaylistDetailFragment
+
         fun newInstance(playlist: Playlist): PlaylistDetailFragment {
             val args = Bundle()
             args.putSerializable(ARG_PLAYLIST, playlist)
             val fragment = PlaylistDetailFragment()
             fragment.arguments = args
+            instance = fragment
             return fragment
+        }
+
+        fun getInstance(): PlaylistDetailFragment {
+            return instance
         }
     }
 }
