@@ -112,6 +112,10 @@ class PlaylistDetailFragment :
 
     private var isFirstLoad = true
 
+    lateinit var playlist: Playlist
+
+    lateinit var adapter: ViewModelAdapter
+
     private lateinit var presenter: PlaylistDetailPresenter
 
     @Inject lateinit var presenterFactory: PlaylistDetailPresenter.Factory
@@ -641,10 +645,6 @@ class PlaylistDetailFragment :
         private const val ARG_TRANSITION_NAME = "transition_name"
 
         private const val ARG_PLAYLIST = "playlist"
-
-        lateinit var playlist: Playlist
-
-        lateinit var adapter: ViewModelAdapter
 
         private lateinit var instance: PlaylistDetailFragment
 

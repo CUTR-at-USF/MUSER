@@ -32,8 +32,7 @@ class QueueMenuPresenter @Inject constructor(
     albumsRepository,
     navigationEventRelay
 ), QueueMenuContract.Presenter {
-    override fun removeSong(song: Song) {
-        TODO("Not yet implemented")
+    override fun removeSong(context: Context, song: Song) {
     }
 
     override fun moveToNext(queueItem: QueueItem) {

@@ -108,7 +108,7 @@ object SongMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 R.id.remove -> {
-                    callbacks.removeSong(song)
+                    callbacks.removeSong(context, song)
                     return@OnMenuItemClickListener true
                 }
                 R.id.delete -> {

@@ -1,6 +1,8 @@
 package com.simplecity.amp_library.ui.screens.songs.menu
 
+import android.app.Activity
 import android.content.Context
+import android.content.ContextWrapper
 import android.util.Log
 import com.annimon.stream.Stream
 import com.annimon.stream.function.Predicate
@@ -15,6 +17,8 @@ import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.modelviews.SongView
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay.NavigationEvent
+import com.simplecity.amp_library.ui.screens.main.MainActivity
+import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.ui.screens.playlist.detail.PlaylistDetailFragment
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuContract.View
 import com.simplecity.amp_library.utils.LogUtils
@@ -138,16 +142,22 @@ open class SongMenuPresenter @Inject constructor(
             ))
     }
 
-    override fun removeSong(song: Song) {
+    override fun removeSong(context: Context, song: Song) {
         Log.d(TAG, "removeSong: here")
-        val songView: ViewModel<*> = Stream.of<ViewModel<*>>(PlaylistDetailFragment.adapter.items).filter(Predicate<ViewModel<*>> { value: ViewModel<*>? -> value is SongView && (value as SongView).song === song }).findFirst().orElse(null)
-        val index: Int = PlaylistDetailFragment.adapter.items.indexOf(songView)
-        PlaylistDetailFragment.playlist.removeSong(song, UnsafeConsumer<Boolean> { success: Boolean? ->
-            if (!success!!) {
-                // Playlist removal failed, re-insert _root_ide_package_.com.simplecity.amp_library.ui.screens.playlist.detail.PlaylistDetailFragment.adapter item
-                PlaylistDetailFragment.adapter.addItem(index, songView)
-            }
-        })
+        val playlistDetailFragment = (context as MainActivity)
+                .supportFragmentManager
+                .findFragmentByTag("PlaylistDetailFragment") as PlaylistDetailFragment?
+
+        if (playlistDetailFragment != null) {
+            val songView: ViewModel<*> = Stream.of<ViewModel<*>>(playlistDetailFragment.adapter.items).filter(Predicate<ViewModel<*>> { value: ViewModel<*>? -> value is SongView && (value as SongView).song === song }).findFirst().orElse(null)
+            val index: Int = playlistDetailFragment.adapter.items.indexOf(songView)
+            playlistDetailFragment.playlist.removeSong(song, UnsafeConsumer<Boolean> { success: Boolean? ->
+                if (!success!!) {
+                    // Playlist removal failed, re-insert adapter item
+                    playlistDetailFragment.adapter.addItem(index, songView)
+                }
+            })
+        }
     }
 
     override fun <T> transform(src: Single<List<T>>, dst: (List<T>) -> Unit) {
