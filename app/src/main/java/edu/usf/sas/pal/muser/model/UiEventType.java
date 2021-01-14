@@ -24,6 +24,7 @@ public enum UiEventType {
          PAUSE,
          NEXT,
          PREV,
+         REMOVE_FROM_PLAYLIST,
          REPEAT_OFF,
          REPEAT_ALL_SONGS,
          REPEAT_CURRENT_SONG,

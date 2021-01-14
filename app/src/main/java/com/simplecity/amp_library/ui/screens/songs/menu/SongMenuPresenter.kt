@@ -154,6 +154,8 @@ open class SongMenuPresenter @Inject constructor(
                 if (!success!!) {
                     // Playlist removal failed, re-insert adapter item
                     playlistDetailFragment.adapter.addItem(index, songView)
+                } else{
+                    newUiEvent(song, UiEventType.REMOVE_FROM_PLAYLIST)
                 }
             }
         }
