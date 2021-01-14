@@ -63,6 +63,11 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * PlaylistUtils.java was pulled from Shuttle's f-droid fork
+ * https://github.com/quwepiro/Shuttle/blob/f-droid/app/src/main/java/com/simplecity/amp_library/utils/PlaylistUtils.java
+ */
+
 public class PlaylistUtils {
 
     private static final String TAG = "PlaylistUtils";

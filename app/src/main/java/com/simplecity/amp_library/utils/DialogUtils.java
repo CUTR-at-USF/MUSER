@@ -15,6 +15,10 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
 
+/**
+ * DialogUtils.java was pulled from Shuttle's f-droid fork
+ * https://github.com/quwepiro/Shuttle/blob/f-droid/app/src/main/java/com/simplecity/amp_library/utils/DialogUtils.java
+ */
 public class DialogUtils {
 
     private static final String TAG = "DialogUtils";

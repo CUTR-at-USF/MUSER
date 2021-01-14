@@ -34,6 +34,10 @@ import io.reactivex.annotations.Nullable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * DataManager.java was pulled from Shuttle's f-droid fork
+ * https://github.com/quwepiro/Shuttle/blob/f-droid/app/src/main/java/com/simplecity/amp_library/utils/DataManager.java
+ */
 public class DataManager {
 
     private static final String TAG = "DataManager";
