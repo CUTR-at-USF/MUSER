@@ -89,8 +89,6 @@ public class MainController extends BaseNavigationController implements BackPres
     @BindView(R.id.multiSheetView)
     CustomMultiSheetView multiSheetView;
 
-    public FragmentManager childFragmentManager;
-
     private CompositeDisposable disposables = new CompositeDisposable();
 
     public static MainController newInstance() {
@@ -118,7 +116,6 @@ public class MainController extends BaseNavigationController implements BackPres
 
         ButterKnife.bind(this, rootView);
 
-        childFragmentManager = getChildFragmentManager();
         multiSheetView.setMultiSheetEventRelay(multiSheetEventRelay);
         multiSheetView.setMultiSheetSlideEventRelay(multiSheetSlideEventRelay);
 

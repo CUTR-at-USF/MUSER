@@ -140,21 +140,22 @@ open class SongMenuPresenter @Inject constructor(
     }
 
     override fun removeSong(mainController: MainController, context: Context, song: Song) {
-        Log.d(TAG, "removeSong: here")
 
         val playlistDetailFragment = mainController
                 .childFragmentManager
                 .findFragmentByTag("PlaylistDetailFragment") as PlaylistDetailFragment?
 
         if (playlistDetailFragment != null) {
-            val songView: ViewModel<*> = Stream.of<ViewModel<*>>(playlistDetailFragment.adapter.items).filter(Predicate<ViewModel<*>> { value: ViewModel<*>? -> value is SongView && (value as SongView).song === song }).findFirst().orElse(null)
+            val songView: ViewModel<*> = Stream.of<ViewModel<*>>(playlistDetailFragment.adapter.items)
+                    .filter { value: ViewModel<*>? -> value is SongView && (value).song === song }
+                    .findFirst().orElse(null)
             val index: Int = playlistDetailFragment.adapter.items.indexOf(songView)
-            playlistDetailFragment.playlist.removeSong(song, UnsafeConsumer<Boolean> { success: Boolean? ->
+            playlistDetailFragment.playlist.removeSong(song) { success: Boolean? ->
                 if (!success!!) {
                     // Playlist removal failed, re-insert adapter item
                     playlistDetailFragment.adapter.addItem(index, songView)
                 }
-            })
+            }
         }
     }
 
