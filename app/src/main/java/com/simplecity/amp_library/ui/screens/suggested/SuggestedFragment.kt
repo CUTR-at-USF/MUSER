@@ -30,6 +30,7 @@ import com.simplecity.amp_library.ui.modelviews.EmptyView
 import com.simplecity.amp_library.ui.modelviews.HorizontalRecyclerView
 import com.simplecity.amp_library.ui.modelviews.SuggestedHeaderView
 import com.simplecity.amp_library.ui.modelviews.SuggestedSongView
+import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.ui.screens.playlist.detail.PlaylistDetailFragment
 import com.simplecity.amp_library.ui.screens.playlist.dialog.CreatePlaylistDialog
 import com.simplecity.amp_library.ui.screens.suggested.SuggestedPresenter.SuggestedData
@@ -197,7 +198,7 @@ class SuggestedFragment :
         override fun onSongOverflowClicked(v: View, position: Int, song: Song) {
             val popupMenu = PopupMenu(context!!, v)
             SongMenuUtils.setupSongMenu(popupMenu, false, true, playlistMenuHelper)
-            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, presenter))
+            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(parentFragment as MainController, context!!, song, presenter))
             popupMenu.show()
         }
     }

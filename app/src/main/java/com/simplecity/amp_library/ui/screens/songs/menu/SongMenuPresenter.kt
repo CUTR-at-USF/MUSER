@@ -1,8 +1,6 @@
 package com.simplecity.amp_library.ui.screens.songs.menu
 
-import android.app.Activity
 import android.content.Context
-import android.content.ContextWrapper
 import android.util.Log
 import com.annimon.stream.Stream
 import com.annimon.stream.function.Predicate
@@ -17,7 +15,6 @@ import com.simplecity.amp_library.ui.common.Presenter
 import com.simplecity.amp_library.ui.modelviews.SongView
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay.NavigationEvent
-import com.simplecity.amp_library.ui.screens.main.MainActivity
 import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.ui.screens.playlist.detail.PlaylistDetailFragment
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuContract.View
@@ -142,10 +139,11 @@ open class SongMenuPresenter @Inject constructor(
             ))
     }
 
-    override fun removeSong(context: Context, song: Song) {
+    override fun removeSong(mainController: MainController, context: Context, song: Song) {
         Log.d(TAG, "removeSong: here")
-        val playlistDetailFragment = (context as MainActivity)
-                .supportFragmentManager
+
+        val playlistDetailFragment = mainController
+                .childFragmentManager
                 .findFragmentByTag("PlaylistDetailFragment") as PlaylistDetailFragment?
 
         if (playlistDetailFragment != null) {

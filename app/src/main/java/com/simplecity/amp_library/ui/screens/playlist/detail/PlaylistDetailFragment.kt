@@ -29,7 +29,6 @@ import com.bumptech.glide.RequestManager
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.google.android.gms.cast.framework.CastButtonFactory
 import com.simplecity.amp_library.R
-import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.cast.CastManager
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.glide.utils.AlwaysCrossFade
@@ -48,6 +47,7 @@ import com.simplecity.amp_library.ui.modelviews.SelectableViewModel
 import com.simplecity.amp_library.ui.modelviews.SongView
 import com.simplecity.amp_library.ui.modelviews.SubheaderView
 import com.simplecity.amp_library.ui.screens.drawer.DrawerLockManager
+import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.ui.screens.playlist.dialog.CreatePlaylistDialog
 import com.simplecity.amp_library.ui.screens.playlist.dialog.DeletePlaylistConfirmationDialog
 import com.simplecity.amp_library.ui.screens.playlist.dialog.M3uPlaylistDialog
@@ -112,6 +112,8 @@ class PlaylistDetailFragment :
 
     private var isFirstLoad = true
 
+    lateinit var mainController: MainController
+
     lateinit var playlist: Playlist
 
     lateinit var adapter: ViewModelAdapter
@@ -150,6 +152,7 @@ class PlaylistDetailFragment :
 
         adapter = ViewModelAdapter()
 
+        mainController = parentFragment as MainController
         // Todo: On playlist deleted
         //Toast.makeText(getContext(), R.string.playlist_deleted_message, Toast.LENGTH_SHORT).show();
         //getNavigationController().popViewController();
@@ -547,7 +550,7 @@ class PlaylistDetailFragment :
         override fun onSongOverflowClick(position: Int, v: View, song: Song) {
             val popupMenu = PopupMenu(v.context, v)
             SongMenuUtils.setupSongMenu(popupMenu, playlist.canEdit, true, playlistMenuHelper)
-            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, presenter))
+            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(mainController, context!!, song, presenter))
             popupMenu.show()
         }
 

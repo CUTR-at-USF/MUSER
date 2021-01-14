@@ -52,7 +52,7 @@ object QueueMenuUtils {
                 }
             }
 
-            SongMenuUtils.getSongMenuClickListener(context, queueItem.song, callbacks).onMenuItemClick(item)
+            SongMenuUtils.getSongMenuClickListener(null, context, queueItem.song, callbacks).onMenuItemClick(item)
         }
     }
 }

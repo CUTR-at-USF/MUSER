@@ -59,6 +59,7 @@ import com.simplecity.amp_library.ui.dialog.SongInfoDialog;
 import com.simplecity.amp_library.ui.dialog.UpgradeDialog;
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay;
 import com.simplecity.amp_library.ui.screens.lyrics.LyricsDialog;
+import com.simplecity.amp_library.ui.screens.main.MainController;
 import com.simplecity.amp_library.ui.screens.queue.pager.QueuePagerFragment;
 import com.simplecity.amp_library.ui.screens.tagger.TaggerDialog;
 import com.simplecity.amp_library.ui.views.FavoriteActionBarView;
@@ -617,7 +618,7 @@ public class PlayerFragment extends BaseFragment implements
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         if (getContext() != null) {
-            if (!SongMenuUtils.INSTANCE.getSongMenuClickListener(getContext(), mediaManager.getSong(), presenter).onMenuItemClick(item)) {
+            if (!SongMenuUtils.INSTANCE.getSongMenuClickListener((MainController) getParentFragment(), getContext(), mediaManager.getSong(), presenter).onMenuItemClick(item)) {
                 switch (item.getItemId()) {
                     case R.id.favorite:
                         ((FavoriteActionBarView) item.getActionView()).toggle();

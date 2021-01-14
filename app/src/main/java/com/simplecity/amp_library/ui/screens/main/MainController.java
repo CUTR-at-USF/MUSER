@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.util.Pair;
 import android.support.v4.widget.DrawerLayout;
@@ -88,6 +89,8 @@ public class MainController extends BaseNavigationController implements BackPres
     @BindView(R.id.multiSheetView)
     CustomMultiSheetView multiSheetView;
 
+    public FragmentManager childFragmentManager;
+
     private CompositeDisposable disposables = new CompositeDisposable();
 
     public static MainController newInstance() {
@@ -115,7 +118,7 @@ public class MainController extends BaseNavigationController implements BackPres
 
         ButterKnife.bind(this, rootView);
 
-
+        childFragmentManager = getChildFragmentManager();
         multiSheetView.setMultiSheetEventRelay(multiSheetEventRelay);
         multiSheetView.setMultiSheetSlideEventRelay(multiSheetSlideEventRelay);
 

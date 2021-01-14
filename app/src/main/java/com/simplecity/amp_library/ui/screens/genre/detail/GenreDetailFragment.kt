@@ -53,6 +53,7 @@ import com.simplecity.amp_library.ui.modelviews.SongView
 import com.simplecity.amp_library.ui.modelviews.SubheaderView
 import com.simplecity.amp_library.ui.screens.album.detail.AlbumDetailFragment
 import com.simplecity.amp_library.ui.screens.drawer.DrawerLockManager
+import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.ui.screens.playlist.dialog.CreatePlaylistDialog
 import com.simplecity.amp_library.ui.screens.tagger.TaggerDialog
 import com.simplecity.amp_library.ui.views.ContextualToolbar
@@ -465,7 +466,8 @@ class GenreDetailFragment :
         override fun onSongOverflowClick(position: Int, v: View, song: Song) {
             val popupMenu = PopupMenu(v.context, v)
             SongMenuUtils.setupSongMenu(popupMenu, false, true, playlistMenuHelper)
-            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, presenter))
+            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(parentFragment as MainController,
+                    context!!, song, presenter))
             popupMenu.show()
         }
 

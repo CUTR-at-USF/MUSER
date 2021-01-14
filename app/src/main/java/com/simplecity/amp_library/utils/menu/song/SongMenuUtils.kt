@@ -7,6 +7,7 @@ import com.simplecity.amp_library.R
 import com.simplecity.amp_library.model.Playlist
 import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.playback.MediaManager.Defs
+import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.utils.playlists.PlaylistManager
 import com.simplecity.amp_library.utils.playlists.PlaylistMenuHelper
 import io.reactivex.Single
@@ -68,7 +69,7 @@ object SongMenuUtils {
         }
     }
 
-    fun getSongMenuClickListener(context: Context, song: Song, callbacks: SongsMenuCallbacks): PopupMenu.OnMenuItemClickListener {
+    fun getSongMenuClickListener(mainController: MainController?, context: Context, song: Song, callbacks: SongsMenuCallbacks): PopupMenu.OnMenuItemClickListener {
         return PopupMenu.OnMenuItemClickListener { item ->
             when (item.itemId) {
                 R.id.playNext -> {
@@ -108,7 +109,9 @@ object SongMenuUtils {
                     return@OnMenuItemClickListener true
                 }
                 R.id.remove -> {
-                    callbacks.removeSong(context, song)
+                    if (mainController != null) {
+                        callbacks.removeSong(mainController, context, song)
+                    }
                     return@OnMenuItemClickListener true
                 }
                 R.id.delete -> {

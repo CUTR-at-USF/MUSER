@@ -7,6 +7,7 @@ import com.simplecity.amp_library.data.Repository.BlacklistRepository
 import com.simplecity.amp_library.model.Song
 import com.simplecity.amp_library.playback.MediaManager
 import com.simplecity.amp_library.ui.screens.drawer.NavigationEventRelay
+import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.ui.screens.queue.QueueItem
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuPresenter
 import com.simplecity.amp_library.utils.RingtoneManager
@@ -32,7 +33,7 @@ class QueueMenuPresenter @Inject constructor(
     albumsRepository,
     navigationEventRelay
 ), QueueMenuContract.Presenter {
-    override fun removeSong(context: Context, song: Song) {
+    override fun removeSong(mainController: MainController, context: Context, song: Song) {
     }
 
     override fun moveToNext(queueItem: QueueItem) {

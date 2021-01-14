@@ -19,6 +19,7 @@ import com.simplecity.amp_library.ui.modelviews.EmptyView
 import com.simplecity.amp_library.ui.modelviews.SelectableViewModel
 import com.simplecity.amp_library.ui.modelviews.ShuffleView
 import com.simplecity.amp_library.ui.modelviews.SongView
+import com.simplecity.amp_library.ui.screens.main.MainController
 import com.simplecity.amp_library.ui.screens.playlist.dialog.CreatePlaylistDialog
 import com.simplecity.amp_library.ui.screens.songs.menu.SongMenuContract
 import com.simplecity.amp_library.ui.screens.tagger.TaggerDialog
@@ -300,7 +301,7 @@ class SongListFragment :
     override fun onSongOverflowClick(position: Int, view: View, song: Song) {
         val menu = PopupMenu(context!!, view)
         SongMenuUtils.setupSongMenu(menu, false, true, playlistMenuHelper)
-        menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(context!!, song, songsPresenter))
+        menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(parentFragment as MainController, context!!, song, songsPresenter))
         menu.show()
     }
 
