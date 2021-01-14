@@ -35,7 +35,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * DataManager.java was pulled from Shuttle's f-droid fork
+ * DataManager.java was derived from Shuttle's f-droid fork
  * https://github.com/quwepiro/Shuttle/blob/f-droid/app/src/main/java/com/simplecity/amp_library/utils/DataManager.java
  */
 public class DataManager {
@@ -178,93 +178,6 @@ public class DataManager {
 
             return result;
         });
-    }
-
-    /**
-     * Returns an {@link Observable}, which emits a List of {@link Album}s built from the {@link Song}s returned by
-     * {@link #getSongsRelay()}.
-     * <p>
-     * This Observable is continuous. It will emit its most recent value upon subscription, and continue to emit
-     * whenever the underlying {@code uri}'s data changes.
-     * <p>
-     * This Observable is backed by an {@link BehaviorRelay} subscribed to a {@link SqlBrite} {@link Observable}.
-     * <p>
-     * <b>Caution:</b>
-     * <p>
-     * Although the underlying {@link SqlBrite} {@link Observable} is subscribed on the {@link Schedulers#io()} thread,
-     * it seems the {@code Scheduler} will not persist for subsequent {@code subscribe} calls once this {@link Observable} is unsubscribed.
-     * Presumably, since subsequent {@code subscribe} calls to this {@link Observable} only re-emit the most recent emission from the
-     * source {@link Observable}, the source {@link Observable} is no longer part of the current Observable chain (its job is now
-     * just to keep the {@link BehaviorRelay} up to date). So a {@code Scheduler} must be supplied if you wish to ensure the work of this
-     * {@link Observable} is not done on the calling thread. For now, the {@link Observable} is automatically subscribed on the
-     * {@link Schedulers#io()} {@code scheduler}.
-     */
-    public Observable<List<Album>> getAlbumsRelay() {
-        if (albumsSubscription == null || albumsSubscription.isDisposed()) {
-            albumsSubscription = getSongsRelay()
-                    .flatMap(songs -> Observable.just(Operators.songsToAlbums(songs)))
-                    .subscribe(albumsRelay, error -> LogUtils.logException(TAG, "getAlbumsRelay threw error: ", error));
-        }
-        return albumsRelay.subscribeOn(Schedulers.io()).map(ArrayList::new);
-    }
-
-    /**
-     * Returns an {@link Observable}, which emits a List of {@link AlbumArtist}s built from the {@link Album}s returned by
-     * {@link #getAlbumsRelay()}.
-     * <p>
-     * This Observable is continuous. It will emit its most recent value upon subscription, and continue to emit
-     * whenever the underlying {@code uri}'s data changes.
-     * <p>
-     * This Observable is backed by an {@link BehaviorRelay} subscribed to a {@link SqlBrite} {@link Observable}.
-     * <p>
-     * <b>Caution:</b>
-     * <p>
-     * Although the underlying {@link SqlBrite} {@link Observable} is subscribed on the {@link Schedulers#io()} thread,
-     * it seems the {@code Scheduler} will not persist for subsequent {@code subscribe} calls once this {@link Observable} is unsubscribed.
-     * Presumably, since subsequent {@code subscribe} calls to this {@link Observable} only re-emit the most recent emission from the
-     * source {@link Observable}, the source {@link Observable} is no longer part of the current Observable chain (its job is now
-     * just to keep the {@link BehaviorRelay} up to date). So a {@code Scheduler} must be supplied if you wish to ensure the work of this
-     * {@link Observable} is not done on the calling thread. For now, the {@link Observable} is automatically subscribed on the
-     * {@link Schedulers#io()} {@code scheduler}.
-     */
-    public Observable<List<AlbumArtist>> getAlbumArtistsRelay() {
-        if (albumArtistsSubscription == null || albumArtistsSubscription.isDisposed()) {
-            albumArtistsSubscription = getAlbumsRelay()
-                    .flatMap(albums -> Observable.just(Operators.albumsToAlbumArtists(albums)))
-                    .subscribe(albumArtistsRelay, error -> LogUtils.logException(TAG, "getAlbumArtistsRelay threw error", error));
-        }
-        return albumArtistsRelay.subscribeOn(Schedulers.io()).map(ArrayList::new);
-    }
-
-    /**
-     * Returns an {@link Observable}, which emits a List of {@link Genre}s retrieved from the MediaStore.
-     * <p>
-     * This Observable is continuous. It will emit its most recent value upon subscription, and continue to emit
-     * whenever the underlying {@code uri}'s data changes.
-     * <p>
-     * This Observable is backed by an {@link BehaviorRelay} subscribed to a {@link SqlBrite} {@link Observable}.
-     * <p>
-     * <b>Caution:</b>
-     * <p>
-     * Although the underlying {@link SqlBrite} {@link Observable} is subscribed on the {@link Schedulers#io()} thread,
-     * it seems the {@code Scheduler} will not persist for subsequent {@code subscribe} calls once this {@link Observable} is unsubscribed.
-     * Presumably, since subsequent {@code subscribe} calls to this {@link Observable} only re-emit the most recent emission from the
-     * source {@link Observable}, the source {@link Observable} is no longer part of the current Observable chain (its job is now
-     * just to keep the {@link BehaviorRelay} up to date). So a {@code Scheduler} must be supplied if you wish to ensure the work of this
-     * {@link Observable} is not done on the calling thread. For now, the {@link Observable} is automatically subscribed on the
-     * {@link Schedulers#io()} {@code scheduler}.
-     */
-    public Observable<List<Genre>> getGenresRelay() {
-        if (genresSubscription == null || genresSubscription.isDisposed()) {
-            genresSubscription = SqlBriteUtils.createObservableList(ShuttleApplication.getInstance(), Genre::new, Genre.getQuery())
-                    .subscribe(genresRelay, error -> LogUtils.logException(TAG, "getGenresRelay threw error", error));
-        }
-
-        return genresRelay.subscribeOn(Schedulers.io()).map(ArrayList::new);
-    }
-
-    public void updateGenresRelay(List<Genre> genres) {
-        genresRelay.accept(genres);
     }
 
     /**

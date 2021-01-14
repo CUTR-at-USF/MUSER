@@ -3,14 +3,12 @@ package com.simplecity.amp_library.utils;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.app.ProgressDialog;
-import android.content.ContentResolver;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -46,12 +44,8 @@ import com.simplecity.amp_library.playback.MediaManager;
 import com.simplecity.amp_library.rx.UnsafeAction;
 import com.simplecity.amp_library.rx.UnsafeConsumer;
 import com.simplecity.amp_library.sql.SqlUtils;
-import com.simplecity.amp_library.sql.providers.PlayCountTable;
 import com.simplecity.amp_library.sql.sqlbrite.SqlBriteUtils;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -64,7 +58,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * PlaylistUtils.java was pulled from Shuttle's f-droid fork
+ * PlaylistUtils.java was derived from Shuttle's f-droid fork
  * https://github.com/quwepiro/Shuttle/blob/f-droid/app/src/main/java/com/simplecity/amp_library/utils/PlaylistUtils.java
  */
 
@@ -133,106 +127,8 @@ public class PlaylistUtils {
         return SqlBriteUtils.createSingle(context, cursor -> cursor.getInt(0), query, -1);
     }
 
-    @SuppressLint("CheckResult")
-    public static void createM3uPlaylist(final Context context, final Playlist playlist) {
-
-        ProgressDialog progressDialog = new ProgressDialog(context);
-        progressDialog.setIndeterminate(true);
-        progressDialog.setTitle(R.string.saving_playlist);
-        progressDialog.show();
-
-        playlist.getSongsObservable()
-                .first(Collections.emptyList())
-                .map(songs -> {
-                    if (!songs.isEmpty()) {
-
-                        File playlistFile = null;
-
-                        if (Environment.getExternalStorageDirectory().canWrite()) {
-                            File root = new File(Environment.getExternalStorageDirectory(), "Playlists/Export/");
-                            if (!root.exists()) {
-                                root.mkdirs();
-                            }
-
-                            File noMedia = new File(root, ".nomedia");
-                            if (!noMedia.exists()) {
-                                try {
-                                    noMedia.createNewFile();
-                                } catch (IOException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-
-                            String name = playlist.name.replaceAll("[^a-zA-Z0-9.-]", "_");
-
-                            playlistFile = new File(root, name + ".m3u");
-
-                            int i = 0;
-                            while (playlistFile.exists()) {
-                                i++;
-                                playlistFile = new File(root, name + i + ".m3u");
-                            }
-
-                            try {
-                                FileWriter fileWriter = new FileWriter(playlistFile);
-                                StringBuilder body = new StringBuilder();
-                                body.append("#EXTM3U\n");
-
-                                for (Song song : songs) {
-                                    body.append("#EXTINF:")
-                                            .append(song.duration / 1000)
-                                            .append(",")
-                                            .append(song.name)
-                                            .append(" - ")
-                                            .append(song.artistName)
-                                            .append("\n")
-                                            //Todo: Use relative paths instead of absolute
-                                            .append(song.path)
-                                            .append("\n");
-                                }
-                                fileWriter.append(body);
-                                fileWriter.flush();
-                                fileWriter.close();
-                            } catch (IOException e) {
-                                Log.e(TAG, "Failed to write file: " + e);
-                            }
-                        }
-                        return playlistFile;
-                    }
-                    return null;
-                })
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        file -> {
-                            progressDialog.dismiss();
-                            if (file != null) {
-                                Toast.makeText(context, String.format(context.getString(R.string.playlist_saved), file.getPath()), Toast.LENGTH_LONG).show();
-                            } else {
-                                Toast.makeText(context, R.string.playlist_save_failed, Toast.LENGTH_SHORT).show();
-                            }
-                        },
-                        error -> LogUtils.logException(TAG, "Error saving m3u playlist", error)
-                );
-    }
-
-    /**
-     * Clears the 'most played' database
-     */
-    public static void clearMostPlayed() {
-        ShuttleApplication.getInstance().getContentResolver().delete(PlayCountTable.URI, null, null);
-    }
-
     interface OnSavePlaylistListener {
         void onSave(Playlist playlist);
-    }
-
-    public static void createPlaylistMenu(SubMenu subMenu) {
-        createPlaylistMenu(subMenu, false).subscribe(
-                () -> {
-                },
-                throwable -> LogUtils.logException(TAG, "createPlaylistMenu error", throwable)
-        );
     }
 
     public static Completable createUpdatingPlaylistMenu(SubMenu subMenu) {
@@ -503,50 +399,6 @@ public class PlaylistUtils {
     }
 
     /**
-     * Removes all entries from the 'favorites' playlist
-     */
-    public static void clearFavorites() {
-        Playlist.favoritesPlaylist()
-                .filter(Optional::isPresent)
-                .map(Optional::get)
-                .flatMapCompletable(playlist -> Completable.fromAction(() -> {
-                    final Uri uri = MediaStore.Audio.Playlists.Members.getContentUri("external", playlist.id);
-                    ShuttleApplication.getInstance().getContentResolver().delete(uri, null, null);
-                }))
-                .subscribeOn(Schedulers.io())
-                .subscribe(
-                        () -> {
-                        },
-                        throwable -> LogUtils.logException(TAG, "clearFavorites error", throwable)
-                );
-    }
-
-    @SuppressLint("CheckResult")
-    public static void toggleFavorite(@NonNull Song song, UnsafeConsumer<Boolean> isFavorite) {
-        isFavorite(song)
-                .first(false)
-                .subscribeOn(Schedulers.io())
-                .subscribe(
-                        favorite -> {
-                            if (!favorite) {
-                                addToFavorites(song, success -> {
-                                    if (success) {
-                                        isFavorite.accept(true);
-                                    }
-                                });
-                            } else {
-                                removeFromFavorites(song, success -> {
-                                    if (success) {
-                                        isFavorite.accept(false);
-                                    }
-                                });
-                            }
-                        },
-                        error -> LogUtils.logException(TAG, "PlaylistUtils: Error toggling favorites", error)
-                );
-    }
-
-    /**
      * Add a song to the favourites playlist
      */
     @SuppressLint("CheckResult")
@@ -617,15 +469,6 @@ public class PlaylistUtils {
     public static void showPlaylistToast(Context context, int numTracksAdded) {
         final String message = context.getResources().getQuantityString(R.plurals.NNNtrackstoplaylist, numTracksAdded, numTracksAdded);
         Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
-    }
-
-    public static void createPlaylistDialog(final Context context, List<Song> songs, UnsafeAction insertCallback) {
-        createPlaylistDialog(context, playlistId -> PermissionUtils.RequestStoragePermissions(() -> addToPlaylist(context, playlistId, songs, insertCallback)));
-    }
-
-    public static void createFileObjectPlaylistDialog(final Context context, List<BaseFileObject> fileObjects, UnsafeAction insertCallback) {
-        createPlaylistDialog(context, playlistId ->
-                addFileObjectsToPlaylist(context, playlistId, fileObjects, insertCallback));
     }
 
     @SuppressLint("CheckResult")
@@ -727,77 +570,6 @@ public class PlaylistUtils {
         editText.addTextChangedListener(textWatcher);
     }
 
-    public static void renamePlaylistDialog(final Context context, final Playlist playlist) {
-
-        @SuppressLint("InflateParams")
-        View customView = LayoutInflater.from(context).inflate(R.layout.dialog_playlist, null);
-        final EditText editText = customView.findViewById(R.id.editText);
-        editText.setText(playlist.name);
-
-        MaterialDialog.Builder builder = DialogUtils.getBuilder(context)
-                .title(R.string.create_playlist_create_text_prompt)
-                .customView(customView, false)
-                .positiveText(R.string.save)
-                .onPositive((materialDialog, dialogAction) -> {
-
-                    String name = editText.getText().toString();
-                    if (name.length() > 0) {
-                        ContentResolver resolver = context.getContentResolver();
-                        ContentValues values = new ContentValues(1);
-                        values.put(MediaStore.Audio.Playlists.NAME, name);
-                        resolver.update(MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
-                                values,
-                                MediaStore.Audio.Playlists._ID + "=?",
-                                new String[] { Long.valueOf(playlist.id).toString() }
-                        );
-                        playlist.name = name;
-                        Toast.makeText(context, R.string.playlist_renamed_message, Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .negativeText(R.string.cancel);
-
-        final MaterialDialog dialog = builder.build();
-
-        TextWatcher textWatcher = new TextWatcher() {
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            }
-
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                // check if playlist with current name exists already, and warn the user if so.
-                setSaveButton(dialog, playlist, editText.getText().toString());
-            }
-
-            public void afterTextChanged(Editable s) {
-            }
-        };
-
-        editText.addTextChangedListener(textWatcher);
-
-        dialog.show();
-    }
-
-    static void setSaveButton(MaterialDialog dialog, Playlist playlist, String typedName) {
-        if (typedName.trim().length() == 0) {
-            TextView button = dialog.getActionButton(DialogAction.POSITIVE);
-            if (button != null) {
-                button.setEnabled(false);
-            }
-        } else {
-            TextView button = dialog.getActionButton(DialogAction.POSITIVE);
-            if (button != null) {
-                button.setEnabled(true);
-            }
-            if (playlist.id >= 0 && !playlist.name.equals(typedName)) {
-                if (button != null) {
-                    button.setText(R.string.create_playlist_overwrite_text);
-                }
-            } else {
-                if (button != null) {
-                    button.setText(R.string.create_playlist_create_text);
-                }
-            }
-        }
-    }
 
     public interface PlaylistIds {
         long RECENTLY_ADDED_PLAYLIST = -2;
