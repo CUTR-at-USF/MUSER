@@ -161,8 +161,10 @@ public class TaggerDialog extends DialogFragment {
                 .title(R.string.edit_tags)
                 .customView(customView, false)
                 .positiveText(R.string.save)
+                .positiveColor(getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive((dialog, which) -> saveTags())
                 .negativeText(R.string.close)
+                .negativeColor(getResources().getColor(R.color.colorPrimaryDark))
                 .onNegative((dialog, which) -> dismiss())
                 .autoDismiss(false)
                 .build();

@@ -247,7 +247,9 @@ public class SettingsPresenter extends PurchasePresenter<SettingsView> {
                             .title(R.string.pref_title_download_artwork)
                             .content(R.string.pref_warning_download_artwork)
                             .positiveText(R.string.download)
+                            .positiveColor(context.getResources().getColor(R.color.colorPrimaryDark))
                             .onPositive((dialog, which) -> downloadArtwork(context))
+                            .positiveColor(context.getResources().getColor(R.color.colorPrimaryDark))
                             .negativeText(R.string.cancel)
                             .build());
         }

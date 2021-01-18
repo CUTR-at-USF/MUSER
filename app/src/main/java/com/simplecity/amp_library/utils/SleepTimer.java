@@ -85,7 +85,9 @@ public final class SleepTimer {
         if (isActive) {
             return new MaterialDialog.Builder(context)
                     .content(R.string.sleep_timer_stop_title)
+                    .positiveColor(context.getResources().getColor(R.color.colorPrimaryDark))
                     .positiveText(R.string.sleep_timer_stop_button)
+                    .negativeColor(context.getResources().getColor(R.color.colorPrimaryDark))
                     .negativeText(R.string.close)
                     .onPositive((materialDialog, dialogAction) -> stop())
                     .build();

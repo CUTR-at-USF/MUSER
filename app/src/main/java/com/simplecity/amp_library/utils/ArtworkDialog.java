@@ -125,6 +125,7 @@ public class ArtworkDialog {
                 .customView(customView, false)
                 .autoDismiss(false)
                 .positiveText(context.getString(R.string.save))
+                .positiveColor(context.getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive((dialog, which) -> {
                     ArtworkView checkedView = ArtworkDialog.getCheckedView(adapter.items);
                     if (checkedView != null) {
@@ -144,6 +145,7 @@ public class ArtworkDialog {
                     dialog.dismiss();
                 })
                 .negativeText(context.getString(R.string.close))
+                .negativeColor(context.getResources().getColor(R.color.colorPrimaryDark))
                 .onNegative((dialog, which) -> dialog.dismiss())
                 .neutralText(context.getString(R.string.artwork_gallery))
                 .onNeutral((dialog, which) -> RxImagePicker.with(context)

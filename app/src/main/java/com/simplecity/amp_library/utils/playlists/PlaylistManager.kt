@@ -95,6 +95,7 @@ class PlaylistManager @Inject constructor(
                                 .customView(customView, false)
                                 .positiveText(R.string.dialog_button_playlist_duplicate_add)
                                 .autoDismiss(false)
+                                    .positiveColor(context.resources.getColor(R.color.colorPrimaryDark))
                                 .onPositive { dialog, which ->
                                     //If we've only got one item, or we're applying it to all items
                                     if (duplicates.size != 1 && !applyToAll.isChecked) {
@@ -109,6 +110,7 @@ class PlaylistManager @Inject constructor(
                                         dialog.dismiss()
                                     }
                                 }
+                                    .negativeColor(context.resources.getColor(R.color.colorPrimaryDark))
                                 .negativeText(R.string.dialog_button_playlist_duplicate_skip)
                                 .onNegative { dialog, which ->
                                     //If we've only got one item, or we're applying it to all items

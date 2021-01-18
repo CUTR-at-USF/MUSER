@@ -196,8 +196,10 @@ public class DeleteDialog extends DialogFragment implements SafManager.SafDialog
                 .title(R.string.delete_item)
                 .content(message)
                 .positiveText(R.string.button_ok)
+                .positiveColor(getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive((materialDialog, dialogAction) -> deleteSongsOrShowSafDialog())
                 .negativeText(R.string.cancel)
+                .negativeColor(getResources().getColor(R.color.colorPrimaryDark))
                 .onNegative((materialDialog, dialogAction) -> dismiss())
                 .autoDismiss(false)
                 .build();

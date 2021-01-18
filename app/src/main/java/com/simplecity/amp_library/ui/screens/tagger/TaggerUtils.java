@@ -218,9 +218,10 @@ public class TaggerUtils {
                 .title(R.string.edit_tags)
                 .content(hasChecked ? R.string.tag_editor_document_tree_permission_failed : R.string.tag_editor_document_tree_message)
                 .positiveText(R.string.button_ok)
+                .positiveColor(context.getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive(listener);
         if (hasChecked) {
-            builder.negativeText(R.string.cancel);
+            builder.negativeColor(context.getResources().getColor(R.color.colorPrimaryDark)).negativeText(R.string.cancel);
         }
         builder.show();
     }

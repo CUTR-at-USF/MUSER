@@ -285,6 +285,7 @@ public class SafManager {
                     .title(R.string.saf_access_required_title)
                     .content(R.string.saf_access_required_message)
                     .positiveText(R.string.saf_show_files_button)
+                    .positiveColor(getResources().getColor(R.color.colorPrimaryDark))
                     .onPositive((dialog, which) -> {
                         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT_TREE);
                         if (intent.resolveActivity(getContext().getPackageManager()) != null) {
