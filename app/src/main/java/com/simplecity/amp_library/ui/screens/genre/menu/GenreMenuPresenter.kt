@@ -49,6 +49,7 @@ class GenreMenuPresenter @Inject constructor(
                 view?.onSongsAddedToQueue(numSongs)
             }
         }
+        newUiGenreEvent(genre, UiEventType.ADD_TO_QUEUE_GENRE)
     }
 
     override fun play(genre: Genre) {

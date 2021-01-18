@@ -63,6 +63,9 @@ class AlbumMenuPresenter @Inject constructor(
                 view?.onSongsAddedToQueue(numSongs)
             }
         }
+        albums.forEach {
+            newUiAlbumEvent(it, UiEventType.ADD_TO_QUEUE_ALBUM)
+        }
     }
 
     override fun playAlbumsNext(albums: List<Album>) {

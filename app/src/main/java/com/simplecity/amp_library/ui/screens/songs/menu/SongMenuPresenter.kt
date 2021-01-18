@@ -61,6 +61,9 @@ open class SongMenuPresenter @Inject constructor(
     }
 
     override fun addToQueue(songs: List<Song>) {
+        songs.forEach {
+            newUiEvent(it, UiEventType.ADD_TO_QUEUE)
+        }
         mediaManager.addToQueue(songs) { numSongs ->
             view?.onSongsAddedToQueue(numSongs)
         }
