@@ -420,7 +420,7 @@ class AlbumDetailFragment :
         override fun onSongOverflowClick(position: Int, v: View, song: Song) {
             val popupMenu = PopupMenu(v.context, v)
             SongMenuUtils.setupSongMenu(popupMenu, false, false, playlistMenuHelper)
-            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(parentFragment as MainController, context!!, song, presenter))
+            popupMenu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(null, context!!, song, presenter))
             popupMenu.show()
         }
 

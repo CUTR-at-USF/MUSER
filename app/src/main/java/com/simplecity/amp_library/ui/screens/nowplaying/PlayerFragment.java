@@ -618,7 +618,7 @@ public class PlayerFragment extends BaseFragment implements
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         if (getContext() != null) {
-            if (!SongMenuUtils.INSTANCE.getSongMenuClickListener((MainController) getParentFragment(), getContext(), mediaManager.getSong(), presenter).onMenuItemClick(item)) {
+            if (!SongMenuUtils.INSTANCE.getSongMenuClickListener(null, getContext(), mediaManager.getSong(), presenter).onMenuItemClick(item)) {
                 switch (item.getItemId()) {
                     case R.id.favorite:
                         ((FavoriteActionBarView) item.getActionView()).toggle();

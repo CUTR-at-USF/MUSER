@@ -463,7 +463,7 @@ class SearchFragment :
         override fun onSongOverflowClick(position: Int, v: View, song: Song) {
             val menu = PopupMenu(v.context, v)
             SongMenuUtils.setupSongMenu(menu, false, true, playlistMenuHelper)
-            menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(parentFragment as MainController,
+            menu.setOnMenuItemClickListener(SongMenuUtils.getSongMenuClickListener(null,
                     context!!, song, presenter))
             menu.show()
         }
