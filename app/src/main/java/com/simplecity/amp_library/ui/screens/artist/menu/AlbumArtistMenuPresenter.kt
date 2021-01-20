@@ -1,7 +1,6 @@
 package com.simplecity.amp_library.ui.screens.album.menu
 
 import android.content.Context
-import android.util.Log
 import com.simplecity.amp_library.ShuttleApplication
 import com.simplecity.amp_library.data.Repository
 import com.simplecity.amp_library.model.AlbumArtist
@@ -19,7 +18,6 @@ import com.simplecity.amp_library.utils.Operators
 import com.simplecity.amp_library.utils.extensions.getSongs
 import com.simplecity.amp_library.utils.playlists.PlaylistManager
 import com.simplecity.amp_library.utils.sorting.SortManager
-import edu.usf.sas.pal.muser.model.UiEvent
 import edu.usf.sas.pal.muser.model.UiEventType
 import edu.usf.sas.pal.muser.util.EventUtils
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils
@@ -67,7 +65,7 @@ class AlbumArtistMenuPresenter @Inject constructor(
             }
         }
         albumArtists.forEach {
-            newUiAlbumArtistEvent(it, UiEventType.ADD_TO_QUEUE_ALBUM_ARSTIST)
+            newUiAlbumArtistEvent(it, UiEventType.ADD_TO_QUEUE_ALBUM_ARTIST)
         }
     }
 

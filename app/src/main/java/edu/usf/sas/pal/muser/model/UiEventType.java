@@ -19,7 +19,7 @@ public enum UiEventType {
          ADD_TO_PLAYLIST_GENRE,
          ADD_TO_QUEUE,
          ADD_TO_QUEUE_ALBUM,
-         ADD_TO_QUEUE_ALBUM_ARSTIST,
+         ADD_TO_QUEUE_ALBUM_ARTIST,
          ADD_TO_QUEUE_GENRE,
          ALBUM_SHUFFLE,
          DELETE,
