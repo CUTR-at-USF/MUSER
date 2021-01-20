@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.annimon.stream.Stream;
 import com.simplecity.amp_library.R;
+import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.model.Album;
 import com.simplecity.amp_library.model.AlbumArtist;
 import com.simplecity.amp_library.model.Song;
@@ -161,10 +162,10 @@ public class TaggerDialog extends DialogFragment {
                 .title(R.string.edit_tags)
                 .customView(customView, false)
                 .positiveText(R.string.save)
-                .positiveColor(getResources().getColor(R.color.colorPrimaryDark))
+                .positiveColor(ShuttleApplication.get().getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive((dialog, which) -> saveTags())
                 .negativeText(R.string.close)
-                .negativeColor(getResources().getColor(R.color.colorPrimaryDark))
+                .negativeColor(ShuttleApplication.get().getResources().getColor(R.color.colorPrimaryDark))
                 .onNegative((dialog, which) -> dismiss())
                 .autoDismiss(false)
                 .build();

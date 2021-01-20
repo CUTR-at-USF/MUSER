@@ -20,6 +20,7 @@ import com.annimon.stream.Collectors;
 import com.annimon.stream.Stream;
 import com.annimon.stream.function.Supplier;
 import com.simplecity.amp_library.R;
+import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.data.Repository;
 import com.simplecity.amp_library.model.Album;
 import com.simplecity.amp_library.model.AlbumArtist;
@@ -196,10 +197,10 @@ public class DeleteDialog extends DialogFragment implements SafManager.SafDialog
                 .title(R.string.delete_item)
                 .content(message)
                 .positiveText(R.string.button_ok)
-                .positiveColor(getResources().getColor(R.color.colorPrimaryDark))
+                .positiveColor(ShuttleApplication.get().getResources().getColor(R.color.colorPrimaryDark))
                 .onPositive((materialDialog, dialogAction) -> deleteSongsOrShowSafDialog())
                 .negativeText(R.string.cancel)
-                .negativeColor(getResources().getColor(R.color.colorPrimaryDark))
+                .negativeColor(ShuttleApplication.get().getResources().getColor(R.color.colorPrimaryDark))
                 .onNegative((materialDialog, dialogAction) -> dismiss())
                 .autoDismiss(false)
                 .build();
