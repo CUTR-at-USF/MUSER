@@ -14,6 +14,9 @@ import com.simplecity.amp_library.utils.extensions.getSongsSingle
 import com.simplecity.amp_library.utils.sorting.SortManager
 import com.squareup.inject.assisted.Assisted
 import com.squareup.inject.assisted.AssistedInject
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -68,6 +71,7 @@ class AlbumDetailPresenter @AssistedInject constructor(
     }
 
     fun shuffleAll() {
+        newUiEvent(album)
         mediaManager.shuffleAll(songs) {
             view?.onPlaybackFailed()
         }
@@ -100,5 +104,10 @@ class AlbumDetailPresenter @AssistedInject constructor(
                     { error -> LogUtils.logException(SongMenuPresenter.TAG, "Failed to transform src single", error) }
                 )
         )
+    }
+
+    fun newUiEvent(album: Album){
+        val uiEvent = EventUtils.newUiAlbumEvent(album, UiEventType.ALBUM_SONGS_SHUFFLE)
+        FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 }

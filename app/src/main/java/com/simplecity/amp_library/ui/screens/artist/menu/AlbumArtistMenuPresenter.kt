@@ -115,7 +115,7 @@ class AlbumArtistMenuPresenter @Inject constructor(
             view?.onPlaybackFailed()
             Unit
         }
-        newUiAlbumArtistEvent(albumArtist, UiEventType.ALBUM_SHUFFLE)
+        newUiAlbumArtistEvent(albumArtist, UiEventType.ARTIST_ALBUM_SHUFFLE)
     }
 
     override fun <T> transform(src: Single<List<T>>, dst: (List<T>) -> Unit) {
