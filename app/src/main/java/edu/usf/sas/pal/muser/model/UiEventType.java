@@ -22,6 +22,8 @@ public enum UiEventType {
          ADD_TO_QUEUE_ALBUM_ARTIST,
          ADD_TO_QUEUE_GENRE,
          ALBUM_SHUFFLE,
+         ALBUM_BIOGRAPHY,
+         ALBUM_ARTIST_BIOGRAPHY,
          DELETE,
          DELETE_ALBUM,
          DELETE_ALBUM_ARTIST,
