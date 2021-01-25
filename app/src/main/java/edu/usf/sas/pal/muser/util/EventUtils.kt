@@ -121,7 +121,16 @@ object EventUtils {
     }
 
     @JvmStatic
-    fun newUiVolumeEvent(capturedUiAction: UiEventType, context: Context): UiEvent{
+    fun newUiVolumeEvent(capturedUiAction: UiEventType, context: Context): UiEvent {
+        val currentTimeMS = System.currentTimeMillis()
+        val nanoTime = System.nanoTime()
+        val audioData = AudioDeviceUtils.getAudioData(context)
+        return UiEvent(uiEventType = capturedUiAction, currentTimeMs = currentTimeMS,
+                nanoTime = nanoTime, audioData = audioData)
+    }
+
+    @JvmStatic
+    fun newUiAlbumShuffleEvent(capturedUiAction: UiEventType, context: Context): UiEvent {
         val currentTimeMS = System.currentTimeMillis()
         val nanoTime = System.nanoTime()
         val audioData = AudioDeviceUtils.getAudioData(context)

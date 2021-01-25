@@ -47,6 +47,9 @@ import com.simplecityapps.recycler_adapter.recyclerview.RecyclerListener
 import com.simplecityapps.recycler_adapter.recyclerview.SpanSizeLookup
 import com.simplecityapps.recyclerview_fastscroll.views.FastScrollRecyclerView
 import dagger.android.support.AndroidSupportInjection
+import edu.usf.sas.pal.muser.model.UiEventType
+import edu.usf.sas.pal.muser.util.EventUtils
+import edu.usf.sas.pal.muser.util.FirebaseIOUtils
 import io.reactivex.Single
 import io.reactivex.disposables.Disposable
 import javax.inject.Inject
@@ -294,6 +297,7 @@ class AlbumListFragment :
     override fun onShuffleItemClick() {
         // Note: For album-shuffle mode, we don't actually turn shuffle on.
         mediaManager.shuffleMode = QueueManager.ShuffleMode.OFF
+        context?.let { newUiAlbumShuffleEvent(it) }
         mediaManager.playAll(songsRepository.getSongs(null as Function1<Song, Boolean>?)
             .firstOrError()
             .map { songs -> Operators.albumShuffleSongs(songs, sortManager) }) {
@@ -417,6 +421,11 @@ class AlbumListFragment :
 
     override fun screenName(): String {
         return TAG
+    }
+
+    private fun newUiAlbumShuffleEvent(context: Context){
+        val uiEvent = EventUtils.newUiAlbumShuffleEvent(UiEventType.ALBUM_SHUFFLE, context)
+        FirebaseIOUtils.saveUiEvent(uiEvent)
     }
 
     // Static
