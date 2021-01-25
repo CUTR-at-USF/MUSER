@@ -755,5 +755,5 @@
     <string name="saf_access_required_title">Accesso alla memoria richiesto</string>
     <string name="saf_access_required_message">Muser ha bisogno dell\'autorizzazione per accedere a questi file. Scegli la cartella contenente la tua musica.</string>
     <string name="saf_show_files_button">Mostra file</string>
-    <string name="notification_text_Muser_running">Il servizio Muser è in esecuzione...</string>
+    <string name="notification_text_shuttle_running">Il servizio Muser è in esecuzione...</string>
 </resources>

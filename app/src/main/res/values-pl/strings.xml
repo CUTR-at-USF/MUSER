@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">Brak dostępnego dostawcy dokumentów do obsługi żądania uprawnień.</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -82,7 +82,7 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Gromadzenie utworów...</string>
     <!-- -->
-    <string name="get_pro_title">Ulepsz do wersji Shuttle+</string>
+    <string name="get_pro_title">Ulepsz do wersji MUSER+</string>
     <!-- -->
     <string name="get_pro_message">Jeśli Muser spełnia Twoje oczekiwania, rozważ ulepszenie do płatnej wersji.
 \n\nFunkcje:
@@ -93,13 +93,13 @@
 \nZakup płatnej wersji wspomoże również dalszy rozwój aplikacji.</string>
     <!-- -->
     <string name="upgraded_title">Dziękuję</string>
-    <string name="upgraded_message">Ulepszono do wersji Shuttle+. Dziękuę za wsparcie.\n\nProszę uruchomić program ponownie, aby mieć pewność, że włączono wszystkie dostępne funkcje.</string>
+    <string name="upgraded_message">Ulepszono do wersji MUSER+. Dziękuę za wsparcie.\n\nProszę uruchomić program ponownie, aby mieć pewność, że włączono wszystkie dostępne funkcje.</string>
     <string name="upgrade_dialog_message">• Obsługa ChromeCast,
 \n• dodatkowe style,
 \n• edytor etykiet,
 \n• przeglądarka katalogów,
 \n• wsparcie rozwoju aplikacji ❤️.</string>
-    <string name="upgrade_required_folders">Ulepsz do wersji Shuttle+</string>
+    <string name="upgrade_required_folders">Ulepsz do wersji MUSER+</string>
     <string name="btn_upgrade">Ulepsz</string>
     <!-- -->
     <string name="get_pro_button_no">Nie, dziękuję</string>

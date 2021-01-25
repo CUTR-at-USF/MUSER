@@ -738,5 +738,5 @@
     <string name="saf_access_required_title">Se requiere acceso de almacenamiento</string>
     <string name="saf_access_required_message">Muser requiere permiso para acceder a estos archivos. Por favor, elija el directorio que contiene su música.</string>
     <string name="saf_show_files_button">Mostrar archivos</string>
-    <string name="notification_text_Muser_running">Muser se está ejecutando</string>
+    <string name="notification_text_shuttle_running">Muser se está ejecutando</string>
 </resources>

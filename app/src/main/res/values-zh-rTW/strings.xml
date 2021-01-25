@@ -739,5 +739,5 @@
     <string name="saf_access_required_title">儲存空間存取要求</string>
     <string name="saf_access_required_message">Muser 需要權限允許才能存取檔案。請選擇您的音樂所在的路徑。</string>
     <string name="saf_show_files_button">顯示檔案</string>
-    <string name="notification_text_Muser_running">Muser 服務正在執行…</string>
+    <string name="notification_text_shuttle_running">Muser 服務正在執行…</string>
 </resources>

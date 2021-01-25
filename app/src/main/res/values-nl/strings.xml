@@ -79,7 +79,7 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Nummers verzamelen...</string>
     <!-- -->
-    <string name="get_pro_title">Upgrade naar Shuttle+</string>
+    <string name="get_pro_title">Upgrade naar MUSER+</string>
     <!-- -->
     <string name="get_pro_message">Als je Muser leuk vindt, overweeg dan een upgrade.
 \n\nFuncties:
@@ -89,14 +89,14 @@
 \n\• ChromeCast-ondersteuning\n\nOok steun je zo verdere ontwikkeling.</string>
     <!-- -->
     <string name="upgraded_title">Bedankt</string>
-    <string name="upgraded_message">De upgrade naar Shuttle+ is gelukt, bedankt voor de steun.
+    <string name="upgraded_message">De upgrade naar MUSER+ is gelukt, bedankt voor de steun.
 \n\nHerstart de app om te zorgen dat alle functies werken.</string>
     <string name="upgrade_dialog_message">• ChromeCast-ondersteuning
 \n• Extra thema\'s
 \n• Tags bewerken
 \n• Bladeren in mappen
 \n• Steun verdere ontwikkeling ❤️</string>
-    <string name="upgrade_required_folders">Upgraden naar Shuttle+</string>
+    <string name="upgrade_required_folders">Upgraden naar MUSER+</string>
     <string name="btn_upgrade">Upgraden</string>
     <!-- -->
     <string name="get_pro_button_no">Nee bedankt</string>
@@ -744,7 +744,7 @@ map "</item>
     <string name="shuffle_albums">Albumshuffle</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Toegang tot opslag nodig</string>
-    <string name="saf_access_required_message">Shuttle heeft toestemming nodig voor toegang tot deze bestanden. Kies de map die jouw muziek bevat.</string>
+    <string name="saf_access_required_message">MUSER heeft toestemming nodig voor toegang tot deze bestanden. Kies de map die jouw muziek bevat.</string>
     <string name="saf_show_files_button">Bestanden tonen</string>
-    <string name="notification_text_shuttle_running">Shuttle service draait…</string>
+    <string name="notification_text_shuttle_running">MUSER service draait…</string>
 </resources>

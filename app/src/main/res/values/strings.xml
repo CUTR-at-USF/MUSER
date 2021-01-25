@@ -3,7 +3,7 @@
 
     <!-- ## Toast Messages ## -->
 
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">No DocumentProvider available to handle permission request</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -90,9 +90,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Gathering songs…</string>
     <!-- -->
-    <string name="get_pro_title">Upgrade to Shuttle+</string>
+    <string name="get_pro_title">Upgrade to MUSER+</string>
     <!-- -->
-    <string name="get_pro_message">If you like Shuttle, please consider upgrading.
+    <string name="get_pro_message">If you like MUSER, please consider upgrading.
         \n\nFeatures:
         \n• Tons of extra themes
         \n• Tag editing
@@ -101,7 +101,7 @@
         \nIt also helps to promote further development.</string>
     <!-- -->
     <string name="upgraded_title">Thank You</string>
-    <string name="upgraded_message">You have successfully upgraded to Shuttle+. Thank you for your support.
+    <string name="upgraded_message">You have successfully upgraded to MUSER+. Thank you for your support.
         \n\nPlease restart the app to ensure all features are enabled</string>
 
     <string name="upgrade_dialog_message">
@@ -111,7 +111,7 @@
         \n• Folder browsing
         \n• Support development ❤️</string>
 
-    <string name="upgrade_required_folders">Upgrade to Shuttle+</string>
+    <string name="upgrade_required_folders">Upgrade to MUSER+</string>
 
     <string name="btn_upgrade">Upgrade</string>
     <!-- -->
@@ -150,7 +150,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Are you sure you want to permanently delete \"<xliff:g id="folder">%s</xliff:g>\"? All items in this folder will be deleted, including items which might not be visible in the Shuttle file browser.</string>
+    <string name="delete_folder_confirmation_dialog">Are you sure you want to permanently delete \"<xliff:g id="folder">%s</xliff:g>\"? All items in this folder will be deleted, including items which might not be visible in the MUSER file browser.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Are you sure you want to permanently delete \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -158,7 +158,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Set Ringtone</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Shuttle requires permission to \'write settings\' in order to set your ringtone.\n\nAfter granting permission, try setting your ringtone again.</string>
+    <string name="dialog_message_set_ringtone">MUSER requires permission to \'write settings\' in order to set your ringtone.\n\nAfter granting permission, try setting your ringtone again.</string>
 
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> already exists in this playlist. Add it anyway?</string>
@@ -298,7 +298,7 @@
 
     <string name="pref_group_palette">Palette</string>
     <string name="pref_title_palette">Use Colors from Artwork</string>
-    <string name="pref_summary_palette">If enabled, Shuttle will detect the most prominent color in your artwork, and use that as the \'primary color\' throughout the app</string>
+    <string name="pref_summary_palette">If enabled, MUSER will detect the most prominent color in your artwork, and use that as the \'primary color\' throughout the app</string>
     <string name="pref_title_palette_now_playing">Only on \'Now Playing\' Screen</string>
 
     <!--Settings title for whitelist/blacklist-->
@@ -320,7 +320,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Prefer embedded artwork</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Check this box if you\'d prefer Shuttle to look for artwork embedded within your music files, before searching in your music directories</string>
+    <string name="pref_summary_prefer_embedded_art">Check this box if you\'d prefer MUSER to look for artwork embedded within your music files, before searching in your music directories</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ignore embedded artwork</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -340,7 +340,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Download missing artist and album images</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle will download all artwork regardless of your network. Data usage fees may apply.</string>
+    <string name="pref_warning_download_artwork">MUSER will download all artwork regardless of your network. Data usage fees may apply.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Delete Artwork</string>
     <!-- Settings summary for the delete artwork button -->
@@ -361,7 +361,7 @@
     <string name="pref_title_placeholders">Use Gmail Style Placeholders</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Displays \'Gmail\' style placeholders by default.
-        If unchecked, the Shuttle icon will be used as a placeholder instead</string>
+        If unchecked, the MUSER icon will be used as a placeholder instead</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Enable Lockscreen Artwork</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -427,9 +427,9 @@
     <string name="pref_title_faq">FAQ</string>
     <string name="pref_summary_faq">Have a question? Need help? Click here to view the FAQ @ www.shuttlemusicplayer.com</string>
     <string name="pref_title_community">Get Help</string>
-    <string name="pref_summary_community">There is a very active community of Shuttle users on Discord. If you have questions or need help, this is the best place to go.</string>
+    <string name="pref_summary_community">There is a very active community of MUSER users on Discord. If you have questions or need help, this is the best place to go.</string>
     <string name="pref_title_rate">Say Thanks</string>
-    <string name="pref_summary_rate">If you like Shuttle, please consider leaving a review.</string>
+    <string name="pref_summary_rate">If you like MUSER, please consider leaving a review.</string>
 
     <string name="pref_title_headset_beep">Beep on Skip</string>
     <string name="pref_summary_headset_beep">Beep when skipping song via headset controls</string>
@@ -488,10 +488,10 @@
     <!-- Button text for saving tags  -->
     <string name="save">Save</string>
     <!-- Message displayed when tag editing fails -->
-    <string name="tag_error">An error occurred editing tags. If the file is stored on an SD Card, Shuttle might not have permission to access it.</string>
-    <string name="tag_editor_document_tree_message">Due to changes in Android 5.0, Google now require that you specify which folders on the SD card an app is allowed to edit.\n\nShuttle will now open a file picker. Please choose the parent folder of the files you wish to modify.</string>
+    <string name="tag_error">An error occurred editing tags. If the file is stored on an SD Card, MUSER might not have permission to access it.</string>
+    <string name="tag_editor_document_tree_message">Due to changes in Android 5.0, Google now require that you specify which folders on the SD card an app is allowed to edit.\n\nMUSER will now open a file picker. Please choose the parent folder of the files you wish to modify.</string>
     <string name="tag_editor_check_permission">Checking for permissions. This may take a while…\n\nBlame Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">It seems that Shuttle still doesn\'t have permission to edit the files. Double check the directory in the file picker.</string>
+    <string name="tag_editor_document_tree_permission_failed">It seems that MUSER still doesn\'t have permission to edit the files. Double check the directory in the file picker.</string>
     <string name="tag_retrieve_error">An error occurred retrieving tags.</string>
 
     <!-- ## Folder browsing ## -->
@@ -646,7 +646,7 @@
     <string name="button_done">Done</string>
 
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Choose how many weeks into the past Shuttle should search for \'recent\' music.</string>
+    <string name="weekpicker_title">Choose how many weeks into the past MUSER should search for \'recent\' music.</string>
 
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
@@ -750,7 +750,7 @@
     <string name="btn_now_playing">Now playing %1$s by %2$s</string>
     <!-- Accessibility 'show lyrics' -->
 
-    <string name="pref_summary_restore_purchases">If you\'ve already upgraded Shuttle, but it\'s still showing up as the free version, press this.</string>
+    <string name="pref_summary_restore_purchases">If you\'ve already upgraded MUSER, but it\'s still showing up as the free version, press this.</string>
     <string name="pref_title_restore_purchases">Restore Purchases</string>
     <string name="blacklist_empty">You haven\'t blacklisted any songs!</string>
     <string name="whitelist_empty">You haven\'t whitelisted any folders!</string>
@@ -763,11 +763,11 @@
     <string name="song_info_play_count">Play Count</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Purchase Restored. Please restart Shuttle</string>
+    <string name="iab_purchase_restored">Purchase Restored. Please restart MUSER</string>
     <string name="iab_purchase_not_found">No previous purchase found.</string>
-    <string name="iab_already_upgraded">Shuttle is already upgraded. Try restarting the app.</string>
+    <string name="iab_already_upgraded">MUSER is already upgraded. Try restarting the app.</string>
     <string name="iab_purchase_failed">Something went wrong. Please try again later..</string>
-    <string name="snackbar_rate_text">Enjoy using Shuttle?</string>
+    <string name="snackbar_rate_text">Enjoy using MUSER?</string>
     <string name="snackbar_rate_action">Rate It!</string>
     <string name="dialog_create_playlist_error">Error creating playlist</string>
 
@@ -821,7 +821,7 @@
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">No embedded lyrics found.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric is an open-source lyric fetcher on the Google Play Store.\n\nOnce installed, QuickLyric will be opened from Shuttle whenever you hit the \'QuickLyric\' menu button.</string>
+    <string name="quicklyric_info">QuickLyric is an open-source lyric fetcher on the Google Play Store.\n\nOnce installed, QuickLyric will be opened from MUSER whenever you hit the \'QuickLyric\' menu button.</string>
 
 
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
@@ -837,11 +837,11 @@
 
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Storage Access Required</string>
-    <string name="saf_access_required_message">Shuttle requires permission to access these files. Please pick the directory containing your music.</string>
+    <string name="saf_access_required_message">MUSER requires permission to access these files. Please pick the directory containing your music.</string>
     <string name="saf_show_files_button">Show files</string>
 
 
-    <string name="notification_text_shuttle_running">Shuttle service running…</string>
+    <string name="notification_text_shuttle_running">MUSER service running…</string>
 
     <!--User Registration-->
     <string name="register_user_opt_in_message">Currently MUSER is only available for use by participants in USF research. Would you like to join the study?</string>

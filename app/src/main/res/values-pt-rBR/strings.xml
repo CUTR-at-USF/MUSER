@@ -745,5 +745,5 @@ pastas</item>
     <string name="saf_access_required_title">Acesso de armazenamento necessário</string>
     <string name="saf_access_required_message">O Muser requer permissão para acessar esses arquivos. Escolha o diretório que contém sua música.</string>
     <string name="saf_show_files_button">Mostrar arquivos</string>
-    <string name="notification_text_Muser_running">Serviço do Muser em execução...</string>
+    <string name="notification_text_shuttle_running">Serviço do Muser em execução...</string>
 </resources>

@@ -747,5 +747,5 @@ dosyalar</item>
     <string name="saf_access_required_title">Depolama Erişimi Gerekli</string>
     <string name="saf_access_required_message">Muser, bu dosyalara erişim için izin istiyor. Lütfen şarkılarınızın bulunduğu dizini seçin.</string>
     <string name="saf_show_files_button">Dosyaları göster</string>
-    <string name="notification_text_Muser_running">Muser servisi çalışıyor…</string>
+    <string name="notification_text_shuttle_running">Muser servisi çalışıyor…</string>
 </resources>

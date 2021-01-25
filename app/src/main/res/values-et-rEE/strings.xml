@@ -745,5 +745,5 @@ Kui see on välja lülitatud, siis kasutatakse Muser ikooni kohatäitena.</strin
     <string name="saf_access_required_title">Vajalik on ligipääs salvestusmeediale</string>
     <string name="saf_access_required_message">Muser vajab neile failidelel ligipääsemiseks õiguseid. Palun märgi kaust, milles on sinu muusika.</string>
     <string name="saf_show_files_button">Näita faile</string>
-    <string name="notification_text_Muser_running">Muser teenus töötab...</string>
+    <string name="notification_text_shuttle_running">Muser teenus töötab...</string>
 </resources>
