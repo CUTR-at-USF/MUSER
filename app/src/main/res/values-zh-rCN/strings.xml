@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">没有可用文件提供处理许可请求</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -76,9 +76,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">正在采集歌曲...</string>
     <!-- -->
-    <string name="get_pro_title">升级至 Muser+</string>
+    <string name="get_pro_title">升级至 MUSER+</string>
     <!-- -->
-    <string name="get_pro_message">如果您喜欢Muser音乐播放器,请考虑升级
+    <string name="get_pro_message">如果您喜欢MUSER音乐播放器,请考虑升级
 \n\n高级功能:
 \n\&#8226;- 大量额外主题
 \n\&#8226;- 歌曲信息编辑
@@ -87,16 +87,16 @@
 \n您的付费升级也是对我们开发者最大的支持!</string>
     <!-- -->
     <string name="upgraded_title">感谢您</string>
-    <string name="upgraded_message">您已成功升级至Muser+,非常感谢您的支持
+    <string name="upgraded_message">您已成功升级至MUSER+,非常感谢您的支持
 \n\n请重启应用以启用高级功能</string>
-    <string name="upgrade_dialog_message">Muser升级后将会开放以下新功能: 
+    <string name="upgrade_dialog_message">MUSER升级后将会开放以下新功能:
 \n\n- 大量额外主题
 \n- 编辑歌曲信息
 \n- 文件浏览器
 \n- 支持ChromeCast
 \n\n- 这也有助于变得更好
-\n\n您的付费升级也是对我们开发者最大的支持! 如果您已购买Muser+便不需要购买本更新</string>
-    <string name="upgrade_required_folders">升级至 Muser+</string>
+\n\n您的付费升级也是对我们开发者最大的支持! 如果您已购买MUSER+便不需要购买本更新</string>
+    <string name="upgrade_required_folders">升级至 MUSER+</string>
     <string name="btn_upgrade">升级</string>
     <!-- -->
     <string name="get_pro_button_no">取消</string>
@@ -129,7 +129,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">确定</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">您确定要永久删除「<xliff:g id="folder">%s</xliff:g>」吗？将会删除这个文件夹中的所有项目，包含 Muser 文件浏览模式中无法检视的隐藏项目</string>
+    <string name="delete_folder_confirmation_dialog">您确定要永久删除「<xliff:g id="folder">%s</xliff:g>」吗？将会删除这个文件夹中的所有项目，包含 MUSER 文件浏览模式中无法检视的隐藏项目</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">您确定要永久删除\"<xliff:g id="file">%s</xliff:g>\"吗？</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -137,7 +137,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">设为铃声</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Muser 需要「写入设定」权限才能设定铃声。\n\n请在您允许权限后再一次设定铃声</string>
+    <string name="dialog_message_set_ringtone">MUSER 需要「写入设定」权限才能设定铃声。\n\n请在您允许权限后再一次设定铃声</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate">「<xliff:g id="artist">%1$s</xliff:g>—<xliff:g id="song">%2$s</xliff:g>」已存在於这个歌单中。要继续加入吗？</string>
     <!-- Checkbox text 'apply to all' -->
@@ -257,7 +257,7 @@
     <string name="pref_title_theme_black">黑色</string>
     <string name="pref_group_palette">画板</string>
     <string name="pref_title_palette">使用封面色彩</string>
-    <string name="pref_summary_palette">启用后，Muser 将会侦测您的专辑封面影像中较为显眼的色彩，并将其设为应用程式界面主题的主要色彩</string>
+    <string name="pref_summary_palette">启用后，MUSER 将会侦测您的专辑封面影像中较为显眼的色彩，并将其设为应用程式界面主题的主要色彩</string>
     <string name="pref_title_palette_now_playing">仅在正播界面</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">名单</string>
@@ -278,7 +278,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">使用本地封面</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">若您的音乐文件或文件夹中拥有内嵌专辑封面，Muser 将会优先使用</string>
+    <string name="pref_summary_prefer_embedded_art">若您的音乐文件或文件夹中拥有内嵌专辑封面，MUSER 将会优先使用</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">略过内嵌封面</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -298,7 +298,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">下载缺少的歌手与专辑封面</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Muser 将会通过任何网路连线下载所有专辑封面，这可能会使用一些数据用量</string>
+    <string name="pref_warning_download_artwork">MUSER 将会通过任何网路连线下载所有专辑封面，这可能会使用一些数据用量</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">删除专辑封面</string>
     <!-- Settings summary for the delete artwork button -->
@@ -318,7 +318,7 @@
     <!-- Settings title for gmail style placeholders checkbox-->
     <string name="pref_title_placeholders">使用谷歌风格</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
-    <string name="pref_summary_placeholders">显示 Gmail 样式的预设专辑封面。若取消勾选则会以 Muser 图示替代</string>
+    <string name="pref_summary_placeholders">显示 Gmail 样式的预设专辑封面。若取消勾选则会以 MUSER 图示替代</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">锁屏播放控制</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -383,7 +383,7 @@
     <string name="pref_title_faq">常见问题</string>
     <string name="pref_summary_faq">有问题或需要协助吗？请按这里查询常见问题 www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">感谢评分</string>
-    <string name="pref_summary_rate">若您喜欢 Muser，您可给予评价</string>
+    <string name="pref_summary_rate">若您喜欢 MUSER，您可给予评价</string>
     <string name="pref_title_headset_beep">耳机跳歌提醒</string>
     <string name="pref_summary_headset_beep">通过耳机跳过歌曲时发出提示音</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -435,9 +435,9 @@
     <string name="save">保存</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">编辑标签时发生错误</string>
-    <string name="tag_editor_document_tree_message">由於 Google 对於 Android 5.0 作业系统的规范变更，您必须指定 SD 卡中有哪些文件夹允许应用程式存取内容。\n\nMuser 将会开启文件选取界面，请选择您要允许应用程式使用的主要文件夹</string>
+    <string name="tag_editor_document_tree_message">由於 Google 对於 Android 5.0 作业系统的规范变更，您必须指定 SD 卡中有哪些文件夹允许应用程式存取内容。\n\nMUSER 将会开启文件选取界面，请选择您要允许应用程式使用的主要文件夹</string>
     <string name="tag_editor_check_permission">正在检查权限，可能需要一段时间…\n\n都是 Google！</string>
-    <string name="tag_editor_document_tree_permission_failed">Muser 似乎仍无法取得变更文件内容的权限。请再确认一次选取介面中所选择的文件夹路径</string>
+    <string name="tag_editor_document_tree_permission_failed">MUSER 似乎仍无法取得变更文件内容的权限。请再确认一次选取介面中所选择的文件夹路径</string>
     <string name="tag_retrieve_error">检索标签时发生错误</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -575,7 +575,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">完成</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">设定 Muser 要在「最近播放」中显示多少周前使用过的音乐</string>
+    <string name="weekpicker_title">设定 MUSER 要在「最近播放」中显示多少周前使用过的音乐</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">正在下载专辑封面...</string>
@@ -665,7 +665,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">现正播放 %1$s—%2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">若您已升级 Muser，但仍显示为免费版本，请按这里</string>
+    <string name="pref_summary_restore_purchases">若您已升级 MUSER，但仍显示为免费版本，请按这里</string>
     <string name="pref_title_restore_purchases">还原购买</string>
     <string name="blacklist_empty">您目前没有任何已加入至黑名单的歌曲</string>
     <string name="whitelist_empty">您目前没有任何已加入至白名单的文件夹</string>
@@ -678,11 +678,11 @@
     <string name="song_info_play_count">播放次数</string>
     <string name="song_info_bitrate_suffix">"kbps"</string>
     <string name="song_info_sample_rate_suffix">"kHz"</string>
-    <string name="iab_purchase_restored">已还原购买资料。请重新启动 Muser</string>
+    <string name="iab_purchase_restored">已还原购买资料。请重新启动 MUSER</string>
     <string name="iab_purchase_not_found">找不到先前的购买记录</string>
-    <string name="iab_already_upgraded">Muser 已升级完成。请重新启动本应用程式</string>
+    <string name="iab_already_upgraded">MUSER 已升级完成。请重新启动本应用程式</string>
     <string name="iab_purchase_failed">发生错误。请稍后再试</string>
-    <string name="snackbar_rate_text">喜欢 Muser 吗？</string>
+    <string name="snackbar_rate_text">喜欢 MUSER 吗？</string>
     <string name="snackbar_rate_action">立即评分!</string>
     <string name="dialog_create_playlist_error">建立歌单时发生错误</string>
     <!-- Artwork picker -->
@@ -726,7 +726,7 @@
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">找不到内嵌歌词</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric 是 Google Play 商店中的一款开放原始码歌词撷取工具。\n安装完成后，在 Muser 按下「QuickLyric」选单即可启动</string>
+    <string name="quicklyric_info">QuickLyric 是 Google Play 商店中的一款开放原始码歌词撷取工具。\n安装完成后，在 MUSER 按下「QuickLyric」选单即可启动</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">歌单列表</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
@@ -737,6 +737,6 @@
     <string name="shuffle_albums">专辑随机</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">储存空间存取要求</string>
-    <string name="saf_access_required_message">Muser 需要权限允许才能存取文件。请选择您的音乐所在的路径。</string>
+    <string name="saf_access_required_message">MUSER 需要权限允许才能存取文件。请选择您的音乐所在的路径。</string>
     <string name="saf_show_files_button">显示文件</string>
 </resources>
