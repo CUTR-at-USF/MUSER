@@ -89,6 +89,7 @@ class AlbumMenuPresenter @Inject constructor(
     }
 
     override fun albumInfo(album: Album) {
+        newUiAlbumEvent(album, UiEventType.ALBUM_BIOGRAPHY)
         view?.presentAlbumInfoDialog(album)
     }
 

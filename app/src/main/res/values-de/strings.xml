@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">Kein Dokumenten-Provider verfügbar um diese Erlaubnisanfrage zu bearbeiten.</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -79,9 +79,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Stelle Titel zusammen...</string>
     <!-- -->
-    <string name="get_pro_title">Auf Muser+ upgraden</string>
+    <string name="get_pro_title">Auf MUSER+ upgraden</string>
     <!-- -->
-    <string name="get_pro_message">Wenn dir Muser gefällt, denke bitte über ein Upgrade nach.
+    <string name="get_pro_message">Wenn dir MUSER gefällt, denke bitte über ein Upgrade nach.
         \n\nFunktionen:
         \n• Viele neue Themen
         \n• Bearbeiten von Tags
@@ -90,14 +90,14 @@
         \nAußerdem unterstützt du die weitere Entwicklung.</string>
     <!-- -->
     <string name="upgraded_title">Dankeschön</string>
-    <string name="upgraded_message">Dein Upgrade auf Muser+ war erfolgreich. Danke für deine Unterstützung.
+    <string name="upgraded_message">Dein Upgrade auf MUSER+ war erfolgreich. Danke für deine Unterstützung.
 \n\nBitte starte die App neu um die neuen Funktionen zu aktivieren.</string>
     <string name="upgrade_dialog_message">• ChromeCast-Unterstützung
         \n• Zusätzliche Themes
         \n• Tagbearbeitung
         \n• Durchsuchen von Ordnern
         \n• Unterstützung der Entwicklung ❤️</string>
-    <string name="upgrade_required_folders">Auf Muser+ upgraden</string>
+    <string name="upgrade_required_folders">Auf MUSER+ upgraden</string>
     <string name="btn_upgrade">Upgrade</string>
     <!-- -->
     <string name="get_pro_button_no">Nein Danke</string>
@@ -130,7 +130,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Bist Du sicher, dass Du den Ordner \"<xliff:g id="folder">%s</xliff:g>\" endgültig löschen möchtest? Alle Inhalte in diesem Ordner werden gelöscht, auch wenn sie möglicherweise nicht im Muser-Dateimanager sichtbar sind.</string>
+    <string name="delete_folder_confirmation_dialog">Bist Du sicher, dass Du den Ordner \"<xliff:g id="folder">%s</xliff:g>\" endgültig löschen möchtest? Alle Inhalte in diesem Ordner werden gelöscht, auch wenn sie möglicherweise nicht im MUSER-Dateimanager sichtbar sind.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Bist Du sicher, dass Du die Datei \"<xliff:g id="file">%s</xliff:g>\" endgültig löschen möchtest?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -138,7 +138,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Klingelton festlegen</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Muser benötigt Schreibrechte, damit ein Klingelton gesetzt werden kann.\n\nVersuche das Einstellen erneut, wenn diese Rechte gewährt wurden.</string>
+    <string name="dialog_message_set_ringtone">MUSER benötigt Schreibrechte, damit ein Klingelton gesetzt werden kann.\n\nVersuche das Einstellen erneut, wenn diese Rechte gewährt wurden.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> existiert bereits in dieser Playlist. Trotzdem hinzufügen?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -258,7 +258,7 @@
     <string name="pref_title_theme_black">Schwarz</string>
     <string name="pref_group_palette">Palette</string>
     <string name="pref_title_palette">Benutze Farben vom Album Cover</string>
-    <string name="pref_summary_palette">Muser wird die markanteste Farbe im Cover als Hauptfarbe in der App verwenden.</string>
+    <string name="pref_summary_palette">MUSER wird die markanteste Farbe im Cover als Hauptfarbe in der App verwenden.</string>
     <string name="pref_title_palette_now_playing">Nur auf \'Aktuell Gespielt\'-Bildschirm</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">White-/Blacklist</string>
@@ -279,7 +279,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Eingebettete Bilder bevorzugen</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Anwählen, wenn Muser zunächst in der Datei und erst danach in dem Ordner nach Bildern (wie z. B. folder.jpg, cover.png) suchen soll.</string>
+    <string name="pref_summary_prefer_embedded_art">Anwählen, wenn MUSER zunächst in der Datei und erst danach in dem Ordner nach Bildern (wie z. B. folder.jpg, cover.png) suchen soll.</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Eingebettete Bilder ignorieren</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -300,7 +300,7 @@
     <string name="pref_summary_download_artwork">"Fehlende Künstler und Alben-Bilder herunterladen
     "</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Muser wird alle Bilder unabhängig von deiner Datenverbindung herunterladen. Mobilfunkdaten könnten Kosten verursachen</string>
+    <string name="pref_warning_download_artwork">MUSER wird alle Bilder unabhängig von deiner Datenverbindung herunterladen. Mobilfunkdaten könnten Kosten verursachen</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Bilder löschen</string>
     <!-- Settings summary for the delete artwork button -->
@@ -323,7 +323,7 @@
     <string name="pref_title_placeholders">Platzhalter im Gmail-Stil verwenden</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Platzhalter im Gmail-Stil verwenden.
-        Ansonsten wird das Muser-Icon als Platzhalter verwendet</string>
+        Ansonsten wird das MUSER-Icon als Platzhalter verwendet</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Albumcover im Sperrbildschirm anzeigen</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -389,7 +389,7 @@
     <string name="pref_title_faq">FAQ</string>
     <string name="pref_summary_faq">Du hast eine Frage oder brauchst Hilfe? Klicke hier für die FAQ @ www.shuttlemusicplayer.com.</string>
     <string name="pref_title_rate">Danke sagen</string>
-    <string name="pref_summary_rate">Gib bitte eine Bewertung ab, wenn dir Muser gefällt.</string>
+    <string name="pref_summary_rate">Gib bitte eine Bewertung ab, wenn dir MUSER gefällt.</string>
     <string name="pref_title_headset_beep">Ton beim Überspringen</string>
     <string name="pref_summary_headset_beep">Ton beim Überspringen mit Headset</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -440,10 +440,10 @@
     <!-- Button text for saving tags  -->
     <string name="save">Speichern</string>
     <!-- Message displayed when tag editing fails -->
-    <string name="tag_error">Fehler beim Bearbeiten der Tags. Falls die Datei auf einer SD-Karte gespeichert ist, hat Muser eventuell nicht die nötigen Zugriffsberechtigungen.</string>
+    <string name="tag_error">Fehler beim Bearbeiten der Tags. Falls die Datei auf einer SD-Karte gespeichert ist, hat MUSER eventuell nicht die nötigen Zugriffsberechtigungen.</string>
     <string name="tag_editor_document_tree_message">Wegen Änderungen in Android 5.0 muss angegeben werden, welche Dateien auf der SD-Karte bearbeitet werden dürfen.\n\nWähle den Überordner aus, in dem die Dateien bearbeitet werden dürfen.</string>
     <string name="tag_editor_check_permission">Rechte werden überprüft. Es könnte einen Moment dauern...\n\nGoogle ist schuld!</string>
-    <string name="tag_editor_document_tree_permission_failed">Muser hat immer noch keine Rechte zum Bearbeiten von Dateien. Überprüfe das Verzeichnis im Explorer.</string>
+    <string name="tag_editor_document_tree_permission_failed">MUSER hat immer noch keine Rechte zum Bearbeiten von Dateien. Überprüfe das Verzeichnis im Explorer.</string>
     <string name="tag_retrieve_error">Fehler beim Lesen der Tags.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -675,7 +675,7 @@ Ordner</item>
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Spielt %1$s von %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Klicke hier, wenn Muser trotz Upgrade noch als Gratis-Version angezeigt wird.</string>
+    <string name="pref_summary_restore_purchases">Klicke hier, wenn MUSER trotz Upgrade noch als Gratis-Version angezeigt wird.</string>
     <string name="pref_title_restore_purchases">Käufe wiederherstellen</string>
     <string name="blacklist_empty">Du hast keine Titel in deiner Blacklist!</string>
     <string name="whitelist_empty">Du hast keine Ordner in deiner Whitelist!</string>
@@ -688,11 +688,11 @@ Ordner</item>
     <string name="song_info_play_count">Zähler</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Kauf wiederhergestellt. Bitte Muser neu starten.</string>
+    <string name="iab_purchase_restored">Kauf wiederhergestellt. Bitte MUSER neu starten.</string>
     <string name="iab_purchase_not_found">Keinen vorherigen Kauf gefunden.</string>
-    <string name="iab_already_upgraded">Muser wurde schon upgegradet. Versuche es mit einem Neustart der App.</string>
+    <string name="iab_already_upgraded">MUSER wurde schon upgegradet. Versuche es mit einem Neustart der App.</string>
     <string name="iab_purchase_failed">Etwas ist schiefgelaufen. Bitte versuche es später erneut...</string>
-    <string name="snackbar_rate_text">Gefällt dir Muser?</string>
+    <string name="snackbar_rate_text">Gefällt dir MUSER?</string>
     <string name="snackbar_rate_action">Bewerte die App!</string>
     <string name="dialog_create_playlist_error">Fehler beim Erstellen einer Playlist</string>
     <!-- Artwork picker -->
@@ -747,6 +747,6 @@ Ordner</item>
     <string name="shuffle_albums">Alben zufällig wiedergeben</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Speicherzugriff benötigt</string>
-    <string name="saf_access_required_message">Muser benötigt eine Erlaubnis, um auf diese Dateien zugreifen zu können. Wähle bitte das Verzeichnis mit Deiner Musik.</string>
+    <string name="saf_access_required_message">MUSER benötigt eine Erlaubnis, um auf diese Dateien zugreifen zu können. Wähle bitte das Verzeichnis mit Deiner Musik.</string>
     <string name="saf_show_files_button">Dateien anzeigen</string>
 </resources>

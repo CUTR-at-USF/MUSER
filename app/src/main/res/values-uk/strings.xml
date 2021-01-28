@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">Не виявлено DocumentProvider для обробки запиту дозволу</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -83,9 +83,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Збір треків...</string>
     <!-- -->
-    <string name="get_pro_title">Оновити до Muser+</string>
+    <string name="get_pro_title">Оновити до MUSER+</string>
     <!-- -->
-    <string name="get_pro_message">Якщо Вам подобається Muser, будь ласка підтвердьте оновлення.
+    <string name="get_pro_message">Якщо Вам подобається MUSER, будь ласка підтвердьте оновлення.
 \n\nОсобливості:
 \n• Тони екстра тем
 \n• Редагування тегів
@@ -93,14 +93,14 @@
 \n• Підтримка ChromeCast\n\nЦе також допоможе у подальшій розробці!</string>
     <!-- -->
     <string name="upgraded_title">Дякуємо</string>
-    <string name="upgraded_message">Ви успішно оновилися до версії Muser+. Я ціную Вашу підтримку.
+    <string name="upgraded_message">Ви успішно оновилися до версії MUSER+. Я ціную Вашу підтримку.
 \n\nБудь ласка перезавантажте додаток щоб упевнитись, чи всі функції увімкнено</string>
-    <string name="upgrade_dialog_message">Оновлення розблокує додаткові функції в Muser, включаючи:
+    <string name="upgrade_dialog_message">Оновлення розблокує додаткові функції в MUSER, включаючи:
  \n\n• Безліч екстра тем
  \n• Редагування тегів
  \n• Огляд тек
  \n• Підтримку ChromeCast
-\n\nЦе також сприяє подальшій розробці додатку.\n\nВам не потрібно оновлювати додаток якщо у вас вже є Muser+</string>
+\n\nЦе також сприяє подальшій розробці додатку.\n\nВам не потрібно оновлювати додаток якщо у вас вже є MUSER+</string>
     <string name="btn_upgrade">Оновити</string>
     <!-- -->
     <string name="get_pro_button_no">Ні, дякую</string>
@@ -133,7 +133,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">Добре</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Ви впевнені, що хочете назавжди видалити \"<xliff:g id="folder">%s</xliff:g>\"? Весь вміст папки буде видалено,  включаючи те, чого могло бути не видно при перегляді файлів стандартними засобами Muser.</string>
+    <string name="delete_folder_confirmation_dialog">Ви впевнені, що хочете назавжди видалити \"<xliff:g id="folder">%s</xliff:g>\"? Весь вміст папки буде видалено,  включаючи те, чого могло бути не видно при перегляді файлів стандартними засобами MUSER.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Ви впевнені, що хочете назавжди видалити \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -141,7 +141,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Поставити на дзвінок</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Muser потребує дозволу на \"запис налаштувань\", щоб налаштувати ваш рингтон.\n\nПісля надання дозволу, спробуйте налаштувати ваш рингтон ще раз.</string>
+    <string name="dialog_message_set_ringtone">MUSER потребує дозволу на \"запис налаштувань\", щоб налаштувати ваш рингтон.\n\nПісля надання дозволу, спробуйте налаштувати ваш рингтон ще раз.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> вже є у цьому плейлісті. Додати пропри все?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -289,7 +289,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Завантажувати відсутні зображення алобомів та виконавців</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Muser завантажить обкладинки незважаючи на швидкість вашого з\'єднання. За використання даних може стягуватись додаткова плата.</string>
+    <string name="pref_warning_download_artwork">MUSER завантажить обкладинки незважаючи на швидкість вашого з\'єднання. За використання даних може стягуватись додаткова плата.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Видалити обкладинку</string>
     <!-- Settings summary for the delete artwork button -->
@@ -310,7 +310,7 @@
     <string name="pref_title_placeholders">Використовувати іконки в стилі Gmail</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Використовувати іконки в стилі \'Gmail\' за замовчуванням.
-Якщо не вибрано, - використовуватиметься іконка Muser</string>
+Якщо не вибрано, - використовуватиметься іконка MUSER</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Увімкнути обкладинку на екрані блокуванні</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -367,7 +367,7 @@
     <string name="pref_title_faq">Допомога</string>
     <string name="pref_summary_faq">Маєте питання? Потрібна допомога? Натисніть тут щоб переглянути статті \"питання-відповідь\" @ www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Подякувати</string>
-    <string name="pref_summary_rate">Якщо Вам подобається Muser, будь ласка залиште відгук</string>
+    <string name="pref_summary_rate">Якщо Вам подобається MUSER, будь ласка залиште відгук</string>
     <!-- Settings title for ignore playlist duplicates -->
     <string name="pref_title_ignore_duplicates">Ігнорувати дублікати плейлістів</string>
     <!-- Settings summary for ignore playlist duplicates -->
@@ -412,9 +412,9 @@
     <string name="save">Зберегти</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Помилка редагування тегів.</string>
-    <string name="tag_editor_document_tree_message">У зв\'язку зі змінами в Android 5.0, Google потребує щоб ви визначили які теки додатку дозволено редагувати.\n\nMuser зараз відкриє провідник. Будь ласка оберіть   теку файлів, які ви хочете змінити.</string>
+    <string name="tag_editor_document_tree_message">У зв\'язку зі змінами в Android 5.0, Google потребує щоб ви визначили які теки додатку дозволено редагувати.\n\nMUSER зараз відкриє провідник. Будь ласка оберіть   теку файлів, які ви хочете змінити.</string>
     <string name="tag_editor_check_permission">Перевірка дозволів. Це займе момент...\n\nАвторство Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Здається що Muser досі не має дозволу на редагування файлів. Двічі перевірте теку в провіднику.</string>
+    <string name="tag_editor_document_tree_permission_failed">Здається що MUSER досі не має дозволу на редагування файлів. Двічі перевірте теку в провіднику.</string>
     <string name="tag_retrieve_error">Під час отримання тегів сталася помилка.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -544,7 +544,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">Готово</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Встановіть діапазон часу в минулому для пошуку Muser-ом \'нещодавної\' музики.</string>
+    <string name="weekpicker_title">Встановіть діапазон часу в минулому для пошуку MUSER-ом \'нещодавної\' музики.</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Завантаження обкладинки</string>
@@ -640,7 +640,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Зараз грає %1$s від %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Якщо ви оновились до Muser+, а він досі відображається як безкоштовна версія, натисніть тут.</string>
+    <string name="pref_summary_restore_purchases">Якщо ви оновились до MUSER+, а він досі відображається як безкоштовна версія, натисніть тут.</string>
     <string name="pref_title_restore_purchases">Відновити покупки</string>
     <string name="blacklist_empty">Жодного треку не додано в чорний список!</string>
     <string name="whitelist_empty">Жодної теки не додано в білий список!</string>
@@ -653,11 +653,11 @@
     <string name="song_info_play_count">Кількість відтворювань</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Покупку відновлено. Будь ласка перезавантажте Muser</string>
+    <string name="iab_purchase_restored">Покупку відновлено. Будь ласка перезавантажте MUSER</string>
     <string name="iab_purchase_not_found">Не знайдено попередньої покупки.</string>
-    <string name="iab_already_upgraded">Muser вже оновлено. Спробуйте перезавантажити додаток.</string>
+    <string name="iab_already_upgraded">MUSER вже оновлено. Спробуйте перезавантажити додаток.</string>
     <string name="iab_purchase_failed">Щось пішло не так. Будь ласка спробуйте ще раз..</string>
-    <string name="snackbar_rate_text">Сподобався Muser?</string>
+    <string name="snackbar_rate_text">Сподобався MUSER?</string>
     <string name="snackbar_rate_action">Оцініть його!</string>
     <string name="dialog_create_playlist_error">Помилка створення плейлиста</string>
     <!-- Artwork picker -->

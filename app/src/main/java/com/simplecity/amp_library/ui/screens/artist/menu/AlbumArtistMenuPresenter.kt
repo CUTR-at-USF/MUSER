@@ -90,6 +90,7 @@ class AlbumArtistMenuPresenter @Inject constructor(
     }
 
     override fun albumArtistInfo(albumArtist: AlbumArtist) {
+        newUiAlbumArtistEvent(albumArtist, UiEventType.ALBUM_ARTIST_BIOGRAPHY)
         view?.presentAlbumArtistInfoDialog(albumArtist)
     }
 

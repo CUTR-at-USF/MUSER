@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">Brak dostępnego dostawcy dokumentów do obsługi żądania uprawnień.</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -82,9 +82,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Gromadzenie utworów...</string>
     <!-- -->
-    <string name="get_pro_title">Ulepsz do wersji Shuttle+</string>
+    <string name="get_pro_title">Ulepsz do wersji MUSER+</string>
     <!-- -->
-    <string name="get_pro_message">Jeśli Muser spełnia Twoje oczekiwania, rozważ ulepszenie do płatnej wersji.
+    <string name="get_pro_message">Jeśli MUSER spełnia Twoje oczekiwania, rozważ ulepszenie do płatnej wersji.
 \n\nFunkcje:
 \n• Mnóstwo dodatkowych motywów
 \n• Edytor tagów muzycznych,
@@ -93,13 +93,13 @@
 \nZakup płatnej wersji wspomoże również dalszy rozwój aplikacji.</string>
     <!-- -->
     <string name="upgraded_title">Dziękuję</string>
-    <string name="upgraded_message">Ulepszono do wersji Shuttle+. Dziękuę za wsparcie.\n\nProszę uruchomić program ponownie, aby mieć pewność, że włączono wszystkie dostępne funkcje.</string>
+    <string name="upgraded_message">Ulepszono do wersji MUSER+. Dziękuę za wsparcie.\n\nProszę uruchomić program ponownie, aby mieć pewność, że włączono wszystkie dostępne funkcje.</string>
     <string name="upgrade_dialog_message">• Obsługa ChromeCast,
 \n• dodatkowe style,
 \n• edytor etykiet,
 \n• przeglądarka katalogów,
 \n• wsparcie rozwoju aplikacji ❤️.</string>
-    <string name="upgrade_required_folders">Ulepsz do wersji Shuttle+</string>
+    <string name="upgrade_required_folders">Ulepsz do wersji MUSER+</string>
     <string name="btn_upgrade">Ulepsz</string>
     <!-- -->
     <string name="get_pro_button_no">Nie, dziękuję</string>
@@ -434,9 +434,9 @@ Po wyłączeniu, jako obraz zastępczy będzie używana ikona programu.</string>
     <string name="save">Zapisz</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Wystąpił błąd modyfikowania znaczników.</string>
-    <string name="tag_editor_document_tree_message">Z powodu zmian w Androidzie 5.0, Google wymaga określenia katalogów, do których aplikacja może mieć uprawnienia do zapisywania.\n\nProgram Muser otworzy przeglądarkę plików. Proszę wybrać katalog nadrzędny z modyfikowanymi plikami.</string>
+    <string name="tag_editor_document_tree_message">Z powodu zmian w Androidzie 5.0, Google wymaga określenia katalogów, do których aplikacja może mieć uprawnienia do zapisywania.\n\nProgram MUSER otworzy przeglądarkę plików. Proszę wybrać katalog nadrzędny z modyfikowanymi plikami.</string>
     <string name="tag_editor_check_permission">Sprawdzanie uprawnień. Może to chwilę potrwać...\n\nObwiniaj Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Wygląda na to, że Muser nie ma uprawnień do zapisywania plików. Proszę upewnić się, że wybrano odpowiedni katalog w przeglądarce plików.</string>
+    <string name="tag_editor_document_tree_permission_failed">Wygląda na to, że MUSER nie ma uprawnień do zapisywania plików. Proszę upewnić się, że wybrano odpowiedni katalog w przeglądarce plików.</string>
     <string name="tag_retrieve_error">Wystąpił błąd podczas przetwarzania znaczników.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -690,9 +690,9 @@ katalog</item>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
     <string name="iab_purchase_restored">Przywrócono zakupy. Proszę uruchomić program ponownie.</string>
     <string name="iab_purchase_not_found">Nie odnaleziono poprzednich zakupów.</string>
-    <string name="iab_already_upgraded">Program Muser jest już uaktualniony. Proszę spróbować uruchomić program ponownie.</string>
+    <string name="iab_already_upgraded">Program MUSER jest już uaktualniony. Proszę spróbować uruchomić program ponownie.</string>
     <string name="iab_purchase_failed">Coś poszło nie tak. Proszę spróbować ponownie później.</string>
-    <string name="snackbar_rate_text">Odtwarzacz Muser jest ok?</string>
+    <string name="snackbar_rate_text">Odtwarzacz MUSER jest ok?</string>
     <string name="snackbar_rate_action">Oceń go!</string>
     <string name="dialog_create_playlist_error">Błąd tworzenia listy odtwarzania</string>
     <!-- Artwork picker -->
@@ -736,7 +736,7 @@ katalog</item>
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Nie odnaleziono dołączonego tekstu.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric jest otwarto-źródłowym programem pobierającym teksty utworów, dostępnym w sklepie Google Play.\n\n\nPo zainstalowaniu, QuickLyric będzie można otworzyć za pośrednictwem Muser, używając dedykowanego przycisku.</string>
+    <string name="quicklyric_info">QuickLyric jest otwarto-źródłowym programem pobierającym teksty utworów, dostępnym w sklepie Google Play.\n\n\nPo zainstalowaniu, QuickLyric będzie można otworzyć za pośrednictwem MUSER, używając dedykowanego przycisku.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Lista odtwarzania</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->

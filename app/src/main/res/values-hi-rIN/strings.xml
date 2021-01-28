@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Shuttle)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">अनुमति अनुरोध को संभालने के लिए कोई दस्तावेज़प्रदाता उपलब्ध नहीं है</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -78,7 +78,7 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">गीत लोड हो रहे हैं...</string>
     <!-- -->
-    <string name="get_pro_title">Shuttle+ में अपग्रेड करें</string>
+    <string name="get_pro_title">MUSER+ में अपग्रेड करें</string>
     <!-- -->
     <string name="get_pro_message">यदि आप शटल पसंद करते हैं, तो कृपया अपग्रेड करने पर विचार करें।
 
@@ -97,14 +97,14 @@
 यह आगे के विकास को बढ़ावा देने में भी मदद करता है।</string>
     <!-- -->
     <string name="upgraded_title">धन्यवाद</string>
-    <string name="upgraded_message">आपने सफलतापूर्वक Shuttle+ में अपग्रेड कर लिया है। मैं समर्थन की सराहना करता हूँ।
+    <string name="upgraded_message">आपने सफलतापूर्वक MUSER+ में अपग्रेड कर लिया है। मैं समर्थन की सराहना करता हूँ।
 \n\nसभी सुविधाओं को सक्षम करने के लिए कृपया एप्लिकेशन को पुनरारंभ करें</string>
     <string name="upgrade_dialog_message">• ChromeCast समर्थन
 \n• अतिरिक्त थीम
 \n• टैग एडिटिंग
 \n• फ़ोल्डर ब्राउज़िंग
 \n• समर्थन विकास ❤️</string>
-    <string name="upgrade_required_folders">Shuttle+ में अपग्रेड करें</string>
+    <string name="upgrade_required_folders">MUSER+ में अपग्रेड करें</string>
     <string name="btn_upgrade">अपग्रेड</string>
     <!-- -->
     <string name="get_pro_button_no">जी नहीं, धन्यवाद</string>
@@ -137,7 +137,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">ओके</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">क्या आप वाकई स्थायी रूप से डिलीट करना चाहते हैं \"<xliff:g id="folder">%s</xliff:g>\"? इस फ़ोल्डर में सभी आइटम डिलीट कर दिए जाएंगे, जिनमें आइटम शामिल हैं जो Muser फ़ाइल ब्राउज़र में दिखाई नहीं दे सकते।</string>
+    <string name="delete_folder_confirmation_dialog">क्या आप वाकई स्थायी रूप से डिलीट करना चाहते हैं \"<xliff:g id="folder">%s</xliff:g>\"? इस फ़ोल्डर में सभी आइटम डिलीट कर दिए जाएंगे, जिनमें आइटम शामिल हैं जो MUSER फ़ाइल ब्राउज़र में दिखाई नहीं दे सकते।</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">क्या आप वाकई स्थायी रूप से डिलीट करना चाहते हैं \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -145,7 +145,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">रिंगटोन सेट करें</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">रिंगटोन सेट करने के लिए Muser को \'राइट सेटिंग्स\' की अनुमति की आवश्यकता है।\n\nअनुमति देने के बाद, अपनी रिंगटोन फिर से सेट करने का प्रयास करें।</string>
+    <string name="dialog_message_set_ringtone">रिंगटोन सेट करने के लिए MUSER को \'राइट सेटिंग्स\' की अनुमति की आवश्यकता है।\n\nअनुमति देने के बाद, अपनी रिंगटोन फिर से सेट करने का प्रयास करें।</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> पहले से ही इस प्लेलिस्ट में मौजूद है। जैसे भी इसे जोड़ें?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -262,7 +262,7 @@
     <string name="pref_title_theme_black">ब्लैक</string>
     <string name="pref_group_palette">पेलेट</string>
     <string name="pref_title_palette">आर्टवर्क से रंग का उपयोग करें</string>
-    <string name="pref_summary_palette">यदि सक्षम हो, तो Shuttle आपकी कलाकृति में सबसे प्रमुख रंग का पता लगाएगा, और इसे पूरे एप्लिकेशन में \'प्राथमिक रंग\' के रूप में प्रयोग करेगा</string>
+    <string name="pref_summary_palette">यदि सक्षम हो, तो MUSER आपकी कलाकृति में सबसे प्रमुख रंग का पता लगाएगा, और इसे पूरे एप्लिकेशन में \'प्राथमिक रंग\' के रूप में प्रयोग करेगा</string>
     <string name="pref_title_palette_now_playing">केवल \'अभी प्लेयिंग\' स्क्रीन पर</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">व्हाइट/ब्लैकलिस्ट</string>
@@ -282,7 +282,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">एम्बेडेड आर्टवर्क को प्राथमिकता दें</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">इस बॉक्स को चेक करें यदि आप Shuttle को अपनी संगीत फ़ाइलों में एम्बेड की गई आर्टवर्क की तलाश करना चाहते हैं, अपने संगीत निर्देशिका में खोज करने से पहले</string>
+    <string name="pref_summary_prefer_embedded_art">इस बॉक्स को चेक करें यदि आप MUSER को अपनी संगीत फ़ाइलों में एम्बेड की गई आर्टवर्क की तलाश करना चाहते हैं, अपने संगीत निर्देशिका में खोज करने से पहले</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">एम्बेडेड आर्टवर्क को अनदेखा करें</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -302,7 +302,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">मिसिंग कलाकार और एल्बम चित्र डाउनलोड करें</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Shuttle आपके नेटवर्क की परवाह किए बिना सभी आर्टवर्क डाउनलोड करेगा डेटा उपयोग शुल्क लागू हो सकते हैं।</string>
+    <string name="pref_warning_download_artwork">MUSER आपके नेटवर्क की परवाह किए बिना सभी आर्टवर्क डाउनलोड करेगा डेटा उपयोग शुल्क लागू हो सकते हैं।</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">डिलीट आर्टवर्क</string>
     <!-- Settings summary for the delete artwork button -->
@@ -323,7 +323,7 @@
     <string name="pref_title_placeholders">Gmail स्टाइल प्लेसहोल्डर का उपयोग करें</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">डिफ़ॉल्ट रूप से प्रदर्शित \'Gmail\' स्टाइल के प्लेसहोल्डर।
-अनचेक होने पर, Shuttle आइकन का उपयोग प्लेसहोल्डर के रूप में किया जाएगा</string>
+अनचेक होने पर, MUSER आइकन का उपयोग प्लेसहोल्डर के रूप में किया जाएगा</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">लॉकस्क्रीन आर्टवर्क सक्षम करें</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -385,7 +385,7 @@
     <string name="pref_title_version">संस्करण</string>
     <string name="pref_title_faq">FAQ</string>
     <string name="pref_summary_faq">एक सवाल है? मदद चाहिए? पूछे जाने वाले प्रश्न देखने के लिए यहां क्लिक करें @ www.shuttlemusicplayer.com</string>
-    <string name="pref_summary_rate">यदि आप Shuttle पसंद करते हैं, तो रिव्यू छोड़ने पर विचार करें।</string>
+    <string name="pref_summary_rate">यदि आप MUSER पसंद करते हैं, तो रिव्यू छोड़ने पर विचार करें।</string>
     <string name="pref_title_headset_beep">स्किप करने पर बीप</string>
     <string name="pref_summary_headset_beep">हेडसेट नियंत्रण के माध्यम से गाना स्किप करते समय बीप करें</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -435,10 +435,10 @@
     <!-- Button text for saving tags  -->
     <string name="save">सेव</string>
     <!-- Message displayed when tag editing fails -->
-    <string name="tag_error">टैग संपादित करते समय एक त्रुटि हुई। यदि फ़ाइल को SD कार्ड पर संग्रहीत किया जाता है, तो Shuttle को इसे एक्सेस करने की अनुमति नहीं हो सकती है</string>
-    <string name="tag_editor_document_tree_message">एंड्रॉइड 5.0 में बदलाव के कारण, Google को अब यह जरूरी है कि आप निर्दिष्ट करें कि कौन से फ़ोल्डर्स SD कार्ड पर संपादित कर सकते हैं।\n\nShuttle अब एक फाइल पिकर खोल देगा। कृपया उन फ़ाइलों के मूल फ़ोल्डर को चुनें, जिन्हें आप मॉडिफाई करना चाहते हैं।</string>
+    <string name="tag_error">टैग संपादित करते समय एक त्रुटि हुई। यदि फ़ाइल को SD कार्ड पर संग्रहीत किया जाता है, तो MUSER को इसे एक्सेस करने की अनुमति नहीं हो सकती है</string>
+    <string name="tag_editor_document_tree_message">एंड्रॉइड 5.0 में बदलाव के कारण, Google को अब यह जरूरी है कि आप निर्दिष्ट करें कि कौन से फ़ोल्डर्स SD कार्ड पर संपादित कर सकते हैं।\n\nMUSER अब एक फाइल पिकर खोल देगा। कृपया उन फ़ाइलों के मूल फ़ोल्डर को चुनें, जिन्हें आप मॉडिफाई करना चाहते हैं।</string>
     <string name="tag_editor_check_permission">अनुमतियों के लिए जांच रहा है। इसमें थोड़ा सा समय लग सकता है…\n\nब्लैम Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">ऐसा लगता है कि Shuttle को अभी भी फाइलों को संपादित करने की अनुमति नहीं है फ़ाइल पिकर में डायरेक्टरी को दोबारा जांचें।</string>
+    <string name="tag_editor_document_tree_permission_failed">ऐसा लगता है कि MUSER को अभी भी फाइलों को संपादित करने की अनुमति नहीं है फ़ाइल पिकर में डायरेक्टरी को दोबारा जांचें।</string>
     <string name="tag_retrieve_error">टैग पुनर्प्राप्त करने में एक त्रुटि हुई।</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -573,7 +573,7 @@
     <!-- Sleep timer label "Minutes" (limited space here) -->
     <!-- Button name in time span picker -->
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">चुनें कि पिछले Shuttle में कितनी हफ़्ते \'रीसेंट\' संगीत खोजना चाहिए।</string>
+    <string name="weekpicker_title">चुनें कि पिछले MUSER में कितनी हफ़्ते \'रीसेंट\' संगीत खोजना चाहिए।</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <!-- ## SD card error messages ##-->
@@ -667,12 +667,12 @@
     <!-- Button for lyrics -->
     <!-- Shown when there are no lyrics -->
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric Google Play Store पर एक ओपन सोर्स लिरिक फ़ेचर हैI\n\nएक बार इंस्टॉल होने पर, जब भी आप \'QuickLyric\' मेनू बटन को दबाते हैं तो Shuttle से त्वरित लिरिक खोला जाएगा।</string>
+    <string name="quicklyric_info">QuickLyric Google Play Store पर एक ओपन सोर्स लिरिक फ़ेचर हैI\n\nएक बार इंस्टॉल होने पर, जब भी आप \'QuickLyric\' मेनू बटन को दबाते हैं तो MUSER से त्वरित लिरिक खोला जाएगा।</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">प्लेलिस्ट</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
     <!-- "Playlist" Shortcut label disabled. Possibly shows if the playlist has been deleted.-->
     <!-- Displayed at the top of the album list, album shuffle mode-->
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
-    <string name="saf_access_required_message">इन फ़ाइलों तक पहुंचने के लिए Shuttle की आवश्यकता है कृपया अपना संगीत युक्त निर्देशिका चुनें।</string>
+    <string name="saf_access_required_message">इन फ़ाइलों तक पहुंचने के लिए MUSER की आवश्यकता है कृपया अपना संगीत युक्त निर्देशिका चुनें।</string>
 </resources>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">Aucun DocumentProvider disponible pour gérer la demande de permission</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -79,9 +79,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Récupération des titres...</string>
     <!-- -->
-    <string name="get_pro_title">Passer à Muser+</string>
+    <string name="get_pro_title">Passer à MUSER+</string>
     <!-- -->
-    <string name="get_pro_message">Si vous aimez Muser Music Player, envisagez de passer à Muser+. \n\nFonctionnalitées :
+    <string name="get_pro_message">Si vous aimez MUSER Music Player, envisagez de passer à MUSER+. \n\nFonctionnalitées :
 \n• De nombreux thèmes supplémentaires
 \n• Édition des tags
 \n• Navigation par dossiers
@@ -89,14 +89,14 @@
 \nCela permet aussi de contribuer au développement de l\'application!</string>
     <!-- -->
     <string name="upgraded_title">Merci</string>
-    <string name="upgraded_message">Vous avez mis à niveau vers Muser+ avec succès. Merci de votre soutient.
+    <string name="upgraded_message">Vous avez mis à niveau vers MUSER+ avec succès. Merci de votre soutient.
 \n\nVeuillez redémarrer l\'application pour que toute les fonctions soient actives.</string>
     <string name="upgrade_dialog_message">• Prise en charge Chromecast
 \n• Thèmes supplémentaires
 \n• Édition des tags
 \n• Navigation par dossiers
 \n• Contribuer au développement ❤️</string>
-    <string name="upgrade_required_folders">Passer a Muser+</string>
+    <string name="upgrade_required_folders">Passer a MUSER+</string>
     <string name="btn_upgrade">Mise à niveau</string>
     <!-- -->
     <string name="get_pro_button_no">Non merci</string>
@@ -137,7 +137,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Choisir comme sonnerie</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Muser a besoin de l\'autorisation de \'modifier les paramètres système\' pour changer votre sonnerie.\n\nAprès avoir donné la permission, veuillez réessayer.</string>
+    <string name="dialog_message_set_ringtone">MUSER a besoin de l\'autorisation de \'modifier les paramètres système\' pour changer votre sonnerie.\n\nAprès avoir donné la permission, veuillez réessayer.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> existe déjà dans la liste de lecture. L\'ajouter quand même ?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -257,7 +257,7 @@
     <string name="pref_title_theme_black">Noir</string>
     <string name="pref_group_palette">Palette</string>
     <string name="pref_title_palette">Utiliser la couleur de la jaquette</string>
-    <string name="pref_summary_palette">Si activé, Muser va utiliser la couleur dominante de la jaquette comme couleur primaire dans l\'application.</string>
+    <string name="pref_summary_palette">Si activé, MUSER va utiliser la couleur dominante de la jaquette comme couleur primaire dans l\'application.</string>
     <string name="pref_title_palette_now_playing">Seulement sur l\'écran \'Lecture en cours\'</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">Liste blanche/noire</string>
@@ -278,7 +278,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Privilégier les illustrations incorporés</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Cochez cette case si vous préférez que Muser cherche les illustrations incluses dans vos fichiez de musique, avant de chercher dans vos dossiers de musique</string>
+    <string name="pref_summary_prefer_embedded_art">Cochez cette case si vous préférez que MUSER cherche les illustrations incluses dans vos fichiez de musique, avant de chercher dans vos dossiers de musique</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ignorer la pochette intégrée</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -298,7 +298,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Télécharger les illustrations d\'artistes et d\'albums manquantes</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Muser téléchargera toutes les pochettes quelle que soit votre connexion. Des surcoûts de donnée internet peuvent s\'appliquer.</string>
+    <string name="pref_warning_download_artwork">MUSER téléchargera toutes les pochettes quelle que soit votre connexion. Des surcoûts de donnée internet peuvent s\'appliquer.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Supprimer les illustrations</string>
     <!-- Settings summary for the delete artwork button -->
@@ -319,7 +319,7 @@
     <string name="pref_title_placeholders">Espaces réservés style Gmail</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Utilise des espaces réservés de style Gmail.
- Si décoché, l\'icône de Muser sera affichée dans les espaces réservés.</string>
+ Si décoché, l\'icône de MUSER sera affichée dans les espaces réservés.</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Afficher les boutons sur l\'écran de verrouillage</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -385,7 +385,7 @@
     <string name="pref_title_faq">FAQ</string>
     <string name="pref_summary_faq">Une question ? Besoin d\'aide ? Cliquez ici pour voir la FAQ sur www.musicplayer.com</string>
     <string name="pref_title_rate">Dites Merci</string>
-    <string name="pref_summary_rate">Si vous aimez Muser, merci d\'écrire une critique.</string>
+    <string name="pref_summary_rate">Si vous aimez MUSER, merci d\'écrire une critique.</string>
     <string name="pref_title_headset_beep">Jouer un son au changement</string>
     <string name="pref_summary_headset_beep">Jouer un son quand une chanson est passée via les contrôles du casque</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -437,9 +437,9 @@
     <string name="save">Enregistrer</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Impossible de modifier les infos. Si vous êtes sous KitKat et que le fichier est stocké sur la carte SD, la modification des méta-données ne fonctionne plus en raison des restrictions d\'autorisations d\'accès à la carte SD imposées par Google. Désolé!</string>
-    <string name="tag_editor_document_tree_message">À cause de changements d\'Android 5.0, Google demande maintenant que vous spécifiez quels dossiers sur la carte SD une application peut modifier.\n\nMuser va ouvrir maintenant un sélecteur de fichier. Merci de choisir le dossier parent des fichiers que vous souhaitez modifier.</string>
+    <string name="tag_editor_document_tree_message">À cause de changements d\'Android 5.0, Google demande maintenant que vous spécifiez quels dossiers sur la carte SD une application peut modifier.\n\nMUSER va ouvrir maintenant un sélecteur de fichier. Merci de choisir le dossier parent des fichiers que vous souhaitez modifier.</string>
     <string name="tag_editor_check_permission">Contrôle des autorisations en cours. Cela peut prendre un peu de temps...\n\nC\'est la faute à Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Il semble que Muser n\'a toujours pas l\'autorisation de modifier les fichiers. Recontrôlez le dossier dans le sélecteur de fichier.</string>
+    <string name="tag_editor_document_tree_permission_failed">Il semble que MUSER n\'a toujours pas l\'autorisation de modifier les fichiers. Recontrôlez le dossier dans le sélecteur de fichier.</string>
     <string name="tag_retrieve_error">Une erreur est survenue pendant la récupération des tags.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -580,7 +580,7 @@
     <!-- Button name in time span picker -->
     <string name="button_done">Terminé</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Définir combien de semaines en arrière Muser doit chercher pour les musiques \"récentes\".</string>
+    <string name="weekpicker_title">Définir combien de semaines en arrière MUSER doit chercher pour les musiques \"récentes\".</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Téléchargement des illustrations</string>
@@ -672,7 +672,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Lecture de %1$s par %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Si vous avez déjà upgradé Muser, mais que la version gratuite s\'affiche toujours, appuyez ici.</string>
+    <string name="pref_summary_restore_purchases">Si vous avez déjà upgradé MUSER, mais que la version gratuite s\'affiche toujours, appuyez ici.</string>
     <string name="pref_title_restore_purchases">Restaurer les achats</string>
     <string name="blacklist_empty">Vous n\'avez mis aucune chanson sur la liste noire!</string>
     <string name="whitelist_empty">Vous n\'avez mis aucune chanson sur la liste blanche!</string>
@@ -685,11 +685,11 @@
     <string name="song_info_play_count">Nombre de lecture</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Achat restauré. Veuillez redémarrer Muser</string>
+    <string name="iab_purchase_restored">Achat restauré. Veuillez redémarrer MUSER</string>
     <string name="iab_purchase_not_found">Aucun ancien achat trouvé.</string>
-    <string name="iab_already_upgraded">Muser a déjà été upgradé. Essayez de redémarrer l\'application.</string>
+    <string name="iab_already_upgraded">MUSER a déjà été upgradé. Essayez de redémarrer l\'application.</string>
     <string name="iab_purchase_failed">Il y a eu une erreur. Merci de réessayer plus tard...</string>
-    <string name="snackbar_rate_text">Vous appréciez Muser ?</string>
+    <string name="snackbar_rate_text">Vous appréciez MUSER ?</string>
     <string name="snackbar_rate_action">Notez le !</string>
     <string name="dialog_create_playlist_error">Erreur lors de la création de la playlist</string>
     <!-- Artwork picker -->
@@ -733,7 +733,7 @@
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Paroles incorporées introuvables.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyrics est un récupérateur open-source de paroles sur le Google Play Store.\n\nUne fois installé, QuickLyrics sera ouvert depuis Muser dès que vous appuierez sur le bouton \'QuickLyrics\' du menu.</string>
+    <string name="quicklyric_info">QuickLyrics est un récupérateur open-source de paroles sur le Google Play Store.\n\nUne fois installé, QuickLyrics sera ouvert depuis MUSER dès que vous appuierez sur le bouton \'QuickLyrics\' du menu.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Playlist</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
@@ -744,6 +744,6 @@
     <string name="shuffle_albums">Lecture aléatoire</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Accès au stockage requis</string>
-    <string name="saf_access_required_message">Muser a besoin d\'une autorisation pour accéder à ces fichiers. Veuillez sélectionner le dossier contenant votre musique.</string>
+    <string name="saf_access_required_message">MUSER a besoin d\'une autorisation pour accéder à ces fichiers. Veuillez sélectionner le dossier contenant votre musique.</string>
     <string name="saf_show_files_button">Afficher les fichiers</string>
 </resources>

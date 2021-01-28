@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">Geen DocumentProvider beschikbaar om machtigingsverzoek af te handelen</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -79,9 +79,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Nummers verzamelen...</string>
     <!-- -->
-    <string name="get_pro_title">Upgrade naar Shuttle+</string>
+    <string name="get_pro_title">Upgrade naar MUSER+</string>
     <!-- -->
-    <string name="get_pro_message">Als je Muser leuk vindt, overweeg dan een upgrade.
+    <string name="get_pro_message">Als je MUSER leuk vindt, overweeg dan een upgrade.
 \n\nFuncties:
 \n\• Veel extra thema\'s
 \n\• Tags bewerken
@@ -89,14 +89,14 @@
 \n\• ChromeCast-ondersteuning\n\nOok steun je zo verdere ontwikkeling.</string>
     <!-- -->
     <string name="upgraded_title">Bedankt</string>
-    <string name="upgraded_message">De upgrade naar Shuttle+ is gelukt, bedankt voor de steun.
+    <string name="upgraded_message">De upgrade naar MUSER+ is gelukt, bedankt voor de steun.
 \n\nHerstart de app om te zorgen dat alle functies werken.</string>
     <string name="upgrade_dialog_message">• ChromeCast-ondersteuning
 \n• Extra thema\'s
 \n• Tags bewerken
 \n• Bladeren in mappen
 \n• Steun verdere ontwikkeling ❤️</string>
-    <string name="upgrade_required_folders">Upgraden naar Shuttle+</string>
+    <string name="upgrade_required_folders">Upgraden naar MUSER+</string>
     <string name="btn_upgrade">Upgraden</string>
     <!-- -->
     <string name="get_pro_button_no">Nee bedankt</string>
@@ -130,7 +130,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Weet je zeker dat je \"<xliff:g id="folder">%s</xliff:g>\" permanent wil verwijderen? Alle items in deze map worden verwijderd, inclusief items die misschien niet zichtbaar zijn in de Muser bestandsbrowser.</string>
+    <string name="delete_folder_confirmation_dialog">Weet je zeker dat je \"<xliff:g id="folder">%s</xliff:g>\" permanent wil verwijderen? Alle items in deze map worden verwijderd, inclusief items die misschien niet zichtbaar zijn in de MUSER bestandsbrowser.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Weet je zeker dat je \"<xliff:g id="file">%s</xliff:g>\" permanent wil verwijderen?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -138,7 +138,7 @@
     <!--"Set Ringtone" title -->
     <string name="dialog_title_set_ringtone">Stel in als Ringtone</string>
     <!-- "Set Ringtone" message -->
-    <string name="dialog_message_set_ringtone">Muser heeft recht om \'instellingen te schrijven\' nodig om je beltoon in te stellen.\n\nProbeer opnieuw je beltoon in te stellen na toestemming te hebben gegeven.</string>
+    <string name="dialog_message_set_ringtone">MUSER heeft recht om \'instellingen te schrijven\' nodig om je beltoon in te stellen.\n\nProbeer opnieuw je beltoon in te stellen na toestemming te hebben gegeven.</string>
     <!-- Message displayed in dialog when attempting to add duplicates to playlist -->
     <string name="dialog_message_playlist_add_duplicate"><xliff:g id="artist">%1$s</xliff:g> - <xliff:g id="song">%2$s</xliff:g> staat al in deze afspeellijst. Toch toevoegen?</string>
     <!-- Checkbox text 'apply to all' -->
@@ -260,7 +260,7 @@
     <string name="pref_title_theme_black">Zwart</string>
     <string name="pref_group_palette">Kleurenpalet</string>
     <string name="pref_title_palette">Kleuren uit illustraties gebruiken</string>
-    <string name="pref_summary_palette">Indien ingeschakeld, zal Muser de meest prominente kleur uit de illustraties herkennen, en deze gebruiken als \'primaire kleur\' in de hele app.</string>
+    <string name="pref_summary_palette">Indien ingeschakeld, zal MUSER de meest prominente kleur uit de illustraties herkennen, en deze gebruiken als \'primaire kleur\' in de hele app.</string>
     <string name="pref_title_palette_now_playing">Alleen op scherm \'Speelt nu\'</string>
     <!--Settings title for whitelist/blacklist-->
     <string name="pref_title_blacklist">White/blacklist</string>
@@ -281,7 +281,7 @@
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Ingesloten illustraties gebruiken</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Aanvinken als je wilt dat Muser eerst naar de in de muziekbestanden ingesloten albumillustraties zoekt voordat er gezocht wordt in de muziekmappen.</string>
+    <string name="pref_summary_prefer_embedded_art">Aanvinken als je wilt dat MUSER eerst naar de in de muziekbestanden ingesloten albumillustraties zoekt voordat er gezocht wordt in de muziekmappen.</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ingesloten illustraties negeren</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -301,7 +301,7 @@
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Download ontbrekende artiest- en albumillustraties</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Muser zal alle illustraties downloaden ongeacht het netwerk waar je op zit. Kosten voor het gebruik van data kunnen van toepassing zijn.</string>
+    <string name="pref_warning_download_artwork">MUSER zal alle illustraties downloaden ongeacht het netwerk waar je op zit. Kosten voor het gebruik van data kunnen van toepassing zijn.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Illustraties verwijderen</string>
     <!-- Settings summary for the delete artwork button -->
@@ -322,7 +322,7 @@
     <string name="pref_title_placeholders">Plaatshouders in Gmail-stijl</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Standaard Gmail-stijl plaatshouders weergeven.
-Indien uitgeschakeld wordt het Muser-icoon als plaatshouder gebruikt</string>
+Indien uitgeschakeld wordt het MUSER-icoon als plaatshouder gebruikt</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Illustraties op vergrendelscherm</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -385,7 +385,7 @@ Indien uitgeschakeld wordt het Muser-icoon als plaatshouder gebruikt</string>
     <string name="pref_title_faq">FAQ</string>
     <string name="pref_summary_faq">Heb je een vraag of hulp nodig? Klik hier om de FAQ te zien op www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Zeg bedankt</string>
-    <string name="pref_summary_rate">Als je Muser leuk vindt, overweeg dan om een beoordeling achter te laten.</string>
+    <string name="pref_summary_rate">Als je MUSER leuk vindt, overweeg dan om een beoordeling achter te laten.</string>
     <string name="pref_title_headset_beep">Beep bij skippen</string>
     <string name="pref_summary_headset_beep">Beep bij skippen nummer via headsetknoppen</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -436,10 +436,10 @@ Indien uitgeschakeld wordt het Muser-icoon als plaatshouder gebruikt</string>
     <!-- Button text for saving tags  -->
     <string name="save">Opslaan</string>
     <!-- Message displayed when tag editing fails -->
-    <string name="tag_error">Er is een fout opgetreden bij het bewerken van tags. Als het bestand is opgeslagen op een SD-kaart, heeft Muser mogelijk geen toegangsrechten.</string>
-    <string name="tag_editor_document_tree_message">Vanwege wijzigingen in Android 5.0, vereist Google nu om aan te geven in welke mappen op de SD-kaart een app bestanden mag bewerken.\n\n Muser zal nu een bestandenzoeker openen. Kies daarin de hoofdmap van de bestanden die je wilt bewerken.</string>
+    <string name="tag_error">Er is een fout opgetreden bij het bewerken van tags. Als het bestand is opgeslagen op een SD-kaart, heeft MUSER mogelijk geen toegangsrechten.</string>
+    <string name="tag_editor_document_tree_message">Vanwege wijzigingen in Android 5.0, vereist Google nu om aan te geven in welke mappen op de SD-kaart een app bestanden mag bewerken.\n\n MUSER zal nu een bestandenzoeker openen. Kies daarin de hoofdmap van de bestanden die je wilt bewerken.</string>
     <string name="tag_editor_check_permission">Controleren op rechten. Dit kan even duren...\n\nGeef Google maar de schuld!</string>
-    <string name="tag_editor_document_tree_permission_failed">Het lijkt erop dan Muser nog steeds geen rechten heeft om de bestanden te bewerken. Controleer de map in de bestandenzoeker.</string>
+    <string name="tag_editor_document_tree_permission_failed">Het lijkt erop dan MUSER nog steeds geen rechten heeft om de bestanden te bewerken. Controleer de map in de bestandenzoeker.</string>
     <string name="tag_retrieve_error">Er is een fout opgetreden bij het ophalen van tags.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -580,7 +580,7 @@ map "</item>
     <!-- Button name in time span picker -->
     <string name="button_done">Klaar</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Kiezen hoeveel weken terug Muser moet zoeken voor \'recente\' muziek.</string>
+    <string name="weekpicker_title">Kiezen hoeveel weken terug MUSER moet zoeken voor \'recente\' muziek.</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Illustraties downloaden</string>
@@ -672,7 +672,7 @@ map "</item>
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">Nu speelt %1$s door %2$s</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Als je Muser al hebt geüpgraded, met zegt dat je de gratis versie hebt, druk hier.</string>
+    <string name="pref_summary_restore_purchases">Als je MUSER al hebt geüpgraded, met zegt dat je de gratis versie hebt, druk hier.</string>
     <string name="pref_title_restore_purchases">Herstel aankopen</string>
     <string name="blacklist_empty">Je hebt geen nummers geblacklist!</string>
     <string name="whitelist_empty">Je hebt geen mappen gewhitelist!</string>
@@ -685,11 +685,11 @@ map "</item>
     <string name="song_info_play_count">Afspeelteller</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" KHz"</string>
-    <string name="iab_purchase_restored">Aankoop hersteld. Start Muser opnieuw op.</string>
+    <string name="iab_purchase_restored">Aankoop hersteld. Start MUSER opnieuw op.</string>
     <string name="iab_purchase_not_found">Geen vorige aankoop gevonden.</string>
-    <string name="iab_already_upgraded">Muser is al geüpgraded. Probeer de app opnieuw op te starten.</string>
+    <string name="iab_already_upgraded">MUSER is al geüpgraded. Probeer de app opnieuw op te starten.</string>
     <string name="iab_purchase_failed">Er is iets verkeerd gegaan. Probeer het later opnieuw.</string>
-    <string name="snackbar_rate_text">Plezier met het gebruiken van Muser?</string>
+    <string name="snackbar_rate_text">Plezier met het gebruiken van MUSER?</string>
     <string name="snackbar_rate_action">Beoordeel het!</string>
     <string name="dialog_create_playlist_error">Fout bij het creëeren van de afspeellijst</string>
     <!-- Artwork picker -->
@@ -733,7 +733,7 @@ map "</item>
     <!-- Shown when there are no lyrics -->
     <string name="no_lyrics">Geen ingesloten songteksten gevonden.</string>
     <!-- QuickLyric info dialog message-->
-    <string name="quicklyric_info">QuickLyric is een opensource ophaler van songteksten in de Google Play Store.\n\nZodra deze is geïnstalleerd, zal QuickLyric worden geopend vanuit Muser wanneer je op de \'QuickLyric\' menuknop tikt.</string>
+    <string name="quicklyric_info">QuickLyric is een opensource ophaler van songteksten in de Google Play Store.\n\nZodra deze is geïnstalleerd, zal QuickLyric worden geopend vanuit MUSER wanneer je op de \'QuickLyric\' menuknop tikt.</string>
     <!-- "Playlist" Shortcut label. Max 10 characters.-->
     <string name="shortcut_playlist_short_label">Afspeellijst</string>
     <!-- "Playlist" Shortcut long label. Max 25 characters.-->
@@ -744,7 +744,7 @@ map "</item>
     <string name="shuffle_albums">Albumshuffle</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">Toegang tot opslag nodig</string>
-    <string name="saf_access_required_message">Shuttle heeft toestemming nodig voor toegang tot deze bestanden. Kies de map die jouw muziek bevat.</string>
+    <string name="saf_access_required_message">MUSER heeft toestemming nodig voor toegang tot deze bestanden. Kies de map die jouw muziek bevat.</string>
     <string name="saf_show_files_button">Bestanden tonen</string>
-    <string name="notification_text_shuttle_running">Shuttle service draait…</string>
+    <string name="notification_text_shuttle_running">MUSER service draait…</string>
 </resources>

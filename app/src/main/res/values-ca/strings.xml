@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">"Cap proveïdor de documents disponible per manejar la sol·licitud de permisos "</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -76,9 +76,9 @@ cançons afegides a la cua.</item>
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">"Reunint cançons... "</string>
     <!-- -->
-    <string name="get_pro_title">Comprar Muser+</string>
+    <string name="get_pro_title">Comprar MUSER+</string>
     <!-- -->
-    <string name="get_pro_message">Si t\'agrada Muser, sisplau considera comprar Muser+.
+    <string name="get_pro_message">Si t\'agrada MUSER, sisplau considera comprar MUSER+.
 \n\nCaracterístiques:
 \nTones de temes extra
 \nEdició d\'etiquetes (amb suport limitat a Android 4.4 KitKat)
@@ -86,14 +86,14 @@ cançons afegides a la cua.</item>
 \nSuport de ChromeCast \n\nTambé ajuda a promoure major desenvolupament.</string>
     <!-- -->
     <string name="upgraded_title">Gràcies!</string>
-    <string name="upgraded_message">Has actualitzat a Muser+ satisfactòriament. T\'agraeixo el teu suport.
+    <string name="upgraded_message">Has actualitzat a MUSER+ satisfactòriament. T\'agraeixo el teu suport.
 \n\nSisplau reinicia l\'aplicació per assegurar que totes les característiques han estat activades.</string>
-    <string name="upgrade_dialog_message">Actualitzar a Muser+ desbloquejarà moltes característiques addicionals a Muser, incloent:
+    <string name="upgrade_dialog_message">Actualitzar a MUSER+ desbloquejarà moltes característiques addicionals a MUSER, incloent:
 \n\nTones de temes extra
 \nEdició d\'etiquetes (amb suport limitat a Android 4.4 KitKat)
 \nNavegació per carpetes
 \nSuport a ChromeCast
-\n\nTambé ajuda a promoure un major desenvolupament. \n\nNo cal que actualitzis a Muser+ si ja el tens</string>
+\n\nTambé ajuda a promoure un major desenvolupament. \n\nNo cal que actualitzis a MUSER+ si ja el tens</string>
     <string name="btn_upgrade">Actualitzar</string>
     <!-- -->
     <string name="get_pro_button_no">No, gràcies</string>
@@ -122,7 +122,7 @@ cançons afegides a la cua.</item>
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">D\'acord</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Estàs segur que vols esborrar permanentment \"<xliff:g id="folder">%s</xliff:g>\"? Tots els elements en aquesta carpeta seran esborrats, també aquells que no són visibles en l\'explorador d\'arxius de Muser.</string>
+    <string name="delete_folder_confirmation_dialog">Estàs segur que vols esborrar permanentment \"<xliff:g id="folder">%s</xliff:g>\"? Tots els elements en aquesta carpeta seran esborrats, també aquells que no són visibles en l\'explorador d\'arxius de MUSER.</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Estàs segur que vols esborrar permanentment \"<xliff:g id="file">%s</xliff:g>\"?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -248,7 +248,7 @@ cançons afegides a la cua.</item>
     <!-- Settings title for embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_prefer_embedded_art">Preferir caràtules incrustades</string>
     <!-- Settings summary for the ignore embedded artwork checkbox-->
-    <string name="pref_summary_prefer_embedded_art">Marca aquesta casella si prefereixes que Muser cerqui caràtules incrustades entre els teus arxius de música, abans de cercar en els directoris de música.</string>
+    <string name="pref_summary_prefer_embedded_art">Marca aquesta casella si prefereixes que MUSER cerqui caràtules incrustades entre els teus arxius de música, abans de cercar en els directoris de música.</string>
     <!-- Settings title for ignore embedded artwork checkbox (whether the app can use local artwork for the album art -->
     <string name="pref_title_ignore_embedded_art">Ignorar caràtules incrustades</string>
     <!-- Settings summary for the ignore folder artwork checkbox-->
@@ -268,7 +268,7 @@ cançons afegides a la cua.</item>
     <!-- Settings summary for the download artwork button-->
     <string name="pref_summary_download_artwork">Descarrega les il·lustracions d\'artistes i àlbums que falten</string>
     <!-- Settings warning for the download artwork button -->
-    <string name="pref_warning_download_artwork">Muser descarregarà totes les il·lustracions sense tenir en compte la teva xarxa. Es poden aplicar càrregues per ús de dades.</string>
+    <string name="pref_warning_download_artwork">MUSER descarregarà totes les il·lustracions sense tenir en compte la teva xarxa. Es poden aplicar càrregues per ús de dades.</string>
     <!-- Settings title for the delete artwork button-->
     <string name="pref_title_delete_artwork">Esborrar il·lustracions</string>
     <!-- Settings summary for the delete artwork button -->
@@ -287,7 +287,7 @@ cançons afegides a la cua.</item>
     <string name="pref_title_placeholders">Utilitzar caràtules amb estil Gmail</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Mostra caràtules amb \"estil Gmail\" per defecte. 
-Si està desmarcat, s\'emprarà l\'icona de Muser.</string>
+Si està desmarcat, s\'emprarà l\'icona de MUSER.</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Activar la caràtula a la pantalla de bloqueig.</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -344,7 +344,7 @@ Si està desmarcat, s\'emprarà l\'icona de Muser.</string>
     <string name="pref_title_faq">FAQ</string>
     <string name="pref_summary_faq">Tens cap pregunta? Necessites ajuda? Clica aquí per veure les FAQ @www.shuttlemusicplayer.com</string>
     <string name="pref_title_rate">Dóna les gràcies</string>
-    <string name="pref_summary_rate">Si t\'agrada Muser, sisplau considera fer-ne una ressenya.</string>
+    <string name="pref_summary_rate">Si t\'agrada MUSER, sisplau considera fer-ne una ressenya.</string>
     <!-- Settings title for ignore playlist duplicates -->
     <!-- Settings summary for ignore playlist duplicates -->
     <!-- Displayed on the settings page to choose the default main page -->
@@ -387,9 +387,9 @@ Si està desmarcat, s\'emprarà l\'icona de Muser.</string>
     <string name="save">Guardar</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Hi ha hagut un error en guardar les etiquetes</string>
-    <string name="tag_editor_document_tree_message">Degut a canvis a Android 5.0, ara Google requereix que especifiquis a quines carpetes de la targeta SD una determinada aplicació té permès accedir.\n\nAra Muser obrirà un seleccionador d\'arxius. Esculli la carpeta principal dels arxius que vols modificar.</string>
+    <string name="tag_editor_document_tree_message">Degut a canvis a Android 5.0, ara Google requereix que especifiquis a quines carpetes de la targeta SD una determinada aplicació té permès accedir.\n\nAra MUSER obrirà un seleccionador d\'arxius. Esculli la carpeta principal dels arxius que vols modificar.</string>
     <string name="tag_editor_check_permission">Revisant els permisos. Això podria portar una estona...\n\nCulpa a Google!</string>
-    <string name="tag_editor_document_tree_permission_failed">Sembla que Muser encara no té els permisos per editar els arxius. Torna a revisar el directori en el seleccionador d\'arxius.</string>
+    <string name="tag_editor_document_tree_permission_failed">Sembla que MUSER encara no té els permisos per editar els arxius. Torna a revisar el directori en el seleccionador d\'arxius.</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
     <string name="rename_folder">Canvia el nom a la carpeta</string>
@@ -513,7 +513,7 @@ carpeta</item>
     <!-- Button name in time span picker -->
     <string name="button_done">Fet</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Escull quantes setmanes ha de considerar Muser com a \"recent\".</string>
+    <string name="weekpicker_title">Escull quantes setmanes ha de considerar MUSER com a \"recent\".</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
     <string name="notif_downloading_art">Descarregant caràtules</string>
@@ -589,7 +589,7 @@ carpeta</item>
     <!-- Accessibility button description -->
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Si ja has comprat Muser+ però encara es mostra la versió gratuïta, clica aquí.</string>
+    <string name="pref_summary_restore_purchases">Si ja has comprat MUSER+ però encara es mostra la versió gratuïta, clica aquí.</string>
     <string name="pref_title_restore_purchases">Restaurar compres</string>
     <string name="blacklist_empty">No has afegit cap cançó a la llista negra!</string>
     <string name="whitelist_empty">No has afegit cap carpeta a la llista permesa!</string>
@@ -602,11 +602,11 @@ carpeta</item>
     <string name="song_info_play_count">Comptador de reproduccions</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Compra restaurada. Sisplau reiniciï Muser</string>
+    <string name="iab_purchase_restored">Compra restaurada. Sisplau reiniciï MUSER</string>
     <string name="iab_purchase_not_found">No s\'ha trobat cap compra prèvia</string>
-    <string name="iab_already_upgraded">Muser+ ja està activat. Intenta reiniciar l\'aplicació.</string>
+    <string name="iab_already_upgraded">MUSER+ ja està activat. Intenta reiniciar l\'aplicació.</string>
     <string name="iab_purchase_failed">Quelcom no ha anat bé. Sisplau prova-ho un altre cop més tard...</string>
-    <string name="snackbar_rate_text">Gaudint de Muser?</string>
+    <string name="snackbar_rate_text">Gaudint de MUSER?</string>
     <string name="snackbar_rate_action">Valora\'l!</string>
     <!-- Artwork picker -->
     <!-- Launcher Shortcuts -->

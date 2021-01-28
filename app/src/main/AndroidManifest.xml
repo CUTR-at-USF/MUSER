@@ -213,7 +213,7 @@
         <!-- Broadcast Receiver for medium Widget -->
         <receiver
             android:name=".ui.widgets.WidgetProviderMedium"
-            android:label="Shuttle 4x1">
+            android:label="MUSER 4x1">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -235,7 +235,7 @@
         <!-- Broadcast Receiver for small Widget -->
         <receiver
             android:name=".ui.widgets.WidgetProviderSmall"
-            android:label="Shuttle 2x1">
+            android:label="MUSER 2x1">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -274,7 +274,7 @@
         <!-- Broadcast Receiver for large Widget -->
         <receiver
             android:name=".ui.widgets.WidgetProviderLarge"
-            android:label="Shuttle 4x2">
+            android:label="MUSER 4x2">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>
@@ -287,7 +287,7 @@
         <!-- Broadcast Receiver for extra large Widget -->
         <receiver
             android:name=".ui.widgets.WidgetProviderExtraLarge"
-            android:label="Shuttle 4x4">
+            android:label="MUSER 4x4">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
             </intent-filter>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">許可リクエストを処理するDocumentProviderはありません</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -77,9 +77,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">楽曲を収集しています…</string>
     <!-- -->
-    <string name="get_pro_title">Muser+ にアップグレード</string>
+    <string name="get_pro_title">MUSER+ にアップグレード</string>
     <!-- -->
-    <string name="get_pro_message">Muserを気に入りましたら、是非Muser+にアップグレードしてください。
+    <string name="get_pro_message">MUSERを気に入りましたら、是非MUSER+にアップグレードしてください。
 \n\n特徴:
 \n多くのテーマを追加
 \nタグ編集機能 (Android 4.4 Kitkat以降では制限があります)
@@ -87,14 +87,14 @@
 \nChromeCastへの対応\n\n更なる発展を促進するのに役立ちます</string>
     <!-- -->
     <string name="upgraded_title">ありがとう</string>
-    <string name="upgraded_message">アップグレードありがとうございます。Muser+へのアップグレードに成功しました。\n\n全ての機能を有効にするにはアプリを再起動してください。</string>
-    <string name="upgrade_dialog_message">Muserをアップグレードするとこんな機能が使えるようになります:
+    <string name="upgraded_message">アップグレードありがとうございます。MUSER+へのアップグレードに成功しました。\n\n全ての機能を有効にするにはアプリを再起動してください。</string>
+    <string name="upgrade_dialog_message">MUSERをアップグレードするとこんな機能が使えるようになります:
 \n\n多くのテーマを追加
 \nタグ編集機能 (Android 4.4 Kitkat以降では制限があります)
 \nフォルダのブラウジング機能
 \nChromeCastへの対応
-\n\nまた、更なる発展を促進するのに役立ちます。\n\n既にMuser+を持っている場合はアップグレードの必要はありません</string>
-    <string name="upgrade_required_folders">Muser+ にアップグレード</string>
+\n\nまた、更なる発展を促進するのに役立ちます。\n\n既にMUSER+を持っている場合はアップグレードの必要はありません</string>
+    <string name="upgrade_required_folders">MUSER+ にアップグレード</string>
     <string name="btn_upgrade">アップグレード</string>
     <!-- -->
     <string name="get_pro_button_no">結構です</string>
@@ -127,7 +127,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">\"<xliff:g id="folder">%s</xliff:g>\"を完全に削除しますか? Muserのファイルブラウザで表示されていないファイルも含む、フォルダ全体を削除します。</string>
+    <string name="delete_folder_confirmation_dialog">\"<xliff:g id="folder">%s</xliff:g>\"を完全に削除しますか? MUSERのファイルブラウザで表示されていないファイルも含む、フォルダ全体を削除します。</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">\"<xliff:g id="file">%s</xliff:g>\"を完全に削除しますか?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -314,7 +314,7 @@
     <string name="pref_title_placeholders">Gmailスタイルのプレースホルダーを使う</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
     <string name="pref_summary_placeholders">Gmailのようなスタイルのプレースホルダーを表示します。
-チェックを外すと、Muserアイコンを表示します。</string>
+チェックを外すと、MUSERアイコンを表示します。</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">ロックスクリーンにアートワークを表示</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -377,7 +377,7 @@
     <string name="pref_title_faq">よくある質問</string>
     <string name="pref_summary_faq">質問や手助けが必要な場合はwww.shuttlemusicplayer.comでよくある質問を確認できます。</string>
     <string name="pref_title_rate">お礼のメッセージを送信</string>
-    <string name="pref_summary_rate">Muserが気に入りましたら是非レビューをお願いします。</string>
+    <string name="pref_summary_rate">MUSERが気に入りましたら是非レビューをお願いします。</string>
     <string name="pref_title_headset_beep">スキップしたらビープ音を鳴らす</string>
     <string name="pref_summary_headset_beep">ヘッドフォンコントロールで曲をスキップするときにビープ音が鳴る</string>
     <!-- Settings title for ignore playlist duplicates -->
@@ -429,9 +429,9 @@
     <string name="save">保存</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">タグの編集中にエラーが発生しました。</string>
-    <string name="tag_editor_document_tree_message">Android5.0の更新により、Googleがアプリ上で編集できるSDカードのフォルダを指定するよう求めています。\n\nファイル選択画面をMuserより開きます。変更する親フォルダを指定してください。</string>
+    <string name="tag_editor_document_tree_message">Android5.0の更新により、Googleがアプリ上で編集できるSDカードのフォルダを指定するよう求めています。\n\nファイル選択画面をMUSERより開きます。変更する親フォルダを指定してください。</string>
     <string name="tag_editor_check_permission">アクセス権限を確認しています。この作業にはしばらく時間がかかる場合があります...\n\nGoogleを非難してください!</string>
-    <string name="tag_editor_document_tree_permission_failed">Muserはファイルの編集権限を保有していないようです。ファイルの選択を再度確認してください。</string>
+    <string name="tag_editor_document_tree_permission_failed">MUSERはファイルの編集権限を保有していないようです。ファイルの選択を再度確認してください。</string>
     <string name="tag_retrieve_error">タグ検索中エラーが発生しました</string>
     <!-- ## Folder browsing ## -->
     <!-- -->
@@ -661,7 +661,7 @@
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <string name="btn_now_playing">%2$sさんの%1$sを再生中</string>
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">既にMuserをアップグレードしましたが、無料版を表示していた場合このボタンを押してください。</string>
+    <string name="pref_summary_restore_purchases">既にMUSERをアップグレードしましたが、無料版を表示していた場合このボタンを押してください。</string>
     <string name="pref_title_restore_purchases">購入情報の復元</string>
     <string name="blacklist_empty">ブラックリストに曲が登録されていません!</string>
     <string name="whitelist_empty">ホワイトリストにフォルダが登録されていません!</string>
@@ -674,11 +674,11 @@
     <string name="song_info_play_count">再生回数</string>
     <string name="song_info_bitrate_suffix">"kbps"</string>
     <string name="song_info_sample_rate_suffix">"kHz"</string>
-    <string name="iab_purchase_restored">購入データを復元します。Muserを再起動してください。</string>
+    <string name="iab_purchase_restored">購入データを復元します。MUSERを再起動してください。</string>
     <string name="iab_purchase_not_found">購入データが見つかりませんでした。</string>
-    <string name="iab_already_upgraded">Muserは既にアップグレードされています。Muserを再起動してみてください。</string>
+    <string name="iab_already_upgraded">MUSERは既にアップグレードされています。MUSERを再起動してみてください。</string>
     <string name="iab_purchase_failed">問題が発生しました。後ほどやり直してください..</string>
-    <string name="snackbar_rate_text">Muserをお使いになってどうでしたか？</string>
+    <string name="snackbar_rate_text">MUSERをお使いになってどうでしたか？</string>
     <string name="snackbar_rate_action">評価をお願いします!</string>
     <string name="dialog_create_playlist_error">プレイリストの作成中にエラーが発生しました</string>
     <!-- Artwork picker -->
@@ -733,6 +733,6 @@
     <string name="shuffle_albums">全アルバムをシャッフルする</string>
     <!-- Storage Access Framework (Used when deleting files from SD CarD)-->
     <string name="saf_access_required_title">ストーレッジにアクセスの許可が必要です</string>
-    <string name="saf_access_required_message">Muserはこのファイルにアクセスするには許可が必要です。音楽を含むディレクトリを選択してください。</string>
+    <string name="saf_access_required_message">MUSERはこのファイルにアクセスするには許可が必要です。音楽を含むディレクトリを選択してください。</string>
     <string name="saf_show_files_button">ファイルを表示する</string>
 </resources>

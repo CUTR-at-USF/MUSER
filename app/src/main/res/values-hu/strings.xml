@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- ## Toast Messages ## -->
-    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to Muser)-->
+    <!-- Shown when a user attempts to edit tags, but they don't have a 'DocumentProvider' available to pick the directory of their music (and thus give permission to MUSER)-->
     <string name="R.string.toast_no_document_provider">Nincs elérhető \"DocumentProvider\" a kérés végrehajtásához</string>
     <!-- Displayed when an M3U playlist is being saved, but it already exists -->
     <!-- Displayed when an M3U playlist save fails -->
@@ -78,9 +78,9 @@
     <!-- Displayed when whitelisting a folder, as the app gathers the songs-->
     <string name="gathering_songs">Dalok összegyűjtése</string>
     <!-- -->
-    <string name="get_pro_title">Muser+ vásárlása</string>
+    <string name="get_pro_title">MUSER+ vásárlása</string>
     <!-- -->
-    <string name="get_pro_message">Ha tetszik a Muser, kérlek vedd fontolóra a Muser megvásárlását.
+    <string name="get_pro_message">Ha tetszik a MUSER, kérlek vedd fontolóra a MUSER megvásárlását.
 \n\nJellemzők:
 \nRengeteg további téma
 \nCimkék szerkesztése
@@ -88,14 +88,14 @@
 \nChromeCast támogatás\n\nTovábbá, támogatod vele a további fejlesztéseket.</string>
     <!-- -->
     <string name="upgraded_title">Köszönjük</string>
-    <string name="upgraded_message">Sikeresen megvásárolta a Muser+. Köszönjük támogatását.
+    <string name="upgraded_message">Sikeresen megvásárolta a MUSER+. Köszönjük támogatását.
 \n\nIndítsa újra az alkalmazást, hogy engedélyezzen minden funkciót</string>
     <string name="upgrade_dialog_message">A vásárlással a következő funkciók válnak elérhetővé:
  \n\nRengeteg extra téma
  \nCímkék szerkesztése (Andoid 4.4 KitKat változatában ez a funkció limitált)
  \nMappák böngészése
  \nChromeCast támogatás
- \n\n Továbbá segít a jövőbeni fejlesztésekben. \n\nNem szükséges frissítenie ha már rendelkezik a Muser+-szal</string>
+ \n\n Továbbá segít a jövőbeni fejlesztésekben. \n\nNem szükséges frissítenie ha már rendelkezik a MUSER+-szal</string>
     <string name="btn_upgrade">Vásárlás</string>
     <!-- -->
     <string name="get_pro_button_no">Köszönöm nem</string>
@@ -128,7 +128,7 @@
     <!-- Delete confirmation dialog, confirmation button text -->
     <string name="button_ok">OK</string>
     <!-- -->
-    <string name="delete_folder_confirmation_dialog">Biztosan törölni szeretné a \"<xliff:g id="folder">%s</xliff:g>\" mappát? Minden elem törölve lesz, olyanok is, amik nem látszanak a Muser fájlkeresőjében!</string>
+    <string name="delete_folder_confirmation_dialog">Biztosan törölni szeretné a \"<xliff:g id="folder">%s</xliff:g>\" mappát? Minden elem törölve lesz, olyanok is, amik nem látszanak a MUSER fájlkeresőjében!</string>
     <!-- -->
     <string name="delete_file_confirmation_dialog">Biztosan törli: <xliff:g id="file">%s</xliff:g> ?</string>
     <!-- Displayed when user presses 'delete artwork' -->
@@ -300,7 +300,7 @@
     <!-- Settings title for gmail style placeholders checkbox-->
     <string name="pref_title_placeholders">Gmail stílusű helykitöltők</string>
     <!-- Settings summary for gmail style placeholders checkbox-->
-    <string name="pref_summary_placeholders">\'Gmail\' stílusű helykitöltők használata. Ha ki van kapcsolva, egy Muser ikon jelenik meg helykitöltőként.</string>
+    <string name="pref_summary_placeholders">\'Gmail\' stílusű helykitöltők használata. Ha ki van kapcsolva, egy MUSER ikon jelenik meg helykitöltőként.</string>
     <!-- Settings title for the enable lockscreen controls checkbox -->
     <string name="pref_title_lockscreen">Képernyőzári borítókép engedélyezése</string>
     <!-- Settings summary for the enable lockscreen controls checkbox -->
@@ -361,7 +361,7 @@ segítségével
     <string name="pref_title_faq">GYIK</string>
     <string name="pref_summary_faq">Kérdése van? Segítségre van szüksége? GYIK a www.shuttlemusicplayer.com -on</string>
     <string name="pref_title_rate">Mondjon köszönetet</string>
-    <string name="pref_summary_rate">Ha tetszik a Muser, kérem hagyjon róla egy értékelést</string>
+    <string name="pref_summary_rate">Ha tetszik a MUSER, kérem hagyjon róla egy értékelést</string>
     <!-- Settings title for ignore playlist duplicates -->
     <!-- Settings summary for ignore playlist duplicates -->
     <!-- Displayed on the settings page to choose the default main page -->
@@ -409,7 +409,7 @@ segítségével
     <string name="save">Mentés</string>
     <!-- Message displayed when tag editing fails -->
     <string name="tag_error">Hiba történt a címkék szerkesztése közben.</string>
-    <string name="tag_editor_document_tree_message">Az Android 5.0-ban bevezetett változtatások miatt, meg kell adnia azt a mappát, amiben a Muser módosításokat hajthat végre.\n\nMost megnyílik egy fájlkezelő. Válassza ki azt a mappát, amiben azok a fájlok vannak amiket szerkeszteni szeretne.</string>
+    <string name="tag_editor_document_tree_message">Az Android 5.0-ban bevezetett változtatások miatt, meg kell adnia azt a mappát, amiben a MUSER módosításokat hajthat végre.\n\nMost megnyílik egy fájlkezelő. Válassza ki azt a mappát, amiben azok a fájlok vannak amiket szerkeszteni szeretne.</string>
     <string name="tag_editor_check_permission">Engedélyek ellenőrzése. Ez eltarthat egy darabig...\n\nA Google-t hibáztassa!</string>
     <string name="tag_editor_document_tree_permission_failed">Nincs hozzáférési engedély a fájlok módosításához. Ellenőrizze a megadott mappát.</string>
     <string name="tag_retrieve_error">Hiba történt a címkék betöltése közben</string>
@@ -543,10 +543,10 @@ segítségével
     <!-- Button name in time span picker -->
     <string name="button_done">Kész</string>
     <!-- Title of time span picker -->
-    <string name="weekpicker_title">Állítsa be, hogy a Muser hány héttel ezelőttig jegyezze meg a Nemrég játszott dalokat.</string>
+    <string name="weekpicker_title">Állítsa be, hogy a MUSER hány héttel ezelőttig jegyezze meg a Nemrég játszott dalokat.</string>
     <!-- ## Notification bar text ## -->
     <!-- Message in notification bar when downloading -->
-    <string name="notif_downloading_art">Muser - Letöltés</string>
+    <string name="notif_downloading_art">MUSER - Letöltés</string>
     <!-- ## SD card error messages ##-->
     <!-- Title of screen when no sd card is present -->
     <string name="sdcard_missing_title">Hiányzó SD-kártya</string>
@@ -632,7 +632,7 @@ segítségével
     <!-- Accessibility button description -->
     <!-- Accessibility now playing 'mini player' description. Example: Now playing <Wannabe> by <Spice Girls> -->
     <!-- Accessibility 'show lyrics' -->
-    <string name="pref_summary_restore_purchases">Ha már megvásárolta a Muser-t de még mindig az ingyenes változatként működik, koppintson ide</string>
+    <string name="pref_summary_restore_purchases">Ha már megvásárolta a MUSER-t de még mindig az ingyenes változatként működik, koppintson ide</string>
     <string name="pref_title_restore_purchases">Vásárlások visszaállítása</string>
     <string name="blacklist_empty">Nem tett feketelistára egy dalt sem!</string>
     <string name="whitelist_empty">Még nem tett a kivételek közé egy mappát sem.</string>
@@ -645,11 +645,11 @@ segítségével
     <string name="song_info_play_count">Lejátszások száma</string>
     <string name="song_info_bitrate_suffix">" kbps"</string>
     <string name="song_info_sample_rate_suffix">" kHz"</string>
-    <string name="iab_purchase_restored">Vásárlás visszaállítva. Kérem indítsa újra a Muser-t</string>
+    <string name="iab_purchase_restored">Vásárlás visszaállítva. Kérem indítsa újra a MUSER-t</string>
     <string name="iab_purchase_not_found">Nem találhatóak múltbéli vásárlások</string>
-    <string name="iab_already_upgraded">A Muser már meg lett vásárolva. Próbálja újraindítani a programot.</string>
+    <string name="iab_already_upgraded">A MUSER már meg lett vásárolva. Próbálja újraindítani a programot.</string>
     <string name="iab_purchase_failed">Valami hiba történt. Próbálja újra később...</string>
-    <string name="snackbar_rate_text">Szereti használni a Muser-t?</string>
+    <string name="snackbar_rate_text">Szereti használni a MUSER-t?</string>
     <string name="snackbar_rate_action">Értékelje!</string>
     <!-- Artwork picker -->
     <string name="artwork_type_media_store">Médiatár</string>

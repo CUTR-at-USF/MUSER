@@ -24,6 +24,8 @@ public enum UiEventType {
          ALBUM_SHUFFLE,
          ARTIST_ALBUM_SHUFFLE,
          ALBUM_SONGS_SHUFFLE,
+         ALBUM_BIOGRAPHY,
+         ALBUM_ARTIST_BIOGRAPHY,
          DELETE,
          DELETE_ALBUM,
          DELETE_ALBUM_ARTIST,
