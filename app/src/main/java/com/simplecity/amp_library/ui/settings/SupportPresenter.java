@@ -53,6 +53,16 @@ public class SupportPresenter extends Presenter<SupportView> {
         }
     }
 
+    public void emailClicked() {
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.parse("mailto:"));
+        intent.putExtra(Intent.EXTRA_EMAIL, "pal-muser@usf.edu");
+        SupportView supportView = getView();
+        if (supportView != null) {
+            supportView.openEmail(intent);
+        }
+    }
+
     public void rateClicked() {
 
         settingsManager.setHasRated();

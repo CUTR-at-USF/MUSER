@@ -11,4 +11,6 @@ public interface SupportView {
     void showHelp(Intent intent);
 
     void showRate(Intent intent);
+
+    void openEmail(Intent intent);
 }

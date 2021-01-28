@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<android.support.v7.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <android.support.v7.preference.PreferenceCategory
         android:key="support_group"
         android:title="@string/pref_title_support">
@@ -11,17 +12,19 @@
 
         <android.support.v7.preference.Preference
             android:key="pref_changelog"
-            android:title="@string/pref_title_changelog"/>
+            android:title="@string/pref_title_changelog"
+            app:isPreferenceVisible="false"/>
 
         <android.support.v7.preference.Preference
             android:key="pref_faq"
             android:summary="@string/pref_summary_faq"
-            android:title="@string/pref_title_faq"/>
+            android:title="@string/pref_title_faq"
+            app:isPreferenceVisible="false"/>
 
         <android.support.v7.preference.Preference
             android:key="pref_help"
-            android:summary="@string/pref_summary_community"
-            android:title="@string/pref_title_community"/>
+            android:summary="@string/pref_summary_email"
+            android:title="@string/pref_title_email" />
 
         <android.support.v7.preference.Preference
             android:key="pref_rate"
