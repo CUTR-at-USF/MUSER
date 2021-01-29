@@ -27,14 +27,14 @@ public class DeviceInformationManager {
     }
     public void saveDeviceInformation() {
         PackageManager pm = mApplicationContext.getPackageManager();
-        PackageInfo appInfoOba;
+        PackageInfo appInfoMuser;
         PackageInfo appInfoGps;
-        String obaVersion = "";
+        String muserVersion = "";
         String googlePlayServicesAppVersion = "";
         try {
-            appInfoOba = pm.getPackageInfo(mApplicationContext.getPackageName(),
+            appInfoMuser = pm.getPackageInfo(mApplicationContext.getPackageName(),
                     PackageManager.GET_META_DATA);
-            obaVersion = appInfoOba.versionName;
+            muserVersion = appInfoMuser.versionName;
         } catch (PackageManager.NameNotFoundException e) {
             // Leave version as empty string
         }
@@ -60,7 +60,7 @@ public class DeviceInformationManager {
 
         String recordId = Long.toString(System.currentTimeMillis());
 
-        DeviceInfo di = new DeviceInfo(obaVersion, Build.MODEL, Build.VERSION.RELEASE,
+        DeviceInfo di = new DeviceInfo(muserVersion, Build.MODEL, Build.VERSION.RELEASE,
                 Build.VERSION.SDK_INT, googlePlayServicesAppVersion,
                 GoogleApiAvailability.GOOGLE_PLAY_SERVICES_VERSION_CODE, isTalkBackEnabled, recordId,
                 isPowerSaveModeActive, isIgnoringBatteryOptimizations);
