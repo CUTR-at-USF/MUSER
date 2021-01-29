@@ -36,4 +36,5 @@
     <string name="research_participants_url">https://script.google.com/macros/s/AKfycbxkm677NCT-nuLQE8heJgYPydV5icUB5qIVlSZjZA/exec</string>
     <string name="research_participants_opt_out_url">https://script.google.com/macros/s/AKfycbwfQmptSaftNvfBwLwECXrHzULbYsqy3uAm7aw7pjIy0Ygj0uM/exec</string>
     <string name="email">pal-muser@usf.edu</string>
+    <string name="subject">MUSER Feedback</string>
 </resources>

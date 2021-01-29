@@ -57,6 +57,7 @@ public class SupportPresenter extends Presenter<SupportView> {
     public void emailClicked() {
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_EMAIL, new String[]{application.getString(R.string.email)});
+        intent.putExtra(Intent.EXTRA_SUBJECT, application.getString(R.string.subject));
         intent.setType("message/rfc822");
         SupportView supportView = getView();
         if (supportView != null) {
