@@ -14,5 +14,9 @@ public class EventConstants {
 
     public static String USER_EMAIL = "userEmail";
 
+    public static final String DEVICE_INFO_HASH = "deviceInfoHash";
+
+    public static final String FIREBASE_DEVICE_INFO_FOLDER = "device-information";
+
     public static final String RECORD_ID = "recordID";
 }

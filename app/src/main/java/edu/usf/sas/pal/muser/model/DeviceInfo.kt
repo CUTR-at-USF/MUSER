@@ -9,23 +9,22 @@ val sdkVersion: String,
 val sdkVersionInt: Int,
 val googlePlayServicesApp: String,
 val googlePlayServicesLib: Int,
-val regionId: Long,
 val isTalkBackEnabled: Boolean,
 val timestamp: String,
 val isPowerSaveModeEnabled: Boolean?,
 val isIgnoringBatteryOptimizations: Boolean?
-)
-
-@Override
-fun hashCode(deviceInfo: DeviceInfo): Int {
-    val builder: HashCodeBuilder = HashCodeBuilder().append(deviceInfo.appVersion).append(deviceInfo.deviceModel).append(deviceInfo.sdkVersion)
-            .append(deviceInfo.sdkVersionInt).append(deviceInfo.googlePlayServicesApp).append(deviceInfo.googlePlayServicesLib)
-            .append(deviceInfo.regionId).append(deviceInfo.isTalkBackEnabled)
-    if (deviceInfo.isPowerSaveModeEnabled != null) {
-        builder.append(deviceInfo.isPowerSaveModeEnabled)
+) {
+    @Override
+    override fun hashCode(): Int {
+        val builder: HashCodeBuilder = HashCodeBuilder().append(this.appVersion).append(this.deviceModel).append(this.sdkVersion)
+                .append(this.sdkVersionInt).append(this.googlePlayServicesApp).append(this.googlePlayServicesLib)
+                .append(this.isTalkBackEnabled)
+        if (this.isPowerSaveModeEnabled != null) {
+            builder.append(this.isPowerSaveModeEnabled)
+        }
+        if (this.isIgnoringBatteryOptimizations != null) {
+            builder.append(this.isIgnoringBatteryOptimizations)
+        }
+        return builder.toHashCode()
     }
-    if (deviceInfo.isIgnoringBatteryOptimizations != null) {
-        builder.append(deviceInfo.isIgnoringBatteryOptimizations)
-    }
-    return builder.toHashCode()
 }

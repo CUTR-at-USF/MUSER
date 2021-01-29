@@ -10,7 +10,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
 import edu.usf.sas.pal.muser.constants.EventConstants;
+import edu.usf.sas.pal.muser.manager.DeviceInformationManager;
 import edu.usf.sas.pal.muser.manager.UserRegistrationManager;
+import edu.usf.sas.pal.muser.model.DeviceInfo;
 import edu.usf.sas.pal.muser.model.PlayerEvent;
 import edu.usf.sas.pal.muser.model.UiEvent;
 import java.io.IOException;
@@ -114,6 +116,7 @@ public class FirebaseIOUtils {
                                             Toast.LENGTH_SHORT).show();
                                     UserRegistrationManager
                                             .optInUser(firebaseAuth.getUid());
+                                    new DeviceInformationManager(context).saveDeviceInformation();
                                 }
                                 else{
                                     Toast.makeText(context,
@@ -144,6 +147,23 @@ public class FirebaseIOUtils {
             } else {
                 logErrorMessage(task.getException(),
                         "Firebase failed to initialize with user id");
+            }
+        });
+    }
+
+    public static void saveDeviceInfo(DeviceInfo deviceInfo, String userId,
+                                      String recordId, int hashCode) {
+        DocumentReference document = FirebaseIOUtils.
+                getFirebaseDocReferenceByUserIDAndRecordId(userId, recordId,
+                        EventConstants.FIREBASE_DEVICE_INFO_FOLDER);
+
+        document.set(deviceInfo).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                Log.d(TAG, "Device Info document added with ID " + document.getId());
+                PreferenceUtils.saveInt(EventConstants.DEVICE_INFO_HASH, hashCode);
+            } else {
+                logErrorMessage(task.getException(),
+                        "Device Info transition document failed to be added: ");
             }
         });
     }

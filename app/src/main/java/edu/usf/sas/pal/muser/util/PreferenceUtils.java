@@ -52,4 +52,19 @@ public class PreferenceUtils {
     public static boolean getBoolean(String key, boolean defaultValue) {
         return ShuttleApplication.getPrefs().getBoolean(key, defaultValue);
     }
+
+    @TargetApi(9)
+    public static void saveInt(SharedPreferences prefs, String key, int value) {
+        SharedPreferences.Editor edit = prefs.edit();
+        edit.putInt(key, value);
+        edit.apply();
+    }
+
+    public static void saveInt(String key, int value) {
+        saveInt(ShuttleApplication.getPrefs(), key, value);
+    }
+
+    public static int getInt(String key, int defaultValue) {
+        return ShuttleApplication.getPrefs().getInt(key, defaultValue);
+    }
 }
