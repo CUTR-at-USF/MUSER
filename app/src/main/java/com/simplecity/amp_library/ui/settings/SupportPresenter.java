@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import com.simplecity.amp_library.BuildConfig;
+import com.simplecity.amp_library.R;
 import com.simplecity.amp_library.ShuttleApplication;
 import com.simplecity.amp_library.ui.common.Presenter;
 import com.simplecity.amp_library.utils.SettingsManager;
@@ -54,12 +55,12 @@ public class SupportPresenter extends Presenter<SupportView> {
     }
 
     public void emailClicked() {
-        Intent intent = new Intent(Intent.ACTION_SENDTO);
-        intent.setData(Uri.parse("mailto:"));
-        intent.putExtra(Intent.EXTRA_EMAIL, "pal-muser@usf.edu");
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{application.getString(R.string.email)});
+        intent.setType("message/rfc822");
         SupportView supportView = getView();
         if (supportView != null) {
-            supportView.openEmail(intent);
+            supportView.openEmail(intent)               ;
         }
     }
 
