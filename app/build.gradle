@@ -269,6 +269,7 @@ dependencies {
     implementation Dependencies.materialDialogCommons
     implementation Dependencies.expandableRecyclerView
     implementation Dependencies.billing
+    implementation Dependencies.apache
 
     implementation Dependencies.butterknife
     kapt Dependencies.butterknifeAnnotationProcessor
