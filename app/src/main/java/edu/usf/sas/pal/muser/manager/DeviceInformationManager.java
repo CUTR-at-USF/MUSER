@@ -12,7 +12,6 @@ import com.simplecity.amp_library.ShuttleApplication;
 
 import edu.usf.sas.pal.muser.constants.EventConstants;
 import edu.usf.sas.pal.muser.model.DeviceInfo;
-import edu.usf.sas.pal.muser.model.Event;
 import edu.usf.sas.pal.muser.util.FirebaseIOUtils;
 import edu.usf.sas.pal.muser.util.PreferenceUtils;
 
@@ -23,10 +22,10 @@ import static android.content.Context.ACCESSIBILITY_SERVICE;
  */
 public class DeviceInformationManager {
 
-    private Context mApplicationContext;
+    private Context applicationContext;
 
-    public DeviceInformationManager(Context mApplicationContext) {
-        this.mApplicationContext = mApplicationContext;
+    public DeviceInformationManager(Context applicationContext) {
+        this.applicationContext = applicationContext;
     }
 
     /**
@@ -34,13 +33,13 @@ public class DeviceInformationManager {
      * https://github.com/OneBusAway/onebusaway-android/blob/master/onebusaway-android/src/main/java/org/onebusaway/android/travelbehavior/io/worker/UpdateDeviceInfoWorker.java#L54
      */
     public void saveDeviceInformation() {
-        PackageManager pm = mApplicationContext.getPackageManager();
+        PackageManager pm = applicationContext.getPackageManager();
         PackageInfo appInfoMuser;
         PackageInfo appInfoGps;
         String muserVersion = "";
         String googlePlayServicesAppVersion = "";
         try {
-            appInfoMuser = pm.getPackageInfo(mApplicationContext.getPackageName(),
+            appInfoMuser = pm.getPackageInfo(applicationContext.getPackageName(),
                     PackageManager.GET_META_DATA);
             muserVersion = appInfoMuser.versionName;
         } catch (PackageManager.NameNotFoundException e) {
@@ -53,17 +52,17 @@ public class DeviceInformationManager {
             // Leave version as empty string
         }
 
-        AccessibilityManager am = (AccessibilityManager) mApplicationContext.getSystemService(ACCESSIBILITY_SERVICE);
+        AccessibilityManager am = (AccessibilityManager) applicationContext.getSystemService(ACCESSIBILITY_SERVICE);
         Boolean isTalkBackEnabled = am.isTouchExplorationEnabled();
 
-        PowerManager powerManager = (PowerManager) mApplicationContext.getSystemService(Context.POWER_SERVICE);
+        PowerManager powerManager = (PowerManager) applicationContext.getSystemService(Context.POWER_SERVICE);
         Boolean isPowerSaveModeActive = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             isPowerSaveModeActive = powerManager.isPowerSaveMode();
         }
         Boolean isIgnoringBatteryOptimizations = null;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            isIgnoringBatteryOptimizations = ShuttleApplication.isIgnoringBatteryOptimizations(mApplicationContext);
+            isIgnoringBatteryOptimizations = ShuttleApplication.isIgnoringBatteryOptimizations(applicationContext);
         }
 
         String recordId = Long.toString(System.currentTimeMillis());
