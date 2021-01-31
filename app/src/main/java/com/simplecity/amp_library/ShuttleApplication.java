@@ -433,6 +433,11 @@ public class ShuttleApplication extends DaggerApplication {
         FirebaseIOUtils.saveUiEvent(uiEvent);
     }
 
+    /**
+     * Return whether the given application package name is on the device's power whitelist.
+     * Apps can be placed on the whitelist through the settings UI invoked by
+     * {@link android.provider.Settings#ACTION_IGNORE_BATTERY_OPTIMIZATION_SETTINGS}.
+     */
     public static Boolean isIgnoringBatteryOptimizations(Context applicationContext) {
         PowerManager pm = (PowerManager) applicationContext.getSystemService(Context.POWER_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M &&

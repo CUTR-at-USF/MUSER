@@ -18,6 +18,9 @@ import edu.usf.sas.pal.muser.util.PreferenceUtils;
 
 import static android.content.Context.ACCESSIBILITY_SERVICE;
 
+/** Manager class to collect the device information after the user registration is complete.
+ *
+ */
 public class DeviceInformationManager {
 
     private Context mApplicationContext;
@@ -25,6 +28,11 @@ public class DeviceInformationManager {
     public DeviceInformationManager(Context mApplicationContext) {
         this.mApplicationContext = mApplicationContext;
     }
+
+    /**
+     * Function that saves the device information. Derived from
+     * https://github.com/OneBusAway/onebusaway-android/blob/master/onebusaway-android/src/main/java/org/onebusaway/android/travelbehavior/io/worker/UpdateDeviceInfoWorker.java#L54
+     */
     public void saveDeviceInformation() {
         PackageManager pm = mApplicationContext.getPackageManager();
         PackageInfo appInfoMuser;

@@ -2,6 +2,10 @@ package edu.usf.sas.pal.muser.model
 
 import org.apache.commons.lang3.builder.HashCodeBuilder
 
+/**
+ * Model class to collect the device information at the time of registration. Derived from
+ * https://github.com/OneBusAway/onebusaway-android/blob/master/onebusaway-android/src/main/java/org/onebusaway/android/travelbehavior/model/DeviceInformation.java
+ */
 data class DeviceInfo(
 val appVersion: String,
 val deviceModel: String,
