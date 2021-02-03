@@ -21,7 +21,7 @@ object Dependencies {
         const val daggerAssistedInject = "0.3.2"
         const val expandableRecyclerView = "3.0.0-RC1"
         const val billing = "1.2"
-        const val apache = "3:3.0"
+        const val apache = "3.0"
     }
 
     // Kotlin
@@ -76,7 +76,7 @@ object Dependencies {
     const val billing = "com.android.billingclient:billing:${Versions.billing}"
 
     // Hashcodebuilder
-    const val apache= "org.apache.commons:commons-lang${Versions.apache}"
+    const val apache= "org.apache.commons:commons-lang3:${Versions.apache}"
 
     object Plugins {
 
