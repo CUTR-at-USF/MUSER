@@ -52,7 +52,7 @@ data class SongData
  val sampleRateLabel: String,
  val formatLabel: String
 ){
-    constructor(song: Song, context: Context): this(song.id, song.name, song.artistId, song.albumName, song.albumId,
+    constructor(song: Song, context: Context): this(song.id, song.name, song.artistId, song.artistName, song.albumId,
             song.albumName, song.playlistSongId, song.playlistSongPlayOrder, song.lastPlayed,
             song.track, song.discNumber, song.getBitrateLabel(context), song.getFileSizeLabel(),
             song.isPodcast, song.duration, song.dateAdded, song.year, song.path, song.playCount,
