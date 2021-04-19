@@ -1,7 +1,9 @@
 Here's the list of all information we collect. 
 
-We collect the event stream in two variants. The PLAYER_EVENT is a passive event that's collected when we observe a change in the music player's behaviour. This could be result of an action performed by the user on
-a song or when a song plays automatically when it's in a queue. The UI_EVENT is an active event that's monitored when the user explicitly interacts with the app, say when a user plays or pauses a song manually. 
+We collect the event stream in two variants:
+* `PLAYER_EVENT` - a passive event that's collected when we observe a change in the music player's behaviour. This could be result of an action performed by the user on
+a song or when a song plays automatically when it's in a queue. 
+* `UI_EVENT` - an active event that's monitored when the user explicitly interacts with the app, say when a user plays or pauses a song manually. 
 
 
 
@@ -9,8 +11,8 @@ a song or when a song plays automatically when it's in a queue. The UI_EVENT is 
 | ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | User\_id                                       | ID of the registered user in Firebase                                                                                                                                                                                                                            |
 | Record\_id                                     | ID of the record in Firebase                                                                                                                                                                                                                                     |
-| player\_event\_type                            | The player event monitored when the app's behavior changes (passive). Example: https://github.com/CUTR-at-USF/MUSER/blob/usf/app/src/main/java/edu/usf/sas/pal/muser/model/PlayerEventType.java#L9                                                               |
-| ui\_event\_type                                | The UI event monitored when user interacts with the app. Example: https://github.com/CUTR-at-USF/MUSER/blob/usf/app/src/main/java/edu/usf/sas/pal/muser/model/UiEventType.java#L7                                                                                |
+| player\_event\_type                            | The player event monitored when the app's behavior changes (passive). See [PlayerEventType](https://github.com/CUTR-at-USF/MUSER/blob/usf/app/src/main/java/edu/usf/sas/pal/muser/model/PlayerEventType.java#L9) for valid values.                                                               |
+| ui\_event\_type                                | The UI event monitored when user interacts with the app. See [UiEventType](https://github.com/CUTR-at-USF/MUSER/blob/usf/app/src/main/java/edu/usf/sas/pal/muser/model/UiEventType.java#L7) for valid values.                                                                                |
 | event\_current\_time\_in\_milliseconds         | Time stamp in milliseconds (the difference, measured in milliseconds, between the current time and midnight, January 1, 1970 UTC.)                                                                                                                               |
 | event\_nano\_time                              | Time stamp in nanoseconds (This method can only be used to measure elapsed time, and to determine order of events, and is not related to any other notion of system or wall-clock time. See https://developer.android.com/reference/java/lang/System#nanoTime()) |
 | event\_seek\_position\_in\_milliseconds        | Position of the track when the event occurred in milliseconds                                                                                                                                                                                                    |
